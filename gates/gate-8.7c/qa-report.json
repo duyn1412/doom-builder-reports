@@ -1,11 +1,29 @@
 {
   "gate": "8.7C",
-  "title": "Gate 8.7C: AI Minecraft Architect + Vision Critic + Semantic Repair Loop",
+  "title": "Gate 8.7C: AI Minecraft Architect + Semantic Critic + Semantic Repair Loop",
   "status": "HOLD / READY FOR MANUAL REVIEW",
   "technicalQA": "PASS",
   "visualProofAvailability": "PASS",
-  "visualReviewStatus": "PENDING DIRECT MANUAL REVIEW",
-  "auditTimestamp": "2026-09-06T05:38:58.514741Z",
+  "visualReviewStatus": "PENDING DIRECT REVIEW",
+  "aiProviderStatement": "AI Architect framework validated using deterministic fixture provider.",
+  "criticClassification": {
+    "criticType": "SEMANTIC ONLY",
+    "criticProvider": "deterministic-semantic-critic",
+    "modelProviderType": "Deterministic Rule-Based Semantic Evaluator (evaluates ArchitectureSpec fields and structural constraints; no computer vision / pixel inspection)",
+    "imagesAvailableCount": 11,
+    "imagesConsumedCount": 0,
+    "visionCriticStatus": "NOT EVALUATED (critic does not inspect pixels)"
+  },
+  "scoreHonesty": {
+    "semanticContractScore": 100,
+    "visualCriticScore": "NOT EVALUATED (SEMANTIC ONLY)",
+    "manualVisualStatus": "PENDING DIRECT REVIEW"
+  },
+  "repairVerifications": {
+    "storageRequirement": "VERIFIED (storage_pantry room zone realized with barrels, chest, and shelving)",
+    "facadeRepair": "VERIFIED (windowGrouping='paired-bays', workshopVentilation='forge-slits')"
+  },
+  "auditTimestamp": "2026-09-06T08:03:41.257401Z",
   "userPrompt": "Large rustic medieval blacksmith residence with attached workshop, two floors, asymmetrical silhouette, stone forge chimney, rich timber framing, believable room partitions, workshop equipment area, storage area, bedroom, strong entrance hierarchy and non-repetitive facade.",
   "structure": {
     "id": "ai-proposal-house-seed501-iter1",
@@ -17,7 +35,7 @@
       "y": 16,
       "z": 19
     },
-    "totalBlocks": 1808,
+    "totalBlocks": 1810,
     "worldOrigin": {
       "x": 450,
       "y": -60,
@@ -31,33 +49,113 @@
     "finalScore": 100,
     "scoreGain": 40,
     "resolvedIssues": [
-      "Window bays exhibit uniform procedural repetition across south and north facades.",
-      "Ground floor interior lacks structural partitions; functions are blurred in an open hall cavity.",
+      "Window bays exhibit uniform procedural repetition; lacks paired residential groupings and forge ventilation slits.",
+      "Ground floor interior lacks structural room partitions and dedicated functional storage pantry.",
       "Workshop equipment is incomplete; missing essential blacksmith tools such as anvil, blast furnace, and grindstone.",
       "Main residential entrance lacks focal hierarchy over secondary service doors."
     ],
     "semanticDiff": {
       "addedFeatures": [
         "Structural interior room partitions separating workshop from residential living quarters",
-        "Functional room zoning (workshop, living_hall, master_bedroom)",
+        "Functional room zoning (workshop, storage_pantry, living_hall, master_bedroom)",
+        "Dedicated storage pantry annex with barrels, chests, and wall shelving",
         "Full blacksmith equipment cluster (blast furnace, anvil, grindstone, water cauldron, smithing table)",
         "Grand timber-framed porch canopy on south entrance establishing clear visual hierarchy"
       ],
       "modifiedFeatures": [
-        "Window bay distribution: replaced uniform procedural spacing with paired living bays and high workshop ventilation slits"
+        "Facade hierarchy: paired residential window bays ('paired-bays') and utilitarian forge ventilation slits ('forge-slits')"
       ],
       "removedFeatures": [],
-      "summary": "Semantic architecture refined across 4 additions and 1 modifications: enhanced functional zoning, enriched workshop thematic equipment, and eliminated procedural facade repetition."
+      "summary": "Semantic architecture refined across 5 additions and 1 modifications: functional room zoning with storage pantry, full blacksmith workshop equipment cluster, grand entrance hierarchy, and paired window bays with forge ventilation slits."
     }
   },
   "realMinecraftReadback": {
+    "structureId": "ai-proposal-house-seed501-iter1",
     "origin": "(450, -60, 200)",
-    "expected": 1808,
-    "correct": 1808,
+    "expected": 1810,
+    "correct": 1810,
     "missing": 0,
     "incorrect": 0,
     "extra": 0,
-    "accuracy": "100.000%"
+    "accuracy": "100.000%",
+    "specHash": "fe1f593423c788d8d61a339c3fba8176641e257030ade31a185fea51c85dc96d",
+    "blockPlanHash": "b7eeac05c7575759bfe6b2ff23243bf1a32c8a6ba37f6d1f99ba602bef3368d9",
+    "blueprintHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "verified": true
+  },
+  "finalQualityReport": {
+    "checks": [
+      {
+        "detail": "Found 0 duplicate coordinate collisions (target: 0)",
+        "id": "NO_DUPLICATE_COORDINATES",
+        "status": "PASS"
+      },
+      {
+        "detail": "Silhouette variation ratio: 8.83 (area: 2.71, mass: 8.83)",
+        "id": "SILHOUETTE_VARIATION",
+        "status": "PASS"
+      },
+      {
+        "detail": "Facade depth relief: 1 blocks with structural/trim articulation",
+        "id": "FACADE_DEPTH_RELIEF",
+        "status": "PASS"
+      },
+      {
+        "detail": "Windows placed within wall bounds without coordinate collisions",
+        "id": "WINDOW_SPACING_SANITY",
+        "status": "PASS"
+      },
+      {
+        "detail": "Main entrance door detected at base level",
+        "id": "ENTRANCE_ACCESSIBLE",
+        "status": "PASS"
+      },
+      {
+        "detail": "Top volume completely covered by roof, parapet, or deck (100%)",
+        "id": "ROOF_COVERAGE",
+        "status": "PASS"
+      },
+      {
+        "detail": "Structural support ratio: 99.89%",
+        "id": "STRUCTURAL_SUPPORT",
+        "status": "PASS"
+      },
+      {
+        "detail": "Circulation connects vertical platforms (VERIFIED)",
+        "id": "INTERIOR_CONNECTIVITY",
+        "status": "PASS"
+      },
+      {
+        "detail": "Floating disconnected components: 0",
+        "id": "NO_FLOATING_COMPONENTS",
+        "status": "PASS"
+      },
+      {
+        "detail": "Palette roles properly assigned (28 unique materials in histogram)",
+        "id": "PALETTE_COHERENCE",
+        "status": "PASS"
+      },
+      {
+        "detail": "Proportions valid for house (dims: 21x16x19)",
+        "id": "VERTICAL_PROPORTION",
+        "status": "PASS"
+      }
+    ],
+    "metrics": {
+      "duplicateCoordinateCount": 0,
+      "entranceAccessible": true,
+      "facadeDepthRelief": 1,
+      "floatingComponentCount": 0,
+      "interiorConnectivity": true,
+      "paletteRoleCoherence": true,
+      "roofCoveragePercent": 100,
+      "silhouetteVariation": 8.83,
+      "structuralSupportRatio": 0.9989,
+      "verticalProportionOk": true,
+      "windowSpacingSanity": true
+    },
+    "overallScore": 100,
+    "status": "PASS"
   },
   "checks": [
     {
@@ -71,7 +169,7 @@
       "status": "PASS"
     },
     {
-      "detail": "10x determinism verified: specHash=992ee8f6f81715e9... invariant across 10 trials",
+      "detail": "AI Architect framework validated using deterministic fixture provider. 10x determinism verified: specHash=cd759b963e774da9... invariant across 10 trials",
       "id": "deterministic_fixture_provider",
       "status": "PASS"
     },
@@ -101,7 +199,7 @@
       "status": "PASS"
     },
     {
-      "detail": "Critic emitted structured critique: score=60/100, pass=false, issues=4, repairInstructions=4",
+      "detail": "Semantic Critic emitted structured critique with full provenance (type: SEMANTIC ONLY, 0 pixels consumed, screenshot hashes recorded, score=60/100, pass=false, issues=4)",
       "id": "vision_critic_structured_output",
       "status": "PASS"
     },
@@ -116,7 +214,7 @@
       "status": "PASS"
     },
     {
-      "detail": "Semantic diff captured 4 additions and 1 modifications: Semantic architecture refined across 4 additions and 1 modifications: enhanced functional zoning, enriched workshop thematic equipment, and eliminated procedural facade repetition.",
+      "detail": "Semantic diff verified: storage pantry added, explicit paired-bays & forge-slits facade modified (5 additions, 1 modifications)",
       "id": "before_after_semantic_diff",
       "status": "PASS"
     },
@@ -126,7 +224,12 @@
       "status": "PASS"
     },
     {
-      "detail": "100.000% exact readback: expected=1808 correct=1808 missing=0 incorrect=0 extra=0 at origin (450,-60,200)",
+      "detail": "Frozen Gate 8.7B quality heuristics PASS on final spec (score: 100%, 0 duplicate coords, structural support PASS, circulation PASS, palette PASS, roof coverage PASS)",
+      "id": "final_grammar_quality_heuristics",
+      "status": "PASS"
+    },
+    {
+      "detail": "100.000% exact readback: expected=1810 correct=1810 missing=0 incorrect=0 extra=0 at origin (450,-60,200)",
       "id": "real_minecraft_exact_readback",
       "status": "PASS"
     },
