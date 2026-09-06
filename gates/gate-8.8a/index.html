@@ -175,8 +175,8 @@
             <td><code>slime-cube</code></td>
             <td>3/5</td>
             <td><code>soft_body_drop</code></td>
-            <td>6.20s → 7.25s → 9.00s</td>
-            <td>2.5kg emerald slime cube falls, hits actor head, squishes elastically (deform 0.405m), and rebounds</td>
+            <td>6.20s → 7.70s → 9.00s</td>
+            <td>2.5kg emerald slime cube falls, hits actor head, squishes elastically (squish deform=0.72m), and rebounds</td>
             <td><span class="badge badge-pass">PASS</span></td>
           </tr>
           <tr>
@@ -184,7 +184,7 @@
             <td><code>creature-prop</code></td>
             <td>4/5</td>
             <td><code>character_drop</code></td>
-            <td>9.20s → 10.25s → 12.00s</td>
+            <td>9.20s → 10.30s → 12.00s</td>
             <td>4.0kg original voxel creature prop tumbles, collides with actor proxy, and settles stably on stage</td>
             <td><span class="badge badge-pass">PASS</span></td>
           </tr>
@@ -193,8 +193,8 @@
             <td><code>heavy-anvil</code></td>
             <td>5/5</td>
             <td><code>heavy_crush</code></td>
-            <td>12.20s → 13.10s → 14.50s</td>
-            <td>50.0kg heavy iron anvil drops from 8.5m with high kinetic energy, causing impact shock and camera shake</td>
+            <td>12.20s → 13.50s → 14.50s</td>
+            <td>50.0kg heavy iron anvil drops from 6.8m with high kinetic energy, causing impact shock, camera shake, and crush collapse</td>
             <td><span class="badge badge-pass">PASS</span></td>
           </tr>
         </tbody>
@@ -204,7 +204,7 @@
     <!-- SECTION 3: MASTER CONTACT SHEET -->
     <div class="card" style="margin-bottom: 32px;">
       <h2>Master Sequence Contact Sheet (5 Physical Impacts)</h2>
-      <p style="margin-bottom: 12px; font-size: 0.9rem; color: #8b949e;">Horizontal progression across all 5 physical impact moments: Ball Rain (1.45s) | Granular Burial (4.15s) | Slime Cube Squish (7.25s) | Creature Prop (10.25s) | Heavy Anvil Slam (13.10s).</p>
+      <p style="margin-bottom: 12px; font-size: 0.9rem; color: #8b949e;">Horizontal progression across all 5 physical impact moments: Ball Rain (1.45s) | Granular Burial (4.15s) | Slime Cube Squish (7.70s) | Creature Prop (10.30s) | Heavy Anvil Slam (13.50s).</p>
       <img src="images/full-sequence-contact-sheet.png" alt="Full Sequence Contact Sheet" class="contact-sheet-img">
     </div>
 
@@ -247,53 +247,65 @@
       </div>
 
       <!-- Effect 3 -->
-      <h3 style="margin-top: 24px;">Effect 3: Soft Body Drop (Item: slime-cube)</h3>
-      <div class="still-gallery">
+      <h3 style="margin-top: 24px;">Effect 3: Soft Body Drop (Item: slime-cube) — Visual Remediation</h3>
+      <div class="still-gallery" style="grid-template-columns: repeat(4, 1fr);">
         <div class="still-item">
           <img src="images/effect-03-jelly/before.png" alt="Soft Body Before">
-          <div class="still-label">Before Selection (6.50s)</div>
+          <div class="still-label">Before Selection (6.80s)</div>
         </div>
         <div class="still-item">
-          <img src="images/effect-03-jelly/impact.png" alt="Soft Body Impact">
-          <div class="still-label">Physical Impact & Squish (7.25s)</div>
+          <img src="images/effect-03-jelly/peak-squish.png" alt="Soft Body Peak Squish">
+          <div class="still-label">Peak Squish (7.70s)</div>
+        </div>
+        <div class="still-item">
+          <img src="images/effect-03-jelly/rebound.png" alt="Soft Body Elastic Rebound">
+          <div class="still-label">Elastic Rebound (7.90s)</div>
         </div>
         <div class="still-item">
           <img src="images/effect-03-jelly/after.png" alt="Soft Body Settle">
-          <div class="still-label">Rebound & Settle (9.00s)</div>
+          <div class="still-label">Settled Slime (8.50s)</div>
         </div>
       </div>
 
       <!-- Effect 4 -->
-      <h3 style="margin-top: 24px;">Effect 4: Character Drop (Item: creature-prop)</h3>
-      <div class="still-gallery">
+      <h3 style="margin-top: 24px;">Effect 4: Character Drop (Item: creature-prop) — Visual Remediation</h3>
+      <div class="still-gallery" style="grid-template-columns: repeat(4, 1fr);">
         <div class="still-item">
           <img src="images/effect-04-character/before.png" alt="Character Drop Before">
-          <div class="still-label">Before Selection (9.50s)</div>
+          <div class="still-label">Before Selection (9.20s)</div>
+        </div>
+        <div class="still-item">
+          <img src="images/effect-04-character/visible-drop.png" alt="Character Visible Drop">
+          <div class="still-label">Visible Drop Trajectory (9.93s)</div>
         </div>
         <div class="still-item">
           <img src="images/effect-04-character/impact.png" alt="Character Drop Impact">
-          <div class="still-label">Physical Impact (10.25s)</div>
+          <div class="still-label">Impact Shock & Bounce (10.30s)</div>
         </div>
         <div class="still-item">
           <img src="images/effect-04-character/after.png" alt="Character Drop Settle">
-          <div class="still-label">Settled State (12.00s)</div>
+          <div class="still-label">Settled State (11.33s)</div>
         </div>
       </div>
 
       <!-- Effect 5 -->
-      <h3 style="margin-top: 24px;">Effect 5: Heavy Crush (Item: heavy-anvil)</h3>
-      <div class="still-gallery">
+      <h3 style="margin-top: 24px;">Effect 5: Heavy Crush (Item: heavy-anvil) — Visual Remediation</h3>
+      <div class="still-gallery" style="grid-template-columns: repeat(4, 1fr);">
         <div class="still-item">
           <img src="images/effect-05-heavy/before.png" alt="Heavy Crush Before">
-          <div class="still-label">Before Selection (12.50s)</div>
+          <div class="still-label">Before Selection (12.30s)</div>
         </div>
         <div class="still-item">
-          <img src="images/effect-05-heavy/impact.png" alt="Heavy Crush Impact">
-          <div class="still-label">Physical Impact & Punch-in (13.10s)</div>
+          <img src="images/effect-05-heavy/falling.png" alt="Heavy Crush Falling">
+          <div class="still-label">Falling Anticipation (13.17s)</div>
         </div>
         <div class="still-item">
-          <img src="images/effect-05-heavy/after.png" alt="Heavy Crush Settle">
-          <div class="still-label">Final Ending (14.50s)</div>
+          <img src="images/effect-05-heavy/impact.png" alt="Heavy Crush Slam">
+          <div class="still-label">Kinetic Slam Impact (13.50s)</div>
+        </div>
+        <div class="still-item">
+          <img src="images/effect-05-heavy/settled.png" alt="Heavy Crush Settled">
+          <div class="still-label">Crushed Actor & Anvil (14.30s)</div>
         </div>
       </div>
     </div>
@@ -306,15 +318,16 @@
         <div class="stat-row"><span class="stat-label">Total Duration</span><span class="stat-val">15.0s (450 frames @ 30fps)</span></div>
         <div class="stat-row"><span class="stat-label">Aspect Ratio</span><span class="stat-val">9:16 Vertical (360x640 & 1080x1920)</span></div>
         <div class="stat-row"><span class="stat-label">Camera Profile</span><span class="stat-val">viral_vertical_v1 (FOV 54°)</span></div>
-        <div class="stat-row"><span class="stat-label">Render Engine</span><span class="stat-val">CYCLES (CPU, samples=4)</span></div>
-        <div class="stat-row"><span class="stat-label">Blender Version</span><span class="stat-val">Blender 4.5.11 LTS</span></div>
+        <div class="stat-row"><span class="stat-label">Render Engine</span><span class="stat-val">CYCLES (CPU/Metal, samples=4)</span></div>
+        <div class="stat-row"><span class="stat-label">Blender Version</span><span class="stat-val">Blender 5.2.0 LTS</span></div>
+        <div class="stat-row"><span class="stat-label">Render Host</span><span class="stat-val">macOS Duys-MacBook-Pro.local (arm64, Apple Silicon M2)</span></div>
       </div>
 
       <div class="card">
         <h2>Physics Solver Telemetry</h2>
         <div class="stat-row"><span class="stat-label">Physics Engine</span><span class="stat-val">Bullet Rigid-Body</span></div>
-        <div class="stat-row"><span class="stat-label">Substeps / Iterations</span><span class="stat-val">10 / 20</span></div>
-        <div class="stat-row"><span class="stat-label">Sim Bake Time</span><span class="stat-val">9.45s</span></div>
+        <div class="stat-row"><span class="stat-label">Substeps / Iterations</span><span class="stat-val">20 / 30</span></div>
+        <div class="stat-row"><span class="stat-label">Sim Bake Time</span><span class="stat-val">1.605s</span></div>
         <div class="stat-row"><span class="stat-label">Floor Penetrations</span><span class="stat-val" style="color: var(--pass);">0 detected (PASS)</span></div>
         <div class="stat-row"><span class="stat-label">Actor Deflection</span><span class="stat-val" style="color: var(--pass);">Verified (All 5 Effects)</span></div>
         <div class="stat-row"><span class="stat-label">Explosion / Instability</span><span class="stat-val" style="color: var(--pass);">0 (Stable)</span></div>
@@ -351,28 +364,28 @@
             
     <tr>
       <td><strong>100 Balls</strong></td>
-      <td>1.589s</td>
-      <td>0.258s</td>
-      <td>18.141s</td>
-      <td>2.184s</td>
+      <td>0.41s</td>
+      <td>0.143s</td>
+      <td>19.159s</td>
+      <td>0.808s</td>
       <td>50.0 MB</td>
     </tr>
     
     <tr>
       <td><strong>300 Balls</strong></td>
-      <td>17.369s</td>
-      <td>0.97s</td>
-      <td>47.408s</td>
-      <td>18.93s</td>
+      <td>2.876s</td>
+      <td>0.358s</td>
+      <td>15.619s</td>
+      <td>3.44s</td>
       <td>86.0 MB</td>
     </tr>
     
     <tr>
       <td><strong>500 Balls</strong></td>
-      <td>52.438s</td>
-      <td>1.625s</td>
-      <td>34.016s</td>
-      <td>54.567s</td>
+      <td>10.485s</td>
+      <td>0.7s</td>
+      <td>18.274s</td>
+      <td>11.421s</td>
       <td>122.0 MB</td>
     </tr>
     
@@ -836,19 +849,19 @@
     <tr>
       <td class="mono">final_ball_pile_exists</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Final ball pile formed: 70/100 balls accumulated (70%)</td>
+      <td>Final ball pile formed: 78/100 balls accumulated (78%)</td>
     </tr>
     
     <tr>
       <td class="mono">preview_render_succeeds</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Preview video generated: preview.mp4 (1705913 bytes)</td>
+      <td>Preview video generated: preview.mp4 (1475835 bytes)</td>
     </tr>
     
     <tr>
       <td class="mono">production_render_succeeds</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Production video generated: production.mp4 (13009081 bytes)</td>
+      <td>Production video generated: production.mp4 (11177906 bytes)</td>
     </tr>
     
     <tr>
@@ -914,7 +927,7 @@
     <tr>
       <td class="mono">per_effect_image_stills_complete</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>All 15 per-effect screenshot stills (before/impact/after) and contact sheet verified</td>
+      <td>All per-effect review stills (squish, rebound, visible drop, heavy fall, settled) and master contact sheet verified</td>
     </tr>
     
     <tr>
@@ -944,7 +957,7 @@
     <tr>
       <td class="mono">effect_1_ball_rain_telemetry</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Ball Rain telemetry PASS: 100 spheres, 70 in pile (70%), 0 penetrations</td>
+      <td>Ball Rain telemetry PASS: 100 spheres, 78 in pile (78%), 0 penetrations</td>
     </tr>
     
     <tr>
@@ -956,7 +969,7 @@
     <tr>
       <td class="mono">effect_3_soft_body_telemetry</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Soft Body Drop telemetry PASS: slime cube elastic rebound, deformation=0.405m, 0 penetrations</td>
+      <td>Soft Body Drop telemetry PASS: slime cube elastic rebound, deformation=0.72m, 0 penetrations</td>
     </tr>
     
     <tr>
@@ -968,31 +981,31 @@
     <tr>
       <td class="mono">effect_5_heavy_crush_telemetry</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Heavy Crush telemetry PASS: 50kg anvil impact shock, camera punch-in/shake, 0 penetrations</td>
+      <td>Heavy Crush telemetry PASS: 50kg anvil impact shock, camera punch-in/shake, finalZ=0.59m, 0 penetrations</td>
     </tr>
     
     <tr>
       <td class="mono">simulation_provenance_recorded</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Simulation provenance recorded: CYCLES (CPU), 20 solver steps, 10 substeps</td>
+      <td>Simulation provenance recorded: CYCLES (CPU/Metal), 30 solver steps, 20 substeps</td>
     </tr>
     
     <tr>
       <td class="mono">benchmark_100_balls_recorded</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>100 balls benchmark: gen=1.589s, sim=0.258s, total=2.184s</td>
+      <td>100 balls benchmark: gen=0.41s, sim=0.143s, total=0.808s</td>
     </tr>
     
     <tr>
       <td class="mono">benchmark_300_balls_recorded</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>300 balls benchmark (main target): gen=17.369s, sim=0.97s, total=18.93s</td>
+      <td>300 balls benchmark (main target): gen=2.876s, sim=0.358s, total=3.44s</td>
     </tr>
     
     <tr>
       <td class="mono">benchmark_500_balls_recorded</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>500 balls benchmark: gen=52.438s, sim=1.625s, total=54.567s</td>
+      <td>500 balls benchmark: gen=10.485s, sim=0.7s, total=11.421s</td>
     </tr>
     
         </tbody>
@@ -1000,7 +1013,7 @@
     </div>
 
     <footer style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); color: #8b949e; font-size: 0.85rem; text-align: center;">
-      Gate 8.8A Dossier Generated on 2026-09-06 15:35:43 UTC | Antigravity AI Autonomous Pipeline
+      Gate 8.8A Dossier Generated on 2026-09-06 16:26:00 UTC | Antigravity AI Autonomous Pipeline
     </footer>
   </div>
 </body>

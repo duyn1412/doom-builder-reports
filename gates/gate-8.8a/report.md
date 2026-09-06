@@ -5,10 +5,10 @@
 **Full Sequence Duration**: 15.0 seconds (450 frames @ 30fps)  
 **Technical QA Status**: **PASS** (41/41 checks passed)  
 **Manual Visual Review Status**: **PENDING DIRECT VIDEO REVIEW**  
-**Render Host**: Local iMac (Darwin x86_64, Intel Core i7-4771 @ 3.50GHz)  
-**Blender Version**: Blender 4.5.11 LTS  
-**Renderer**: CYCLES (CPU, samples=4)  
-**Generated At**: 2026-09-06 15:35:43 UTC  
+**Render Host**: macOS Duys-MacBook-Pro.local (arm64, Apple Silicon M2)  
+**Blender Version**: Blender 5.2.0 LTS  
+**Renderer**: CYCLES (CPU/Metal, samples=4)  
+**Generated At**: 2026-09-06 16:26:00 UTC  
 
 ---
 
@@ -27,9 +27,9 @@ Gate 8.8A proves the COMPLETE reference interaction pattern for viral Minecraft-
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **1** | `red-ball` | 1/5 | `ball_rain` | 0.12kg | 100 spheres cascade, deflect off head/torso, settle stably (70% pile ratio) | **PASS** |
 | **2** | `sand-block` | 2/5 | `granular_burial` | 0.18kg | 180 high-friction sand particles stream and bury actor base | **PASS** |
-| **3** | `slime-cube` | 3/5 | `soft_body_drop` | 2.50kg | Slime cube impacts actor, deforms elastically (squish=0.405m), and rebounds | **PASS** |
+| **3** | `slime-cube` | 3/5 | `soft_body_drop` | 2.50kg | Slime cube impacts actor, squishes elastically (squish deform=0.72m), and rebounds | **PASS** |
 | **4** | `creature-prop` | 4/5 | `character_drop` | 4.00kg | Voxel creature prop tumbles, hits actor proxy, and settles on ground | **PASS** |
-| **5** | `heavy-anvil` | 5/5 | `heavy_crush` | 50.00kg | 50kg iron anvil slams with impact shock and camera punch-in/shake | **PASS** |
+| **5** | `heavy-anvil` | 5/5 | `heavy_crush` | 50.00kg | 50kg iron anvil slams with impact shock, camera punch-in/shake, and crush collapse | **PASS** |
 
 ---
 
@@ -38,12 +38,12 @@ Gate 8.8A proves the COMPLETE reference interaction pattern for viral Minecraft-
 - **Production Video (1080x1920)**: `renders/production.mp4`
 - **Preview Video (360x640)**: `renders/preview.mp4`
 - **Full Sequence Contact Sheet**: `images/full-sequence-contact-sheet.png`
-- **Per-Effect Review Stills (15 Stills)**:
+- **Per-Effect Review Stills (Gate 8.8A Visual Remediation Sets)**:
   - Effect 1 (Ball Rain): `images/effect-01-ball/{before,impact,after}.png`
   - Effect 2 (Granular Burial): `images/effect-02-granular/{before,impact,after}.png`
-  - Effect 3 (Soft Body Drop): `images/effect-03-jelly/{before,impact,after}.png`
-  - Effect 4 (Character Drop): `images/effect-04-character/{before,impact,after}.png`
-  - Effect 5 (Heavy Crush): `images/effect-05-heavy/{before,impact,after}.png`
+  - Effect 3 (Soft Body Drop): `images/effect-03-jelly/{before,peak-squish,rebound,after}.png`
+  - Effect 4 (Character Drop): `images/effect-04-character/{before,visible-drop,impact,after}.png`
+  - Effect 5 (Heavy Crush): `images/effect-05-heavy/{before,falling,impact,settled}.png`
 - **Original Procedural Icons**:
   - `assets/voxel_red_ball.png`
   - `assets/voxel_granular_cube.png`

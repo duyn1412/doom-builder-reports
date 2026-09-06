@@ -79,17 +79,17 @@
     {
       "id": "final_ball_pile_exists",
       "status": "PASS",
-      "detail": "Final ball pile formed: 70/100 balls accumulated (70%)"
+      "detail": "Final ball pile formed: 78/100 balls accumulated (78%)"
     },
     {
       "id": "preview_render_succeeds",
       "status": "PASS",
-      "detail": "Preview video generated: preview.mp4 (1705913 bytes)"
+      "detail": "Preview video generated: preview.mp4 (1475835 bytes)"
     },
     {
       "id": "production_render_succeeds",
       "status": "PASS",
-      "detail": "Production video generated: production.mp4 (13009081 bytes)"
+      "detail": "Production video generated: production.mp4 (11177906 bytes)"
     },
     {
       "id": "mp4_codec_fps_aspect_valid",
@@ -144,7 +144,7 @@
     {
       "id": "per_effect_image_stills_complete",
       "status": "PASS",
-      "detail": "All 15 per-effect screenshot stills (before/impact/after) and contact sheet verified"
+      "detail": "All per-effect review stills (squish, rebound, visible drop, heavy fall, settled) and master contact sheet verified"
     },
     {
       "id": "effect_event_provenance_recorded",
@@ -169,7 +169,7 @@
     {
       "id": "effect_1_ball_rain_telemetry",
       "status": "PASS",
-      "detail": "Ball Rain telemetry PASS: 100 spheres, 70 in pile (70%), 0 penetrations"
+      "detail": "Ball Rain telemetry PASS: 100 spheres, 78 in pile (78%), 0 penetrations"
     },
     {
       "id": "effect_2_granular_burial_telemetry",
@@ -179,7 +179,7 @@
     {
       "id": "effect_3_soft_body_telemetry",
       "status": "PASS",
-      "detail": "Soft Body Drop telemetry PASS: slime cube elastic rebound, deformation=0.405m, 0 penetrations"
+      "detail": "Soft Body Drop telemetry PASS: slime cube elastic rebound, deformation=0.72m, 0 penetrations"
     },
     {
       "id": "effect_4_character_drop_telemetry",
@@ -189,27 +189,27 @@
     {
       "id": "effect_5_heavy_crush_telemetry",
       "status": "PASS",
-      "detail": "Heavy Crush telemetry PASS: 50kg anvil impact shock, camera punch-in/shake, 0 penetrations"
+      "detail": "Heavy Crush telemetry PASS: 50kg anvil impact shock, camera punch-in/shake, finalZ=0.59m, 0 penetrations"
     },
     {
       "id": "simulation_provenance_recorded",
       "status": "PASS",
-      "detail": "Simulation provenance recorded: CYCLES (CPU), 20 solver steps, 10 substeps"
+      "detail": "Simulation provenance recorded: CYCLES (CPU/Metal), 30 solver steps, 20 substeps"
     },
     {
       "id": "benchmark_100_balls_recorded",
       "status": "PASS",
-      "detail": "100 balls benchmark: gen=1.589s, sim=0.258s, total=2.184s"
+      "detail": "100 balls benchmark: gen=0.41s, sim=0.143s, total=0.808s"
     },
     {
       "id": "benchmark_300_balls_recorded",
       "status": "PASS",
-      "detail": "300 balls benchmark (main target): gen=17.369s, sim=0.97s, total=18.93s"
+      "detail": "300 balls benchmark (main target): gen=2.876s, sim=0.358s, total=3.44s"
     },
     {
       "id": "benchmark_500_balls_recorded",
       "status": "PASS",
-      "detail": "500 balls benchmark: gen=52.438s, sim=1.625s, total=54.567s"
+      "detail": "500 balls benchmark: gen=10.485s, sim=0.7s, total=11.421s"
     }
   ],
   "scenarioSpec": {
@@ -361,18 +361,19 @@
     }
   },
   "simulationReport": {
-    "blenderVersion": "Blender 4.5.11 LTS",
-    "engine": "CYCLES (CPU)",
+    "blenderVersion": "Blender 5.2.0 LTS",
+    "engine": "CYCLES (CPU/Metal)",
+    "host": "Duys-MacBook-Pro.local (arm64)",
     "preset": "viral_5_effect_sequence_v1",
     "totalDurationSec": 15,
     "totalFrames": 450,
-    "solverSteps": 20,
-    "substeps": 10,
+    "solverSteps": 30,
+    "substeps": 20,
     "penetrationsDetected": 0,
     "stablePile": true,
-    "ballsInPile": 70,
-    "pileAccumulationPercent": 70,
-    "simulationDurationSec": 9.45,
+    "ballsInPile": 78,
+    "pileAccumulationPercent": 78,
+    "simulationDurationSec": 1.605,
     "spawnScheduleHash": "5f9c975fe1ca8736b9fea18936f0c32fad0409776fcb5e534f845965d1894806",
     "effects": {
       "ball_rain": {
@@ -384,8 +385,8 @@
         "penetrationsDetected": 0,
         "stableState": true,
         "metrics": {
-          "ballsInPile": 70,
-          "accumulationRatio": 0.7
+          "ballsInPile": 78,
+          "accumulationRatio": 0.78
         }
       },
       "granular_burial": {
@@ -397,7 +398,7 @@
         "penetrationsDetected": 0,
         "stableState": true,
         "metrics": {
-          "granulesAroundActor": 147,
+          "granulesAroundActor": 162,
           "particleSize": 0.14
         }
       },
@@ -410,8 +411,9 @@
         "penetrationsDetected": 0,
         "stableState": true,
         "metrics": {
-          "finalZ": 0.571,
-          "peakSquishDeformation": 0.405
+          "finalZ": 0.79,
+          "peakSquishDeformation": 0.72,
+          "elasticRebound": 0.85
         }
       },
       "character_drop": {
@@ -423,7 +425,7 @@
         "penetrationsDetected": 0,
         "stableState": true,
         "metrics": {
-          "finalZ": 0.38,
+          "finalZ": 0.739,
           "propType": "voxel_creature"
         }
       },
@@ -436,44 +438,47 @@
         "penetrationsDetected": 0,
         "stableState": true,
         "metrics": {
-          "finalZ": 10.576,
+          "initialZ": 6.8,
+          "impactZ": 1.8,
+          "finalZ": 0.59,
+          "finalVelocity": 0,
           "massKg": 50,
-          "impactFrame": 393,
+          "impactFrame": 405,
           "cameraShake": true
         }
       }
     }
   },
   "performanceReport": {
-    "hardware": "macOS Darwin x86_64 (Intel Core i7-4771 CPU @ 3.50GHz)",
-    "renderer": "CYCLES (CPU)",
-    "blenderVersion": "Blender 4.5.11 LTS",
+    "hardware": "macOS Duys-MacBook-Pro.local (arm64, Apple Silicon M2)",
+    "renderer": "CYCLES (CPU/Metal)",
+    "blenderVersion": "Blender 5.2.0 LTS",
     "benchmarks": [
       {
         "ballCount": 100,
-        "sceneGenTimeSec": 1.589,
-        "simTimeSec": 0.258,
-        "renderTimeSec": 18.141,
+        "sceneGenTimeSec": 0.41,
+        "simTimeSec": 0.143,
+        "renderTimeSec": 19.159,
         "encodeTimeSec": 0.45,
-        "totalTimeSec": 2.184,
+        "totalTimeSec": 0.808,
         "peakMemoryMb": 50
       },
       {
         "ballCount": 300,
-        "sceneGenTimeSec": 17.369,
-        "simTimeSec": 0.97,
-        "renderTimeSec": 47.408,
+        "sceneGenTimeSec": 2.876,
+        "simTimeSec": 0.358,
+        "renderTimeSec": 15.619,
         "encodeTimeSec": 0.45,
-        "totalTimeSec": 18.93,
+        "totalTimeSec": 3.44,
         "peakMemoryMb": 86
       },
       {
         "ballCount": 500,
-        "sceneGenTimeSec": 52.438,
-        "simTimeSec": 1.625,
-        "renderTimeSec": 34.016,
+        "sceneGenTimeSec": 10.485,
+        "simTimeSec": 0.7,
+        "renderTimeSec": 18.274,
         "encodeTimeSec": 0.45,
-        "totalTimeSec": 54.567,
+        "totalTimeSec": 11.421,
         "peakMemoryMb": 122
       }
     ]

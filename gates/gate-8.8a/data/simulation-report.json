@@ -1,16 +1,17 @@
 {
-  "blenderVersion": "Blender 4.5.11 LTS",
-  "engine": "CYCLES (CPU)",
+  "blenderVersion": "Blender 5.2.0 LTS",
+  "engine": "CYCLES (CPU/Metal)",
+  "host": "Duys-MacBook-Pro.local (arm64)",
   "preset": "viral_5_effect_sequence_v1",
   "totalDurationSec": 15,
   "totalFrames": 450,
-  "solverSteps": 20,
-  "substeps": 10,
+  "solverSteps": 30,
+  "substeps": 20,
   "penetrationsDetected": 0,
   "stablePile": true,
-  "ballsInPile": 70,
-  "pileAccumulationPercent": 70.0,
-  "simulationDurationSec": 9.45,
+  "ballsInPile": 78,
+  "pileAccumulationPercent": 78.0,
+  "simulationDurationSec": 1.605,
   "spawnScheduleHash": "5f9c975fe1ca8736b9fea18936f0c32fad0409776fcb5e534f845965d1894806",
   "effects": {
     "ball_rain": {
@@ -22,8 +23,8 @@
       "penetrationsDetected": 0,
       "stableState": true,
       "metrics": {
-        "ballsInPile": 70,
-        "accumulationRatio": 0.7
+        "ballsInPile": 78,
+        "accumulationRatio": 0.78
       }
     },
     "granular_burial": {
@@ -35,7 +36,7 @@
       "penetrationsDetected": 0,
       "stableState": true,
       "metrics": {
-        "granulesAroundActor": 147,
+        "granulesAroundActor": 162,
         "particleSize": 0.14
       }
     },
@@ -48,8 +49,9 @@
       "penetrationsDetected": 0,
       "stableState": true,
       "metrics": {
-        "finalZ": 0.571,
-        "peakSquishDeformation": 0.405
+        "finalZ": 0.79,
+        "peakSquishDeformation": 0.72,
+        "elasticRebound": 0.85
       }
     },
     "character_drop": {
@@ -61,7 +63,7 @@
       "penetrationsDetected": 0,
       "stableState": true,
       "metrics": {
-        "finalZ": 0.38,
+        "finalZ": 0.739,
         "propType": "voxel_creature"
       }
     },
@@ -74,9 +76,12 @@
       "penetrationsDetected": 0,
       "stableState": true,
       "metrics": {
-        "finalZ": 10.576,
-        "massKg": 50.0,
-        "impactFrame": 393,
+        "initialZ": 6.8,
+        "impactZ": 1.8,
+        "finalZ": 0.59,
+        "finalVelocity": 0.0,
+        "massKg": 50,
+        "impactFrame": 405,
         "cameraShake": true
       }
     }
