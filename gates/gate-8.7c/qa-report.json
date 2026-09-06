@@ -23,7 +23,7 @@
     "storageRequirement": "VERIFIED (storage_pantry room zone realized with barrels, chest, and shelving)",
     "facadeRepair": "VERIFIED (windowGrouping='paired-bays', workshopVentilation='forge-slits')"
   },
-  "auditTimestamp": "2026-09-06T08:03:41.257401Z",
+  "auditTimestamp": "2026-09-06T08:06:51.067793Z",
   "userPrompt": "Large rustic medieval blacksmith residence with attached workshop, two floors, asymmetrical silhouette, stone forge chimney, rich timber framing, believable room partitions, workshop equipment area, storage area, bedroom, strong entrance hierarchy and non-repetitive facade.",
   "structure": {
     "id": "ai-proposal-house-seed501-iter1",
