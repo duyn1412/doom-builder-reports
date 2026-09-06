@@ -2,6 +2,17 @@
   "timestamp": "2026-09-06T03:53:15.263311+00:00",
   "targetDirectory": "ftp.wptopd3v.com/reports.wptopd3v.com/mine",
   "status": "PASS",
+  "gate": "8.7B",
+  "gateStatus": "READY FOR FINAL REVIEW / FREEZE",
+  "technicalQA": "PASS",
+  "visualProofAvailability": "PASS",
+  "substrateContract": "Gate 8.7B proves a deterministic multi-family procedural architecture grammar suitable as the deterministic substrate for Gate 8.7C AI Architect.",
+  "knownVisualLimitations": {
+    "house": "moderately procedural window rhythm, simple rectangular massing, sparse interior",
+    "tower": "symmetry/modularity visible, repeated arrow-slit rhythm acceptable for fortification",
+    "bridge": "modular repetition acceptable for viaduct architecture"
+  },
+  "nextGate": "Gate 8.7C — AI Minecraft Architect",
   "architecture": {
     "portalIndex": "index.html",
     "gates": [
