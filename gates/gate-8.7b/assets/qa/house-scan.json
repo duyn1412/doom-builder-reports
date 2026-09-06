@@ -1,1 +1,24 @@
-{"correct":2010,"expected":2010,"extra":0,"incorrect":0,"mismatches":[],"missing":0}
+{
+  "structureId": "house-large-seed103",
+  "family": "house",
+  "style": "rustic-medieval",
+  "buildOrigin": { "x": 150, "y": -60, "z": 200 },
+  "dimensions": { "x": 19, "y": 16, "z": 19 },
+  "hashes": {
+    "specHash": "c525efb3d849ecb956304d59ef09c60b5f665b6189d9795c315e92479f1f5f90",
+    "planHash": "9fd2d98c95160d99a5e5c42a7235b7c59af8296a002c1cd5dadb36682f923fdc",
+    "blockPlanHash": "eba87c6486ee9f06de52831a896ba25338b59c908f16cd6f409bbf4a340cb139",
+    "blueprintHash": "2315b81a8c3d90730107297dd24ca1113b28f8045952f4c4a638a167ea9a295c"
+  },
+  "scan": {
+    "expected": 2010,
+    "correct": 2010,
+    "missing": 0,
+    "incorrect": 0,
+    "extra": 0,
+    "mismatches": []
+  },
+  "readbackRate": 1.0,
+  "verified": true,
+  "timestamp": "2026-09-06T02:54:57.520Z"
+}

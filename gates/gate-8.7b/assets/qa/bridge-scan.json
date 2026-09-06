@@ -1,0 +1,24 @@
+{
+  "structureId": "bridge-viaduct-seed302",
+  "family": "bridge",
+  "style": "stone-fortified",
+  "buildOrigin": { "x": 350, "y": -60, "z": 200 },
+  "dimensions": { "x": 9, "y": 10, "z": 27 },
+  "hashes": {
+    "specHash": "6d1678da6b2a835e741eaee1da38e6b4c9db2e59f9e909809fc2cc47b67ad00b",
+    "planHash": "b2b25dab3d5778e9aecb69b74a11f3e1ad7559b7bce5bd6dcca518d0501ebc3e",
+    "blockPlanHash": "db2095a87a7b140bdf7e011b7a7b41e1201703e01a9d1bbe3e9cea56248462d0",
+    "blueprintHash": "800b519b2e3c777209aeb023b791a03094cb1d5b04b0682e22708aa3eb2d1933"
+  },
+  "scan": {
+    "expected": 1010,
+    "correct": 1010,
+    "missing": 0,
+    "incorrect": 0,
+    "extra": 0,
+    "mismatches": []
+  },
+  "readbackRate": 1.0,
+  "verified": true,
+  "timestamp": "2026-09-06T02:57:13.620Z"
+}

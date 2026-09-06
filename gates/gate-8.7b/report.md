@@ -9,10 +9,12 @@
 **Report Finalized:** 2026-09-06T04:20:00Z  
 **Repository:** `minecraft-shorts`  
 **Target Architecture:** Fabric Minecraft 1.21.11 / Sponge v2 Schematics  
-**Gate Status:** **READY FOR FINAL REVIEW / FREEZE**  
+**Overall Gate 8.7B:** **HOLD / READY FOR MANUAL REVIEW**  
 **Technical QA:** **PASS (10/10 automated checks, 100.000% exact readbacks)**  
 **Visual Proof Availability:** **PASS (All multi-angle views and contact sheets generated and verified)**  
-**House Visual Review:** **APPROVED (VISUAL PASS)**  
+**House Visual:** **PASS**  
+**Tower Visual:** **PENDING DIRECT REVIEW**  
+**Bridge Visual:** **PENDING DIRECT REVIEW**  
 **Known Visual Limitations:** **Documented (Quality notes, not technical failures)**  
 **Next Planned Gate:** Gate 8.7C (AI Minecraft Architect) — **FROZEN / NOT STARTED**
 
@@ -36,7 +38,7 @@
 | Stress Test | External Schematic Ingestion | **FROZEN / PASS** | 2,587 non-air blocks, 100.000% exact readback, 9.1 bps |
 | Gate 8.7A | Schematic Factory Core | **FROZEN / PASS** | BuildSpec -> BlockPlan -> Sponge v2 .schem -> 100% roundtrip |
 | Gate 8.7B (Tech) | Procedural Architecture Grammar Automated QA | **PASS (10/10)** | 7 packages across 3 families, 11 heuristics 100%, 2010 blk house |
-| **Gate 8.7B (Visual)** | **Real-Minecraft Visual-Proof Evidence** | **PASS / FROZEN** | Complete visual proof suites for House, Tower, Bridge available. |
+| **Gate 8.7B (Visual)** | **Real-Minecraft Visual-Proof Evidence** | **HOLD / REVIEW** | House: PASS. Tower & Bridge: PENDING DIRECT REVIEW. Proofs available. |
 | Gate 8.7C | AI Architect / Vision Critic | **NOT STARTED / NEXT** | Semantic boundary: ArchitectureSpec output only; no raw binary Sponge/NBT. |
 | Gate 9 | FFmpeg Master Editing & Music | **NOT STARTED** | Future phase. |
 
@@ -155,9 +157,11 @@ All evidence files are bundled in `assets/qa/` with sanitized relative paths:
 - [assets/qa/house-architecture-spec.json](assets/qa/house-architecture-spec.json) — House ArchitectureSpec v1.0.0
 - [assets/qa/house-build-spec.json](assets/qa/house-build-spec.json) — House Compiled BuildSpec v1.0.0
 - [assets/qa/tower-quality-report.json](assets/qa/tower-quality-report.json) — Tower Quality Heuristics (100%)
+- [assets/qa/tower-scan.json](assets/qa/tower-scan.json) — Tower 100.000% Exact World Readback (1,326/1,326)
 - [assets/qa/tower-architecture-spec.json](assets/qa/tower-architecture-spec.json) — Tower ArchitectureSpec v1.0.0
 - [assets/qa/tower-build-spec.json](assets/qa/tower-build-spec.json) — Tower Compiled BuildSpec v1.0.0
 - [assets/qa/bridge-quality-report.json](assets/qa/bridge-quality-report.json) — Bridge Quality Heuristics (100%)
+- [assets/qa/bridge-scan.json](assets/qa/bridge-scan.json) — Bridge 100.000% Exact World Readback (1,010/1,010)
 - [assets/qa/bridge-architecture-spec.json](assets/qa/bridge-architecture-spec.json) — Bridge ArchitectureSpec v1.0.0
 - [assets/qa/bridge-build-spec.json](assets/qa/bridge-build-spec.json) — Bridge Compiled BuildSpec v1.0.0
 - [assets/qa/schematic-factory-report.json](assets/qa/schematic-factory-report.json) — Gate 8.7A Acceptance Report

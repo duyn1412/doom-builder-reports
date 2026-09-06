@@ -1,0 +1,24 @@
+{
+  "structureId": "tower-keep-seed202",
+  "family": "tower",
+  "style": "rustic-medieval",
+  "buildOrigin": { "x": 250, "y": -60, "z": 250 },
+  "dimensions": { "x": 11, "y": 24, "z": 11 },
+  "hashes": {
+    "specHash": "504082e8389cea2121193f8dbbcb830e2792d7cc14937ccccc806b00a7eb62ec",
+    "planHash": "94802ab11ab51851df3acc1bab0e2616c852bca612a1c3d48b860d7e2675f458",
+    "blockPlanHash": "7e9dac1a55bf00341da9b341487b95c7ab3fe0765b81eefdfadf63eb1c22f441",
+    "blueprintHash": "9a6bf9f8f97f851dbb09f7465937bb5c6539e783201450d7a29368ef9234bcdd"
+  },
+  "scan": {
+    "expected": 1326,
+    "correct": 1326,
+    "missing": 0,
+    "incorrect": 0,
+    "extra": 0,
+    "mismatches": []
+  },
+  "readbackRate": 1.0,
+  "verified": true,
+  "timestamp": "2026-09-06T02:56:15.149Z"
+}
