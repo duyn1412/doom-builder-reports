@@ -279,11 +279,12 @@
     </a>
     <nav class="nav-links">
       <a href="index.html" class="active">All Gates</a>
-      <a href="gates/gate-8.7b/index.html">Gate 8.7B (Active)</a>
+      <a href="gates/gate-8.7c/index.html">Gate 8.7C (Review)</a>
+      <a href="gates/gate-8.7b/index.html">Gate 8.7B (Frozen)</a>
       <a href="https://github.com/duyn1412/doom-builder-reports" target="_blank">GitHub Repo &nearr;</a>
     </nav>
     <div>
-      <span class="status-pill pill-frozen">Gate 8.7B: FINAL PASS / FROZEN</span>
+      <span class="status-pill pill-hold">Gate 8.7C: READY FOR MANUAL REVIEW</span>
     </div>
   </header>
 
@@ -296,27 +297,27 @@
       <div class="hero-metrics">
         <div class="metric-card">
           <div class="label">Current Milestone</div>
-          <div class="value" style="color: var(--accent-emerald);">Gate 8.7B (FROZEN)</div>
+          <div class="value" style="color: var(--accent-cyan);">Gate 8.7C</div>
         </div>
         <div class="metric-card">
-          <div class="label">Technical QA</div>
-          <div class="value" style="color: var(--accent-emerald);">PASS (10/10)</div>
+          <div class="label">Gate 8.7C Status</div>
+          <div class="value" style="color: var(--accent-amber);">HOLD / REVIEW</div>
         </div>
         <div class="metric-card">
-          <div class="label">Visual Proofs</div>
-          <div class="value" style="color: var(--accent-emerald);">PASS (Available)</div>
+          <div class="label">Gate 8.7C Tech QA</div>
+          <div class="value" style="color: var(--accent-emerald);">PASS (15/15)</div>
         </div>
         <div class="metric-card">
-          <div class="label">House Visual</div>
-          <div class="value" style="color: var(--accent-emerald);">PASS (w/ Limits)</div>
+          <div class="label">Quality Gain</div>
+          <div class="value" style="color: var(--accent-cyan);">+40 pts (60&rarr;100)</div>
         </div>
         <div class="metric-card">
-          <div class="label">Tower Visual</div>
-          <div class="value" style="color: var(--accent-emerald);">PASS (w/ Limits)</div>
+          <div class="label">World Readback</div>
+          <div class="value" style="color: var(--accent-emerald);">100.000% (1,808)</div>
         </div>
         <div class="metric-card">
-          <div class="label">Bridge Visual</div>
-          <div class="value" style="color: var(--accent-emerald);">PASS</div>
+          <div class="label">Gate 8.7B Grammar</div>
+          <div class="value" style="color: var(--accent-emerald);">FROZEN (PASS)</div>
         </div>
       </div>
     </div>
@@ -329,8 +330,31 @@
 
       <div class="gate-grid">
 
+        <!-- Gate 8.7C -->
+        <div class="gate-card active-gate" style="border-left: 4px solid var(--accent-cyan);">
+          <div>
+            <div class="gate-top">
+              <div class="gate-title">Gate 8.7C: AI Minecraft Architect + Vision Critic + Semantic Repair Loop</div>
+              <span class="status-pill pill-hold">READY FOR MANUAL REVIEW</span>
+            </div>
+            <p class="gate-desc">First production-valid AI architecture synthesis layer in Doom Builder. User prompts are translated into high-level declarative ArchitectureSpec v1.1.0 parameters (never raw blocks or coordinates), compiled through frozen procedural grammar and schematic factory pipelines, and evaluated across 12 criteria by Vision Critic. Automated repair loop achieves +40 point score gain, resolving 4 major architectural deficiencies with 0 block-coordinate leaks. 1,808-block large rustic medieval blacksmith residence built in live Fabric 1.21.11 Minecraft with 100.000% exact readback.</p>
+            <div class="gate-meta">
+              <span class="badge">Iterations: <strong>2 (Converged)</strong></span>
+              <span class="badge">Quality Score: <strong>60% &rarr; 100% (+40 pts)</strong></span>
+              <span class="badge">Blacksmith Scale: <strong>1,808 blocks</strong></span>
+              <span class="badge">Readback: <strong>100.000% (1,808 / 1,808 exact)</strong></span>
+              <span class="badge">Automated QA: <strong>15/15 PASS</strong></span>
+            </div>
+          </div>
+          <div class="btn-group">
+            <a class="btn btn-primary" href="gates/gate-8.7c/index.html">View Gate 8.7C Dossier &rarr;</a>
+            <a class="btn btn-outline" href="gates/gate-8.7c/report.md">View report.md</a>
+            <a class="btn btn-outline" href="gates/gate-8.7c/qa-report.json">View qa-report.json</a>
+          </div>
+        </div>
+
         <!-- Gate 8.7B -->
-        <div class="gate-card active-gate">
+        <div class="gate-card">
           <div>
             <div class="gate-top">
               <div class="gate-title">Gate 8.7B: Procedural Architecture Grammar</div>
@@ -349,23 +373,6 @@
             <a class="btn btn-primary" href="gates/gate-8.7b/index.html">View HTML Report Dossier &rarr;</a>
             <a class="btn btn-outline" href="gates/gate-8.7b/report.md">View report.md</a>
             <a class="btn btn-outline" href="gates/gate-8.7b/qa-report.json">View qa-report.json</a>
-          </div>
-        </div>
-
-        <!-- Future Gate Placeholder: Gate 8.7C -->
-        <div class="gate-card" style="opacity: 0.65;">
-          <div>
-            <div class="gate-top">
-              <div class="gate-title">Gate 8.7C: AI Minecraft Architect &amp; Vision Critic</div>
-              <span class="status-pill pill-frozen">NOT STARTED / NEXT GATE</span>
-            </div>
-            <p class="gate-desc">Automated AI Architect generating high-level ArchitectureSpecs evaluated by Vision Critic with semantic repair loops. The LLM never generates Sponge/NBT binary directly; deterministic compilers remain authoritative.</p>
-            <div class="gate-meta">
-              <span class="badge">Substrate: <strong>FROZEN Gate 8.7B &amp; 8.7A</strong></span>
-            </div>
-          </div>
-          <div>
-            <button class="btn btn-outline" disabled style="cursor: not-allowed;">Next Phase Contract Locked</button>
           </div>
         </div>
 
