@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-06T03:53:15.263311+00:00",
+  "timestamp": "2026-09-06T04:33:40.678341+00:00",
   "targetDirectory": "ftp.wptopd3v.com/reports.wptopd3v.com/mine",
   "status": "PASS",
   "gate": "8.7B",
@@ -17,7 +17,11 @@
       "correct": 2010,
       "missing": 0,
       "extra": 0,
-      "buildOrigin": { "x": 150, "y": -60, "z": 200 }
+      "buildOrigin": {
+        "x": 150,
+        "y": -60,
+        "z": 200
+      }
     },
     "tower": {
       "verified": true,
@@ -26,7 +30,11 @@
       "correct": 1326,
       "missing": 0,
       "extra": 0,
-      "buildOrigin": { "x": 250, "y": -60, "z": 250 }
+      "buildOrigin": {
+        "x": 250,
+        "y": -60,
+        "z": 250
+      }
     },
     "bridge": {
       "verified": true,
@@ -35,7 +43,11 @@
       "correct": 1010,
       "missing": 0,
       "extra": 0,
-      "buildOrigin": { "x": 350, "y": -60, "z": 200 }
+      "buildOrigin": {
+        "x": 350,
+        "y": -60,
+        "z": 200
+      }
     }
   },
   "substrateContract": "Gate 8.7B proves a deterministic multi-family procedural architecture grammar suitable as the deterministic substrate for Gate 8.7C AI Architect.",
@@ -44,7 +56,7 @@
     "tower": "symmetry/modularity visible, repeated arrow-slit rhythm acceptable for fortification",
     "bridge": "modular repetition acceptable for viaduct architecture"
   },
-  "nextGate": "Gate 8.7C — AI Minecraft Architect",
+  "nextGate": "Gate 8.7C \u2014 AI Minecraft Architect",
   "architecture": {
     "portalIndex": "index.html",
     "gates": [
@@ -57,7 +69,7 @@
   },
   "verification": {
     "totalHtmlPages": 6,
-    "totalLinksChecked": 127,
+    "totalLinksChecked": 68,
     "brokenLinksCount": 0,
     "noAbsolutePaths": true,
     "noSecretsDetected": true,
@@ -70,7 +82,7 @@
     "pages": 6,
     "images": 21,
     "videos": 4,
-    "qaFiles": 15
+    "qaFiles": 17
   },
   "errors": [],
   "manifest": {
@@ -135,9 +147,9 @@
     "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/index.html",
     "httpStatus": 200,
     "contentType": "text/html",
-    "assetCountChecked": 29,
+    "assetCountChecked": 32,
     "failedAssetUrls": [],
-    "timestamp": "2026-09-06T03:53:15.263311+00:00",
+    "timestamp": "2026-09-06T04:33:40.678341+00:00",
     "overallStatus": "PASS",
     "targetEndpoints": {
       "indexHtml": {
@@ -158,176 +170,194 @@
     },
     "checkedAssets": [
       {
-        "relativePath": "../../assets/images/bridge/approach_view.png",
-        "url": "https://reports.wptopd3v.com/mine/assets/images/bridge/approach_view.png",
+        "relativePath": "assets/images/bridge/approach_view.png",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/images/bridge/approach_view.png",
         "status": 200,
         "contentType": "image/png"
       },
       {
-        "relativePath": "../../assets/images/bridge/contact_sheet.png",
-        "url": "https://reports.wptopd3v.com/mine/assets/images/bridge/contact_sheet.png",
+        "relativePath": "assets/images/bridge/contact_sheet.png",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/images/bridge/contact_sheet.png",
         "status": 200,
         "contentType": "image/png"
       },
       {
-        "relativePath": "../../assets/images/bridge/elevated_isometric.png",
-        "url": "https://reports.wptopd3v.com/mine/assets/images/bridge/elevated_isometric.png",
+        "relativePath": "assets/images/bridge/elevated_isometric.png",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/images/bridge/elevated_isometric.png",
         "status": 200,
         "contentType": "image/png"
       },
       {
-        "relativePath": "../../assets/images/bridge/hero.png",
-        "url": "https://reports.wptopd3v.com/mine/assets/images/bridge/hero.png",
+        "relativePath": "assets/images/bridge/hero.png",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/images/bridge/hero.png",
         "status": 200,
         "contentType": "image/png"
       },
       {
-        "relativePath": "../../assets/images/bridge/side_elevation.png",
-        "url": "https://reports.wptopd3v.com/mine/assets/images/bridge/side_elevation.png",
+        "relativePath": "assets/images/bridge/side_elevation.png",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/images/bridge/side_elevation.png",
         "status": 200,
         "contentType": "image/png"
       },
       {
-        "relativePath": "../../assets/images/bridge/underside_arch_support.png",
-        "url": "https://reports.wptopd3v.com/mine/assets/images/bridge/underside_arch_support.png",
+        "relativePath": "assets/images/bridge/underside_arch_support.png",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/images/bridge/underside_arch_support.png",
         "status": 200,
         "contentType": "image/png"
       },
       {
-        "relativePath": "../../assets/images/house/contact_sheet.png",
-        "url": "https://reports.wptopd3v.com/mine/assets/images/house/contact_sheet.png",
+        "relativePath": "assets/images/house/contact_sheet.png",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/images/house/contact_sheet.png",
         "status": 200,
         "contentType": "image/png"
       },
       {
-        "relativePath": "../../assets/images/house/elevated_isometric.png",
-        "url": "https://reports.wptopd3v.com/mine/assets/images/house/elevated_isometric.png",
+        "relativePath": "assets/images/house/elevated_isometric.png",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/images/house/elevated_isometric.png",
         "status": 200,
         "contentType": "image/png"
       },
       {
-        "relativePath": "../../assets/images/house/entrance_facade_detail.png",
-        "url": "https://reports.wptopd3v.com/mine/assets/images/house/entrance_facade_detail.png",
+        "relativePath": "assets/images/house/entrance_facade_detail.png",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/images/house/entrance_facade_detail.png",
         "status": 200,
         "contentType": "image/png"
       },
       {
-        "relativePath": "../../assets/images/house/front_three_quarter.png",
-        "url": "https://reports.wptopd3v.com/mine/assets/images/house/front_three_quarter.png",
+        "relativePath": "assets/images/house/front_three_quarter.png",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/images/house/front_three_quarter.png",
         "status": 200,
         "contentType": "image/png"
       },
       {
-        "relativePath": "../../assets/images/house/hero.png",
-        "url": "https://reports.wptopd3v.com/mine/assets/images/house/hero.png",
+        "relativePath": "assets/images/house/hero.png",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/images/house/hero.png",
         "status": 200,
         "contentType": "image/png"
       },
       {
-        "relativePath": "../../assets/images/house/interior_circulation_detail.png",
-        "url": "https://reports.wptopd3v.com/mine/assets/images/house/interior_circulation_detail.png",
+        "relativePath": "assets/images/house/interior_circulation_detail.png",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/images/house/interior_circulation_detail.png",
         "status": 200,
         "contentType": "image/png"
       },
       {
-        "relativePath": "../../assets/images/house/interior_ground_floor.png",
-        "url": "https://reports.wptopd3v.com/mine/assets/images/house/interior_ground_floor.png",
+        "relativePath": "assets/images/house/interior_ground_floor.png",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/images/house/interior_ground_floor.png",
         "status": 200,
         "contentType": "image/png"
       },
       {
-        "relativePath": "../../assets/images/house/opposite_three_quarter.png",
-        "url": "https://reports.wptopd3v.com/mine/assets/images/house/opposite_three_quarter.png",
+        "relativePath": "assets/images/house/opposite_three_quarter.png",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/images/house/opposite_three_quarter.png",
         "status": 200,
         "contentType": "image/png"
       },
       {
-        "relativePath": "../../assets/images/house/side.png",
-        "url": "https://reports.wptopd3v.com/mine/assets/images/house/side.png",
+        "relativePath": "assets/images/house/side.png",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/images/house/side.png",
         "status": 200,
         "contentType": "image/png"
       },
       {
-        "relativePath": "../../assets/images/tower/contact_sheet.png",
-        "url": "https://reports.wptopd3v.com/mine/assets/images/tower/contact_sheet.png",
+        "relativePath": "assets/images/tower/contact_sheet.png",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/images/tower/contact_sheet.png",
         "status": 200,
         "contentType": "image/png"
       },
       {
-        "relativePath": "../../assets/images/tower/elevated_isometric.png",
-        "url": "https://reports.wptopd3v.com/mine/assets/images/tower/elevated_isometric.png",
+        "relativePath": "assets/images/tower/elevated_isometric.png",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/images/tower/elevated_isometric.png",
         "status": 200,
         "contentType": "image/png"
       },
       {
-        "relativePath": "../../assets/images/tower/front_three_quarter.png",
-        "url": "https://reports.wptopd3v.com/mine/assets/images/tower/front_three_quarter.png",
+        "relativePath": "assets/images/tower/front_three_quarter.png",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/images/tower/front_three_quarter.png",
         "status": 200,
         "contentType": "image/png"
       },
       {
-        "relativePath": "../../assets/images/tower/hero.png",
-        "url": "https://reports.wptopd3v.com/mine/assets/images/tower/hero.png",
+        "relativePath": "assets/images/tower/hero.png",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/images/tower/hero.png",
         "status": 200,
         "contentType": "image/png"
       },
       {
-        "relativePath": "../../assets/images/tower/opposite_three_quarter.png",
-        "url": "https://reports.wptopd3v.com/mine/assets/images/tower/opposite_three_quarter.png",
+        "relativePath": "assets/images/tower/opposite_three_quarter.png",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/images/tower/opposite_three_quarter.png",
         "status": 200,
         "contentType": "image/png"
       },
       {
-        "relativePath": "../../assets/images/tower/side.png",
-        "url": "https://reports.wptopd3v.com/mine/assets/images/tower/side.png",
+        "relativePath": "assets/images/tower/side.png",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/images/tower/side.png",
         "status": 200,
         "contentType": "image/png"
       },
       {
-        "relativePath": "../../assets/qa/bridge-quality-report.json",
-        "url": "https://reports.wptopd3v.com/mine/assets/qa/bridge-quality-report.json",
+        "relativePath": "assets/qa/bridge-quality-report.json",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/qa/bridge-quality-report.json",
         "status": 200,
         "contentType": "application/json"
       },
       {
-        "relativePath": "../../assets/qa/gate_8.7b_report.json",
-        "url": "https://reports.wptopd3v.com/mine/assets/qa/gate_8.7b_report.json",
+        "relativePath": "assets/qa/bridge-scan.json",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/qa/bridge-scan.json",
         "status": 200,
         "contentType": "application/json"
       },
       {
-        "relativePath": "../../assets/qa/house-quality-report.json",
-        "url": "https://reports.wptopd3v.com/mine/assets/qa/house-quality-report.json",
+        "relativePath": "assets/qa/gate_8.7b_report.json",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/qa/gate_8.7b_report.json",
         "status": 200,
         "contentType": "application/json"
       },
       {
-        "relativePath": "../../assets/qa/output-profiles-report.json",
-        "url": "https://reports.wptopd3v.com/mine/assets/qa/output-profiles-report.json",
+        "relativePath": "assets/qa/house-quality-report.json",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/qa/house-quality-report.json",
         "status": 200,
         "contentType": "application/json"
       },
       {
-        "relativePath": "../../assets/qa/schematic-factory-report.json",
-        "url": "https://reports.wptopd3v.com/mine/assets/qa/schematic-factory-report.json",
+        "relativePath": "assets/qa/house-scan.json",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/qa/house-scan.json",
         "status": 200,
         "contentType": "application/json"
       },
       {
-        "relativePath": "../../assets/qa/tower-quality-report.json",
-        "url": "https://reports.wptopd3v.com/mine/assets/qa/tower-quality-report.json",
+        "relativePath": "assets/qa/output-profiles-report.json",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/qa/output-profiles-report.json",
         "status": 200,
         "contentType": "application/json"
       },
       {
-        "relativePath": "../../assets/videos/long-preview.mp4",
-        "url": "https://reports.wptopd3v.com/mine/assets/videos/long-preview.mp4",
+        "relativePath": "assets/qa/schematic-factory-report.json",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/qa/schematic-factory-report.json",
+        "status": 200,
+        "contentType": "application/json"
+      },
+      {
+        "relativePath": "assets/qa/tower-quality-report.json",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/qa/tower-quality-report.json",
+        "status": 200,
+        "contentType": "application/json"
+      },
+      {
+        "relativePath": "assets/qa/tower-scan.json",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/qa/tower-scan.json",
+        "status": 200,
+        "contentType": "application/json"
+      },
+      {
+        "relativePath": "assets/videos/long-preview.mp4",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/videos/long-preview.mp4",
         "status": 200,
         "contentType": "video/mp4"
       },
       {
-        "relativePath": "../../assets/videos/short-preview.mp4",
-        "url": "https://reports.wptopd3v.com/mine/assets/videos/short-preview.mp4",
+        "relativePath": "assets/videos/short-preview.mp4",
+        "url": "https://reports.wptopd3v.com/mine/gates/gate-8.7b/assets/videos/short-preview.mp4",
         "status": 200,
         "contentType": "video/mp4"
       }
