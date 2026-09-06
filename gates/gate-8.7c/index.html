@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gate 8.7C QA Review Portal | AI Minecraft Architect</title>
+  <title>Gate 8.7C QA Review Portal | Real Minecraft In-Game Evidence</title>
   <style>
     :root {
-      --bg-base: #0a0e17;
-      --bg-surface: #111827;
-      --bg-card: #162032;
-      --bg-card-hover: #1e2c45;
+      --bg-base: #090d16;
+      --bg-surface: #0f172a;
+      --bg-card: #141e33;
+      --bg-card-hover: #1b2844;
       --border: rgba(255, 255, 255, 0.08);
-      --border-accent: rgba(56, 189, 248, 0.3);
+      --border-accent: rgba(56, 189, 248, 0.35);
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
       --text-faint: #64748b;
@@ -19,7 +19,8 @@
       --accent-blue: #60a5fa;
       --accent-emerald: #10b981;
       --accent-amber: #f59e0b;
-      --accent-purple: #a855f7;
+      --accent-red: #ef4444;
+      --accent-purple: #c084fc;
       --radius-sm: 6px;
       --radius-md: 10px;
       --radius-lg: 16px;
@@ -38,10 +39,10 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(17, 24, 39, 0.92);
+      background: rgba(15, 23, 42, 0.94);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
-      padding: 0.85rem 1.5rem;
+      padding: 0.85rem 1.75rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -65,118 +66,61 @@
       border-radius: var(--radius-sm);
       text-transform: uppercase;
     }
-    nav.nav-links {
+    .status-pills {
       display: flex;
-      gap: 0.85rem;
-      font-size: 0.85rem;
-    }
-    nav.nav-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      padding: 0.25rem 0.5rem;
-      border-radius: var(--radius-sm);
-      transition: all 0.15s ease;
-    }
-    nav.nav-links a:hover, nav.nav-links a.active {
-      color: var(--accent-cyan);
-      background: rgba(56, 189, 248, 0.08);
+      gap: 0.5rem;
+      align-items: center;
+      flex-wrap: wrap;
     }
     .status-pill {
       font-size: 0.75rem;
       font-weight: 700;
-      padding: 0.25rem 0.75rem;
+      padding: 0.25rem 0.65rem;
       border-radius: 9999px;
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.35rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
-    .pill-hold {
-      background: rgba(245, 158, 11, 0.15);
-      color: var(--accent-amber);
-      border: 1px solid rgba(245, 158, 11, 0.3);
-    }
-    .pill-pass {
-      background: rgba(16, 185, 129, 0.15);
-      color: var(--accent-emerald);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-    }
-    .pill-neutral {
-      background: rgba(148, 163, 184, 0.15);
-      color: var(--text-muted);
-      border: 1px solid rgba(148, 163, 184, 0.3);
-    }
+    .pill-hold { background: rgba(245, 158, 11, 0.15); color: var(--accent-amber); border: 1px solid rgba(245, 158, 11, 0.3); }
+    .pill-pass { background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald); border: 1px solid rgba(16, 185, 129, 0.3); }
+    .pill-fail { background: rgba(239, 68, 68, 0.15); color: var(--accent-red); border: 1px solid rgba(239, 68, 68, 0.3); }
+    .pill-neutral { background: rgba(148, 163, 184, 0.15); color: var(--text-muted); border: 1px solid rgba(148, 163, 184, 0.3); }
+
     main.container {
       max-width: 1400px;
       margin: 0 auto;
       padding: 2rem 1.5rem 4rem;
     }
-    .hero {
-      margin-bottom: 2rem;
-    }
-    .hero-pre {
-      color: var(--accent-cyan);
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-    .hero h1 {
-      font-size: 2.25rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.75rem;
-      background: linear-gradient(to right, #fff, var(--text-muted));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .hero p.lead {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      max-width: 950px;
-    }
-    .statement-box {
-      background: rgba(56, 189, 248, 0.06);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      border-radius: var(--radius-md);
-      padding: 1rem 1.25rem;
-      margin-bottom: 1.5rem;
-      font-size: 0.95rem;
-    }
-    .statement-title {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      font-weight: 700;
-      color: var(--accent-cyan);
-      letter-spacing: 0.05em;
-      margin-bottom: 0.25rem;
-    }
-    .prompt-card {
-      background: rgba(168, 85, 247, 0.06);
-      border: 1px solid rgba(168, 85, 247, 0.25);
+
+    /* Notice Banner */
+    .notice-banner {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(239, 68, 68, 0.1));
+      border: 1px solid rgba(245, 158, 11, 0.3);
       border-radius: var(--radius-lg);
       padding: 1.25rem 1.5rem;
       margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
     }
-    .prompt-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
+    .notice-title {
       font-weight: 700;
-      color: var(--accent-purple);
-      margin-bottom: 0.4rem;
-      letter-spacing: 0.05em;
+      color: var(--accent-amber);
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
     }
-    .prompt-text {
-      font-size: 1.1rem;
-      font-style: italic;
-      color: #fff;
+    .notice-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
     }
-    .score-breakdown {
+
+    /* Scoreboard */
+    .scoreboard {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1rem;
       margin-bottom: 2.5rem;
     }
@@ -185,7 +129,18 @@
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
       padding: 1.25rem;
+      position: relative;
+      overflow: hidden;
     }
+    .score-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: var(--border);
+    }
+    .score-card.pass::before { background: var(--accent-emerald); }
+    .score-card.hold::before { background: var(--accent-amber); }
+    .score-card.fail::before { background: var(--accent-red); }
     .score-label {
       font-size: 0.75rem;
       color: var(--text-faint);
@@ -195,7 +150,7 @@
     }
     .score-val {
       font-size: 1.6rem;
-      font-weight: 700;
+      font-weight: 800;
       font-family: var(--font-mono);
       margin-bottom: 0.25rem;
     }
@@ -203,8 +158,38 @@
       font-size: 0.8rem;
       color: var(--text-muted);
     }
+
+    /* Tabs */
+    .tab-nav {
+      display: flex;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.75rem;
+      overflow-x: auto;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      padding: 0.85rem 1.25rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .tab-btn:hover { color: #fff; }
+    .tab-btn.active {
+      color: var(--accent-cyan);
+      border-bottom-color: var(--accent-cyan);
+    }
+    .tab-pane { display: none; }
+    .tab-pane.active { display: block; }
+
+    /* Section Headings */
     .section-title {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 700;
       margin: 2.5rem 0 1rem;
       display: flex;
@@ -218,196 +203,162 @@
       background: var(--accent-cyan);
       border-radius: 2px;
     }
-    /* Tabs */
-    .tab-nav {
-      display: flex;
-      gap: 0.5rem;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 1.5rem;
-      overflow-x: auto;
-    }
-    .tab-btn {
-      background: none;
-      border: none;
-      color: var(--text-muted);
-      padding: 0.75rem 1.25rem;
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      border-bottom: 2px solid transparent;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-    .tab-btn:hover {
-      color: #fff;
-    }
-    .tab-btn.active {
-      color: var(--accent-cyan);
-      border-bottom-color: var(--accent-cyan);
-    }
-    .tab-pane {
-      display: none;
-    }
-    .tab-pane.active {
-      display: block;
-    }
-    /* Gallery Grid */
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.25rem;
-      margin-bottom: 2rem;
-    }
-    .gallery-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-      cursor: pointer;
-    }
-    .gallery-item:hover {
-      transform: translateY(-3px);
-      border-color: var(--border-accent);
-    }
-    .gallery-thumb {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      display: block;
-      background: #000;
-    }
-    .gallery-info {
-      padding: 0.75rem 1rem;
-    }
-    .gallery-name {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #fff;
-    }
-    .gallery-desc {
-      font-size: 0.75rem;
-      color: var(--text-faint);
-    }
-    .contact-sheet-container {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-    .contact-sheet-img {
-      max-width: 100%;
-      height: auto;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border);
-      cursor: zoom-in;
-    }
-    .comparison-split {
+
+    /* Split Comparisons */
+    .split-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
       margin-bottom: 2rem;
     }
     @media (max-width: 900px) {
-      .comparison-split { grid-template-columns: 1fr; }
+      .split-grid { grid-template-columns: 1fr; }
     }
-    .comp-box {
+    .split-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 1.5rem;
+      overflow: hidden;
     }
-    .comp-box.iter-0 {
-      border-top: 4px solid var(--accent-amber);
-    }
-    .comp-box.iter-final {
-      border-top: 4px solid var(--accent-emerald);
-    }
-    .comp-header {
+    .split-header {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 1rem;
     }
-    .comp-title {
-      font-size: 1.1rem;
+    .split-title {
       font-weight: 700;
+      font-size: 1rem;
     }
-    .comp-score {
-      font-family: var(--font-mono);
-      font-size: 1.1rem;
-      font-weight: 700;
+    .split-img-box {
+      position: relative;
+      background: #000;
     }
-    .critique-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
+    .split-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      cursor: zoom-in;
     }
-    .issue-badge {
-      display: inline-block;
+    .split-badge {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
       font-size: 0.7rem;
       font-weight: 700;
       text-transform: uppercase;
-      padding: 0.15rem 0.4rem;
-      border-radius: 4px;
-      margin-right: 0.5rem;
+      letter-spacing: 0.05em;
     }
-    .badge-high { background: rgba(239, 68, 68, 0.2); color: #f87171; }
-    .badge-med { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
-    .badge-low { background: rgba(56, 189, 248, 0.2); color: #38bdf8; }
-    .critique-item {
-      padding: 0.85rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    .badge-real { background: rgba(16, 185, 129, 0.9); color: #fff; }
+    .badge-preview { background: rgba(239, 68, 68, 0.9); color: #fff; }
+
+    /* Cards Grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
     }
-    .critique-item:last-child { border-bottom: none; }
-    .critique-desc { font-size: 0.9rem; color: #fff; margin-bottom: 0.35rem; }
-    .repair-inst { font-size: 0.8rem; color: var(--accent-cyan); font-family: var(--font-mono); }
-    table.data-table {
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--border-accent);
+    }
+    .feature-thumb-box {
+      position: relative;
+      background: #000;
+      height: 200px;
+    }
+    .feature-thumb {
       width: 100%;
-      border-collapse: collapse;
-      font-size: 0.85rem;
-      margin: 1rem 0;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      cursor: zoom-in;
     }
-    table.data-table th, table.data-table td {
-      padding: 0.75rem 1rem;
-      text-align: left;
-      border-bottom: 1px solid var(--border);
-    }
-    table.data-table th {
-      color: var(--text-faint);
-      font-weight: 600;
+    .feature-category {
+      position: absolute;
+      top: 0.5rem;
+      left: 0.5rem;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
       text-transform: uppercase;
-      font-size: 0.75rem;
-      background: rgba(255, 255, 255, 0.02);
     }
-    table.data-table tr:hover td {
-      background: rgba(255, 255, 255, 0.02);
+    .feature-content {
+      padding: 1rem 1.25rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
+    .feature-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.35rem;
+    }
+    .feature-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+      flex: 1;
+    }
+    .feature-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+    .feature-tag {
+      font-size: 0.7rem;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--accent-blue);
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+    }
+
+    /* Lightbox Modal */
     .modal {
       display: none;
       position: fixed;
       z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.85);
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.92);
       backdrop-filter: blur(8px);
       align-items: center;
       justify-content: center;
+      flex-direction: column;
+      padding: 1rem;
     }
-    .modal.active {
-      display: flex;
-    }
-    .modal-content {
-      max-width: 90%;
-      max-height: 90%;
+    .modal.open { display: flex; }
+    .modal-img {
+      max-width: 95vw;
+      max-height: 85vh;
       border-radius: var(--radius-md);
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+      border: 1px solid var(--border);
+    }
+    .modal-caption {
+      color: #fff;
+      font-size: 1rem;
+      margin-top: 0.75rem;
+      font-weight: 600;
     }
     .modal-close {
       position: absolute;
@@ -415,476 +366,509 @@
       right: 2rem;
       color: #fff;
       font-size: 2rem;
-      font-weight: 700;
       cursor: pointer;
+      line-height: 1;
+    }
+
+    /* Table Styles */
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 2rem;
+      font-size: 0.85rem;
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    table.data-table th, table.data-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    table.data-table th {
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text-faint);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+    table.data-table tr:last-child td { border-bottom: none; }
+    table.data-table code {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+    }
+
+    .callout {
+      background: rgba(56, 189, 248, 0.08);
+      border-left: 4px solid var(--accent-cyan);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.85rem;
+    }
+    .callout.warning {
+      background: rgba(245, 158, 11, 0.08);
+      border-left-color: var(--accent-amber);
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Navigation -->
   <header class="top-nav">
-    <a href="../../index.html" class="brand">
+    <a href="#" class="brand">
       <span class="logo-badge">Gate 8.7C</span>
-      <span>Doom Builder QA Mirror</span>
+      <span>AI Minecraft Architect</span>
     </a>
-    <nav class="nav-links">
-      <a href="../../index.html">All Gates</a>
-      <a href="../gate-8.7b/index.html">Gate 8.7B (Grammar)</a>
-      <a href="index.html" class="active">Gate 8.7C (AI Architect)</a>
-      <a href="report.md">Report MD</a>
-      <a href="qa-report.json">QA JSON</a>
-      <a href="assets/qa/final-grammar-quality-report.json">Final Grammar QA</a>
-      <a href="assets/qa/blacksmith-scan.json">Readback Scan</a>
-    </nav>
-    <div class="status-pill pill-hold">
-      <span>●</span> HOLD / READY FOR MANUAL REVIEW
+    <div class="status-pills">
+      <span class="status-pill pill-hold">Gate 8.7C: HOLD</span>
+      <span class="status-pill pill-pass">Technical QA: PASS</span>
+      <span class="status-pill pill-pass">Semantic Critic: PASS</span>
+      <span class="status-pill pill-hold">Real Visual Proof: PENDING</span>
+      <span class="status-pill pill-fail">Manual Visual: FAIL/HOLD</span>
     </div>
   </header>
 
   <main class="container">
 
-    <!-- Hero Section -->
-    <div class="hero">
-      <div class="hero-pre">QA Remediation Milestone Evidence</div>
-      <h1>AI Minecraft Architect + Semantic Critic + Semantic Repair Loop</h1>
-      <p class="lead">
-        Closed-loop architectural synthesis: declarative semantic specifications, compiled through frozen procedural grammar, evaluated by an automated semantic critic, and repaired without raw coordinate leaks.
-      </p>
+    <!-- Notice Banner -->
+    <div class="notice-banner">
+      <div>
+        <div class="notice-title">VISUAL REMEDIATION COMPLETE — PENDING MANUAL REVIEW</div>
+        <div class="notice-desc">
+          Final structure <code>ai-proposal-house-seed501-iter1</code> built in real Fabric Minecraft 1.21.11 (1,822/1,822 blocks, 100.000% readback).
+          All 11 required exterior, detail, and interior shots captured directly in-game. Old software rasterizer previews retained as non-authoritative debug history.
+        </div>
+      </div>
+      <div>
+        <span class="status-pill pill-hold" style="padding: 0.5rem 1rem; font-size: 0.85rem;">REVIEW REQUIRED</span>
+      </div>
     </div>
 
-    <!-- Required AI Provider Statement -->
-    <div class="statement-box">
-      <div class="statement-title">Framework Validation Statement</div>
-      <div><strong>"AI Architect framework validated using deterministic fixture provider."</strong> &mdash; 10x determinism verified invariant spec hash (<code>cd759b96...</code>). No unverified LLM claims made.</div>
-    </div>
-
-    <!-- User Prompt Card -->
-    <div class="prompt-card">
-      <div class="prompt-label">Target Architectural Intent / User Prompt</div>
-      <div class="prompt-text">"Large rustic medieval blacksmith residence with attached workshop, two floors, asymmetrical silhouette, stone forge chimney, rich timber framing, believable room partitions, workshop equipment area, storage area, bedroom, strong entrance hierarchy and non-repetitive facade."</div>
-    </div>
-
-    <!-- Score Honesty Breakdown Grid -->
-    <div class="score-breakdown">
-      <div class="score-card">
-        <div class="score-label">Semantic / Contract Score</div>
+    <!-- Scoreboard -->
+    <div class="scoreboard">
+      <div class="score-card pass">
+        <div class="score-label">Semantic Contract Score</div>
         <div class="score-val" style="color: var(--accent-emerald);">100 / 100</div>
-        <div class="score-note">All functional zones, equipment & bounds satisfied</div>
+        <div class="score-note">All spec fields & grammar heuristics verified</div>
       </div>
-      <div class="score-card">
-        <div class="score-label">Automated Critic Score</div>
-        <div class="score-val" style="color: var(--accent-cyan);">100 / 100</div>
-        <div class="score-note">Evaluated by Semantic Critic (rule-based)</div>
+      <div class="score-card hold">
+        <div class="score-label">Visual Review Score</div>
+        <div class="score-val" style="color: var(--accent-amber);">PENDING</div>
+        <div class="score-note">Pending direct manual inspection of real renders</div>
       </div>
-      <div class="score-card">
-        <div class="score-label">Computer Vision Pixel Score</div>
-        <div class="score-val" style="color: var(--text-faint); font-size: 1.1rem; padding-top: 0.4rem;">NOT EVALUATED</div>
-        <div class="score-note">Critic is SEMANTIC ONLY (0 images consumed)</div>
+      <div class="score-card pass">
+        <div class="score-label">Minecraft Readback Accuracy</div>
+        <div class="score-val" style="color: var(--accent-emerald);">100.000%</div>
+        <div class="score-note">1,822 / 1,822 blocks verified on Fabric server</div>
       </div>
-      <div class="score-card">
-        <div class="score-label">Manual Visual Review</div>
-        <div class="score-val" style="color: var(--accent-amber); font-size: 1.1rem; padding-top: 0.4rem;">PENDING REVIEW</div>
-        <div class="score-note">Awaiting direct human inspection of renders</div>
-      </div>
-    </div>
-
-    <!-- Side-by-Side Comparison Overview -->
-    <div class="section-title">Before vs After: Semantic Repair Loop Progression</div>
-    <div class="comparison-split">
-      <div class="comp-box iter-0">
-        <div class="comp-header">
-          <div class="comp-title">Iteration 0: Initial AI Proposal</div>
-          <div class="comp-score" style="color: var(--accent-amber);">Score: 60% (FAIL)</div>
-        </div>
-        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
-          Initial unpartitioned layout. Monolithic massing, uniform procedural window spacing, open cavity interior, missing anvil & blacksmith equipment.
-        </p>
-        <img src="assets/images/iteration-0/contact_sheet.png" class="contact-sheet-img" alt="Iteration 0 Contact Sheet" onclick="openModal(this.src)">
-      </div>
-
-      <div class="comp-box iter-final">
-        <div class="comp-header">
-          <div class="comp-title">Iteration 1: Repaired Architecture (Final)</div>
-          <div class="comp-score" style="color: var(--accent-emerald);">Score: 100% (PASS)</div>
-        </div>
-        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
-          Enriched semantic architecture. Asymmetrical workshop annex, functional room partitions, grand porch canopy, complete blacksmith equipment cluster.
-        </p>
-        <img src="assets/images/iteration-final/contact_sheet.png" class="contact-sheet-img" alt="Iteration Final Contact Sheet" onclick="openModal(this.src)">
+      <div class="score-card pass">
+        <div class="score-label">Real Screenshots Published</div>
+        <div class="score-val" style="color: var(--accent-cyan);">22 + 2</div>
+        <div class="score-note">11 Iteration 0 + 11 Final + 2 Master Contact Sheets</div>
       </div>
     </div>
 
-    <!-- Interactive Tabs for Multi-Angle Galleries -->
-    <div class="section-title">Multi-Angle Architectural Views (10 Angles + Contact Sheet)</div>
+    <!-- Tab Navigation -->
     <div class="tab-nav">
-      <button class="tab-btn active" onclick="switchTab('tab-final')">Final Accepted Design (Iteration 1)</button>
-      <button class="tab-btn" onclick="switchTab('tab-iter0')">Baseline Proposal (Iteration 0)</button>
-      <button class="tab-btn" onclick="switchTab('tab-diff')">Semantic Diff & Critique</button>
-      <button class="tab-btn" onclick="switchTab('tab-provenance')">Critic Provenance & SHA256</button>
-      <button class="tab-btn" onclick="switchTab('tab-readback')">Exact World Readback (1,810 blocks)</button>
-      <button class="tab-btn" onclick="switchTab('tab-heuristics')">Final Grammar Heuristics</button>
-      <button class="tab-btn" onclick="switchTab('tab-checks')">16 Acceptance Checks</button>
+      <button class="tab-btn active" onclick="showTab('real-visual')">Real Minecraft Visual Proof (1.21.11)</button>
+      <button class="tab-btn" onclick="showTab('before-after')">Before / After Real Comparison</button>
+      <button class="tab-btn" onclick="showTab('software-preview')">Old Software Previews (Debug Only)</button>
+      <button class="tab-btn" onclick="showTab('provenance')">QA & Critic Provenance</button>
     </div>
 
-    <!-- TAB 1: FINAL DESIGN -->
-    <div id="tab-final" class="tab-pane active">
-      <div class="gallery-grid">
-        <div class="gallery-item" onclick="openModal('assets/images/iteration-final/hero_shot.png')">
-          <img src="assets/images/iteration-final/hero_shot.png" class="gallery-thumb" alt="Hero Shot">
-          <div class="gallery-info"><div class="gallery-name">1. Hero Perspective</div><div class="gallery-desc">Dramatic low-angle view of grand entrance canopy</div></div>
-        </div>
-        <div class="gallery-item" onclick="openModal('assets/images/iteration-final/front_three_quarter.png')">
-          <img src="assets/images/iteration-final/front_three_quarter.png" class="gallery-thumb" alt="Front 3/4">
-          <div class="gallery-info"><div class="gallery-name">2. Front 3/4 View</div><div class="gallery-desc">Main facade, timber framing & workshop annex</div></div>
-        </div>
-        <div class="gallery-item" onclick="openModal('assets/images/iteration-final/opposite_three_quarter.png')">
-          <img src="assets/images/iteration-final/opposite_three_quarter.png" class="gallery-thumb" alt="Opposite 3/4">
-          <div class="gallery-info"><div class="gallery-name">3. Opposite 3/4 View</div><div class="gallery-desc">Attached workshop, lean-to roof & stone chimney</div></div>
-        </div>
-        <div class="gallery-item" onclick="openModal('assets/images/iteration-final/elevated_isometric.png')">
-          <img src="assets/images/iteration-final/elevated_isometric.png" class="gallery-thumb" alt="Elevated Isometric">
-          <div class="gallery-info"><div class="gallery-name">4. Elevated Isometric</div><div class="gallery-desc">Dual roof composition and massing profile</div></div>
-        </div>
-        <div class="gallery-item" onclick="openModal('assets/images/iteration-final/entrance_facade_detail.png')">
-          <img src="assets/images/iteration-final/entrance_facade_detail.png" class="gallery-thumb" alt="Entrance Detail">
-          <div class="gallery-info"><div class="gallery-name">5. Entrance Facade Detail</div><div class="gallery-desc">Grand timber porch, stairs & lantern accent</div></div>
-        </div>
-        <div class="gallery-item" onclick="openModal('assets/images/iteration-final/roof_chimney_detail.png')">
-          <img src="assets/images/iteration-final/roof_chimney_detail.png" class="gallery-thumb" alt="Roof Chimney Detail">
-          <div class="gallery-info"><div class="gallery-name">6. Forge Chimney Detail</div><div class="gallery-desc">Stone brick exhaust with campfire smoke pot</div></div>
-        </div>
-        <div class="gallery-item" onclick="openModal('assets/images/iteration-final/interior_living_hall.png')">
-          <img src="assets/images/iteration-final/interior_living_hall.png" class="gallery-thumb" alt="Interior Living Hall">
-          <div class="gallery-info"><div class="gallery-name">7. Living Hall</div><div class="gallery-desc">Dining table, hearth & partition wall</div></div>
-        </div>
-        <div class="gallery-item" onclick="openModal('assets/images/iteration-final/interior_circulation.png')">
-          <img src="assets/images/iteration-final/interior_circulation.png" class="gallery-thumb" alt="Staircase Circulation">
-          <div class="gallery-info"><div class="gallery-name">8. Staircase Circulation</div><div class="gallery-desc">Staircase ascending to upper master loft</div></div>
-        </div>
-        <div class="gallery-item" onclick="openModal('assets/images/iteration-final/interior_workshop_forge.png')">
-          <img src="assets/images/iteration-final/interior_workshop_forge.png" class="gallery-thumb" alt="Workshop Forge Area">
-          <div class="gallery-info"><div class="gallery-name">9. Workshop Forge Area</div><div class="gallery-desc">Blast furnace, anvil, grindstone & cauldron</div></div>
-        </div>
-        <div class="gallery-item" onclick="openModal('assets/images/iteration-final/side_elevation.png')">
-          <img src="assets/images/iteration-final/side_elevation.png" class="gallery-thumb" alt="Side Elevation">
-          <div class="gallery-info"><div class="gallery-name">10. Side Elevation</div><div class="gallery-desc">Silhouette profile & timber bay articulation</div></div>
-        </div>
+    <!-- TAB 1: Real Minecraft Visual Proof -->
+    <div id="real-visual" class="tab-pane active">
+      <div class="callout">
+        <strong>Real Minecraft Engine Provenance:</strong> The screenshots below were exported directly from <strong>Fabric Minecraft 1.21.11</strong> using the Flashback companion replay pipeline. They feature native game lighting, authentic block textures (cobblestone, oak, spruce, stone bricks), ambient shading, and in-world entity/block states.
       </div>
-      <div class="contact-sheet-container">
-        <div style="font-weight: 700; margin-bottom: 0.75rem;">10-Angle Master Contact Sheet (Iteration 1 Final)</div>
-        <img src="assets/images/iteration-final/contact_sheet.png" class="contact-sheet-img" alt="Final Master Contact Sheet" onclick="openModal(this.src)">
-      </div>
-    </div>
 
-    <!-- TAB 2: ITERATION 0 -->
-    <div id="tab-iter0" class="tab-pane">
-      <div class="gallery-grid">
-        <div class="gallery-item" onclick="openModal('assets/images/iteration-0/hero_shot.png')">
-          <img src="assets/images/iteration-0/hero_shot.png" class="gallery-thumb" alt="Hero Shot">
-          <div class="gallery-info"><div class="gallery-name">1. Hero Perspective (Iter 0)</div><div class="gallery-desc">Lacks grand porch canopy and focal hierarchy</div></div>
+      <!-- Master Contact Sheet -->
+      <div class="split-card" style="margin-bottom: 2.5rem;">
+        <div class="split-header">
+          <div class="split-title">Final Structure Master Contact Sheet (Real Minecraft 1.21.11)</div>
+          <span class="status-pill pill-pass">11 In-Game Views</span>
         </div>
-        <div class="gallery-item" onclick="openModal('assets/images/iteration-0/front_three_quarter.png')">
-          <img src="assets/images/iteration-0/front_three_quarter.png" class="gallery-thumb" alt="Front 3/4">
-          <div class="gallery-info"><div class="gallery-name">2. Front 3/4 View (Iter 0)</div><div class="gallery-desc">Uniform procedural window spacing</div></div>
-        </div>
-        <div class="gallery-item" onclick="openModal('assets/images/iteration-0/interior_living_hall.png')">
-          <img src="assets/images/iteration-0/interior_living_hall.png" class="gallery-thumb" alt="Interior Living Hall">
-          <div class="gallery-info"><div class="gallery-name">7. Living Hall (Iter 0)</div><div class="gallery-desc">Unpartitioned cavity open directly into workshop</div></div>
-        </div>
-        <div class="gallery-item" onclick="openModal('assets/images/iteration-0/interior_workshop_forge.png')">
-          <img src="assets/images/iteration-0/interior_workshop_forge.png" class="gallery-thumb" alt="Workshop Forge Area">
-          <div class="gallery-info"><div class="gallery-name">9. Workshop Forge Area (Iter 0)</div><div class="gallery-desc">Missing anvil, grindstone & smithing equipment</div></div>
-        </div>
-      </div>
-      <div class="contact-sheet-container">
-        <div style="font-weight: 700; margin-bottom: 0.75rem;">Iteration 0 Master Contact Sheet (Initial Proposal)</div>
-        <img src="assets/images/iteration-0/contact_sheet.png" class="contact-sheet-img" alt="Iter 0 Master Contact Sheet" onclick="openModal(this.src)">
-      </div>
-    </div>
-
-    <!-- TAB 3: SEMANTIC DIFF -->
-    <div id="tab-diff" class="tab-pane">
-      <div class="critique-card">
-        <h3 style="margin-bottom: 1rem; color: var(--accent-cyan);">Semantic Critic Feedback & Repair Instructions (Iteration 0)</h3>
-        <div class="critique-item">
-          <span class="issue-badge badge-high">Room Richness</span>
-          <div class="critique-desc">Ground floor interior lacks structural partitions; functions are blurred in an open hall cavity.</div>
-          <div class="repair-inst">Instruction: partition ground floor into a dedicated blacksmith workshop, storage pantry, living hall, and upper sleeping quarters with interior connecting doorways</div>
-        </div>
-        <div class="critique-item">
-          <span class="issue-badge badge-med">Furniture Density</span>
-          <div class="critique-desc">Workshop equipment is incomplete; missing essential blacksmith tools such as anvil, blast furnace, and grindstone.</div>
-          <div class="repair-inst">Instruction: equip the workshop zone with blast furnace, anvil, grindstone, water quenching cauldron, and raw material storage</div>
-        </div>
-        <div class="critique-item">
-          <span class="issue-badge badge-med">Facade Repetition</span>
-          <div class="critique-desc">Window bays exhibit uniform procedural repetition; lacks paired residential groupings and forge ventilation slits.</div>
-          <div class="repair-inst">Instruction: configure facade hierarchy with paired residential window bays (windowGrouping: 'paired-bays') and utilitarian iron-bars forge ventilation slits (workshopVentilation: 'forge-slits')</div>
-        </div>
-        <div class="critique-item">
-          <span class="issue-badge badge-low">Entrance Hierarchy</span>
-          <div class="critique-desc">Main residential entrance lacks focal hierarchy over secondary service doors.</div>
-          <div class="repair-inst">Instruction: establish clear entrance hierarchy with a prominent timber-framed porch canopy for the residence and a separate utilitarian door for the workshop</div>
+        <div class="split-img-box">
+          <img class="split-img" src="assets/images/iteration-final-real/contact_sheet.png" alt="Final Contact Sheet Real Minecraft" onclick="openModal(this.src, 'Final Structure Real Minecraft Contact Sheet (11 Views)')">
         </div>
       </div>
 
-      <div class="critique-card">
-        <h3 style="margin-bottom: 1rem; color: var(--accent-emerald);">Semantic Diff Applied (Iteration 0 → Final)</h3>
-        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
-          Semantic architecture refined across 5 additions and 1 modifications: functional room zoning with storage pantry, full blacksmith workshop equipment cluster, grand entrance hierarchy, and paired window bays with forge ventilation slits.
-        </p>
-        <h4 style="font-size: 0.85rem; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.5rem;">Added Features</h4>
-        <ul style="padding-left: 1.5rem; font-size: 0.9rem; margin-bottom: 1rem;">
-          <li>Structural interior room partitions separating workshop from residential living quarters</li>
-<li>Functional room zoning (workshop, storage_pantry, living_hall, master_bedroom)</li>
-<li>Dedicated storage pantry annex with barrels, chests, and wall shelving</li>
-<li>Full blacksmith equipment cluster (blast furnace, anvil, grindstone, water cauldron, smithing table)</li>
-<li>Grand timber-framed porch canopy on south entrance establishing clear visual hierarchy</li>
-        </ul>
-        <h4 style="font-size: 0.85rem; text-transform: uppercase; color: var(--text-faint); margin-bottom: 0.5rem;">Modified Features</h4>
-        <ul style="padding-left: 1.5rem; font-size: 0.9rem;">
-          <li>Facade hierarchy: paired residential window bays ('paired-bays') and utilitarian forge ventilation slits ('forge-slits')</li>
-        </ul>
-      </div>
-    </div>
+      <div class="section-title">Verified Semantic Claim Evidence (Real In-Game Renders)</div>
+      
+      <div class="cards-grid">
+        <!-- Workshop -->
+        <div class="feature-card">
+          <div class="feature-thumb-box">
+            <span class="feature-category">Interior</span>
+            <img class="feature-thumb" src="assets/images/iteration-final-real/blacksmith_workshop.png" alt="Workshop Equipment" onclick="openModal(this.src, 'Blacksmith Workshop: Blast Furnace, Anvil, Grindstone, Cauldron, Smithing Table')">
+          </div>
+          <div class="feature-content">
+            <div class="feature-name">Workshop Equipment Cluster</div>
+            <div class="feature-desc">Dedicated forge workshop visibly equipped with active glowing blast furnace, iron anvil placed in front of hearth, grindstone, cauldron, and smithing table on stone brick floor.</div>
+            <div class="feature-tags">
+              <span class="feature-tag">blast_furnace</span>
+              <span class="feature-tag">anvil</span>
+              <span class="feature-tag">grindstone</span>
+              <span class="feature-tag">cauldron</span>
+              <span class="feature-tag">smithing_table</span>
+            </div>
+          </div>
+        </div>
 
-    <!-- TAB 4: PROVENANCE -->
-    <div id="tab-provenance" class="tab-pane">
-      <div class="critique-card">
-        <h3 style="margin-bottom: 1rem; color: var(--accent-cyan);">Critic Provenance & Asset Hashes</h3>
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Field</th>
-              <th>Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Critic Provider</td>
-              <td><code>deterministic-semantic-critic</code></td>
-            </tr>
-            <tr>
-              <td>Critic Classification</td>
-              <td><span class="status-pill pill-neutral">SEMANTIC ONLY</span></td>
-            </tr>
-            <tr>
-              <td>Model / Provider Type</td>
-              <td>Deterministic Rule-Based Semantic Evaluator (evaluates ArchitectureSpec fields and structural constraints; no computer vision / pixel inspection)</td>
-            </tr>
-            <tr>
-              <td>Images Available</td>
-              <td>11 rendered angles</td>
-            </tr>
-            <tr>
-              <td>Images Consumed (Pixels)</td>
-              <td><strong>0</strong> (Evaluates semantic spec & structural constraints only)</td>
-            </tr>
-            <tr>
-              <td>ArchitectureSpec Hash (Final)</td>
-              <td><code>fe1f593423c788d8d61a339c3fba8176641e257030ade31a185fea51c85dc96d</code></td>
-            </tr>
-            <tr>
-              <td>Critique Output Hash (Final)</td>
-              <td><code>30ea3fdbf0c51e02e0e6cd9499e27ca4b3d47aac089aad8441f066c9ee77e123</code></td>
-            </tr>
-            <tr>
-              <td>Timestamp</td>
-              <td><code>2026-09-06T08:04:54.046Z</code></td>
-            </tr>
-          </tbody>
-        </table>
+        <!-- Storage Pantry -->
+        <div class="feature-card">
+          <div class="feature-thumb-box">
+            <span class="feature-category">Interior</span>
+            <img class="feature-thumb" src="assets/images/iteration-final-real/storage_pantry.png" alt="Storage Pantry" onclick="openModal(this.src, 'Storage Pantry: Stacked Barrels, Chest, Shelving')">
+          </div>
+          <div class="feature-content">
+            <div class="feature-name">Dedicated Storage Pantry</div>
+            <div class="feature-desc">Dedicated storage room zone featuring stacked vertical storage barrels, wood chest, and spruce trapdoor wall shelving. Visibly answers the storage critic directive.</div>
+            <div class="feature-tags">
+              <span class="feature-tag">barrel</span>
+              <span class="feature-tag">chest</span>
+              <span class="feature-tag">storage_shelving</span>
+            </div>
+          </div>
+        </div>
 
-        <h4 style="margin: 1.5rem 0 0.5rem; font-size: 0.9rem; text-transform: uppercase; color: var(--text-faint);">Exact Image SHA256 Hashes</h4>
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Asset</th>
-              <th>SHA256 Hash</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><code>contact_sheet.png</code></td><td><code>88474f07d6872dd64e04c827caa7d22af462ce5cdc0de1c2b1672a2f4bbb76b4</code></td></tr>
-            <tr><td><code>hero_shot.png</code></td><td><code>f6d98b2ced5b9939e7e971dbcd9b70b10f8ad434dab4332e60fe7f9cbfb27a49</code></td></tr>
-            <tr><td><code>front_three_quarter.png</code></td><td><code>602d81c45ceb6ec5d159c08691810b7129b4eaec5078a92a426422699e2e4daa</code></td></tr>
-            <tr><td><code>opposite_three_quarter.png</code></td><td><code>8d9a78920edcfc8f5a8222d3b2080f8033a27afe883baddcbc17aab0bfcc1156</code></td></tr>
-            <tr><td><code>side_elevation.png</code></td><td><code>0c1af24e47aa2b72226d5c2a2635384b1a868796364128e2b4b327614eb32a86</code></td></tr>
-            <tr><td><code>elevated_isometric.png</code></td><td><code>6b76cff040a3547d1a3a9992f5f10fe38432a09a4ca5b87063841698e335e927</code></td></tr>
-            <tr><td><code>entrance_facade_detail.png</code></td><td><code>be717af73a4039db994b1ca256e9346db75d5feb9892cb0acb5acd82eea6c3c8</code></td></tr>
-            <tr><td><code>roof_chimney_detail.png</code></td><td><code>9920f9a036af5a01458ae2b3c96e769217346a18d96d6ecb6223ca33a10e044c</code></td></tr>
-            <tr><td><code>interior_living_hall.png</code></td><td><code>6c7ccf169758da3b814bb620c525a570420756e7df45577bc969d003403c4eeb</code></td></tr>
-            <tr><td><code>interior_circulation.png</code></td><td><code>b8b15148e68980271523c6f47eee970b61f11b21e570a9bf2e56d3d5c0b46b61</code></td></tr>
-            <tr><td><code>interior_workshop_forge.png</code></td><td><code>e38188db2030187a1c23bae675b0cf3d13f76f00e9b133faaaec3a6f613bbe2b</code></td></tr>
-          </tbody>
-        </table>
+        <!-- Living Hall -->
+        <div class="feature-card">
+          <div class="feature-thumb-box">
+            <span class="feature-category">Interior</span>
+            <img class="feature-thumb" src="assets/images/iteration-final-real/living_hall.png" alt="Living Hall" onclick="openModal(this.src, 'Living Hall: Dining Table, Chairs, Bookshelf, Smoker Fireplace')">
+          </div>
+          <div class="feature-content">
+            <div class="feature-name">Furnished Living Hall</div>
+            <div class="feature-desc">Warm residential hall with central timber dining table and spruce chairs, domestic smoker hearth fireplace, bookshelf, and hanging lantern. Not an empty cavity.</div>
+            <div class="feature-tags">
+              <span class="feature-tag">dining_table</span>
+              <span class="feature-tag">chairs</span>
+              <span class="feature-tag">smoker_hearth</span>
+              <span class="feature-tag">bookshelf</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Entrance Porch -->
+        <div class="feature-card">
+          <div class="feature-thumb-box">
+            <span class="feature-category">Detail</span>
+            <img class="feature-thumb" src="assets/images/iteration-final-real/entrance_porch.png" alt="Entrance Porch" onclick="openModal(this.src, 'Grand Entrance Porch: Timber Canopy, Lantern, Dark Oak Door')">
+          </div>
+          <div class="feature-content">
+            <div class="feature-name">Grand Entrance Hierarchy</div>
+            <div class="feature-desc">Projecting timber porch canopy framed by spruce posts, dark oak stair & slab roof, hanging lantern illumination, and dark oak entrance door on cobblestone foundation plinth.</div>
+            <div class="feature-tags">
+              <span class="feature-tag">timber_canopy</span>
+              <span class="feature-tag">hanging_lantern</span>
+              <span class="feature-tag">entrance_scale:grand</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Roof & Chimney -->
+        <div class="feature-card">
+          <div class="feature-thumb-box">
+            <span class="feature-category">Detail</span>
+            <img class="feature-thumb" src="assets/images/iteration-final-real/roof_chimney.png" alt="Roof and Chimney" onclick="openModal(this.src, 'Roof & Chimney: High Pitch Gable, Cobblestone Trim, Stone Chimney')">
+          </div>
+          <div class="feature-content">
+            <div class="feature-name">Roof + Chimney Composition</div>
+            <div class="feature-desc">High-pitch dark oak gable roof detailed with cobblestone overhang trim, intersecting shed roof over workshop, and full-height stone forge chimney with active smoking top pot.</div>
+            <div class="feature-tags">
+              <span class="feature-tag">gable_roof</span>
+              <span class="feature-tag">cobblestone_trim</span>
+              <span class="feature-tag">forge_chimney</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Exterior -->
+        <div class="feature-card">
+          <div class="feature-thumb-box">
+            <span class="feature-category">Exterior</span>
+            <img class="feature-thumb" src="assets/images/iteration-final-real/hero.png" alt="Hero Shot" onclick="openModal(this.src, 'Hero Shot: Paired Window Bays, Entrance Porch, Material Layering')">
+          </div>
+          <div class="feature-content">
+            <div class="feature-name">Hero Perspective</div>
+            <div class="feature-desc">Low-angle street perspective proving paired residential window bays with glass panes, entrance porch hierarchy, cobblestone foundation plinth, and rich timber framing.</div>
+            <div class="feature-tags">
+              <span class="feature-tag">paired_bays</span>
+              <span class="feature-tag">hero_camera</span>
+              <span class="feature-tag">material_layering</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Opposite 3/4 -->
+        <div class="feature-card">
+          <div class="feature-thumb-box">
+            <span class="feature-category">Exterior</span>
+            <img class="feature-thumb" src="assets/images/iteration-final-real/opposite_three_quarter.png" alt="Opposite 3/4" onclick="openModal(this.src, 'Opposite 3/4: Asymmetrical Massing & Attached Workshop')">
+          </div>
+          <div class="feature-content">
+            <div class="feature-name">Asymmetrical Massing</div>
+            <div class="feature-desc">Exterior rear 3/4 view proving distinct two-story residential hall massing coupled to single-story attached workshop wing and prominent stone chimney stack.</div>
+            <div class="feature-tags">
+              <span class="feature-tag">asymmetrical_massing</span>
+              <span class="feature-tag">attached_workshop</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Circulation Staircase -->
+        <div class="feature-card">
+          <div class="feature-thumb-box">
+            <span class="feature-category">Interior</span>
+            <img class="feature-thumb" src="assets/images/iteration-final-real/circulation_staircase.png" alt="Circulation Staircase" onclick="openModal(this.src, 'Circulation Staircase: Timber Stairs Ascending to Upper Floor')">
+          </div>
+          <div class="feature-content">
+            <div class="feature-name">Circulation & Staircase</div>
+            <div class="feature-desc">Interior circulation showing functional timber staircase ascending from the living hall to the upper master bedroom suite through a dedicated stairwell opening.</div>
+            <div class="feature-tags">
+              <span class="feature-tag">staircase</span>
+              <span class="feature-tag">multi_floor</span>
+              <span class="feature-tag">loft_opening</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Front 3/4 -->
+        <div class="feature-card">
+          <div class="feature-thumb-box">
+            <span class="feature-category">Exterior</span>
+            <img class="feature-thumb" src="assets/images/iteration-final-real/front_three_quarter.png" alt="Front 3/4" onclick="openModal(this.src, 'Front 3/4 Elevation')">
+          </div>
+          <div class="feature-content">
+            <div class="feature-name">Front 3/4 Elevation</div>
+            <div class="feature-desc">Elevated front perspective demonstrating structural timber columns, horizontal ring beams, overhanging gables, and entrance facade depth articulation.</div>
+            <div class="feature-tags">
+              <span class="feature-tag">timber_framing</span>
+              <span class="feature-tag">depth_articulation</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- TAB 5: READBACK -->
-    <div id="tab-readback" class="tab-pane">
-      <div class="critique-card">
-        <h3 style="margin-bottom: 1rem; color: var(--accent-cyan);">Real Minecraft Fabric 1.21.11 World Readback</h3>
-        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem;">
-          Physical build realized sequentially via performative <code>/setblock strict</code> commands on a live Fabric 1.21.11 server. Exact AABB scan read back using voxel state comparison.
-        </p>
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Metric</th>
-              <th>Value</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Structure ID</td>
-              <td><code>ai-proposal-house-seed501-iter1</code></td>
-              <td><span class="status-pill pill-pass">VERIFIED</span></td>
-            </tr>
-            <tr>
-              <td>World Origin Coordinates</td>
-              <td><code>(450, -60, 200)</code></td>
-              <td><span class="status-pill pill-pass">ISOLATED ORIGIN</span></td>
-            </tr>
-            <tr>
-              <td>Expected Non-Air Blocks</td>
-              <td>1,810</td>
-              <td><span class="status-pill pill-pass">VERIFIED</span></td>
-            </tr>
-            <tr>
-              <td>Correct Placed Blocks</td>
-              <td>1,810</td>
-              <td><span class="status-pill pill-pass">100.000% MATCH</span></td>
-            </tr>
-            <tr>
-              <td>Missing Blocks</td>
-              <td>0</td>
-              <td><span class="status-pill pill-pass">0 MISSING</span></td>
-            </tr>
-            <tr>
-              <td>Incorrect Block States</td>
-              <td>0</td>
-              <td><span class="status-pill pill-pass">0 INCORRECT</span></td>
-            </tr>
-            <tr>
-              <td>Extra / Floating Blocks</td>
-              <td>0</td>
-              <td><span class="status-pill pill-pass">0 EXTRA</span></td>
-            </tr>
-            <tr>
-              <td>Spec Hash</td>
-              <td><code>fe1f593423c788d8d61a339c3fba8176641e257030ade31a185fea51c85dc96d</code></td>
-              <td><span class="status-pill pill-pass">VERIFIED</span></td>
-            </tr>
-            <tr>
-              <td>Block Plan Hash</td>
-              <td><code>b7eeac05c7575759bfe6b2ff23243bf1a32c8a6ba37f6d1f99ba602bef3368d9</code></td>
-              <td><span class="status-pill pill-pass">VERIFIED</span></td>
-            </tr>
-            <tr>
-              <td>Blueprint Hash</td>
-              <td><code>44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a</code></td>
-              <td><span class="status-pill pill-pass">VERIFIED</span></td>
-            </tr>
-            <tr>
-              <td>Verified Flag</td>
-              <td><code>true</code></td>
-              <td><span class="status-pill pill-pass">PASS</span></td>
-            </tr>
-          </tbody>
-        </table>
+    <!-- TAB 2: Before / After Real Comparison -->
+    <div id="before-after" class="tab-pane">
+      <div class="callout warning">
+        <strong>Score Separation Integrity:</strong> Semantic score is <strong>100/100</strong>. Visual score is <strong>PENDING MANUAL REVIEW</strong>. We do not claim an unverified numeric visual jump; reviewers can directly evaluate the side-by-side real Minecraft gameplay renders below.
+      </div>
+
+      <div class="split-grid">
+        <div class="split-card">
+          <div class="split-header">
+            <div class="split-title">Iteration 0 (Real Minecraft Baseline)</div>
+            <span class="status-pill pill-hold">Pre-Repair</span>
+          </div>
+          <div class="split-img-box">
+            <span class="split-badge badge-real">Real In-Game 1.21.11</span>
+            <img class="split-img" src="assets/images/iteration-0-real/hero.png" alt="Iteration 0 Hero" onclick="openModal(this.src, 'Iteration 0 Real Minecraft Hero (Flat Wall, Single Window, No Porch)')">
+          </div>
+          <div style="padding: 1rem 1.25rem; font-size: 0.85rem; color: var(--text-muted);">
+            • Single procedurally spaced windows<br>
+            • Bare entrance without porch canopy or lantern<br>
+            • Flat facade rhythm without paired bays
+          </div>
+        </div>
+
+        <div class="split-card">
+          <div class="split-header">
+            <div class="split-title">Final Structure (Real Minecraft Repaired)</div>
+            <span class="status-pill pill-pass">Repaired</span>
+          </div>
+          <div class="split-img-box">
+            <span class="split-badge badge-real">Real In-Game 1.21.11</span>
+            <img class="split-img" src="assets/images/iteration-final-real/hero.png" alt="Final Hero" onclick="openModal(this.src, 'Final Real Minecraft Hero (Paired Bays, Grand Porch, Glowing Lantern)')">
+          </div>
+          <div style="padding: 1rem 1.25rem; font-size: 0.85rem; color: var(--text-muted);">
+            • Paired residential window bays with glass mullions<br>
+            • Grand timber porch canopy with hanging lantern<br>
+            • Clear entrance hierarchy and material layering
+          </div>
+        </div>
+      </div>
+
+      <div class="split-grid">
+        <div class="split-card">
+          <div class="split-header">
+            <div class="split-title">Iteration 0: Workshop Zone</div>
+            <span class="status-pill pill-hold">Pre-Repair</span>
+          </div>
+          <div class="split-img-box">
+            <span class="split-badge badge-real">Real In-Game 1.21.11</span>
+            <img class="split-img" src="assets/images/iteration-0-real/blacksmith_workshop.png" alt="Iteration 0 Workshop" onclick="openModal(this.src, 'Iteration 0 Workshop (Empty, Missing Anvil/Grindstone/Cauldron)')">
+          </div>
+          <div style="padding: 1rem 1.25rem; font-size: 0.85rem; color: var(--text-muted);">
+            • Missing anvil, grindstone, cauldron, smithing table<br>
+            • Empty floor space without equipment grouping
+          </div>
+        </div>
+
+        <div class="split-card">
+          <div class="split-header">
+            <div class="split-title">Final Structure: Workshop Zone</div>
+            <span class="status-pill pill-pass">Repaired</span>
+          </div>
+          <div class="split-img-box">
+            <span class="split-badge badge-real">Real In-Game 1.21.11</span>
+            <img class="split-img" src="assets/images/iteration-final-real/blacksmith_workshop.png" alt="Final Workshop" onclick="openModal(this.src, 'Final Workshop (Fully Equipped Forge)')">
+          </div>
+          <div style="padding: 1rem 1.25rem; font-size: 0.85rem; color: var(--text-muted);">
+            • Fully equipped with glowing blast furnace, anvil, grindstone, cauldron, smithing table<br>
+            • Stone brick floor and cobblestone chimney breast
+          </div>
+        </div>
+      </div>
+
+      <div class="split-card" style="margin-top: 2rem;">
+        <div class="split-header">
+          <div class="split-title">Iteration 0 Baseline Master Contact Sheet</div>
+          <span class="status-pill pill-neutral">11 In-Game Views</span>
+        </div>
+        <div class="split-img-box">
+          <img class="split-img" src="assets/images/iteration-0-real/contact_sheet.png" alt="Iteration 0 Contact Sheet" onclick="openModal(this.src, 'Iteration 0 Baseline Contact Sheet (Real Minecraft)')">
+        </div>
       </div>
     </div>
 
-    <!-- TAB 6: HEURISTICS -->
-    <div id="tab-heuristics" class="tab-pane">
-      <div class="critique-card">
-        <h3 style="margin-bottom: 1rem; color: var(--accent-cyan);">Frozen Gate 8.7B Architectural Quality Heuristics (Final Output)</h3>
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Heuristic ID</th>
-              <th>Status</th>
-              <th>Result Detail</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><code>NO_DUPLICATE_COORDINATES</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>Found 0 duplicate coordinate collisions (target: 0)</td></tr>
-<tr><td><code>SILHOUETTE_VARIATION</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>Silhouette variation ratio: 8.83 (area: 2.71, mass: 8.83)</td></tr>
-<tr><td><code>FACADE_DEPTH_RELIEF</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>Facade depth relief: 1 blocks with structural/trim articulation</td></tr>
-<tr><td><code>WINDOW_SPACING_SANITY</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>Windows placed within wall bounds without coordinate collisions</td></tr>
-<tr><td><code>ENTRANCE_ACCESSIBLE</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>Main entrance door detected at base level</td></tr>
-<tr><td><code>ROOF_COVERAGE</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>Top volume completely covered by roof, parapet, or deck (100%)</td></tr>
-<tr><td><code>STRUCTURAL_SUPPORT</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>Structural support ratio: 99.89%</td></tr>
-<tr><td><code>INTERIOR_CONNECTIVITY</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>Circulation connects vertical platforms (VERIFIED)</td></tr>
-<tr><td><code>NO_FLOATING_COMPONENTS</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>Floating disconnected components: 0</td></tr>
-<tr><td><code>PALETTE_COHERENCE</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>Palette roles properly assigned (28 unique materials in histogram)</td></tr>
-<tr><td><code>VERTICAL_PROPORTION</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>Proportions valid for house (dims: 21x16x19)</td></tr>
-          </tbody>
-        </table>
+    <!-- TAB 3: Old Software Previews -->
+    <div id="software-preview" class="tab-pane">
+      <div class="callout warning">
+        <strong>NON-AUTHORITATIVE / SOFTWARE PREVIEW (DEBUGGING ONLY):</strong><br>
+        The images in this section are software-rasterized previews generated during initial pipeline testing. They DO NOT represent real Minecraft gameplay graphics (no block textures, game lighting, or authentic shaders). They are retained strictly for debugging history and contract continuity. Do NOT use them as final visual evidence.
+      </div>
+
+      <div class="split-grid">
+        <div class="split-card">
+          <div class="split-header">
+            <div class="split-title">Software Preview (Iteration 0)</div>
+            <span class="status-pill pill-neutral">Debug Only</span>
+          </div>
+          <div class="split-img-box">
+            <span class="split-badge badge-preview">Software Preview</span>
+            <img class="split-img" src="assets/images/iteration-0/contact_sheet.png" alt="Old Iter 0 Software Preview">
+          </div>
+        </div>
+        <div class="split-card">
+          <div class="split-header">
+            <div class="split-title">Software Preview (Final Structure)</div>
+            <span class="status-pill pill-neutral">Debug Only</span>
+          </div>
+          <div class="split-img-box">
+            <span class="split-badge badge-preview">Software Preview</span>
+            <img class="split-img" src="assets/images/iteration-final/contact_sheet.png" alt="Old Final Software Preview">
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- TAB 7: CHECKS -->
-    <div id="tab-checks" class="tab-pane">
-      <div class="critique-card">
-        <h3 style="margin-bottom: 1rem; color: var(--accent-cyan);">16 Acceptance Checks Audit Table</h3>
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Check ID</th>
-              <th>Status</th>
-              <th>Verification Detail</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><code>architect_request_schema_validation</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>ArchitectRequest valid: prompt length=274 chars, family=house, style=rustic-medieval, seed=501</td></tr>
-<tr><td><code>architect_provider_interface</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>Provider conforms to interface: id=deterministic-fixture-provider, name='Deterministic Architecture Synthesizer v1.0', isAvailable=true</td></tr>
-<tr><td><code>deterministic_fixture_provider</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>AI Architect framework validated using deterministic fixture provider. 10x determinism verified: specHash=cd759b963e774da9... invariant across 10 trials</td></tr>
-<tr><td><code>valid_ai_generated_architecture_spec</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>valid ArchitectureSpec v1.1.0 generated: family=house, dimensions=21x16x19, hasForge=true</td></tr>
-<tr><td><code>invalid_spec_feedback_repair</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>Schema guard properly caught malformed spec with 2 structured errors for automated feedback correction</td></tr>
-<tr><td><code>frozen_grammar_compatibility</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>Successfully compiled ArchitectureSpec through frozen Gate 8.7B grammar: 1752 blocks, grammar score 100%</td></tr>
-<tr><td><code>frozen_compiler_compatibility</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>Compiled to 1752 blocks via frozen Gate 8.7A compiler (target 1,500-3,000 blocks)</td></tr>
-<tr><td><code>multi_angle_visual_proof_generated</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>All 10 multi-angle shots + contact sheets generated for both Iteration 0 and Final (output/qa/ai-architect/loop/iteration-1)</td></tr>
-<tr><td><code>vision_critic_structured_output</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>Semantic Critic emitted structured critique with full provenance (type: SEMANTIC ONLY, 0 pixels consumed, screenshot hashes recorded, score=60/100, pass=false, issues=4)</td></tr>
-<tr><td><code>semantic_repair_instructions_only</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>Zero block-coordinate leaks detected: all repair instructions are high-level semantic directives</td></tr>
-<tr><td><code>max_iteration_protection</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>Loop converged safely in 2 iterations (max threshold: 3)</td></tr>
-<tr><td><code>before_after_semantic_diff</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>Semantic diff verified: storage pantry added, explicit paired-bays & forge-slits facade modified (5 additions, 1 modifications)</td></tr>
-<tr><td><code>demonstrated_quality_improvement</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>Quality score improved from 60% to 100% (+40 points), resolving 4 issues</td></tr>
-<tr><td><code>final_grammar_quality_heuristics</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>Frozen Gate 8.7B quality heuristics PASS on final spec (score: 100%, 0 duplicate coords, structural support PASS, circulation PASS, palette PASS, roof coverage PASS)</td></tr>
-<tr><td><code>real_minecraft_exact_readback</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>100.000% exact readback: expected=1810 correct=1810 missing=0 incorrect=0 extra=0 at origin (450,-60,200)</td></tr>
-<tr><td><code>frozen_regressions_intact</code></td><td><span class='status-pill pill-pass'>PASS</span></td><td>Frozen Gate 8.7A compiler (factory-report.json), Gate 8.7B grammar (gate_8.7b_report.json), and dynamic camera hashes (LiveReplay=4a9c4df6c05a6974... DryRun=c32d95c1cf8104df...) verified intact</td></tr>
-          </tbody>
-        </table>
+    <!-- TAB 4: QA & Critic Provenance -->
+    <div id="provenance" class="tab-pane">
+      <div class="section-title">Architect Framework & Critic Classification</div>
+      <div class="callout">
+        <strong>Mandatory AI Provider Statement:</strong><br>
+        <em>"AI Architect framework validated using deterministic fixture provider."</em><br>
+        No external LLM was claimed or executed for this acceptance run. All synthesis is deterministic and invariant across runs.
       </div>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Component</th>
+            <th>Type</th>
+            <th>Provider / Model</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AI Architect Synthesizer</td>
+            <td>Fixture Provider</td>
+            <td><code>DeterministicArchitectProvider v1.0</code></td>
+            <td><strong style="color: var(--accent-emerald);">PASS (Invariant)</strong></td>
+          </tr>
+          <tr>
+            <td>Architectural Critic</td>
+            <td>Semantic Spec Evaluator</td>
+            <td><code>DeterministicSemanticCritic</code> (Rule-based)</td>
+            <td><strong style="color: var(--accent-emerald);">PASS (100/100)</strong></td>
+          </tr>
+          <tr>
+            <td>Computer Vision Inspection</td>
+            <td>Pixel Inspector</td>
+            <td>None (Images consumed: 0)</td>
+            <td><strong style="color: var(--text-muted);">NOT EVALUATED</strong></td>
+          </tr>
+          <tr>
+            <td>Real Minecraft Build & Readback</td>
+            <td>Fabric 1.21.11 Bot</td>
+            <td>Mineflayer ShortsBuilder (/setblock strict)</td>
+            <td><strong style="color: var(--accent-emerald);">100.000% (1,822/1,822)</strong></td>
+          </tr>
+          <tr>
+            <td>Manual Visual Review</td>
+            <td>Human Reviewer</td>
+            <td>Real In-Game 1.21.11 Screenshots</td>
+            <td><strong style="color: var(--accent-amber);">HOLD / READY FOR REVIEW</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="section-title">Frozen Regression Checklist</div>
+      <table class="data-table">
+        <thead>
+          <tr><th>Gate / Module</th><th>Result</th><th>Detail</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Gate 8.7B Architecture Grammar</td><td><strong style="color: var(--accent-emerald);">PASS</strong></td><td>10/10 quality heuristics, 0 coordinate collisions</td></tr>
+          <tr><td>Gate 8.7A Schematic Factory</td><td><strong style="color: var(--accent-emerald);">PASS</strong></td><td>Schematic Sponge v2 compiler 100% bit-exact</td></tr>
+          <tr><td>Gate 8.6C Dynamic Camera</td><td><strong style="color: var(--accent-emerald);">PASS</strong></td><td>Dual timeline hashes verified invariant</td></tr>
+          <tr><td>Gate 8.6D Environment QA</td><td><strong style="color: var(--accent-emerald);">PASS</strong></td><td>Weather/time lockdown & mob clearance verified</td></tr>
+          <tr><td>Gate 8.6E Dual Output Profiles</td><td><strong style="color: var(--accent-emerald);">PASS</strong></td><td>360p & 720p profiles verified</td></tr>
+        </tbody>
+      </table>
     </div>
 
   </main>
 
-  <!-- Modal Lightbox -->
-  <div id="lightbox" class="modal" onclick="closeModal()">
+  <!-- Lightbox Modal -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
     <span class="modal-close">&times;</span>
-    <img id="modal-img" class="modal-content" src="" alt="Enlarged View">
+    <img id="modalImage" class="modal-img" src="" alt="">
+    <div id="modalCaption" class="modal-caption"></div>
   </div>
 
   <script>
-    function switchTab(tabId) {
+    function showTab(tabId) {
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
       event.target.classList.add('active');
       document.getElementById(tabId).classList.add('active');
     }
 
-    function openModal(src) {
-      document.getElementById('modal-img').src = src;
-      document.getElementById('lightbox').classList.add('active');
+    function openModal(src, caption) {
+      const modal = document.getElementById('imageModal');
+      const img = document.getElementById('modalImage');
+      const cap = document.getElementById('modalCaption');
+      img.src = src;
+      cap.innerText = caption || '';
+      modal.classList.add('open');
     }
 
     function closeModal() {
-      document.getElementById('lightbox').classList.remove('active');
+      document.getElementById('imageModal').classList.remove('open');
     }
-  </script>
 
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
 </body>
 </html>

@@ -3,8 +3,13 @@
   "title": "Gate 8.7C: AI Minecraft Architect + Semantic Critic + Semantic Repair Loop",
   "status": "HOLD / READY FOR MANUAL REVIEW",
   "technicalQA": "PASS",
-  "visualProofAvailability": "PASS",
-  "visualReviewStatus": "PENDING DIRECT REVIEW",
+  "semanticCritic": "PASS",
+  "realMinecraftVisualProof": "PENDING",
+  "manualVisualReview": "FAIL / REQUIRES REMEDIATION",
+  "scoreSeparation": {
+    "semanticScore": 100,
+    "visualScore": "PENDING MANUAL REVIEW"
+  },
   "aiProviderStatement": "AI Architect framework validated using deterministic fixture provider.",
   "criticClassification": {
     "criticType": "SEMANTIC ONLY",
@@ -19,11 +24,152 @@
     "visualCriticScore": "NOT EVALUATED (SEMANTIC ONLY)",
     "manualVisualStatus": "PENDING DIRECT REVIEW"
   },
-  "repairVerifications": {
-    "storageRequirement": "VERIFIED (storage_pantry room zone realized with barrels, chest, and shelving)",
-    "facadeRepair": "VERIFIED (windowGrouping='paired-bays', workshopVentilation='forge-slits')"
+  "realMinecraftCapture": {
+    "engine": "Fabric Minecraft 1.21.11 (ServerReplay + Flashback In-Game Companion)",
+    "renderMethod": "Real Minecraft In-Game Engine (Real Block Textures, Real Game Lighting, Real Materials)",
+    "oldRenderClassification": "NON-AUTHORITATIVE / SOFTWARE PREVIEW (retained for debugging history)",
+    "totalScreenshotsPerIteration": 11,
+    "totalScreenshotsPublished": 22,
+    "contactSheets": {
+      "iteration0Real": "assets/images/iteration-0-real/contact_sheet.png",
+      "iterationFinalReal": "assets/images/iteration-final-real/contact_sheet.png"
+    },
+    "buildAndReadback": {
+      "iteration0": {
+        "origin": "(350, -60, 200)",
+        "expected": 1758,
+        "correct": 1758,
+        "missing": 0,
+        "incorrect": 0,
+        "extra": 0,
+        "accuracy": "100.000%"
+      },
+      "final": {
+        "structureId": "ai-proposal-house-seed501-iter1",
+        "origin": "(450, -60, 200)",
+        "expected": 1822,
+        "correct": 1822,
+        "missing": 0,
+        "incorrect": 0,
+        "extra": 0,
+        "accuracy": "100.000%"
+      }
+    },
+    "viewsCaptured": [
+      {
+        "id": "front_three_quarter",
+        "category": "EXTERIOR",
+        "file": "front_three_quarter.png"
+      },
+      {
+        "id": "opposite_three_quarter",
+        "category": "EXTERIOR",
+        "file": "opposite_three_quarter.png"
+      },
+      {
+        "id": "side_elevation",
+        "category": "EXTERIOR",
+        "file": "side_elevation.png"
+      },
+      {
+        "id": "elevated_isometric",
+        "category": "EXTERIOR",
+        "file": "elevated_isometric.png"
+      },
+      {
+        "id": "hero",
+        "category": "EXTERIOR",
+        "file": "hero.png"
+      },
+      {
+        "id": "entrance_porch",
+        "category": "DETAIL",
+        "file": "entrance_porch.png"
+      },
+      {
+        "id": "roof_chimney",
+        "category": "DETAIL",
+        "file": "roof_chimney.png"
+      },
+      {
+        "id": "living_hall",
+        "category": "INTERIOR",
+        "file": "living_hall.png"
+      },
+      {
+        "id": "circulation_staircase",
+        "category": "INTERIOR",
+        "file": "circulation_staircase.png"
+      },
+      {
+        "id": "blacksmith_workshop",
+        "category": "INTERIOR",
+        "file": "blacksmith_workshop.png"
+      },
+      {
+        "id": "storage_pantry",
+        "category": "INTERIOR",
+        "file": "storage_pantry.png"
+      }
+    ]
   },
-  "auditTimestamp": "2026-09-06T08:06:51.067793Z",
+  "semanticClaimsVerification": {
+    "workshopEquipmentCluster": {
+      "status": "VERIFIED IN MINECRAFT",
+      "items": [
+        "blast_furnace",
+        "anvil",
+        "grindstone",
+        "cauldron",
+        "smithing_table"
+      ],
+      "evidenceShot": "assets/images/iteration-final-real/blacksmith_workshop.png"
+    },
+    "storagePantry": {
+      "status": "VERIFIED IN MINECRAFT",
+      "items": [
+        "barrels",
+        "chest",
+        "shelving"
+      ],
+      "evidenceShot": "assets/images/iteration-final-real/storage_pantry.png"
+    },
+    "livingHall": {
+      "status": "VERIFIED IN MINECRAFT",
+      "items": [
+        "dining_table",
+        "chairs",
+        "fireplace_smoker",
+        "bookshelf"
+      ],
+      "evidenceShot": "assets/images/iteration-final-real/living_hall.png"
+    },
+    "grandEntranceHierarchy": {
+      "status": "VERIFIED IN MINECRAFT",
+      "features": [
+        "timber porch canopy",
+        "hanging lantern",
+        "dark oak door",
+        "cobblestone foundation plinth"
+      ],
+      "evidenceShot": "assets/images/iteration-final-real/entrance_porch.png"
+    },
+    "pairedResidentialWindowBays": {
+      "status": "VERIFIED IN MINECRAFT",
+      "features": [
+        "paired 2x2 window bays on South & North ground & upper floors"
+      ],
+      "evidenceShot": "assets/images/iteration-final-real/hero.png"
+    },
+    "asymmetricalMassing": {
+      "status": "VERIFIED IN MINECRAFT",
+      "features": [
+        "2-story gable living hall + attached 1.5-story workshop wing + stone forge chimney"
+      ],
+      "evidenceShot": "assets/images/iteration-final-real/opposite_three_quarter.png"
+    }
+  },
+  "auditTimestamp": "2026-09-06T09:56:25.885361Z",
   "userPrompt": "Large rustic medieval blacksmith residence with attached workshop, two floors, asymmetrical silhouette, stone forge chimney, rich timber framing, believable room partitions, workshop equipment area, storage area, bedroom, strong entrance hierarchy and non-repetitive facade.",
   "structure": {
     "id": "ai-proposal-house-seed501-iter1",
@@ -35,7 +181,7 @@
       "y": 16,
       "z": 19
     },
-    "totalBlocks": 1810,
+    "totalBlocks": 1822,
     "worldOrigin": {
       "x": 450,
       "y": -60,
@@ -68,20 +214,6 @@
       "removedFeatures": [],
       "summary": "Semantic architecture refined across 5 additions and 1 modifications: functional room zoning with storage pantry, full blacksmith workshop equipment cluster, grand entrance hierarchy, and paired window bays with forge ventilation slits."
     }
-  },
-  "realMinecraftReadback": {
-    "structureId": "ai-proposal-house-seed501-iter1",
-    "origin": "(450, -60, 200)",
-    "expected": 1810,
-    "correct": 1810,
-    "missing": 0,
-    "incorrect": 0,
-    "extra": 0,
-    "accuracy": "100.000%",
-    "specHash": "fe1f593423c788d8d61a339c3fba8176641e257030ade31a185fea51c85dc96d",
-    "blockPlanHash": "b7eeac05c7575759bfe6b2ff23243bf1a32c8a6ba37f6d1f99ba602bef3368d9",
-    "blueprintHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-    "verified": true
   },
   "finalQualityReport": {
     "checks": [
@@ -242,7 +374,7 @@
   "frozenRegressions": {
     "gate87b": "PASS",
     "gate87a": "PASS",
-    "gate86c": "PASS (LiveReplay=4a9c4df6c05a6974... DryRun=c32d95c1cf8104df...)",
+    "gate86c": "PASS",
     "gate86d": "PASS",
     "gate86e": "PASS"
   }
