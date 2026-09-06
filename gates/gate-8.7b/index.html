@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doom Builder QA Review — Gate 8.7B Procedural Architecture Grammar</title>
+  <style>
+    :root {
+      --bg-base: #0a0e17;
+      --bg-surface: #111827;
+      --bg-card: #162032;
+      --bg-card-hover: #1e2c45;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(56, 189, 248, 0.3);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-faint: #64748b;
+      --accent-cyan: #38bdf8;
+      --accent-blue: #60a5fa;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-rose: #f43f5e;
+      --accent-purple: #a855f7;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header & Navigation */
+    header.top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(17, 24, 39, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+    }
+    .brand .logo-badge {
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+      color: #000;
+      font-weight: 800;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+    }
+    nav.nav-links {
+      display: flex;
+      gap: 1.25rem;
+      font-size: 0.875rem;
+    }
+    nav.nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    nav.nav-links a:hover { color: var(--accent-cyan); }
+    .status-pill {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .pill-hold {
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--accent-amber);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    .pill-pass {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--accent-emerald);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .pill-frozen {
+      background: rgba(148, 163, 184, 0.15);
+      color: var(--text-muted);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+    }
+
+    /* Main Container */
+    main.content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+    }
+
+    /* Hero Banner */
+    .hero {
+      background: linear-gradient(180deg, var(--bg-surface) 0%, rgba(17, 24, 39, 0.4) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem;
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 400px;
+      height: 100%;
+      background: radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .hero h1 {
+      font-size: 2.25rem;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      max-width: 900px;
+    }
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 850px;
+      margin-bottom: 2rem;
+    }
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .metric-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+    }
+    .metric-card .label {
+      font-size: 0.75rem;
+      color: var(--text-faint);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+    .metric-card .value {
+      font-size: 1.25rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Section Titles */
+    section { margin-bottom: 4rem; }
+    .section-header {
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .section-header h2 {
+      font-size: 1.6rem;
+      letter-spacing: -0.02em;
+    }
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-top: 0.25rem;
+    }
+
+    /* Structure Review Card */
+    .structure-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+    .structure-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .structure-title h3 {
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .structure-title .sub {
+      color: var(--text-faint);
+      font-size: 0.9rem;
+      font-family: var(--font-mono);
+      margin-top: 0.2rem;
+    }
+    .meta-badges {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .badge {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+    }
+    .badge strong { color: var(--text-main); font-weight: 600; }
+
+    /* Contact Sheet Preview */
+    .contact-sheet-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      cursor: pointer;
+      position: relative;
+    }
+    .contact-sheet-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.2s ease;
+    }
+    .contact-sheet-box:hover img {
+      transform: scale(1.008);
+    }
+    .contact-sheet-overlay {
+      position: absolute;
+      bottom: 0.75rem;
+      right: 0.75rem;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(6px);
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      color: var(--accent-cyan);
+      font-weight: 600;
+      border: 1px solid var(--border);
+      pointer-events: none;
+    }
+
+    /* Thumbnail Gallery */
+    .shot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .shot-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+    .shot-item:hover {
+      transform: translateY(-3px);
+      border-color: var(--border-accent);
+    }
+    .shot-item img {
+      width: 100%;
+      height: 155px;
+      object-fit: cover;
+      display: block;
+    }
+    .shot-info {
+      padding: 0.65rem 0.85rem;
+    }
+    .shot-info .shot-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+    .shot-info .shot-sub {
+      font-size: 0.75rem;
+      color: var(--text-faint);
+    }
+
+    /* Architectural Notes Box */
+    .review-notes {
+      background: rgba(10, 14, 23, 0.6);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      margin-top: 1rem;
+    }
+    .review-notes h4 {
+      font-size: 0.95rem;
+      color: var(--accent-cyan);
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .review-notes ul {
+      list-style: none;
+      display: grid;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+    }
+    .review-notes li {
+      display: flex;
+      gap: 0.6rem;
+      color: var(--text-muted);
+    }
+    .review-notes li strong {
+      color: var(--text-main);
+      min-width: 140px;
+    }
+    .alert-box {
+      margin-top: 0.75rem;
+      background: rgba(245, 158, 11, 0.08);
+      border-left: 3px solid var(--accent-amber);
+      padding: 0.75rem 1rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.85rem;
+      color: #fde68a;
+    }
+
+    /* Status Table */
+    .table-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.875rem;
+    }
+    th {
+      background: var(--bg-card);
+      color: var(--text-faint);
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: rgba(255, 255, 255, 0.02); }
+    td strong { color: var(--text-main); }
+
+    /* Video Section */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 1.5rem;
+    }
+    .video-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .video-wrapper {
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-height: 380px;
+    }
+    .video-wrapper video {
+      max-width: 100%;
+      max-height: 380px;
+      display: block;
+    }
+    .video-meta {
+      padding: 1.25rem;
+    }
+    .video-meta h4 {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .video-meta p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin-bottom: 0.75rem;
+    }
+
+    /* QA Cards */
+    .qa-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+    }
+    .qa-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: border-color 0.15s ease;
+    }
+    .qa-card:hover { border-color: var(--border-accent); }
+    .qa-card .title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+    .qa-card .desc {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+    .qa-card a.link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-weight: 500;
+    }
+    .qa-card a.link-btn:hover { text-decoration: underline; }
+
+    /* Modal / Lightbox */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(10px);
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .modal.open { display: flex; }
+    .modal-content {
+      position: relative;
+      max-width: 95vw;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .modal-img {
+      max-width: 100%;
+      max-height: 82vh;
+      border-radius: var(--radius-md);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      border: 1px solid var(--border);
+    }
+    .modal-caption {
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      font-weight: 500;
+      text-align: center;
+    }
+    .modal-close {
+      position: absolute;
+      top: -2.5rem;
+      right: 0;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      color: var(--text-faint);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 1.75rem; }
+      nav.nav-links { display: none; }
+      .structure-card { padding: 1.25rem; }
+      .review-notes li { flex-direction: column; gap: 0.1rem; }
+      .video-grid { grid-template-columns: 1fr; }
+    }
+  
+    .breadcrumb {
+      display: flex;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-faint);
+      margin-bottom: 1.25rem;
+      align-items: center;
+    }
+    .breadcrumb a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+    }
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+    .sub-nav {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      padding: 0.75rem 1rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+    }
+    .sub-nav span {
+      color: var(--text-faint);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+    .sub-nav a {
+      color: var(--accent-cyan);
+      text-decoration: none;
+      padding: 0.2rem 0.5rem;
+      border-radius: var(--radius-sm);
+      background: rgba(56, 189, 248, 0.06);
+      transition: all 0.15s ease;
+    }
+    .sub-nav a:hover {
+      background: rgba(56, 189, 248, 0.18);
+    }
+    .page-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.2rem;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 0.875rem;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--accent-cyan);
+      color: #000;
+    }
+    .btn-primary:hover { background: #7dd3fc; }
+    .btn-outline {
+      background: var(--bg-card);
+      color: var(--text-main);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--accent-cyan);
+    }
+
+</style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  
+    <header class="top-nav">
+    <a class="brand" href="../../index.html">
+      <span class="logo-badge">Doom Builder</span>
+      <span>QA Reports Mirror</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../../index.html">QA Portal Home</a>
+      <a href="index.html" class="active">Gate 8.7B Grammar (Active)</a>
+      <a href="report.md">report.md</a>
+      <a href="qa-report.json">qa-report.json</a>
+      <a href="https://reports.wptopd3v.com/mine/gates/gate-8.7b/index.html" target="_blank">Canonical Host &nearr;</a>
+    </nav>
+    <div>
+      <span class="status-pill pill-hold">Gate 8.7B: HOLD</span>
+    </div>
+  </header>
+  
+
+  
+  <main class="content">
+
+    <!-- GitHub Pages Mirror Header Notice -->
+    <div style="background: rgba(56, 189, 248, 0.08); border: 1px solid var(--border-accent); border-radius: var(--radius-md); padding: 0.85rem 1.25rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; font-size: 0.85rem;">
+      <div>
+        <span style="color: var(--accent-cyan); font-weight: 700;">🌐 GitHub Pages QA Review Mirror</span>
+        <span style="color: var(--text-muted); margin-left: 0.5rem;">Dedicated public review copy for AI & human architecture review.</span>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <a href="report.md" style="color: var(--accent-cyan); text-decoration: none; font-weight: 600;">📄 View report.md &rarr;</a>
+        <a href="qa-report.json" style="color: var(--accent-cyan); text-decoration: none; font-weight: 600;">📋 View qa-report.json &rarr;</a>
+      </div>
+    </div>
+
+    <div class="breadcrumb">
+      <a href="../../index.html">QA Portal</a> &gt; <span>Gate 8.7B</span>
+    </div>
+    <div class="sub-nav">
+      <span>Quick Jumps:</span>
+      <a href="#status">Project Status</a>
+      <a href="#house">House (Approved)</a>
+      <a href="#tower">Tower (Needs Review)</a>
+      <a href="#bridge">Bridge (Needs Review)</a>
+      <a href="#videos">Video Previews</a>
+      <a href="#qa-evidence">QA Evidence</a>
+    </div>
+
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-badge">Gate 8.7B Visual-Proof Remediation</div>
+      <h1>Procedural Architecture Grammar: Standalone Visual Validation</h1>
+      <p>
+        Real-Minecraft visual proof render for seed-generated structures across 3 architectural families. Rendered using scoped chunk replays for 100% visual isolation with zero background contamination.
+      </p>
+      <div class="hero-metrics">
+        <div class="metric-card">
+          <div class="label">Overall Gate 8.7B</div>
+          <div class="value" style="color: var(--accent-amber)">HOLD (Pending)</div>
+        </div>
+        <div class="metric-card">
+          <div class="label">House Review</div>
+          <div class="value" style="color: var(--accent-emerald)">VISUAL PASS</div>
+        </div>
+        <div class="metric-card">
+          <div class="label">Tower Review</div>
+          <div class="value" style="color: var(--accent-amber)">NEEDS REVIEW</div>
+        </div>
+        <div class="metric-card">
+          <div class="label">Bridge Review</div>
+          <div class="value" style="color: var(--accent-amber)">NEEDS REVIEW</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 1: Project Status Matrix -->
+    <section id="status">
+      <div class="section-header">
+        <div>
+          <h2>1. Project Status Matrix</h2>
+          <p>State verification across all pipeline gates up to Gate 8.7B.</p>
+        </div>
+      </div>
+
+      <div class="table-box">
+        <table>
+          <thead>
+            <tr>
+              <th>Gate</th>
+              <th>Component & Scope</th>
+              <th>Readback & Verification</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Phase 0–3</strong></td>
+              <td>Architecture, Doctor, .schem parser, planner</td>
+              <td>Deterministic block states, flood-fill bursts</td>
+              <td><span class="status-pill pill-frozen">FROZEN / PASS</span></td>
+            </tr>
+            <tr>
+              <td><strong>Gate 4A–4C</strong></td>
+              <td>Real Minecraft Builder & World Readback</td>
+              <td>fixture_006 931/931 blocks (100.000% exact readback)</td>
+              <td><span class="status-pill pill-frozen">FROZEN / PASS</span></td>
+            </tr>
+            <tr>
+              <td><strong>Gate 6–8.5</strong></td>
+              <td>ServerReplay capture, dynamic camera, 360p video export</td>
+              <td>Lossless replays, safe-frame occupancy, 10s hold diagnostics</td>
+              <td><span class="status-pill pill-frozen">FROZEN / PASS</span></td>
+            </tr>
+            <tr>
+              <td><strong>Gate 8.6A–8.6B</strong></td>
+              <td>Structure Analyzer & Detailed Interior Semantics</td>
+              <td>fixture_009_furnished coverage, zero fake interiors</td>
+              <td><span class="status-pill pill-frozen">FROZEN / PASS</span></td>
+            </tr>
+            <tr>
+              <td><strong>Gate 8.6C</strong></td>
+              <td>Dynamic Collision-Safe Camera</td>
+              <td>0 voxel collisions, 10x hash stability, adaptive height</td>
+              <td><span class="status-pill pill-frozen">FROZEN / PASS</span></td>
+            </tr>
+            <tr>
+              <td><strong>Gate 8.6D</strong></td>
+              <td>Procedural Environment & Ambient Life</td>
+              <td>Protected envelope (0 inside), approach paths, ambient mobs</td>
+              <td><span class="status-pill pill-frozen">FROZEN / PASS</span></td>
+            </tr>
+            <tr>
+              <td><strong>Gate 8.6E</strong></td>
+              <td>Master Build Timeline & Dual Output Profiles</td>
+              <td>SHORT_CINEMATIC (9:16, 59.8s) & LONG_CINEMATIC (16:9, 11m 33s)</td>
+              <td><span class="status-pill pill-frozen">FROZEN / PASS</span></td>
+            </tr>
+            <tr>
+              <td><strong>Gate 8.7A</strong></td>
+              <td>Schematic Factory Core (BuildSpec -> .schem compiler)</td>
+              <td>100.000% exact readback (181/181), zero schematic copying</td>
+              <td><span class="status-pill pill-frozen">FROZEN / PASS</span></td>
+            </tr>
+            <tr>
+              <td><strong>Gate 8.7B (Tech)</strong></td>
+              <td>Procedural Architecture Grammar Automated QA</td>
+              <td>10/10 PASS: 7 structures, 11 heuristics 100%, 2010 blk house</td>
+              <td><span class="status-pill pill-pass">PASS</span></td>
+            </tr>
+            <tr>
+              <td><strong>Gate 8.7B (Visual)</strong></td>
+              <td>Real-Minecraft Visual-Proof Remediation</td>
+              <td>House: VISUAL PASS. Tower & Bridge: Awaiting user review.</td>
+              <td><span class="status-pill pill-hold">HOLD (REVIEW)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Gate 8.7C</strong></td>
+              <td>AI Architect / LLM Procedural Guidance</td>
+              <td>Do NOT start until Tower & Bridge review approved</td>
+              <td><span class="status-pill pill-frozen">NOT STARTED</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 2: Gate 8.7B Visual Review -->
+    <section id="visual-review">
+      <div class="section-header">
+        <div>
+          <h2>2. Gate 8.7B Real-Minecraft Visual Proofs</h2>
+          <p>Click any thumbnail or contact sheet to view high-resolution 1280×720 screenshots.</p>
+        </div>
+      </div>
+
+      <!-- House Card -->
+      <div class="structure-card" id="house">
+        <div class="structure-top">
+          <div class="structure-title">
+            <h3>
+              Large Medieval House
+              <span class="status-pill pill-pass">APPROVED (VISUAL PASS)</span>
+            </h3>
+            <div class="sub">house-large-seed103 · Origin: (150, -60, 200)</div>
+          </div>
+          <div class="meta-badges">
+            <span class="badge">Blocks: <strong>2,010</strong></span>
+            <span class="badge">Size: <strong>19×16×19</strong></span>
+            <span class="badge">Family: <strong>House</strong></span>
+            <span class="badge">Style: <strong>Rustic-Medieval</strong></span>
+            <span class="badge">Readback: <strong>2,010/2,010 (100.000%)</strong></span>
+          </div>
+        </div>
+
+        <!-- Contact Sheet -->
+        <div class="contact-sheet-box" onclick="openModal('assets/images/house/contact_sheet.png', 'House: 8-Angle Contact Sheet (2560px)')">
+          <img src="assets/images/house/contact_sheet.png" alt="House Contact Sheet" loading="lazy">
+          <div class="contact-sheet-overlay">🔍 Click to Expand Contact Sheet</div>
+        </div>
+
+        <!-- 8 Individual Thumbnails -->
+        <div class="shot-grid">
+          <div class="shot-item" onclick="openModal('assets/images/house/front_three_quarter.png', 'House: Front 3/4 View')">
+            <img src="assets/images/house/front_three_quarter.png" alt="Front 3/4" loading="lazy">
+            <div class="shot-info">
+              <div class="shot-label">1. Front 3/4</div>
+              <div class="shot-sub">Porch, foundation & roofline</div>
+            </div>
+          </div>
+          <div class="shot-item" onclick="openModal('assets/images/house/opposite_three_quarter.png', 'House: Opposite 3/4 View')">
+            <img src="assets/images/house/opposite_three_quarter.png" alt="Opposite 3/4" loading="lazy">
+            <div class="shot-info">
+              <div class="shot-label">2. Opposite 3/4</div>
+              <div class="shot-sub">Chimney side & rear bays</div>
+            </div>
+          </div>
+          <div class="shot-item" onclick="openModal('assets/images/house/side.png', 'House: Side Elevation')">
+            <img src="assets/images/house/side.png" alt="Side Elevation" loading="lazy">
+            <div class="shot-info">
+              <div class="shot-label">3. Side Elevation</div>
+              <div class="shot-sub">Vertical framing posts & chimney</div>
+            </div>
+          </div>
+          <div class="shot-item" onclick="openModal('assets/images/house/elevated_isometric.png', 'House: Elevated Isometric')">
+            <img src="assets/images/house/elevated_isometric.png" alt="Elevated Isometric" loading="lazy">
+            <div class="shot-info">
+              <div class="shot-label">4. Elevated Isometric</div>
+              <div class="shot-sub">Roof geometry & eaves overhang</div>
+            </div>
+          </div>
+          <div class="shot-item" onclick="openModal('assets/images/house/hero.png', 'House: Hero Shot')">
+            <img src="assets/images/house/hero.png" alt="Hero Shot" loading="lazy">
+            <div class="shot-info">
+              <div class="shot-label">5. Hero Shot</div>
+              <div class="shot-sub">Low-angle front entrance</div>
+            </div>
+          </div>
+          <div class="shot-item" onclick="openModal('assets/images/house/entrance_facade_detail.png', 'House: Entrance Facade Detail')">
+            <img src="assets/images/house/entrance_facade_detail.png" alt="Entrance Facade" loading="lazy">
+            <div class="shot-info">
+              <div class="shot-label">6. Entrance Detail</div>
+              <div class="shot-sub">Dark oak door, canopy & lantern</div>
+            </div>
+          </div>
+          <div class="shot-item" onclick="openModal('assets/images/house/interior_ground_floor.png', 'House: Ground-Floor Interior')">
+            <img src="assets/images/house/interior_ground_floor.png" alt="Ground Floor" loading="lazy">
+            <div class="shot-info">
+              <div class="shot-label">7. Ground Floor Interior</div>
+              <div class="shot-sub">Table, lantern & open floor</div>
+            </div>
+          </div>
+          <div class="shot-item" onclick="openModal('assets/images/house/interior_circulation_detail.png', 'House: Circulation / Staircase Detail')">
+            <img src="assets/images/house/interior_circulation_detail.png" alt="Circulation" loading="lazy">
+            <div class="shot-info">
+              <div class="shot-label">8. Circulation / Stairs</div>
+              <div class="shot-sub">Dark oak staircase ascending</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-notes">
+          <h4>Architectural Quality Review</h4>
+          <ul>
+            <li><strong>Silhouette:</strong> 2-story rectangular volume ($19 	imes 16 	imes 19$) with pitched dark oak gable roof and 1-block overhang.</li>
+            <li><strong>Facade Depth:</strong> Stepped cobblestone base (+1 block), vertical log pilasters framing bays, recessed spruce planking, entrance canopy.</li>
+            <li><strong>Material Harmony:</strong> Cobblestone foundation, spruce timber framing, spruce plank walling, dark oak roof.</li>
+            <li><strong>Structural Detail:</strong> Ground-level foundation band, story-division horizontal ring beams, corner and mid-span log pilasters.</li>
+            <li><strong>Procedural Look:</strong> Moderately procedural due to uniform 3-block window rhythm.</li>
+          </ul>
+          <div class="alert-box">
+            <strong>Interior Assessment (Transparent):</strong> The ground floor interior ($17 	imes 17$ clearance) is <em>mostly empty</em>. It contains a single central $1 	imes 1$ table under a hanging lantern and a crafting table/bookshelf corner. There are no room partitions or detailed domestic furniture. An exposed dark oak staircase climbs to the sparse second floor.
+          </div>
+        </div>
+      </div>
+
+      <!-- Tower Card -->
+      <div class="structure-card" id="tower">
+        <div class="structure-top">
+          <div class="structure-title">
+            <h3>
+              Fortified Tower Keep
+              <span class="status-pill pill-hold">PENDING DIRECT REVIEW</span>
+            </h3>
+            <div class="sub">tower-keep-seed202 · Origin: (250, -60, 250)</div>
+          </div>
+          <div class="meta-badges">
+            <span class="badge">Blocks: <strong>1,326</strong></span>
+            <span class="badge">Size: <strong>11×24×11</strong></span>
+            <span class="badge">Family: <strong>Tower</strong></span>
+            <span class="badge">Style: <strong>Rustic-Medieval / Fortified</strong></span>
+            <span class="badge">Readback: <strong>1,326/1,326 (100.000%)</strong></span>
+          </div>
+        </div>
+
+        <!-- Contact Sheet -->
+        <div class="contact-sheet-box" onclick="openModal('assets/images/tower/contact_sheet.png', 'Tower: 5-Angle Contact Sheet (2560px)')">
+          <img src="assets/images/tower/contact_sheet.png" alt="Tower Contact Sheet" loading="lazy">
+          <div class="contact-sheet-overlay">🔍 Click to Expand Contact Sheet</div>
+        </div>
+
+        <!-- 5 Individual Thumbnails -->
+        <div class="shot-grid">
+          <div class="shot-item" onclick="openModal('assets/images/tower/front_three_quarter.png', 'Tower: Front 3/4 View')">
+            <img src="assets/images/tower/front_three_quarter.png" alt="Front 3/4" loading="lazy">
+            <div class="shot-info">
+              <div class="shot-label">1. Front 3/4</div>
+              <div class="shot-sub">Buttresses, shaft & battlements</div>
+            </div>
+          </div>
+          <div class="shot-item" onclick="openModal('assets/images/tower/opposite_three_quarter.png', 'Tower: Opposite 3/4 View')">
+            <img src="assets/images/tower/opposite_three_quarter.png" alt="Opposite 3/4" loading="lazy">
+            <div class="shot-info">
+              <div class="shot-label">2. Opposite 3/4</div>
+              <div class="shot-sub">Arrow slit rhythm & corner columns</div>
+            </div>
+          </div>
+          <div class="shot-item" onclick="openModal('assets/images/tower/side.png', 'Tower: Side Elevation')">
+            <img src="assets/images/tower/side.png" alt="Side Elevation" loading="lazy">
+            <div class="shot-info">
+              <div class="shot-label">3. Side Elevation</div>
+              <div class="shot-sub">Vertical proportions (2.2:1 aspect)</div>
+            </div>
+          </div>
+          <div class="shot-item" onclick="openModal('assets/images/tower/elevated_isometric.png', 'Tower: Elevated Isometric')">
+            <img src="assets/images/tower/elevated_isometric.png" alt="Elevated Isometric" loading="lazy">
+            <div class="shot-info">
+              <div class="shot-label">4. Elevated Isometric</div>
+              <div class="shot-sub">Crenellated fighting platform</div>
+            </div>
+          </div>
+          <div class="shot-item" onclick="openModal('assets/images/tower/hero.png', 'Tower: Hero Shot')">
+            <img src="assets/images/tower/hero.png" alt="Hero Shot" loading="lazy">
+            <div class="shot-info">
+              <div class="shot-label">5. Hero Shot</div>
+              <div class="shot-sub">Low-angle dramatic perspective</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-notes">
+          <h4>Architectural Quality Review</h4>
+          <ul>
+            <li><strong>Silhouette:</strong> Distinct vertical profile ($11 	imes 24 	imes 11$, 2.2:1 aspect ratio) with flared base buttresses and corbelled crown.</li>
+            <li><strong>Facade Depth:</strong> Corner buttresses at ground level, narrow $1 	imes 2$ arrow slits, and 1-block outward corbelling under the battlements.</li>
+            <li><strong>Material Harmony:</strong> Heavy cobblestone base, stone brick / timber infill, topped with dark oak stair merlons.</li>
+            <li><strong>Roof / Top Quality:</strong> Open crenellated fighting deck with stair merlons and embrasures against the sky.</li>
+            <li><strong>Procedural Look:</strong> Low-to-moderate. Defensive keeps naturally follow symmetry; arrow slit heights are programmatically uniform on all faces.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bridge Card -->
+      <div class="structure-card" id="bridge">
+        <div class="structure-top">
+          <div class="structure-title">
+            <h3>
+              Viaduct Bridge
+              <span class="status-pill pill-hold">PENDING DIRECT REVIEW</span>
+            </h3>
+            <div class="sub">bridge-viaduct-seed302 · Origin: (350, -60, 200)</div>
+          </div>
+          <div class="meta-badges">
+            <span class="badge">Blocks: <strong>1,010</strong></span>
+            <span class="badge">Size: <strong>9×10×27</strong></span>
+            <span class="family">Family: <strong>Bridge</strong></span>
+            <span class="badge">Style: <strong>Stone-Fortified</strong></span>
+            <span class="badge">Readback: <strong>1,010/1,010 (100.000%)</strong></span>
+          </div>
+        </div>
+
+        <!-- Contact Sheet -->
+        <div class="contact-sheet-box" onclick="openModal('assets/images/bridge/contact_sheet.png', 'Bridge: 5-Angle Contact Sheet (2560px)')">
+          <img src="assets/images/bridge/contact_sheet.png" alt="Bridge Contact Sheet" loading="lazy">
+          <div class="contact-sheet-overlay">🔍 Click to Expand Contact Sheet</div>
+        </div>
+
+        <!-- 5 Individual Thumbnails -->
+        <div class="shot-grid">
+          <div class="shot-item" onclick="openModal('assets/images/bridge/approach_view.png', 'Bridge: Approach View')">
+            <img src="assets/images/bridge/approach_view.png" alt="Approach View" loading="lazy">
+            <div class="shot-info">
+              <div class="shot-label">1. Approach View</div>
+              <div class="shot-sub">Roadway deck perspective & torch pillars</div>
+            </div>
+          </div>
+          <div class="shot-item" onclick="openModal('assets/images/bridge/side_elevation.png', 'Bridge: Side Elevation')">
+            <img src="assets/images/bridge/side_elevation.png" alt="Side Elevation" loading="lazy">
+            <div class="shot-info">
+              <div class="shot-label">2. Side Elevation</div>
+              <div class="shot-sub">3 segmental arches & central piers</div>
+            </div>
+          </div>
+          <div class="shot-item" onclick="openModal('assets/images/bridge/underside_arch_support.png', 'Bridge: Underside Arch Support View')">
+            <img src="assets/images/bridge/underside_arch_support.png" alt="Underside Arch Support" loading="lazy">
+            <div class="shot-info">
+              <div class="shot-label">3. Underside / Support</div>
+              <div class="shot-sub">Inverted deepslate stairs & vaulting</div>
+            </div>
+          </div>
+          <div class="shot-item" onclick="openModal('assets/images/bridge/elevated_isometric.png', 'Bridge: Elevated Isometric')">
+            <img src="assets/images/bridge/elevated_isometric.png" alt="Elevated Isometric" loading="lazy">
+            <div class="shot-info">
+              <div class="shot-label">4. Elevated Isometric</div>
+              <div class="shot-sub">Full viaduct span & roadway surface</div>
+            </div>
+          </div>
+          <div class="shot-item" onclick="openModal('assets/images/bridge/hero.png', 'Bridge: Hero Shot')">
+            <img src="assets/images/bridge/hero.png" alt="Hero Shot" loading="lazy">
+            <div class="shot-info">
+              <div class="shot-label">5. Hero Shot</div>
+              <div class="shot-sub">Low-angle pier perspective</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-notes">
+          <h4>Architectural Quality Review</h4>
+          <ul>
+            <li><strong>Silhouette:</strong> Elongated horizontal engineering profile ($9 	imes 10 	imes 27$) with 3 repeating segmental arches and sturdy central piers.</li>
+            <li><strong>Approach Experience:</strong> 7-block wide stone-slab roadway flanked by iron bar safety balustrades and torch-topped stone pillars every 5 blocks.</li>
+            <li><strong>Underside Vaulting:</strong> Inverted deepslate brick stairs form dark, textured ribs supporting the stone brick roadway above.</li>
+            <li><strong>Material Harmony:</strong> High-contrast combination of deepslate arch ribs and smooth stone brick masonry.</li>
+            <li><strong>Procedural Look:</strong> Least procedural of the three; modularity mirrors real-world civil engineering.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Video Previews -->
+    <section id="videos">
+      <div class="section-header">
+        <div>
+          <h2>3. Video Previews</h2>
+          <p>Production previews generated from Gate 8.6E Master Build Timeline.</p>
+        </div>
+      </div>
+
+      <div class="video-grid">
+        <div class="video-card">
+          <div class="video-wrapper">
+            <video controls preload="metadata">
+              <source src="assets/videos/short-preview.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+          <div class="video-meta">
+            <h4>
+              <span>SHORT_CINEMATIC</span>
+              <span class="badge">Gate 8.6E</span>
+            </h4>
+            <p>9:16 Portrait format (Shorts / Reels / TikTok). Paced dynamic timelapse capturing foundation, framing, roofing, and hero orbit.</p>
+            <div class="meta-badges">
+              <span class="badge">360×640</span>
+              <span class="badge">30 fps</span>
+              <span class="badge">59.77s</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-wrapper">
+            <video controls preload="metadata">
+              <source src="assets/videos/long-preview.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+          <div class="video-meta">
+            <h4>
+              <span>LONG_CINEMATIC</span>
+              <span class="badge">Gate 8.6E</span>
+            </h4>
+            <p>16:9 Landscape format (YouTube). 6-milestone proof demonstrating dynamic camera orbits, environment dressing, and building progression.</p>
+            <div class="meta-badges">
+              <span class="badge">640×360</span>
+              <span class="badge">30 fps</span>
+              <span class="badge">61.27s</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: QA Evidence & Artifacts -->
+    <section id="qa-evidence">
+      <div class="section-header">
+        <div>
+          <h2>4. QA Evidence Artifacts</h2>
+          <p>Direct relative links to machine-readable reports and specifications.</p>
+        </div>
+      </div>
+
+      <div class="qa-grid">
+        <div class="qa-card">
+          <div class="title">Gate 8.7B Master QA Report</div>
+          <div class="desc">10/10 automated checks PASS: schema validation, 10x determinism, quality heuristics, scale target, readback.</div>
+          <a class="link-btn" href="assets/qa/gate_8.7b_report.json" target="_blank">📄 gate_8.7b_report.json ↗</a>
+        </div>
+        <div class="qa-card">
+          <div class="title">House Quality & Readback</div>
+          <div class="desc">11/11 heuristics (100% score), exact AABB scan: 2,010 expected, 2,010 correct, 0 missing, 0 extra.</div>
+          <a class="link-btn" href="assets/qa/house-quality-report.json" target="_blank">📄 house-quality-report.json ↗</a>
+        </div>
+        <div class="qa-card">
+          <div class="title">Tower Quality Report</div>
+          <div class="desc">1,326 blocks, fortified vertical keep, 11/11 heuristics passed, 100.000% readback verified.</div>
+          <a class="link-btn" href="assets/qa/tower-quality-report.json" target="_blank">📄 tower-quality-report.json ↗</a>
+        </div>
+        <div class="qa-card">
+          <div class="title">Bridge Quality Report</div>
+          <div class="desc">1,010 blocks, 3 segmental arches, 11/11 heuristics passed, 100.000% readback verified.</div>
+          <a class="link-btn" href="assets/qa/bridge-quality-report.json" target="_blank">📄 bridge-quality-report.json ↗</a>
+        </div>
+        <div class="qa-card">
+          <div class="title">Schematic Factory Acceptance</div>
+          <div class="desc">Gate 8.7A core contract verification: BuildSpec -> Canonical BlockPlan -> Sponge v2 .schem -> 100% roundtrip.</div>
+          <a class="link-btn" href="assets/qa/schematic-factory-report.json" target="_blank">📄 schematic-factory-report.json ↗</a>
+        </div>
+        <div class="qa-card">
+          <div class="title">Output Profiles Report</div>
+          <div class="desc">Gate 8.6E dual delivery packaging: Master Build Timeline with short (9:16) and long (16:9) formats.</div>
+          <a class="link-btn" href="assets/qa/output-profiles-report.json" target="_blank">📄 output-profiles-report.json ↗</a>
+        </div>
+      </div>
+    </section>
+
+  
+        <div class="page-nav">
+      <a class="btn btn-primary" href="../../index.html">&larr; Return to QA Portal Home</a>
+      <a class="btn btn-outline" href="https://reports.wptopd3v.com/mine/gates/gate-8.7b/index.html" target="_blank">View on Canonical SFTP Host &nearr;</a>
+    </div>
+  </main>
+
+
+  <!-- Lightbox Modal -->
+  <div id="imageModal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <img id="modalImg" class="modal-img" src="" alt="Full Resolution Image">
+      <div id="modalCaption" class="modal-caption"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Doom Builder QA Review Report · Gate 8.7B Procedural Architecture Grammar</p>
+    <p style="margin-top: 0.25rem;">Generated with relative portable paths · Ready for SFTP sync · Zero external runtime dependencies</p>
+  </footer>
+
+  <script>
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalCaption = document.getElementById('modalCaption');
+
+    function openModal(src, caption) {
+      modalImg.src = src;
+      modalCaption.textContent = caption;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+      modalImg.src = '';
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+</body>
+</html>

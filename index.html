@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doom Builder QA Review Reports | GitHub Pages Mirror</title>
+  <style>
+    :root {
+      --bg-base: #0a0e17;
+      --bg-surface: #111827;
+      --bg-card: #162032;
+      --bg-card-hover: #1e2c45;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(56, 189, 248, 0.3);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-faint: #64748b;
+      --accent-cyan: #38bdf8;
+      --accent-blue: #60a5fa;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-purple: #a855f7;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    header.top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(17, 24, 39, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+    .brand .logo-badge {
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+      color: #000;
+      font-weight: 800;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+    }
+    nav.nav-links {
+      display: flex;
+      gap: 0.85rem;
+      font-size: 0.85rem;
+    }
+    nav.nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      border-radius: var(--radius-sm);
+      transition: all 0.15s ease;
+    }
+    nav.nav-links a:hover, nav.nav-links a.active {
+      color: var(--accent-cyan);
+      background: rgba(56, 189, 248, 0.08);
+    }
+    .status-pill {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .pill-hold {
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--accent-amber);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    .pill-pass {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--accent-emerald);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .pill-frozen {
+      background: rgba(148, 163, 184, 0.15);
+      color: var(--text-muted);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+    }
+    main.content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+    .hero {
+      background: linear-gradient(180deg, var(--bg-surface) 0%, rgba(17, 24, 39, 0.4) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2.5rem;
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      margin-bottom: 0.85rem;
+      letter-spacing: -0.03em;
+    }
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 850px;
+      margin-bottom: 2rem;
+    }
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .metric-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+    }
+    .metric-card .label {
+      font-size: 0.75rem;
+      color: var(--text-faint);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+    .metric-card .value {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    section { margin-bottom: 3.5rem; }
+    .section-header {
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+    .section-header h2 { font-size: 1.5rem; letter-spacing: -0.02em; }
+    .section-header p { color: var(--text-muted); font-size: 0.95rem; margin-top: 0.25rem; }
+    .gate-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+    .gate-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+    }
+    .gate-card.active-gate {
+      border-color: rgba(245, 158, 11, 0.4);
+      background: linear-gradient(180deg, var(--bg-surface) 0%, rgba(245, 158, 11, 0.03) 100%);
+    }
+    .gate-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    .gate-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .gate-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+    .gate-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      max-width: 900px;
+    }
+    .gate-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .badge {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 0.3rem 0.7rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.825rem;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+    }
+    .badge strong { color: var(--text-main); font-weight: 600; }
+    .btn-group {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.3rem;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--accent-cyan);
+      color: #000;
+    }
+    .btn-primary:hover { background: #7dd3fc; }
+    .btn-outline {
+      background: var(--bg-card);
+      color: var(--text-main);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--accent-cyan);
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      color: var(--text-faint);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-nav">
+    <a class="brand" href="index.html">
+      <span class="logo-badge">Doom Builder</span>
+      <span>QA Reports Mirror</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="active">All Gates</a>
+      <a href="gates/gate-8.7b/index.html">Gate 8.7B (Active)</a>
+      <a href="https://github.com/duyn1412/doom-builder-reports" target="_blank">GitHub Repo &nearr;</a>
+    </nav>
+    <div>
+      <span class="status-pill pill-hold">Active: Gate 8.7B</span>
+    </div>
+  </header>
+
+  <main class="content">
+
+    <div class="hero">
+      <div class="hero-badge">Public Review Mirror · GitHub Pages</div>
+      <h1>Doom Builder QA Review Portal</h1>
+      <p>Standalone public review repository containing verified Minecraft visual proofs, high-resolution contact sheets, architectural review notes, and automated acceptance JSON reports.</p>
+      <div class="hero-metrics">
+        <div class="metric-card">
+          <div class="label">Current Milestone</div>
+          <div class="value" style="color: var(--accent-amber);">Gate 8.7B</div>
+        </div>
+        <div class="metric-card">
+          <div class="label">House Review</div>
+          <div class="value" style="color: var(--accent-emerald);">VISUAL PASS</div>
+        </div>
+        <div class="metric-card">
+          <div class="label">Tower Review</div>
+          <div class="value" style="color: var(--accent-amber);">PENDING REVIEW</div>
+        </div>
+        <div class="metric-card">
+          <div class="label">Bridge Review</div>
+          <div class="value" style="color: var(--accent-amber);">PENDING REVIEW</div>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <div class="section-header">
+        <h2>Available Gate Reports</h2>
+        <p>Select any dossier to inspect complete screenshots, specs, and readback validation.</p>
+      </div>
+
+      <div class="gate-grid">
+
+        <!-- Gate 8.7B -->
+        <div class="gate-card active-gate">
+          <div>
+            <div class="gate-top">
+              <div class="gate-title">Gate 8.7B: Procedural Architecture Grammar</div>
+              <span class="status-pill pill-hold">HOLD (Awaiting Visual Review)</span>
+            </div>
+            <p class="gate-desc">Seed-driven architectural grammar compiling declarative specs into 3 structure families (House, Tower, Bridge). Complete real-Minecraft visual-proof suite rendered in 100% visual isolation with zero background contamination.</p>
+            <div class="gate-meta">
+              <span class="badge">House: <strong>2,010 blocks (PASS)</strong></span>
+              <span class="badge">Tower: <strong>1,326 blocks (Review)</strong></span>
+              <span class="badge">Bridge: <strong>1,010 blocks (Review)</strong></span>
+              <span class="badge">Readback: <strong>100.000% Exact</strong></span>
+              <span class="badge">Automated QA: <strong>10/10 PASS</strong></span>
+            </div>
+          </div>
+          <div class="btn-group">
+            <a class="btn btn-primary" href="gates/gate-8.7b/index.html">View HTML Report Dossier &rarr;</a>
+            <a class="btn btn-outline" href="gates/gate-8.7b/report.md">View report.md</a>
+            <a class="btn btn-outline" href="gates/gate-8.7b/qa-report.json">View qa-report.json</a>
+          </div>
+        </div>
+
+        <!-- Future Gate Placeholder: Gate 8.7C -->
+        <div class="gate-card" style="opacity: 0.65;">
+          <div>
+            <div class="gate-top">
+              <div class="gate-title">Gate 8.7C: AI Architect &amp; Vision Critic</div>
+              <span class="status-pill pill-frozen">FROZEN / NOT STARTED</span>
+            </div>
+            <p class="gate-desc">Automated visual critic evaluating procedural generation outputs against prompt specifications with feedback-driven refinement loops.</p>
+            <div class="gate-meta">
+              <span class="badge">Status: <strong>Blocked on Gate 8.7B Visual Approval</strong></span>
+            </div>
+          </div>
+          <div>
+            <button class="btn btn-outline" disabled style="cursor: not-allowed;">Pending Gate 8.7B Approval</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Doom Builder QA Reports · GitHub Pages Public Review Mirror</p>
+    <p style="margin-top: 0.25rem;">Report artifacts only · Zero project source code included</p>
+  </footer>
+
+</body>
+</html>
