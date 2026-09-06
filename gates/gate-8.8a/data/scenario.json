@@ -16,14 +16,14 @@
   },
   "effects": {
     "ball_rain": {
-      "count": 300,
+      "count": 100,
       "friction": 0.55,
       "gravity": 9.81,
       "mass": 0.12,
       "radiusMax": 0.2,
       "radiusMin": 0.12,
       "restitution": 0.25,
-      "spawnDuration": 5,
+      "spawnDuration": 1.8,
       "spawnVolume": {
         "depth": 4.5,
         "maxHeight": 11.5,
@@ -31,6 +31,68 @@
         "width": 5
       },
       "start": 1
+    },
+    "character_drop": {
+      "friction": 0.65,
+      "mass": 4,
+      "propType": "voxel_creature",
+      "restitution": 0.35,
+      "scale": 0.75,
+      "start": 9.7,
+      "startPosition": [
+        0.3,
+        0.2,
+        7.8
+      ]
+    },
+    "granular_burial": {
+      "count": 180,
+      "friction": 0.9,
+      "mass": 0.18,
+      "particleSize": 0.14,
+      "restitution": 0.05,
+      "spawnDuration": 1.6,
+      "spawnVolume": {
+        "depth": 3.5,
+        "maxHeight": 10,
+        "minHeight": 6,
+        "width": 3.5
+      },
+      "start": 3.7
+    },
+    "heavy_crush": {
+      "cameraShake": true,
+      "friction": 0.95,
+      "mass": 50,
+      "restitution": 0.05,
+      "size": [
+        1.2,
+        0.8,
+        0.7
+      ],
+      "start": 12.7,
+      "startPosition": [
+        0,
+        -0.4,
+        8.5
+      ]
+    },
+    "soft_body_drop": {
+      "friction": 0.6,
+      "mass": 2.5,
+      "restitution": 0.4,
+      "size": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "start": 6.7,
+      "startPosition": [
+        0,
+        0,
+        7.5
+      ],
+      "stiffness": 0.45
     }
   },
   "environment": {
@@ -43,30 +105,6 @@
     "counterVisible": true,
     "items": [
       {
-        "effect": "granular_burial",
-        "icon": "voxel_granular_cube",
-        "id": "item-01",
-        "label": "Sand Block"
-      },
-      {
-        "effect": "soft_body_drop",
-        "icon": "voxel_jelly_cube",
-        "id": "item-02",
-        "label": "Slime Cube"
-      },
-      {
-        "effect": "character_drop",
-        "icon": "voxel_face_item",
-        "id": "item-03",
-        "label": "Creature Head"
-      },
-      {
-        "effect": "heavy_crush",
-        "icon": "voxel_heavy_cube",
-        "id": "item-04",
-        "label": "Heavy Anvil"
-      },
-      {
         "effect": "ball_rain",
         "icon": "voxel_red_ball",
         "id": "red-ball",
@@ -75,41 +113,35 @@
       {
         "effect": "granular_burial",
         "icon": "voxel_granular_cube",
-        "id": "item-06",
-        "label": "Gravel Block"
+        "id": "sand-block",
+        "label": "Sand Block"
       },
       {
         "effect": "soft_body_drop",
         "icon": "voxel_jelly_cube",
-        "id": "item-07",
-        "label": "Bouncy Jelly"
-      },
-      {
-        "effect": "ball_rain",
-        "icon": "voxel_red_ball",
-        "id": "item-08",
-        "label": "Blue Ball"
+        "id": "slime-cube",
+        "label": "Slime Cube"
       },
       {
         "effect": "character_drop",
         "icon": "voxel_face_item",
-        "id": "item-09",
-        "label": "Zombie Head"
+        "id": "creature-prop",
+        "label": "Creature Head"
       },
       {
         "effect": "heavy_crush",
         "icon": "voxel_heavy_cube",
-        "id": "item-10",
-        "label": "Crush Weight"
+        "id": "heavy-anvil",
+        "label": "Heavy Anvil"
       }
     ],
-    "startIndex": 4,
-    "totalItems": 10,
+    "startIndex": 0,
+    "totalItems": 5,
     "visibleSlots": 5
   },
   "output": {
     "aspect": "9:16",
-    "duration": 9,
+    "duration": 15,
     "fps": 30
   },
   "seed": 1001

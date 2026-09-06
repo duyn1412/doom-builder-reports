@@ -1,16 +1,13 @@
 {
-  "absoluteItemIndex": 4,
   "causalityVerified": true,
-  "displayedCounter": "5/10",
-  "effectEndTimestamp": 8,
-  "effectPrepareTimestamp": 0.8,
-  "effectStartTimestamp": 1,
-  "effectType": "ball_rain",
   "events": [
     {
       "details": {
+        "displayedCounter": "1/5",
         "itemEffect": "ball_rain",
-        "itemId": "red-ball"
+        "itemId": "red-ball",
+        "itemIndex": 0,
+        "slotIndex": 0
       },
       "timestamp": 0.5,
       "type": "ITEM_SELECT"
@@ -18,26 +15,24 @@
     {
       "details": {
         "effectStatus": "IMPLEMENTED",
-        "effectType": "ball_rain"
+        "effectType": "ball_rain",
+        "itemIndex": 0
       },
       "timestamp": 0.8,
       "type": "EFFECT_PREPARE"
     },
     {
       "details": {
-        "count": 300,
-        "spawnVolume": {
-          "depth": 4.5,
-          "maxHeight": 11.5,
-          "minHeight": 6.5,
-          "width": 5
-        }
+        "effectType": "ball_rain",
+        "itemIndex": 0
       },
       "timestamp": 1,
       "type": "EFFECT_START"
     },
     {
       "details": {
+        "effectType": "ball_rain",
+        "itemIndex": 0,
         "target": "actor_and_ground"
       },
       "timestamp": 1.45,
@@ -45,21 +40,302 @@
     },
     {
       "details": {
-        "midPointImpact": true
+        "effectType": "ball_rain",
+        "itemIndex": 0,
+        "midPointActive": true
       },
-      "timestamp": 3.5,
+      "timestamp": 2,
       "type": "EFFECT_ACTIVE"
     },
     {
       "details": {
-        "pileStabilized": true
+        "effectType": "ball_rain",
+        "itemIndex": 0,
+        "settleComplete": true
       },
-      "timestamp": 8,
+      "timestamp": 3,
+      "type": "EFFECT_SETTLE"
+    },
+    {
+      "details": {
+        "displayedCounter": "2/5",
+        "itemEffect": "granular_burial",
+        "itemId": "sand-block",
+        "itemIndex": 1,
+        "slotIndex": 1
+      },
+      "timestamp": 3.2,
+      "type": "ITEM_SELECT"
+    },
+    {
+      "details": {
+        "effectStatus": "IMPLEMENTED",
+        "effectType": "granular_burial",
+        "itemIndex": 1
+      },
+      "timestamp": 3.5,
+      "type": "EFFECT_PREPARE"
+    },
+    {
+      "details": {
+        "effectType": "granular_burial",
+        "itemIndex": 1
+      },
+      "timestamp": 3.7,
+      "type": "EFFECT_START"
+    },
+    {
+      "details": {
+        "effectType": "granular_burial",
+        "itemIndex": 1,
+        "target": "actor_and_ground"
+      },
+      "timestamp": 4.15,
+      "type": "FIRST_IMPACT"
+    },
+    {
+      "details": {
+        "effectType": "granular_burial",
+        "itemIndex": 1,
+        "midPointActive": true
+      },
+      "timestamp": 4.85,
+      "type": "EFFECT_ACTIVE"
+    },
+    {
+      "details": {
+        "effectType": "granular_burial",
+        "itemIndex": 1,
+        "settleComplete": true
+      },
+      "timestamp": 6,
+      "type": "EFFECT_SETTLE"
+    },
+    {
+      "details": {
+        "displayedCounter": "3/5",
+        "itemEffect": "soft_body_drop",
+        "itemId": "slime-cube",
+        "itemIndex": 2,
+        "slotIndex": 2
+      },
+      "timestamp": 6.2,
+      "type": "ITEM_SELECT"
+    },
+    {
+      "details": {
+        "effectStatus": "IMPLEMENTED",
+        "effectType": "soft_body_drop",
+        "itemIndex": 2
+      },
+      "timestamp": 6.5,
+      "type": "EFFECT_PREPARE"
+    },
+    {
+      "details": {
+        "effectType": "soft_body_drop",
+        "itemIndex": 2
+      },
+      "timestamp": 6.7,
+      "type": "EFFECT_START"
+    },
+    {
+      "details": {
+        "effectType": "soft_body_drop",
+        "itemIndex": 2,
+        "target": "actor_and_ground"
+      },
+      "timestamp": 7.25,
+      "type": "FIRST_IMPACT"
+    },
+    {
+      "details": {
+        "effectType": "soft_body_drop",
+        "itemIndex": 2,
+        "midPointActive": true
+      },
+      "timestamp": 7.85,
+      "type": "EFFECT_ACTIVE"
+    },
+    {
+      "details": {
+        "effectType": "soft_body_drop",
+        "itemIndex": 2,
+        "settleComplete": true
+      },
+      "timestamp": 9,
+      "type": "EFFECT_SETTLE"
+    },
+    {
+      "details": {
+        "displayedCounter": "4/5",
+        "itemEffect": "character_drop",
+        "itemId": "creature-prop",
+        "itemIndex": 3,
+        "slotIndex": 3
+      },
+      "timestamp": 9.2,
+      "type": "ITEM_SELECT"
+    },
+    {
+      "details": {
+        "effectStatus": "IMPLEMENTED",
+        "effectType": "character_drop",
+        "itemIndex": 3
+      },
+      "timestamp": 9.5,
+      "type": "EFFECT_PREPARE"
+    },
+    {
+      "details": {
+        "effectType": "character_drop",
+        "itemIndex": 3
+      },
+      "timestamp": 9.7,
+      "type": "EFFECT_START"
+    },
+    {
+      "details": {
+        "effectType": "character_drop",
+        "itemIndex": 3,
+        "target": "actor_and_ground"
+      },
+      "timestamp": 10.25,
+      "type": "FIRST_IMPACT"
+    },
+    {
+      "details": {
+        "effectType": "character_drop",
+        "itemIndex": 3,
+        "midPointActive": true
+      },
+      "timestamp": 10.85,
+      "type": "EFFECT_ACTIVE"
+    },
+    {
+      "details": {
+        "effectType": "character_drop",
+        "itemIndex": 3,
+        "settleComplete": true
+      },
+      "timestamp": 12,
+      "type": "EFFECT_SETTLE"
+    },
+    {
+      "details": {
+        "displayedCounter": "5/5",
+        "itemEffect": "heavy_crush",
+        "itemId": "heavy-anvil",
+        "itemIndex": 4,
+        "slotIndex": 4
+      },
+      "timestamp": 12.2,
+      "type": "ITEM_SELECT"
+    },
+    {
+      "details": {
+        "effectStatus": "IMPLEMENTED",
+        "effectType": "heavy_crush",
+        "itemIndex": 4
+      },
+      "timestamp": 12.5,
+      "type": "EFFECT_PREPARE"
+    },
+    {
+      "details": {
+        "effectType": "heavy_crush",
+        "itemIndex": 4
+      },
+      "timestamp": 12.7,
+      "type": "EFFECT_START"
+    },
+    {
+      "details": {
+        "effectType": "heavy_crush",
+        "itemIndex": 4,
+        "target": "actor_and_ground"
+      },
+      "timestamp": 13.1,
+      "type": "FIRST_IMPACT"
+    },
+    {
+      "details": {
+        "effectType": "heavy_crush",
+        "itemIndex": 4,
+        "midPointActive": true
+      },
+      "timestamp": 13.6,
+      "type": "EFFECT_ACTIVE"
+    },
+    {
+      "details": {
+        "effectType": "heavy_crush",
+        "itemIndex": 4,
+        "settleComplete": true
+      },
+      "timestamp": 14.5,
       "type": "EFFECT_SETTLE"
     }
   ],
-  "firstImpactTimestamp": 1.45,
+  "executedEffects": [
+    "ball_rain",
+    "granular_burial",
+    "soft_body_drop",
+    "character_drop",
+    "heavy_crush"
+  ],
+  "itemExecutions": [
+    {
+      "effectType": "ball_rain",
+      "impactTimestamp": 1.45,
+      "itemId": "red-ball",
+      "itemIndex": 0,
+      "selectTimestamp": 0.5,
+      "settleTimestamp": 3,
+      "slotIndex": 0,
+      "startTimestamp": 1
+    },
+    {
+      "effectType": "granular_burial",
+      "impactTimestamp": 4.15,
+      "itemId": "sand-block",
+      "itemIndex": 1,
+      "selectTimestamp": 3.2,
+      "settleTimestamp": 6,
+      "slotIndex": 1,
+      "startTimestamp": 3.7
+    },
+    {
+      "effectType": "soft_body_drop",
+      "impactTimestamp": 7.25,
+      "itemId": "slime-cube",
+      "itemIndex": 2,
+      "selectTimestamp": 6.2,
+      "settleTimestamp": 9,
+      "slotIndex": 2,
+      "startTimestamp": 6.7
+    },
+    {
+      "effectType": "character_drop",
+      "impactTimestamp": 10.25,
+      "itemId": "creature-prop",
+      "itemIndex": 3,
+      "selectTimestamp": 9.2,
+      "settleTimestamp": 12,
+      "slotIndex": 3,
+      "startTimestamp": 9.7
+    },
+    {
+      "effectType": "heavy_crush",
+      "impactTimestamp": 13.1,
+      "itemId": "heavy-anvil",
+      "itemIndex": 4,
+      "selectTimestamp": 12.2,
+      "settleTimestamp": 14.5,
+      "slotIndex": 4,
+      "startTimestamp": 12.7
+    }
+  ],
   "scenarioId": "viral-drop-001",
-  "selectedItemId": "red-ball",
-  "selectedSlot": 2
+  "totalItems": 5
 }

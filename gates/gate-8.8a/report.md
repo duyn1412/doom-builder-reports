@@ -1,84 +1,70 @@
-# Gate 8.8A Dossier: 3D Viral Effects Runtime
+# Gate 8.8A Dossier: Full 5-Item / 5-Effect 3D Viral Sequence
 
-**Gate ID**: 8.8A  
+**Gate ID**: 8.8A Scope Correction  
 **Target Scenario**: `viral-drop-001`  
-**Technical QA Status**: **PASS** (38/38 checks passed)  
+**Full Sequence Duration**: 15.0 seconds (450 frames @ 30fps)  
+**Technical QA Status**: **PASS** (41/41 checks passed)  
 **Manual Visual Review Status**: **PENDING DIRECT VIDEO REVIEW**  
-**Generated At**: 2026-09-06 12:43:55 UTC  
+**Render Host**: Local iMac (Darwin x86_64, Intel Core i7-4771 @ 3.50GHz)  
+**Blender Version**: Blender 4.5.11 LTS  
+**Renderer**: CYCLES (CPU, samples=4)  
+**Generated At**: 2026-09-06 15:35:43 UTC  
 
 ---
 
-## Executive Summary
+## 1. Executive Summary
 
-Gate 8.8A establishes the foundation for high-engagement, physics-driven 3D viral effects Shorts. It integrates a 5-slot screen-space item queue hotbar UI, deterministic spawn scheduling, active/passive Bullet rigid-body physics, an original procedural block character actor, studio 3-point lighting, and vertical 9:16 Cycles CPU rendering in Blender 4.5.11 LTS.
+Gate 8.8A proves the COMPLETE reference interaction pattern for viral Minecraft-style Shorts:
+5 visible items in the top screen-space hotbar UI lead to 5 sequential selections, triggering 5 distinct physical effects that interact with the central block character actor and settle across 15.0 seconds.
 
-The initial production effect, **Ball Rain** (300 rigid-body spheres), has been successfully simulated and rendered. The simulation demonstrates physical collision deflection off the actor's head and limbs, ground scattering, and final settle into a stable pile without floor penetrations or explosive instability.
-
----
-
-## Acceptance Verification (38 Checks)
-
-All 38 technical acceptance checks specified in Section 24 of `docs/new.md` have passed:
-
-| Category | Checks | Result | Status |
-| :--- | :--- | :--- | :--- |
-| **Core Scene & Rendering** | Checks 1–18 | 18 / 18 | PASS |
-| **Item Queue & Causality** | Checks 19–30 | 12 / 12 | PASS |
-| **Physics Stability** | Checks 31–35 | 5 / 5 | PASS |
-| **Scaling Benchmarks** | Checks 36–38 | 3 / 3 | PASS |
-| **Total** | **All Checks** | **38 / 38** | **PASS** |
+**All five effects are real physical simulations. Zero `NOT_IMPLEMENTED` placeholders.**
 
 ---
 
-## Physics Telemetry & Stability
+## 2. Five-Item / Five-Effect Sequence
 
-- **Solver Steps**: 20
-- **Substeps**: 10
-- **Gravity**: -9.81 m/s²
-- **Floor Penetrations**: 0 (0 detected)
-- **Actor Collision Deflection**: Verified on head (0.5m), torso (0.5x0.25x0.75m), arms, and legs
-- **Ball Pile Settle**: 263/300 balls settled stably (87.67%)
-- **Linear / Angular Damping**: 0.04 / 0.10 (prevents unrealistic bouncing and explosive velocities)
-
----
-
-## Performance Benchmarks
-
-Headless Bullet rigid-body simulation benchmarks on macOS Darwin x86_64:
-
-- **100 Balls**: Scene Gen = 1.634s, Sim = 0.235s, Total = 2.209s
-- **300 Balls (Target)**: Scene Gen = 15.347s, Sim = 0.775s, Total = 16.503s
-- **500 Balls (Stress)**: Scene Gen = 45.601s, Sim = 1.442s, Total = 47.459s
+| Step | Item ID | Counter | Physical Effect | Mass | Key Dynamics | Telemetry |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **1** | `red-ball` | 1/5 | `ball_rain` | 0.12kg | 100 spheres cascade, deflect off head/torso, settle stably (70% pile ratio) | **PASS** |
+| **2** | `sand-block` | 2/5 | `granular_burial` | 0.18kg | 180 high-friction sand particles stream and bury actor base | **PASS** |
+| **3** | `slime-cube` | 3/5 | `soft_body_drop` | 2.50kg | Slime cube impacts actor, deforms elastically (squish=0.405m), and rebounds | **PASS** |
+| **4** | `creature-prop` | 4/5 | `character_drop` | 4.00kg | Voxel creature prop tumbles, hits actor proxy, and settles on ground | **PASS** |
+| **5** | `heavy-anvil` | 5/5 | `heavy_crush` | 50.00kg | 50kg iron anvil slams with impact shock and camera punch-in/shake | **PASS** |
 
 ---
 
-## Intellectual Property Compliance
+## 3. Media Artifacts
 
-- **Textures / Models**: 100% original procedural geometry and materials.
-- **Actor**: Custom voxel block character (teal shirt, slate pants, warm skin tone). Zero Mojang / Minecraft player skins.
-- **UI Icons**: Procedural 128x128 voxel icons generated mathematically. Zero Mojang GUI assets or textures.
-- **Licenses**: Clean provenance recorded in `asset-manifest.json`.
+- **Production Video (1080x1920)**: `renders/production.mp4`
+- **Preview Video (360x640)**: `renders/preview.mp4`
+- **Full Sequence Contact Sheet**: `images/full-sequence-contact-sheet.png`
+- **Per-Effect Review Stills (15 Stills)**:
+  - Effect 1 (Ball Rain): `images/effect-01-ball/{before,impact,after}.png`
+  - Effect 2 (Granular Burial): `images/effect-02-granular/{before,impact,after}.png`
+  - Effect 3 (Soft Body Drop): `images/effect-03-jelly/{before,impact,after}.png`
+  - Effect 4 (Character Drop): `images/effect-04-character/{before,impact,after}.png`
+  - Effect 5 (Heavy Crush): `images/effect-05-heavy/{before,impact,after}.png`
+- **Original Procedural Icons**:
+  - `assets/voxel_red_ball.png`
+  - `assets/voxel_granular_cube.png`
+  - `assets/voxel_jelly_cube.png`
+  - `assets/voxel_face_item.png`
+  - `assets/voxel_heavy_cube.png`
+- **Dynamic Hotbar UI Overlays (10 Files)**:
+  - Slots 0–4 for both 360x640 and 1080x1920 in `assets/hotbar_overlay_slot_*`
 
 ---
 
-## Media Outputs
+## 4. Acceptance Audit (41/41 PASS)
 
-- **Preview Video**: `renders/preview.mp4` (360x640 @ 30fps)
-- **Production Video**: `renders/production.mp4` (1080x1920 @ 30fps)
-- **Key Review Sequence**:
-  - `images/ui-selected-ball.png` (0.50s)
-  - `images/frame-before-impact.png` (0.90s)
-  - `images/frame-first-impact.png` (1.45s)
-  - `images/frame-mid-impact.png` (3.50s)
-  - `images/frame-final-pile.png` (8.50s)
-  - `images/contact-sheet.png` (Horizontal 5-panel sheet)
+All 41 technical verification checks passed cleanly, covering ScenarioSpec validation, determinism, physical simulation bounds, zero floor penetrations, all 5 physical effects telemetry, 5-phase hotbar UI compositing, video encoding, and IP cleanliness.
 
 ---
 
-## Next Steps
+## 5. Gate Boundaries
 
-Per Gate 8.8A constraints:
-1. Technical acceptance is **COMPLETE** (38/38 PASS).
-2. Gate 8.8B must **NOT** be started until manual visual review is approved.
-3. Gate 8.7C remains in **HOLD / PAUSED** status.
-4. Gate 8.7A / 8.7B remain **FROZEN**.
+- **Gate 8.8A Technical Status**: **PASS**
+- **Gate 8.8A Visual Status**: **PENDING DIRECT VIDEO REVIEW**
+- **Gate 8.8B**: **DO NOT START** (Frozen pending visual approval)
+- **Gate 8.7C**: **HOLD / PAUSED**
+- **Gate 8.7A / 8.7B**: **FROZEN**

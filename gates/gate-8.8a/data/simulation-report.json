@@ -1,18 +1,84 @@
 {
   "blenderVersion": "Blender 4.5.11 LTS",
   "engine": "CYCLES (CPU)",
-  "preset": "viral_ball_rain_v1",
-  "ballCount": 300,
+  "preset": "viral_5_effect_sequence_v1",
+  "totalDurationSec": 15,
+  "totalFrames": 450,
   "solverSteps": 20,
   "substeps": 10,
-  "gravity": -9.81,
-  "floorCollision": true,
-  "actorCollision": true,
-  "stablePile": true,
-  "ballsInPile": 263,
-  "pileAccumulationPercent": 87.67,
   "penetrationsDetected": 0,
-  "simulationDurationSec": 3.291,
-  "spawnScheduleHash": "b880f48822fa368a8e33d477b9ba2a1518e5fd15dcfb4a6a98da09cade44a37e",
-  "finalFrame": 270
+  "stablePile": true,
+  "ballsInPile": 70,
+  "pileAccumulationPercent": 70.0,
+  "simulationDurationSec": 9.45,
+  "spawnScheduleHash": "5f9c975fe1ca8736b9fea18936f0c32fad0409776fcb5e534f845965d1894806",
+  "effects": {
+    "ball_rain": {
+      "effectType": "ball_rain",
+      "status": "PASS",
+      "objectCount": 100,
+      "actorCollision": true,
+      "floorCollision": true,
+      "penetrationsDetected": 0,
+      "stableState": true,
+      "metrics": {
+        "ballsInPile": 70,
+        "accumulationRatio": 0.7
+      }
+    },
+    "granular_burial": {
+      "effectType": "granular_burial",
+      "status": "PASS",
+      "objectCount": 180,
+      "actorCollision": true,
+      "floorCollision": true,
+      "penetrationsDetected": 0,
+      "stableState": true,
+      "metrics": {
+        "granulesAroundActor": 147,
+        "particleSize": 0.14
+      }
+    },
+    "soft_body_drop": {
+      "effectType": "soft_body_drop",
+      "status": "PASS",
+      "objectCount": 1,
+      "actorCollision": true,
+      "floorCollision": true,
+      "penetrationsDetected": 0,
+      "stableState": true,
+      "metrics": {
+        "finalZ": 0.571,
+        "peakSquishDeformation": 0.405
+      }
+    },
+    "character_drop": {
+      "effectType": "character_drop",
+      "status": "PASS",
+      "objectCount": 1,
+      "actorCollision": true,
+      "floorCollision": true,
+      "penetrationsDetected": 0,
+      "stableState": true,
+      "metrics": {
+        "finalZ": 0.38,
+        "propType": "voxel_creature"
+      }
+    },
+    "heavy_crush": {
+      "effectType": "heavy_crush",
+      "status": "PASS",
+      "objectCount": 1,
+      "actorCollision": true,
+      "floorCollision": true,
+      "penetrationsDetected": 0,
+      "stableState": true,
+      "metrics": {
+        "finalZ": 10.576,
+        "massKg": 50.0,
+        "impactFrame": 393,
+        "cameraShake": true
+      }
+    }
+  }
 }

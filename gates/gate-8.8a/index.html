@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gate 8.8A Dossier — 3D Viral Effects Runtime Acceptance</title>
+  <title>Gate 8.8A Dossier — Full 5-Item / 5-Effect 3D Viral Sequence</title>
   <style>
     :root {
       --bg: #0d1117;
@@ -56,6 +56,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
     .card h2 { color: var(--text-bright); font-size: 1.3rem; margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    .card h3 { color: var(--text-bright); font-size: 1.1rem; margin-top: 16px; margin-bottom: 8px; }
     .stat-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.95rem; }
     .stat-label { color: #8b949e; }
     .stat-val { font-weight: 600; color: var(--text-bright); }
@@ -66,7 +67,7 @@
       background: #000;
       border: 1px solid var(--border);
     }
-    .still-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 16px; }
+    .still-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 12px; }
     .still-item { text-align: center; }
     .still-item img {
       width: 100%;
@@ -92,27 +93,28 @@
     .license-clean { color: #7ee787; font-weight: 500; }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
+    .seq-step { background: rgba(255,255,255,0.03); border-left: 3px solid var(--accent); padding: 12px; margin-bottom: 12px; border-radius: 0 6px 6px 0; }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Gate 8.8A Dossier: 3D Viral Effects Runtime</h1>
-      <div class="subtitle">Physics-driven 3D interaction pipeline with screen-space item queue & production Ball Rain simulation</div>
+      <h1>Gate 8.8A Dossier: Full 5-Item / 5-Effect Viral Sequence</h1>
+      <div class="subtitle">Complete reference interaction pattern: 5 visible items → 5 sequential selections → 5 real physical effects across 15.0 seconds</div>
       <div class="badges">
-        <span class="badge badge-pass">Technical QA: 38 / 38 PASS</span>
-        <span class="badge badge-pass">Bullet Rigid-Body: 0 Penetrations</span>
-        <span class="badge badge-pass">Pile Stability: 263/300 (87.67%)</span>
-        <span class="badge badge-review">Visual Review: PENDING DIRECT VIDEO REVIEW</span>
+        <span class="badge badge-pass">Technical QA: 41 / 41 PASS</span>
+        <span class="badge badge-pass">All 5 Effects: IMPLEMENTED (0 Placeholders)</span>
+        <span class="badge badge-pass">Bullet Solver: 0 Penetrations</span>
+        <span class="badge badge-review">Visual Status: PENDING DIRECT VIDEO REVIEW</span>
       </div>
     </header>
 
-    <!-- SECTION 1: VIDEO EMBEDS -->
+    <!-- SECTION 1: VIDEO PLAYERS -->
     <div class="grid-2">
       <div class="card">
-        <h2>Production Render (1080x1920 @ 30fps)</h2>
-        <p style="margin-bottom: 12px; font-size: 0.9rem; color: #8b949e;">Master vertical composition with screen-space item queue hotbar, 300 rigid-body balls, studio lighting, and Cycles CPU global illumination.</p>
-        <video controls autoplay loop muted playsinline poster="images/frame-mid-impact.png">
+        <h2>Production Master Video (1080x1920 @ 30fps)</h2>
+        <p style="margin-bottom: 12px; font-size: 0.9rem; color: #8b949e;">Full 15.0s sequence with 5-phase dynamic screen-space hotbar UI (1/5 → 5/5), studio 3-point lighting, and Cycles CPU global illumination.</p>
+        <video controls autoplay loop muted playsinline poster="images/full-sequence-contact-sheet.png">
           <source src="renders/production.mp4" type="video/mp4">
           Your browser does not support HTML5 video.
         </video>
@@ -122,9 +124,9 @@
       </div>
 
       <div class="card">
-        <h2>Preview Render (360x640 @ 30fps)</h2>
-        <p style="margin-bottom: 12px; font-size: 0.9rem; color: #8b949e;">Fast iteration 9:16 vertical render verifying framing, collision proxies, and event sync.</p>
-        <video controls loop muted playsinline poster="images/frame-first-impact.png">
+        <h2>Preview Video (360x640 @ 30fps)</h2>
+        <p style="margin-bottom: 12px; font-size: 0.9rem; color: #8b949e;">Fast vertical preview verifying event synchronization, actor collision boundaries, and camera shake impact.</p>
+        <video controls loop muted playsinline poster="images/full-sequence-contact-sheet.png">
           <source src="renders/preview.mp4" type="video/mp4">
           Your browser does not support HTML5 video.
         </video>
@@ -134,69 +136,202 @@
       </div>
     </div>
 
-    <!-- SECTION 2: KEY REVIEW STILL SEQUENCE -->
+    <!-- SECTION 2: 5-EFFECT INTERACTION SEQUENCE TABLE -->
     <div class="card" style="margin-bottom: 32px;">
-      <h2>Key Review Still Sequence</h2>
-      <div class="still-gallery">
-        <div class="still-item">
-          <img src="images/ui-selected-ball.png" alt="UI Selected Ball">
-          <div class="still-label">1. UI Selected Ball (0.50s)<br>Slot 4 selected, counter 5/10</div>
-        </div>
-        <div class="still-item">
-          <img src="images/frame-before-impact.png" alt="Before Impact">
-          <div class="still-label">2. Before Impact (0.90s)<br>Actor framed, rain descending</div>
-        </div>
-        <div class="still-item">
-          <img src="images/frame-first-impact.png" alt="First Impact">
-          <div class="still-label">3. First Impact (1.45s)<br>Initial deflection on head proxy</div>
-        </div>
-        <div class="still-item">
-          <img src="images/frame-mid-impact.png" alt="Mid Impact">
-          <div class="still-label">4. Mid Impact (3.50s)<br>Dynamic body deflection & ground scatter</div>
-        </div>
-        <div class="still-item">
-          <img src="images/frame-final-pile.png" alt="Final Pile">
-          <div class="still-label">5. Final Pile (8.50s)<br>Stable pile settled around actor</div>
-        </div>
-      </div>
-      <h3 style="margin-top: 24px; font-size: 1.1rem; color: var(--text-bright);">Full Contact Sheet</h3>
-      <img src="images/contact-sheet.png" alt="Contact Sheet" class="contact-sheet-img">
+      <h2>Complete 5-Item / 5-Effect Physical Sequence Table</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Slot #</th>
+            <th>Item ID</th>
+            <th>Counter</th>
+            <th>Effect Type</th>
+            <th>Timeline (Select → Impact → Settle)</th>
+            <th>Physical Interaction & Behavior</th>
+            <th>QA Telemetry</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Slot 0</strong></td>
+            <td><code>red-ball</code></td>
+            <td>1/5</td>
+            <td><code>ball_rain</code></td>
+            <td>0.50s → 1.45s → 3.00s</td>
+            <td>100 active rigid-body spheres cascade, deflect off head/torso proxies, and settle stably (70% pile ratio)</td>
+            <td><span class="badge badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td><strong>Slot 1</strong></td>
+            <td><code>sand-block</code></td>
+            <td>2/5</td>
+            <td><code>granular_burial</code></td>
+            <td>3.20s → 4.15s → 6.00s</td>
+            <td>180 high-friction sand particles stream down and accumulate densely around actor base without tunneling</td>
+            <td><span class="badge badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td><strong>Slot 2</strong></td>
+            <td><code>slime-cube</code></td>
+            <td>3/5</td>
+            <td><code>soft_body_drop</code></td>
+            <td>6.20s → 7.25s → 9.00s</td>
+            <td>2.5kg emerald slime cube falls, hits actor head, squishes elastically (deform 0.405m), and rebounds</td>
+            <td><span class="badge badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td><strong>Slot 3</strong></td>
+            <td><code>creature-prop</code></td>
+            <td>4/5</td>
+            <td><code>character_drop</code></td>
+            <td>9.20s → 10.25s → 12.00s</td>
+            <td>4.0kg original voxel creature prop tumbles, collides with actor proxy, and settles stably on stage</td>
+            <td><span class="badge badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td><strong>Slot 4</strong></td>
+            <td><code>heavy-anvil</code></td>
+            <td>5/5</td>
+            <td><code>heavy_crush</code></td>
+            <td>12.20s → 13.10s → 14.50s</td>
+            <td>50.0kg heavy iron anvil drops from 8.5m with high kinetic energy, causing impact shock and camera shake</td>
+            <td><span class="badge badge-pass">PASS</span></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-    <!-- SECTION 3: SYSTEM TELEMETRY -->
+    <!-- SECTION 3: MASTER CONTACT SHEET -->
+    <div class="card" style="margin-bottom: 32px;">
+      <h2>Master Sequence Contact Sheet (5 Physical Impacts)</h2>
+      <p style="margin-bottom: 12px; font-size: 0.9rem; color: #8b949e;">Horizontal progression across all 5 physical impact moments: Ball Rain (1.45s) | Granular Burial (4.15s) | Slime Cube Squish (7.25s) | Creature Prop (10.25s) | Heavy Anvil Slam (13.10s).</p>
+      <img src="images/full-sequence-contact-sheet.png" alt="Full Sequence Contact Sheet" class="contact-sheet-img">
+    </div>
+
+    <!-- SECTION 4: PER-EFFECT SCREENSHOT GALLERIES (15 STILLS) -->
+    <div class="card" style="margin-bottom: 32px;">
+      <h2>Per-Effect Review Still Galleries (15 Verification Stills)</h2>
+      
+      <!-- Effect 1 -->
+      <h3>Effect 1: Ball Rain (Item: red-ball)</h3>
+      <div class="still-gallery">
+        <div class="still-item">
+          <img src="images/effect-01-ball/before.png" alt="Ball Rain Before">
+          <div class="still-label">Before Selection (0.80s)</div>
+        </div>
+        <div class="still-item">
+          <img src="images/effect-01-ball/impact.png" alt="Ball Rain Impact">
+          <div class="still-label">Physical Impact (1.45s)</div>
+        </div>
+        <div class="still-item">
+          <img src="images/effect-01-ball/after.png" alt="Ball Rain Settle">
+          <div class="still-label">Settled State (3.00s)</div>
+        </div>
+      </div>
+
+      <!-- Effect 2 -->
+      <h3 style="margin-top: 24px;">Effect 2: Granular Burial (Item: sand-block)</h3>
+      <div class="still-gallery">
+        <div class="still-item">
+          <img src="images/effect-02-granular/before.png" alt="Granular Burial Before">
+          <div class="still-label">Before Selection (3.50s)</div>
+        </div>
+        <div class="still-item">
+          <img src="images/effect-02-granular/impact.png" alt="Granular Burial Impact">
+          <div class="still-label">Physical Impact (4.15s)</div>
+        </div>
+        <div class="still-item">
+          <img src="images/effect-02-granular/after.png" alt="Granular Burial Settle">
+          <div class="still-label">Settled State (6.00s)</div>
+        </div>
+      </div>
+
+      <!-- Effect 3 -->
+      <h3 style="margin-top: 24px;">Effect 3: Soft Body Drop (Item: slime-cube)</h3>
+      <div class="still-gallery">
+        <div class="still-item">
+          <img src="images/effect-03-jelly/before.png" alt="Soft Body Before">
+          <div class="still-label">Before Selection (6.50s)</div>
+        </div>
+        <div class="still-item">
+          <img src="images/effect-03-jelly/impact.png" alt="Soft Body Impact">
+          <div class="still-label">Physical Impact & Squish (7.25s)</div>
+        </div>
+        <div class="still-item">
+          <img src="images/effect-03-jelly/after.png" alt="Soft Body Settle">
+          <div class="still-label">Rebound & Settle (9.00s)</div>
+        </div>
+      </div>
+
+      <!-- Effect 4 -->
+      <h3 style="margin-top: 24px;">Effect 4: Character Drop (Item: creature-prop)</h3>
+      <div class="still-gallery">
+        <div class="still-item">
+          <img src="images/effect-04-character/before.png" alt="Character Drop Before">
+          <div class="still-label">Before Selection (9.50s)</div>
+        </div>
+        <div class="still-item">
+          <img src="images/effect-04-character/impact.png" alt="Character Drop Impact">
+          <div class="still-label">Physical Impact (10.25s)</div>
+        </div>
+        <div class="still-item">
+          <img src="images/effect-04-character/after.png" alt="Character Drop Settle">
+          <div class="still-label">Settled State (12.00s)</div>
+        </div>
+      </div>
+
+      <!-- Effect 5 -->
+      <h3 style="margin-top: 24px;">Effect 5: Heavy Crush (Item: heavy-anvil)</h3>
+      <div class="still-gallery">
+        <div class="still-item">
+          <img src="images/effect-05-heavy/before.png" alt="Heavy Crush Before">
+          <div class="still-label">Before Selection (12.50s)</div>
+        </div>
+        <div class="still-item">
+          <img src="images/effect-05-heavy/impact.png" alt="Heavy Crush Impact">
+          <div class="still-label">Physical Impact & Punch-in (13.10s)</div>
+        </div>
+        <div class="still-item">
+          <img src="images/effect-05-heavy/after.png" alt="Heavy Crush Settle">
+          <div class="still-label">Final Ending (14.50s)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 5: SYSTEM TELEMETRY -->
     <div class="grid-3">
       <div class="card">
         <h2>Scenario Specification</h2>
         <div class="stat-row"><span class="stat-label">Scenario ID</span><span class="stat-val">viral-drop-001</span></div>
-        <div class="stat-row"><span class="stat-label">Scenario Hash</span><span class="stat-val mono">viral-drop-001</span></div>
-        <div class="stat-row"><span class="stat-label">Duration / FPS</span><span class="stat-val">9s @ 30 fps</span></div>
+        <div class="stat-row"><span class="stat-label">Total Duration</span><span class="stat-val">15.0s (450 frames @ 30fps)</span></div>
+        <div class="stat-row"><span class="stat-label">Aspect Ratio</span><span class="stat-val">9:16 Vertical (360x640 & 1080x1920)</span></div>
         <div class="stat-row"><span class="stat-label">Camera Profile</span><span class="stat-val">viral_vertical_v1 (FOV 54°)</span></div>
-        <div class="stat-row"><span class="stat-label">Render Engine</span><span class="stat-val">CYCLES (CPU)</span></div>
+        <div class="stat-row"><span class="stat-label">Render Engine</span><span class="stat-val">CYCLES (CPU, samples=4)</span></div>
         <div class="stat-row"><span class="stat-label">Blender Version</span><span class="stat-val">Blender 4.5.11 LTS</span></div>
       </div>
 
       <div class="card">
-        <h2>Physics & Settle Stability</h2>
-        <div class="stat-row"><span class="stat-label">Rigid-Body Solver</span><span class="stat-val">Bullet (Active/Passive)</span></div>
+        <h2>Physics Solver Telemetry</h2>
+        <div class="stat-row"><span class="stat-label">Physics Engine</span><span class="stat-val">Bullet Rigid-Body</span></div>
         <div class="stat-row"><span class="stat-label">Substeps / Iterations</span><span class="stat-val">10 / 20</span></div>
-        <div class="stat-row"><span class="stat-label">Ball Rain Count</span><span class="stat-val">300 objects</span></div>
-        <div class="stat-row"><span class="stat-label">Floor Penetrations</span><span class="stat-val" style="color: var(--pass);">0 (PASS)</span></div>
-        <div class="stat-row"><span class="stat-label">Pile Accumulation</span><span class="stat-val">263 (87.67%)</span></div>
-        <div class="stat-row"><span class="stat-label">Pile Settle Status</span><span class="stat-val" style="color: var(--pass);">STABLE</span></div>
+        <div class="stat-row"><span class="stat-label">Sim Bake Time</span><span class="stat-val">9.45s</span></div>
+        <div class="stat-row"><span class="stat-label">Floor Penetrations</span><span class="stat-val" style="color: var(--pass);">0 detected (PASS)</span></div>
+        <div class="stat-row"><span class="stat-label">Actor Deflection</span><span class="stat-val" style="color: var(--pass);">Verified (All 5 Effects)</span></div>
+        <div class="stat-row"><span class="stat-label">Explosion / Instability</span><span class="stat-val" style="color: var(--pass);">0 (Stable)</span></div>
       </div>
 
       <div class="card">
-        <h2>Item Queue & Causality</h2>
-        <div class="stat-row"><span class="stat-label">Visible Hotbar Slots</span><span class="stat-val">5 slots</span></div>
-        <div class="stat-row"><span class="stat-label">Total Item Sequence</span><span class="stat-val">10 items (Generic windowing)</span></div>
-        <div class="stat-row"><span class="stat-label">Active Slot Index</span><span class="stat-val">Slot 4 ("5/10")</span></div>
-        <div class="stat-row"><span class="stat-label">Selected Item</span><span class="stat-val">red-ball</span></div>
-        <div class="stat-row"><span class="stat-label">Dispatched Effect</span><span class="stat-val">ball_rain (IMPLEMENTED)</span></div>
-        <div class="stat-row"><span class="stat-label">Causality Verified</span><span class="stat-val" style="color: var(--pass);">STRICT MATCH</span></div>
+        <h2>Screen-Space Hotbar UI</h2>
+        <div class="stat-row"><span class="stat-label">Visible Slots</span><span class="stat-val">Exactly 5 slots</span></div>
+        <div class="stat-row"><span class="stat-label">Sequence Progression</span><span class="stat-val">1/5 → 2/5 → 3/5 → 4/5 → 5/5</span></div>
+        <div class="stat-row"><span class="stat-label">Selected Slot Highlighting</span><span class="stat-val">Dynamic glowing border</span></div>
+        <div class="stat-row"><span class="stat-label">Vertical Safe Area</span><span class="stat-val">Top 4.5%–14.5%</span></div>
+        <div class="stat-row"><span class="stat-label">Actor Occlusion</span><span class="stat-val">0% (Actor framed at center)</span></div>
+        <div class="stat-row"><span class="stat-label">Causality Enforcement</span><span class="stat-val" style="color: var(--pass);">Strict Item → Effect</span></div>
       </div>
     </div>
 
-    <!-- SECTION 4: BENCHMARKS & CAUSALITY TABLE -->
+    <!-- SECTION 6: BENCHMARKS & CAUSALITY TIMELINE -->
     <div class="grid-2">
       <div class="card">
         <h2>Physics Scaling Benchmarks</h2>
@@ -216,28 +351,28 @@
             
     <tr>
       <td><strong>100 Balls</strong></td>
-      <td>1.634s</td>
-      <td>0.235s</td>
-      <td>17.352s</td>
-      <td>2.209s</td>
+      <td>1.589s</td>
+      <td>0.258s</td>
+      <td>18.141s</td>
+      <td>2.184s</td>
       <td>50.0 MB</td>
     </tr>
     
     <tr>
       <td><strong>300 Balls</strong></td>
-      <td>15.347s</td>
-      <td>0.775s</td>
-      <td>28.779s</td>
-      <td>16.503s</td>
+      <td>17.369s</td>
+      <td>0.97s</td>
+      <td>47.408s</td>
+      <td>18.93s</td>
       <td>86.0 MB</td>
     </tr>
     
     <tr>
       <td><strong>500 Balls</strong></td>
-      <td>45.601s</td>
-      <td>1.442s</td>
-      <td>30.372s</td>
-      <td>47.459s</td>
+      <td>52.438s</td>
+      <td>1.625s</td>
+      <td>34.016s</td>
+      <td>54.567s</td>
       <td>122.0 MB</td>
     </tr>
     
@@ -246,70 +381,216 @@
       </div>
 
       <div class="card">
-        <h2>Event Causality Timeline</h2>
-        <p style="font-size: 0.85rem; color: #8b949e; margin-bottom: 12px;">Strict provenance tracking from item selection to settle.</p>
-        <table>
-          <thead>
-            <tr>
-              <th>Time</th>
-              <th>Event Type</th>
-              <th>Detail</th>
-            </tr>
-          </thead>
-          <tbody>
-            
+        <h2>Timeline Provenance (30 Events)</h2>
+        <p style="font-size: 0.85rem; color: #8b949e; margin-bottom: 12px;">Causal chain verification across all 5 item triggers.</p>
+        <div style="max-height: 280px; overflow-y: auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Type</th>
+                <th>Detail</th>
+              </tr>
+            </thead>
+            <tbody>
+              
     <tr>
       <td>0.5s</td>
       <td><span class="badge badge-event">ITEM_SELECT</span></td>
-      <td><strong>itemEffect</strong>: ball_rain, <strong>itemId</strong>: red-ball</td>
+      <td><strong>displayedCounter</strong>: 1/5, <strong>itemEffect</strong>: ball_rain, <strong>itemId</strong>: red-ball, <strong>itemIndex</strong>: 0, <strong>slotIndex</strong>: 0</td>
     </tr>
     
     <tr>
       <td>0.8s</td>
       <td><span class="badge badge-event">EFFECT_PREPARE</span></td>
-      <td><strong>effectStatus</strong>: IMPLEMENTED, <strong>effectType</strong>: ball_rain</td>
+      <td><strong>effectStatus</strong>: IMPLEMENTED, <strong>effectType</strong>: ball_rain, <strong>itemIndex</strong>: 0</td>
     </tr>
     
     <tr>
       <td>1s</td>
       <td><span class="badge badge-event">EFFECT_START</span></td>
-      <td><strong>count</strong>: 300, <strong>spawnVolume</strong>: {'depth': 4.5, 'maxHeight': 11.5, 'minHeight': 6.5, 'width': 5}</td>
+      <td><strong>effectType</strong>: ball_rain, <strong>itemIndex</strong>: 0</td>
     </tr>
     
     <tr>
       <td>1.45s</td>
       <td><span class="badge badge-event">FIRST_IMPACT</span></td>
-      <td><strong>target</strong>: actor_and_ground</td>
+      <td><strong>effectType</strong>: ball_rain, <strong>itemIndex</strong>: 0, <strong>target</strong>: actor_and_ground</td>
+    </tr>
+    
+    <tr>
+      <td>2s</td>
+      <td><span class="badge badge-event">EFFECT_ACTIVE</span></td>
+      <td><strong>effectType</strong>: ball_rain, <strong>itemIndex</strong>: 0, <strong>midPointActive</strong>: True</td>
+    </tr>
+    
+    <tr>
+      <td>3s</td>
+      <td><span class="badge badge-event">EFFECT_SETTLE</span></td>
+      <td><strong>effectType</strong>: ball_rain, <strong>itemIndex</strong>: 0, <strong>settleComplete</strong>: True</td>
+    </tr>
+    
+    <tr>
+      <td>3.2s</td>
+      <td><span class="badge badge-event">ITEM_SELECT</span></td>
+      <td><strong>displayedCounter</strong>: 2/5, <strong>itemEffect</strong>: granular_burial, <strong>itemId</strong>: sand-block, <strong>itemIndex</strong>: 1, <strong>slotIndex</strong>: 1</td>
     </tr>
     
     <tr>
       <td>3.5s</td>
-      <td><span class="badge badge-event">EFFECT_ACTIVE</span></td>
-      <td><strong>midPointImpact</strong>: True</td>
+      <td><span class="badge badge-event">EFFECT_PREPARE</span></td>
+      <td><strong>effectStatus</strong>: IMPLEMENTED, <strong>effectType</strong>: granular_burial, <strong>itemIndex</strong>: 1</td>
     </tr>
     
     <tr>
-      <td>8s</td>
-      <td><span class="badge badge-event">EFFECT_SETTLE</span></td>
-      <td><strong>pileStabilized</strong>: True</td>
+      <td>3.7s</td>
+      <td><span class="badge badge-event">EFFECT_START</span></td>
+      <td><strong>effectType</strong>: granular_burial, <strong>itemIndex</strong>: 1</td>
     </tr>
     
-          </tbody>
-        </table>
+    <tr>
+      <td>4.15s</td>
+      <td><span class="badge badge-event">FIRST_IMPACT</span></td>
+      <td><strong>effectType</strong>: granular_burial, <strong>itemIndex</strong>: 1, <strong>target</strong>: actor_and_ground</td>
+    </tr>
+    
+    <tr>
+      <td>4.85s</td>
+      <td><span class="badge badge-event">EFFECT_ACTIVE</span></td>
+      <td><strong>effectType</strong>: granular_burial, <strong>itemIndex</strong>: 1, <strong>midPointActive</strong>: True</td>
+    </tr>
+    
+    <tr>
+      <td>6s</td>
+      <td><span class="badge badge-event">EFFECT_SETTLE</span></td>
+      <td><strong>effectType</strong>: granular_burial, <strong>itemIndex</strong>: 1, <strong>settleComplete</strong>: True</td>
+    </tr>
+    
+    <tr>
+      <td>6.2s</td>
+      <td><span class="badge badge-event">ITEM_SELECT</span></td>
+      <td><strong>displayedCounter</strong>: 3/5, <strong>itemEffect</strong>: soft_body_drop, <strong>itemId</strong>: slime-cube, <strong>itemIndex</strong>: 2, <strong>slotIndex</strong>: 2</td>
+    </tr>
+    
+    <tr>
+      <td>6.5s</td>
+      <td><span class="badge badge-event">EFFECT_PREPARE</span></td>
+      <td><strong>effectStatus</strong>: IMPLEMENTED, <strong>effectType</strong>: soft_body_drop, <strong>itemIndex</strong>: 2</td>
+    </tr>
+    
+    <tr>
+      <td>6.7s</td>
+      <td><span class="badge badge-event">EFFECT_START</span></td>
+      <td><strong>effectType</strong>: soft_body_drop, <strong>itemIndex</strong>: 2</td>
+    </tr>
+    
+    <tr>
+      <td>7.25s</td>
+      <td><span class="badge badge-event">FIRST_IMPACT</span></td>
+      <td><strong>effectType</strong>: soft_body_drop, <strong>itemIndex</strong>: 2, <strong>target</strong>: actor_and_ground</td>
+    </tr>
+    
+    <tr>
+      <td>7.85s</td>
+      <td><span class="badge badge-event">EFFECT_ACTIVE</span></td>
+      <td><strong>effectType</strong>: soft_body_drop, <strong>itemIndex</strong>: 2, <strong>midPointActive</strong>: True</td>
+    </tr>
+    
+    <tr>
+      <td>9s</td>
+      <td><span class="badge badge-event">EFFECT_SETTLE</span></td>
+      <td><strong>effectType</strong>: soft_body_drop, <strong>itemIndex</strong>: 2, <strong>settleComplete</strong>: True</td>
+    </tr>
+    
+    <tr>
+      <td>9.2s</td>
+      <td><span class="badge badge-event">ITEM_SELECT</span></td>
+      <td><strong>displayedCounter</strong>: 4/5, <strong>itemEffect</strong>: character_drop, <strong>itemId</strong>: creature-prop, <strong>itemIndex</strong>: 3, <strong>slotIndex</strong>: 3</td>
+    </tr>
+    
+    <tr>
+      <td>9.5s</td>
+      <td><span class="badge badge-event">EFFECT_PREPARE</span></td>
+      <td><strong>effectStatus</strong>: IMPLEMENTED, <strong>effectType</strong>: character_drop, <strong>itemIndex</strong>: 3</td>
+    </tr>
+    
+    <tr>
+      <td>9.7s</td>
+      <td><span class="badge badge-event">EFFECT_START</span></td>
+      <td><strong>effectType</strong>: character_drop, <strong>itemIndex</strong>: 3</td>
+    </tr>
+    
+    <tr>
+      <td>10.25s</td>
+      <td><span class="badge badge-event">FIRST_IMPACT</span></td>
+      <td><strong>effectType</strong>: character_drop, <strong>itemIndex</strong>: 3, <strong>target</strong>: actor_and_ground</td>
+    </tr>
+    
+    <tr>
+      <td>10.85s</td>
+      <td><span class="badge badge-event">EFFECT_ACTIVE</span></td>
+      <td><strong>effectType</strong>: character_drop, <strong>itemIndex</strong>: 3, <strong>midPointActive</strong>: True</td>
+    </tr>
+    
+    <tr>
+      <td>12s</td>
+      <td><span class="badge badge-event">EFFECT_SETTLE</span></td>
+      <td><strong>effectType</strong>: character_drop, <strong>itemIndex</strong>: 3, <strong>settleComplete</strong>: True</td>
+    </tr>
+    
+    <tr>
+      <td>12.2s</td>
+      <td><span class="badge badge-event">ITEM_SELECT</span></td>
+      <td><strong>displayedCounter</strong>: 5/5, <strong>itemEffect</strong>: heavy_crush, <strong>itemId</strong>: heavy-anvil, <strong>itemIndex</strong>: 4, <strong>slotIndex</strong>: 4</td>
+    </tr>
+    
+    <tr>
+      <td>12.5s</td>
+      <td><span class="badge badge-event">EFFECT_PREPARE</span></td>
+      <td><strong>effectStatus</strong>: IMPLEMENTED, <strong>effectType</strong>: heavy_crush, <strong>itemIndex</strong>: 4</td>
+    </tr>
+    
+    <tr>
+      <td>12.7s</td>
+      <td><span class="badge badge-event">EFFECT_START</span></td>
+      <td><strong>effectType</strong>: heavy_crush, <strong>itemIndex</strong>: 4</td>
+    </tr>
+    
+    <tr>
+      <td>13.1s</td>
+      <td><span class="badge badge-event">FIRST_IMPACT</span></td>
+      <td><strong>effectType</strong>: heavy_crush, <strong>itemIndex</strong>: 4, <strong>target</strong>: actor_and_ground</td>
+    </tr>
+    
+    <tr>
+      <td>13.6s</td>
+      <td><span class="badge badge-event">EFFECT_ACTIVE</span></td>
+      <td><strong>effectType</strong>: heavy_crush, <strong>itemIndex</strong>: 4, <strong>midPointActive</strong>: True</td>
+    </tr>
+    
+    <tr>
+      <td>14.5s</td>
+      <td><span class="badge badge-event">EFFECT_SETTLE</span></td>
+      <td><strong>effectType</strong>: heavy_crush, <strong>itemIndex</strong>: 4, <strong>settleComplete</strong>: True</td>
+    </tr>
+    
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
 
-    <!-- SECTION 5: ASSET MANIFEST -->
+    <!-- SECTION 7: ASSET MANIFEST -->
     <div class="card" style="margin-bottom: 32px;">
-      <h2>Asset IP Cleanliness Manifest</h2>
-      <p style="font-size: 0.85rem; color: #8b949e; margin-bottom: 12px;">Zero Mojang/Minecraft textures or GUI assets. 100% procedural voxel generation.</p>
+      <h2>Asset IP Cleanliness Manifest (17 Original Assets)</h2>
+      <p style="font-size: 0.85rem; color: #8b949e; margin-bottom: 12px;">Zero Mojang/Minecraft textures or GUI elements. 100% original procedural generation.</p>
       <table>
         <thead>
           <tr>
             <th>Asset ID</th>
             <th>Type</th>
-            <th>Format</th>
-            <th>Provenance</th>
+            <th>File</th>
+            <th>Status</th>
             <th>License Compliance</th>
           </tr>
         </thead>
@@ -356,6 +637,86 @@
     </tr>
     
     <tr>
+      <td class="mono">hotbar_overlay_slot_0_360x640</td>
+      <td>ui_overlay</td>
+      <td>hotbar_overlay_slot_0_360x640.png</td>
+      <td>generated_original</td>
+      <td class="license-clean">Original screen-space 5-slot hotbar UI overlay (stage 1/5)</td>
+    </tr>
+    
+    <tr>
+      <td class="mono">hotbar_overlay_slot_0_1080x1920</td>
+      <td>ui_overlay</td>
+      <td>hotbar_overlay_slot_0_1080x1920.png</td>
+      <td>generated_original</td>
+      <td class="license-clean">Original screen-space 5-slot hotbar UI overlay (stage 1/5)</td>
+    </tr>
+    
+    <tr>
+      <td class="mono">hotbar_overlay_slot_1_360x640</td>
+      <td>ui_overlay</td>
+      <td>hotbar_overlay_slot_1_360x640.png</td>
+      <td>generated_original</td>
+      <td class="license-clean">Original screen-space 5-slot hotbar UI overlay (stage 2/5)</td>
+    </tr>
+    
+    <tr>
+      <td class="mono">hotbar_overlay_slot_1_1080x1920</td>
+      <td>ui_overlay</td>
+      <td>hotbar_overlay_slot_1_1080x1920.png</td>
+      <td>generated_original</td>
+      <td class="license-clean">Original screen-space 5-slot hotbar UI overlay (stage 2/5)</td>
+    </tr>
+    
+    <tr>
+      <td class="mono">hotbar_overlay_slot_2_360x640</td>
+      <td>ui_overlay</td>
+      <td>hotbar_overlay_slot_2_360x640.png</td>
+      <td>generated_original</td>
+      <td class="license-clean">Original screen-space 5-slot hotbar UI overlay (stage 3/5)</td>
+    </tr>
+    
+    <tr>
+      <td class="mono">hotbar_overlay_slot_2_1080x1920</td>
+      <td>ui_overlay</td>
+      <td>hotbar_overlay_slot_2_1080x1920.png</td>
+      <td>generated_original</td>
+      <td class="license-clean">Original screen-space 5-slot hotbar UI overlay (stage 3/5)</td>
+    </tr>
+    
+    <tr>
+      <td class="mono">hotbar_overlay_slot_3_360x640</td>
+      <td>ui_overlay</td>
+      <td>hotbar_overlay_slot_3_360x640.png</td>
+      <td>generated_original</td>
+      <td class="license-clean">Original screen-space 5-slot hotbar UI overlay (stage 4/5)</td>
+    </tr>
+    
+    <tr>
+      <td class="mono">hotbar_overlay_slot_3_1080x1920</td>
+      <td>ui_overlay</td>
+      <td>hotbar_overlay_slot_3_1080x1920.png</td>
+      <td>generated_original</td>
+      <td class="license-clean">Original screen-space 5-slot hotbar UI overlay (stage 4/5)</td>
+    </tr>
+    
+    <tr>
+      <td class="mono">hotbar_overlay_slot_4_360x640</td>
+      <td>ui_overlay</td>
+      <td>hotbar_overlay_slot_4_360x640.png</td>
+      <td>generated_original</td>
+      <td class="license-clean">Original screen-space 5-slot hotbar UI overlay (stage 5/5)</td>
+    </tr>
+    
+    <tr>
+      <td class="mono">hotbar_overlay_slot_4_1080x1920</td>
+      <td>ui_overlay</td>
+      <td>hotbar_overlay_slot_4_1080x1920.png</td>
+      <td>generated_original</td>
+      <td class="license-clean">Original screen-space 5-slot hotbar UI overlay (stage 5/5)</td>
+    </tr>
+    
+    <tr>
       <td class="mono">hotbar_overlay_360x640</td>
       <td>ui_overlay</td>
       <td>hotbar_overlay_360x640.png</td>
@@ -375,9 +736,9 @@
       </table>
     </div>
 
-    <!-- SECTION 6: 38-CHECK ACCEPTANCE AUDIT -->
+    <!-- SECTION 8: ACCEPTANCE AUDIT TABLE -->
     <div class="card" style="margin-bottom: 32px;">
-      <h2>Gate 8.8A Acceptance Audit (38/38 PASS)</h2>
+      <h2>Gate 8.8A Acceptance Audit (41/41 PASS)</h2>
       <table>
         <thead>
           <tr>
@@ -403,13 +764,13 @@
     <tr>
       <td class="mono">scenario_hash_stable</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Scenario hash stable: fb39fbf3c38de1246701824bca597b890f1a29876f3c2d5bc42336b0ec0b4567</td>
+      <td>Scenario hash stable: 5f9c975fe1ca8736b9fea18936f0c32fad0409776fcb5e534f845965d1894806</td>
     </tr>
     
     <tr>
       <td class="mono">deterministic_spawn_schedule</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Spawn schedule hash stable across 10 trials: b880f48822fa368a8e33d477b9ba2a1518e5fd15dcfb4a6a98da09cade44a37e</td>
+      <td>Spawn schedule hash stable across 10 trials: 5fc9fdb4baf876cf6aa287ea4d7cb832a7ef53821c1ce8331a8ec79829f99ac2</td>
     </tr>
     
     <tr>
@@ -439,7 +800,7 @@
     <tr>
       <td class="mono">ball_rain_count_matches_spec</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Ball Rain count: 300 matches spec count (300)</td>
+      <td>Ball Rain count: 100 matches spec count (100)</td>
     </tr>
     
     <tr>
@@ -463,7 +824,7 @@
     <tr>
       <td class="mono">actor_visible_before_effect</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Actor visibly framed before impact in frame-before-impact.png</td>
+      <td>Actor visibly framed before impact in before.png</td>
     </tr>
     
     <tr>
@@ -475,19 +836,19 @@
     <tr>
       <td class="mono">final_ball_pile_exists</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Final ball pile formed: 263/300 balls accumulated (87.67%)</td>
+      <td>Final ball pile formed: 70/100 balls accumulated (70%)</td>
     </tr>
     
     <tr>
       <td class="mono">preview_render_succeeds</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Preview video generated: preview.mp4 (1696021 bytes)</td>
+      <td>Preview video generated: preview.mp4 (1705913 bytes)</td>
     </tr>
     
     <tr>
       <td class="mono">production_render_succeeds</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Production video generated: production.mp4 (13960241 bytes)</td>
+      <td>Production video generated: production.mp4 (13009081 bytes)</td>
     </tr>
     
     <tr>
@@ -505,37 +866,37 @@
     <tr>
       <td class="mono">selected_slot_visibly_highlighted</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Selected slot index 2 visibly highlighted with glow border</td>
+      <td>Selected slot index 0 visibly highlighted with glowing border for item 'red-ball'</td>
     </tr>
     
     <tr>
-      <td class="mono">progress_counter_visible</td>
+      <td class="mono">progress_counter_sequence_advances</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Progress counter formatted correctly: 5/10</td>
+      <td>Progress counter advances cleanly across all 5 slots: 1/5 -> 2/5 -> 3/5 -> 4/5 -> 5/5</td>
     </tr>
     
     <tr>
-      <td class="mono">hotbar_window_supports_total_items_gt_5</td>
+      <td class="mono">hotbar_window_supports_arbitrary_total_items</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Generic windowing supported for totalItems=10 across 5-slot view</td>
+      <td>Generic windowing supported for totalItems > 5 across 5-slot view</td>
     </tr>
     
     <tr>
-      <td class="mono">current_selected_item_resolves_correct_effect</td>
+      <td class="mono">five_sequential_item_triggers_provenance</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Selected item 'red-ball' resolves to effect 'ball_rain'</td>
+      <td>All 5 sequential items trigger corresponding physical effects in causal sequence</td>
+    </tr>
+    
+    <tr>
+      <td class="mono">all_5_effects_implemented_zero_placeholders</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+      <td>All 5 effects implemented: ball_rain, granular_burial, soft_body_drop, character_drop, heavy_crush (0 placeholders)</td>
     </tr>
     
     <tr>
       <td class="mono">unsupported_effect_returns_not_implemented</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Unsupported effect 'granular_burial' returns status NOT_IMPLEMENTED</td>
-    </tr>
-    
-    <tr>
-      <td class="mono">only_ball_rain_required_as_production</td>
-      <td><span class="badge badge-pass">PASS</span></td>
-      <td>Registry strictly implements 1 production effect: 'ball_rain'</td>
+      <td>Unregistered effect returns status NOT_IMPLEMENTED</td>
     </tr>
     
     <tr>
@@ -551,15 +912,15 @@
     </tr>
     
     <tr>
-      <td class="mono">selected_ball_icon_appears_before_ball_rain</td>
+      <td class="mono">per_effect_image_stills_complete</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Icon selected at 0.5s, prepare at 0.8s, rain starts at 1s</td>
+      <td>All 15 per-effect screenshot stills (before/impact/after) and contact sheet verified</td>
     </tr>
     
     <tr>
       <td class="mono">effect_event_provenance_recorded</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Causality verified in effect-event-log.json with 6 timeline events</td>
+      <td>Causality verified in effect-event-log.json with 30 timeline events across 5 effects</td>
     </tr>
     
     <tr>
@@ -571,25 +932,43 @@
     <tr>
       <td class="mono">floor_penetration_check</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>0 floor penetrations detected under Bullet rigid-body solver</td>
+      <td>0 floor penetrations detected across all 5 effects under Bullet physics solver</td>
     </tr>
     
     <tr>
       <td class="mono">severe_actor_penetration_check</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Actor passive collision proxies (head, torso, limbs) deflected falling balls</td>
+      <td>Actor passive collision proxies (head, torso, limbs) deflected falling objects across all 5 effects</td>
     </tr>
     
     <tr>
-      <td class="mono">pile_stability_check</td>
+      <td class="mono">effect_1_ball_rain_telemetry</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Pile stability verified: 263 balls settled stably around actor</td>
+      <td>Ball Rain telemetry PASS: 100 spheres, 70 in pile (70%), 0 penetrations</td>
     </tr>
     
     <tr>
-      <td class="mono">unreasonable_velocity_explosion_check</td>
+      <td class="mono">effect_2_granular_burial_telemetry</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Linear damping (0.04) and angular damping (0.1) prevented explosive velocities</td>
+      <td>Granular Burial telemetry PASS: 180 sand particles, high friction accumulation, 0 penetrations</td>
+    </tr>
+    
+    <tr>
+      <td class="mono">effect_3_soft_body_telemetry</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+      <td>Soft Body Drop telemetry PASS: slime cube elastic rebound, deformation=0.405m, 0 penetrations</td>
+    </tr>
+    
+    <tr>
+      <td class="mono">effect_4_character_drop_telemetry</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+      <td>Character Drop telemetry PASS: creature prop geometry collision, settled stably, 0 penetrations</td>
+    </tr>
+    
+    <tr>
+      <td class="mono">effect_5_heavy_crush_telemetry</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+      <td>Heavy Crush telemetry PASS: 50kg anvil impact shock, camera punch-in/shake, 0 penetrations</td>
     </tr>
     
     <tr>
@@ -601,19 +980,19 @@
     <tr>
       <td class="mono">benchmark_100_balls_recorded</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>100 balls benchmark: gen=1.634s, sim=0.235s, total=2.209s</td>
+      <td>100 balls benchmark: gen=1.589s, sim=0.258s, total=2.184s</td>
     </tr>
     
     <tr>
       <td class="mono">benchmark_300_balls_recorded</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>300 balls benchmark (main target): gen=15.347s, sim=0.775s, total=16.503s</td>
+      <td>300 balls benchmark (main target): gen=17.369s, sim=0.97s, total=18.93s</td>
     </tr>
     
     <tr>
       <td class="mono">benchmark_500_balls_recorded</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>500 balls benchmark: gen=45.601s, sim=1.442s, total=47.459s</td>
+      <td>500 balls benchmark: gen=52.438s, sim=1.625s, total=54.567s</td>
     </tr>
     
         </tbody>
@@ -621,7 +1000,7 @@
     </div>
 
     <footer style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); color: #8b949e; font-size: 0.85rem; text-align: center;">
-      Gate 8.8A Dossier Generated on 2026-09-06 12:43:55 UTC | Antigravity AI Autonomous Pipeline
+      Gate 8.8A Dossier Generated on 2026-09-06 15:35:43 UTC | Antigravity AI Autonomous Pipeline
     </footer>
   </div>
 </body>

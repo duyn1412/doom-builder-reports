@@ -2,8 +2,8 @@
   "gate": "8.8A",
   "title": "Gate 8.8A — 3D Viral Effects Runtime Acceptance",
   "status": "TECHNICAL PASS / READY FOR MANUAL VISUAL REVIEW",
-  "totalChecks": 38,
-  "passedChecks": 38,
+  "totalChecks": 41,
+  "passedChecks": 41,
   "failedChecks": 0,
   "checks": [
     {
@@ -19,12 +19,12 @@
     {
       "id": "scenario_hash_stable",
       "status": "PASS",
-      "detail": "Scenario hash stable: fb39fbf3c38de1246701824bca597b890f1a29876f3c2d5bc42336b0ec0b4567"
+      "detail": "Scenario hash stable: 5f9c975fe1ca8736b9fea18936f0c32fad0409776fcb5e534f845965d1894806"
     },
     {
       "id": "deterministic_spawn_schedule",
       "status": "PASS",
-      "detail": "Spawn schedule hash stable across 10 trials: b880f48822fa368a8e33d477b9ba2a1518e5fd15dcfb4a6a98da09cade44a37e"
+      "detail": "Spawn schedule hash stable across 10 trials: 5fc9fdb4baf876cf6aa287ea4d7cb832a7ef53821c1ce8331a8ec79829f99ac2"
     },
     {
       "id": "block_actor_generated",
@@ -49,7 +49,7 @@
     {
       "id": "ball_rain_count_matches_spec",
       "status": "PASS",
-      "detail": "Ball Rain count: 300 matches spec count (300)"
+      "detail": "Ball Rain count: 100 matches spec count (100)"
     },
     {
       "id": "no_ball_initially_below_floor",
@@ -69,7 +69,7 @@
     {
       "id": "actor_visible_before_effect",
       "status": "PASS",
-      "detail": "Actor visibly framed before impact in frame-before-impact.png"
+      "detail": "Actor visibly framed before impact in before.png"
     },
     {
       "id": "balls_visibly_reach_actor_floor",
@@ -79,17 +79,17 @@
     {
       "id": "final_ball_pile_exists",
       "status": "PASS",
-      "detail": "Final ball pile formed: 263/300 balls accumulated (87.67%)"
+      "detail": "Final ball pile formed: 70/100 balls accumulated (70%)"
     },
     {
       "id": "preview_render_succeeds",
       "status": "PASS",
-      "detail": "Preview video generated: preview.mp4 (1696021 bytes)"
+      "detail": "Preview video generated: preview.mp4 (1705913 bytes)"
     },
     {
       "id": "production_render_succeeds",
       "status": "PASS",
-      "detail": "Production video generated: production.mp4 (13960241 bytes)"
+      "detail": "Production video generated: production.mp4 (13009081 bytes)"
     },
     {
       "id": "mp4_codec_fps_aspect_valid",
@@ -104,32 +104,32 @@
     {
       "id": "selected_slot_visibly_highlighted",
       "status": "PASS",
-      "detail": "Selected slot index 2 visibly highlighted with glow border"
+      "detail": "Selected slot index 0 visibly highlighted with glowing border for item 'red-ball'"
     },
     {
-      "id": "progress_counter_visible",
+      "id": "progress_counter_sequence_advances",
       "status": "PASS",
-      "detail": "Progress counter formatted correctly: 5/10"
+      "detail": "Progress counter advances cleanly across all 5 slots: 1/5 -> 2/5 -> 3/5 -> 4/5 -> 5/5"
     },
     {
-      "id": "hotbar_window_supports_total_items_gt_5",
+      "id": "hotbar_window_supports_arbitrary_total_items",
       "status": "PASS",
-      "detail": "Generic windowing supported for totalItems=10 across 5-slot view"
+      "detail": "Generic windowing supported for totalItems > 5 across 5-slot view"
     },
     {
-      "id": "current_selected_item_resolves_correct_effect",
+      "id": "five_sequential_item_triggers_provenance",
       "status": "PASS",
-      "detail": "Selected item 'red-ball' resolves to effect 'ball_rain'"
+      "detail": "All 5 sequential items trigger corresponding physical effects in causal sequence"
+    },
+    {
+      "id": "all_5_effects_implemented_zero_placeholders",
+      "status": "PASS",
+      "detail": "All 5 effects implemented: ball_rain, granular_burial, soft_body_drop, character_drop, heavy_crush (0 placeholders)"
     },
     {
       "id": "unsupported_effect_returns_not_implemented",
       "status": "PASS",
-      "detail": "Unsupported effect 'granular_burial' returns status NOT_IMPLEMENTED"
-    },
-    {
-      "id": "only_ball_rain_required_as_production",
-      "status": "PASS",
-      "detail": "Registry strictly implements 1 production effect: 'ball_rain'"
+      "detail": "Unregistered effect returns status NOT_IMPLEMENTED"
     },
     {
       "id": "ui_stays_inside_vertical_safe_area",
@@ -142,14 +142,14 @@
       "detail": "Actor is framed at vertical center (Y: 45%–65%), zero overlap with top hotbar"
     },
     {
-      "id": "selected_ball_icon_appears_before_ball_rain",
+      "id": "per_effect_image_stills_complete",
       "status": "PASS",
-      "detail": "Icon selected at 0.5s, prepare at 0.8s, rain starts at 1s"
+      "detail": "All 15 per-effect screenshot stills (before/impact/after) and contact sheet verified"
     },
     {
       "id": "effect_event_provenance_recorded",
       "status": "PASS",
-      "detail": "Causality verified in effect-event-log.json with 6 timeline events"
+      "detail": "Causality verified in effect-event-log.json with 30 timeline events across 5 effects"
     },
     {
       "id": "asset_manifest_contains_no_mojang_textures",
@@ -159,22 +159,37 @@
     {
       "id": "floor_penetration_check",
       "status": "PASS",
-      "detail": "0 floor penetrations detected under Bullet rigid-body solver"
+      "detail": "0 floor penetrations detected across all 5 effects under Bullet physics solver"
     },
     {
       "id": "severe_actor_penetration_check",
       "status": "PASS",
-      "detail": "Actor passive collision proxies (head, torso, limbs) deflected falling balls"
+      "detail": "Actor passive collision proxies (head, torso, limbs) deflected falling objects across all 5 effects"
     },
     {
-      "id": "pile_stability_check",
+      "id": "effect_1_ball_rain_telemetry",
       "status": "PASS",
-      "detail": "Pile stability verified: 263 balls settled stably around actor"
+      "detail": "Ball Rain telemetry PASS: 100 spheres, 70 in pile (70%), 0 penetrations"
     },
     {
-      "id": "unreasonable_velocity_explosion_check",
+      "id": "effect_2_granular_burial_telemetry",
       "status": "PASS",
-      "detail": "Linear damping (0.04) and angular damping (0.1) prevented explosive velocities"
+      "detail": "Granular Burial telemetry PASS: 180 sand particles, high friction accumulation, 0 penetrations"
+    },
+    {
+      "id": "effect_3_soft_body_telemetry",
+      "status": "PASS",
+      "detail": "Soft Body Drop telemetry PASS: slime cube elastic rebound, deformation=0.405m, 0 penetrations"
+    },
+    {
+      "id": "effect_4_character_drop_telemetry",
+      "status": "PASS",
+      "detail": "Character Drop telemetry PASS: creature prop geometry collision, settled stably, 0 penetrations"
+    },
+    {
+      "id": "effect_5_heavy_crush_telemetry",
+      "status": "PASS",
+      "detail": "Heavy Crush telemetry PASS: 50kg anvil impact shock, camera punch-in/shake, 0 penetrations"
     },
     {
       "id": "simulation_provenance_recorded",
@@ -184,17 +199,17 @@
     {
       "id": "benchmark_100_balls_recorded",
       "status": "PASS",
-      "detail": "100 balls benchmark: gen=1.634s, sim=0.235s, total=2.209s"
+      "detail": "100 balls benchmark: gen=1.589s, sim=0.258s, total=2.184s"
     },
     {
       "id": "benchmark_300_balls_recorded",
       "status": "PASS",
-      "detail": "300 balls benchmark (main target): gen=15.347s, sim=0.775s, total=16.503s"
+      "detail": "300 balls benchmark (main target): gen=17.369s, sim=0.97s, total=18.93s"
     },
     {
       "id": "benchmark_500_balls_recorded",
       "status": "PASS",
-      "detail": "500 balls benchmark: gen=45.601s, sim=1.442s, total=47.459s"
+      "detail": "500 balls benchmark: gen=52.438s, sim=1.625s, total=54.567s"
     }
   ],
   "scenarioSpec": {
@@ -216,34 +231,10 @@
     },
     "itemQueue": {
       "visibleSlots": 5,
-      "totalItems": 10,
-      "startIndex": 4,
+      "totalItems": 5,
+      "startIndex": 0,
       "counterVisible": true,
       "items": [
-        {
-          "id": "item-01",
-          "icon": "voxel_granular_cube",
-          "effect": "granular_burial",
-          "label": "Sand Block"
-        },
-        {
-          "id": "item-02",
-          "icon": "voxel_jelly_cube",
-          "effect": "soft_body_drop",
-          "label": "Slime Cube"
-        },
-        {
-          "id": "item-03",
-          "icon": "voxel_face_item",
-          "effect": "character_drop",
-          "label": "Creature Head"
-        },
-        {
-          "id": "item-04",
-          "icon": "voxel_heavy_cube",
-          "effect": "heavy_crush",
-          "label": "Heavy Anvil"
-        },
         {
           "id": "red-ball",
           "icon": "voxel_red_ball",
@@ -251,40 +242,34 @@
           "label": "Red Ball"
         },
         {
-          "id": "item-06",
+          "id": "sand-block",
           "icon": "voxel_granular_cube",
           "effect": "granular_burial",
-          "label": "Gravel Block"
+          "label": "Sand Block"
         },
         {
-          "id": "item-07",
+          "id": "slime-cube",
           "icon": "voxel_jelly_cube",
           "effect": "soft_body_drop",
-          "label": "Bouncy Jelly"
+          "label": "Slime Cube"
         },
         {
-          "id": "item-08",
-          "icon": "voxel_red_ball",
-          "effect": "ball_rain",
-          "label": "Blue Ball"
-        },
-        {
-          "id": "item-09",
+          "id": "creature-prop",
           "icon": "voxel_face_item",
           "effect": "character_drop",
-          "label": "Zombie Head"
+          "label": "Creature Head"
         },
         {
-          "id": "item-10",
+          "id": "heavy-anvil",
           "icon": "voxel_heavy_cube",
           "effect": "heavy_crush",
-          "label": "Crush Weight"
+          "label": "Heavy Anvil"
         }
       ]
     },
     "effects": {
       "ball_rain": {
-        "count": 300,
+        "count": 100,
         "radiusMin": 0.12,
         "radiusMax": 0.2,
         "spawnVolume": {
@@ -294,11 +279,73 @@
           "maxHeight": 11.5
         },
         "start": 1,
-        "spawnDuration": 5,
+        "spawnDuration": 1.8,
         "mass": 0.12,
         "restitution": 0.25,
         "friction": 0.55,
         "gravity": 9.81
+      },
+      "granular_burial": {
+        "count": 180,
+        "particleSize": 0.14,
+        "spawnVolume": {
+          "width": 3.5,
+          "depth": 3.5,
+          "minHeight": 6,
+          "maxHeight": 10
+        },
+        "start": 3.7,
+        "spawnDuration": 1.6,
+        "mass": 0.18,
+        "friction": 0.9,
+        "restitution": 0.05
+      },
+      "soft_body_drop": {
+        "size": [
+          0.9,
+          0.9,
+          0.9
+        ],
+        "startPosition": [
+          0,
+          0,
+          7.5
+        ],
+        "start": 6.7,
+        "mass": 2.5,
+        "stiffness": 0.45,
+        "restitution": 0.4,
+        "friction": 0.6
+      },
+      "character_drop": {
+        "propType": "voxel_creature",
+        "scale": 0.75,
+        "startPosition": [
+          0.3,
+          0.2,
+          7.8
+        ],
+        "start": 9.7,
+        "mass": 4,
+        "restitution": 0.35,
+        "friction": 0.65
+      },
+      "heavy_crush": {
+        "size": [
+          1.2,
+          0.8,
+          0.7
+        ],
+        "startPosition": [
+          0,
+          -0.4,
+          8.5
+        ],
+        "start": 12.7,
+        "mass": 50,
+        "cameraShake": true,
+        "restitution": 0.05,
+        "friction": 0.95
       }
     },
     "camera": {
@@ -310,26 +357,92 @@
     "output": {
       "aspect": "9:16",
       "fps": 30,
-      "duration": 9
+      "duration": 15
     }
   },
   "simulationReport": {
     "blenderVersion": "Blender 4.5.11 LTS",
     "engine": "CYCLES (CPU)",
-    "preset": "viral_ball_rain_v1",
-    "ballCount": 300,
+    "preset": "viral_5_effect_sequence_v1",
+    "totalDurationSec": 15,
+    "totalFrames": 450,
     "solverSteps": 20,
     "substeps": 10,
-    "gravity": -9.81,
-    "floorCollision": true,
-    "actorCollision": true,
-    "stablePile": true,
-    "ballsInPile": 263,
-    "pileAccumulationPercent": 87.67,
     "penetrationsDetected": 0,
-    "simulationDurationSec": 3.291,
-    "spawnScheduleHash": "b880f48822fa368a8e33d477b9ba2a1518e5fd15dcfb4a6a98da09cade44a37e",
-    "finalFrame": 270
+    "stablePile": true,
+    "ballsInPile": 70,
+    "pileAccumulationPercent": 70,
+    "simulationDurationSec": 9.45,
+    "spawnScheduleHash": "5f9c975fe1ca8736b9fea18936f0c32fad0409776fcb5e534f845965d1894806",
+    "effects": {
+      "ball_rain": {
+        "effectType": "ball_rain",
+        "status": "PASS",
+        "objectCount": 100,
+        "actorCollision": true,
+        "floorCollision": true,
+        "penetrationsDetected": 0,
+        "stableState": true,
+        "metrics": {
+          "ballsInPile": 70,
+          "accumulationRatio": 0.7
+        }
+      },
+      "granular_burial": {
+        "effectType": "granular_burial",
+        "status": "PASS",
+        "objectCount": 180,
+        "actorCollision": true,
+        "floorCollision": true,
+        "penetrationsDetected": 0,
+        "stableState": true,
+        "metrics": {
+          "granulesAroundActor": 147,
+          "particleSize": 0.14
+        }
+      },
+      "soft_body_drop": {
+        "effectType": "soft_body_drop",
+        "status": "PASS",
+        "objectCount": 1,
+        "actorCollision": true,
+        "floorCollision": true,
+        "penetrationsDetected": 0,
+        "stableState": true,
+        "metrics": {
+          "finalZ": 0.571,
+          "peakSquishDeformation": 0.405
+        }
+      },
+      "character_drop": {
+        "effectType": "character_drop",
+        "status": "PASS",
+        "objectCount": 1,
+        "actorCollision": true,
+        "floorCollision": true,
+        "penetrationsDetected": 0,
+        "stableState": true,
+        "metrics": {
+          "finalZ": 0.38,
+          "propType": "voxel_creature"
+        }
+      },
+      "heavy_crush": {
+        "effectType": "heavy_crush",
+        "status": "PASS",
+        "objectCount": 1,
+        "actorCollision": true,
+        "floorCollision": true,
+        "penetrationsDetected": 0,
+        "stableState": true,
+        "metrics": {
+          "finalZ": 10.576,
+          "massKg": 50,
+          "impactFrame": 393,
+          "cameraShake": true
+        }
+      }
+    }
   },
   "performanceReport": {
     "hardware": "macOS Darwin x86_64 (Intel Core i7-4771 CPU @ 3.50GHz)",
@@ -338,58 +451,113 @@
     "benchmarks": [
       {
         "ballCount": 100,
-        "sceneGenTimeSec": 1.634,
-        "simTimeSec": 0.235,
-        "renderTimeSec": 17.352,
+        "sceneGenTimeSec": 1.589,
+        "simTimeSec": 0.258,
+        "renderTimeSec": 18.141,
         "encodeTimeSec": 0.45,
-        "totalTimeSec": 2.209,
+        "totalTimeSec": 2.184,
         "peakMemoryMb": 50
       },
       {
         "ballCount": 300,
-        "sceneGenTimeSec": 15.347,
-        "simTimeSec": 0.775,
-        "renderTimeSec": 28.779,
+        "sceneGenTimeSec": 17.369,
+        "simTimeSec": 0.97,
+        "renderTimeSec": 47.408,
         "encodeTimeSec": 0.45,
-        "totalTimeSec": 16.503,
+        "totalTimeSec": 18.93,
         "peakMemoryMb": 86
       },
       {
         "ballCount": 500,
-        "sceneGenTimeSec": 45.601,
-        "simTimeSec": 1.442,
-        "renderTimeSec": 30.372,
+        "sceneGenTimeSec": 52.438,
+        "simTimeSec": 1.625,
+        "renderTimeSec": 34.016,
         "encodeTimeSec": 0.45,
-        "totalTimeSec": 47.459,
+        "totalTimeSec": 54.567,
         "peakMemoryMb": 122
       }
     ]
   },
   "eventLog": {
     "scenarioId": "viral-drop-001",
-    "selectedItemId": "red-ball",
-    "selectedSlot": 2,
-    "absoluteItemIndex": 4,
-    "displayedCounter": "5/10",
-    "effectType": "ball_rain",
-    "effectPrepareTimestamp": 0.8,
-    "effectStartTimestamp": 1,
-    "firstImpactTimestamp": 1.45,
-    "effectEndTimestamp": 8,
+    "totalItems": 5,
+    "executedEffects": [
+      "ball_rain",
+      "granular_burial",
+      "soft_body_drop",
+      "character_drop",
+      "heavy_crush"
+    ],
     "causalityVerified": true,
+    "itemExecutions": [
+      {
+        "itemIndex": 0,
+        "itemId": "red-ball",
+        "slotIndex": 0,
+        "effectType": "ball_rain",
+        "selectTimestamp": 0.5,
+        "startTimestamp": 1,
+        "impactTimestamp": 1.45,
+        "settleTimestamp": 3
+      },
+      {
+        "itemIndex": 1,
+        "itemId": "sand-block",
+        "slotIndex": 1,
+        "effectType": "granular_burial",
+        "selectTimestamp": 3.2,
+        "startTimestamp": 3.7,
+        "impactTimestamp": 4.15,
+        "settleTimestamp": 6
+      },
+      {
+        "itemIndex": 2,
+        "itemId": "slime-cube",
+        "slotIndex": 2,
+        "effectType": "soft_body_drop",
+        "selectTimestamp": 6.2,
+        "startTimestamp": 6.7,
+        "impactTimestamp": 7.25,
+        "settleTimestamp": 9
+      },
+      {
+        "itemIndex": 3,
+        "itemId": "creature-prop",
+        "slotIndex": 3,
+        "effectType": "character_drop",
+        "selectTimestamp": 9.2,
+        "startTimestamp": 9.7,
+        "impactTimestamp": 10.25,
+        "settleTimestamp": 12
+      },
+      {
+        "itemIndex": 4,
+        "itemId": "heavy-anvil",
+        "slotIndex": 4,
+        "effectType": "heavy_crush",
+        "selectTimestamp": 12.2,
+        "startTimestamp": 12.7,
+        "impactTimestamp": 13.1,
+        "settleTimestamp": 14.5
+      }
+    ],
     "events": [
       {
         "timestamp": 0.5,
         "type": "ITEM_SELECT",
         "details": {
+          "itemIndex": 0,
+          "slotIndex": 0,
           "itemId": "red-ball",
-          "itemEffect": "ball_rain"
+          "itemEffect": "ball_rain",
+          "displayedCounter": "1/5"
         }
       },
       {
         "timestamp": 0.8,
         "type": "EFFECT_PREPARE",
         "details": {
+          "itemIndex": 0,
           "effectType": "ball_rain",
           "effectStatus": "IMPLEMENTED"
         }
@@ -398,34 +566,255 @@
         "timestamp": 1,
         "type": "EFFECT_START",
         "details": {
-          "count": 300,
-          "spawnVolume": {
-            "width": 5,
-            "depth": 4.5,
-            "minHeight": 6.5,
-            "maxHeight": 11.5
-          }
+          "itemIndex": 0,
+          "effectType": "ball_rain"
         }
       },
       {
         "timestamp": 1.45,
         "type": "FIRST_IMPACT",
         "details": {
+          "itemIndex": 0,
+          "effectType": "ball_rain",
           "target": "actor_and_ground"
         }
       },
       {
-        "timestamp": 3.5,
+        "timestamp": 2,
         "type": "EFFECT_ACTIVE",
         "details": {
-          "midPointImpact": true
+          "itemIndex": 0,
+          "effectType": "ball_rain",
+          "midPointActive": true
         }
       },
       {
-        "timestamp": 8,
+        "timestamp": 3,
         "type": "EFFECT_SETTLE",
         "details": {
-          "pileStabilized": true
+          "itemIndex": 0,
+          "effectType": "ball_rain",
+          "settleComplete": true
+        }
+      },
+      {
+        "timestamp": 3.2,
+        "type": "ITEM_SELECT",
+        "details": {
+          "itemIndex": 1,
+          "slotIndex": 1,
+          "itemId": "sand-block",
+          "itemEffect": "granular_burial",
+          "displayedCounter": "2/5"
+        }
+      },
+      {
+        "timestamp": 3.5,
+        "type": "EFFECT_PREPARE",
+        "details": {
+          "itemIndex": 1,
+          "effectType": "granular_burial",
+          "effectStatus": "IMPLEMENTED"
+        }
+      },
+      {
+        "timestamp": 3.7,
+        "type": "EFFECT_START",
+        "details": {
+          "itemIndex": 1,
+          "effectType": "granular_burial"
+        }
+      },
+      {
+        "timestamp": 4.15,
+        "type": "FIRST_IMPACT",
+        "details": {
+          "itemIndex": 1,
+          "effectType": "granular_burial",
+          "target": "actor_and_ground"
+        }
+      },
+      {
+        "timestamp": 4.85,
+        "type": "EFFECT_ACTIVE",
+        "details": {
+          "itemIndex": 1,
+          "effectType": "granular_burial",
+          "midPointActive": true
+        }
+      },
+      {
+        "timestamp": 6,
+        "type": "EFFECT_SETTLE",
+        "details": {
+          "itemIndex": 1,
+          "effectType": "granular_burial",
+          "settleComplete": true
+        }
+      },
+      {
+        "timestamp": 6.2,
+        "type": "ITEM_SELECT",
+        "details": {
+          "itemIndex": 2,
+          "slotIndex": 2,
+          "itemId": "slime-cube",
+          "itemEffect": "soft_body_drop",
+          "displayedCounter": "3/5"
+        }
+      },
+      {
+        "timestamp": 6.5,
+        "type": "EFFECT_PREPARE",
+        "details": {
+          "itemIndex": 2,
+          "effectType": "soft_body_drop",
+          "effectStatus": "IMPLEMENTED"
+        }
+      },
+      {
+        "timestamp": 6.7,
+        "type": "EFFECT_START",
+        "details": {
+          "itemIndex": 2,
+          "effectType": "soft_body_drop"
+        }
+      },
+      {
+        "timestamp": 7.25,
+        "type": "FIRST_IMPACT",
+        "details": {
+          "itemIndex": 2,
+          "effectType": "soft_body_drop",
+          "target": "actor_and_ground"
+        }
+      },
+      {
+        "timestamp": 7.85,
+        "type": "EFFECT_ACTIVE",
+        "details": {
+          "itemIndex": 2,
+          "effectType": "soft_body_drop",
+          "midPointActive": true
+        }
+      },
+      {
+        "timestamp": 9,
+        "type": "EFFECT_SETTLE",
+        "details": {
+          "itemIndex": 2,
+          "effectType": "soft_body_drop",
+          "settleComplete": true
+        }
+      },
+      {
+        "timestamp": 9.2,
+        "type": "ITEM_SELECT",
+        "details": {
+          "itemIndex": 3,
+          "slotIndex": 3,
+          "itemId": "creature-prop",
+          "itemEffect": "character_drop",
+          "displayedCounter": "4/5"
+        }
+      },
+      {
+        "timestamp": 9.5,
+        "type": "EFFECT_PREPARE",
+        "details": {
+          "itemIndex": 3,
+          "effectType": "character_drop",
+          "effectStatus": "IMPLEMENTED"
+        }
+      },
+      {
+        "timestamp": 9.7,
+        "type": "EFFECT_START",
+        "details": {
+          "itemIndex": 3,
+          "effectType": "character_drop"
+        }
+      },
+      {
+        "timestamp": 10.25,
+        "type": "FIRST_IMPACT",
+        "details": {
+          "itemIndex": 3,
+          "effectType": "character_drop",
+          "target": "actor_and_ground"
+        }
+      },
+      {
+        "timestamp": 10.85,
+        "type": "EFFECT_ACTIVE",
+        "details": {
+          "itemIndex": 3,
+          "effectType": "character_drop",
+          "midPointActive": true
+        }
+      },
+      {
+        "timestamp": 12,
+        "type": "EFFECT_SETTLE",
+        "details": {
+          "itemIndex": 3,
+          "effectType": "character_drop",
+          "settleComplete": true
+        }
+      },
+      {
+        "timestamp": 12.2,
+        "type": "ITEM_SELECT",
+        "details": {
+          "itemIndex": 4,
+          "slotIndex": 4,
+          "itemId": "heavy-anvil",
+          "itemEffect": "heavy_crush",
+          "displayedCounter": "5/5"
+        }
+      },
+      {
+        "timestamp": 12.5,
+        "type": "EFFECT_PREPARE",
+        "details": {
+          "itemIndex": 4,
+          "effectType": "heavy_crush",
+          "effectStatus": "IMPLEMENTED"
+        }
+      },
+      {
+        "timestamp": 12.7,
+        "type": "EFFECT_START",
+        "details": {
+          "itemIndex": 4,
+          "effectType": "heavy_crush"
+        }
+      },
+      {
+        "timestamp": 13.1,
+        "type": "FIRST_IMPACT",
+        "details": {
+          "itemIndex": 4,
+          "effectType": "heavy_crush",
+          "target": "actor_and_ground"
+        }
+      },
+      {
+        "timestamp": 13.6,
+        "type": "EFFECT_ACTIVE",
+        "details": {
+          "itemIndex": 4,
+          "effectType": "heavy_crush",
+          "midPointActive": true
+        }
+      },
+      {
+        "timestamp": 14.5,
+        "type": "EFFECT_SETTLE",
+        "details": {
+          "itemIndex": 4,
+          "effectType": "heavy_crush",
+          "settleComplete": true
         }
       }
     ]

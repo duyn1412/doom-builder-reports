@@ -41,10 +41,90 @@
       "type": "icon"
     },
     {
+      "file": "hotbar_overlay_slot_0_360x640.png",
+      "id": "hotbar_overlay_slot_0_360x640",
+      "licenseProvenance": "Original screen-space 5-slot hotbar UI overlay (stage 1/5)",
+      "sha256": "84dfbf3737c74e12ee54d7a29ccf14b8e9e29f20d74015f74ffdbfa35063b505",
+      "status": "generated_original",
+      "type": "ui_overlay"
+    },
+    {
+      "file": "hotbar_overlay_slot_0_1080x1920.png",
+      "id": "hotbar_overlay_slot_0_1080x1920",
+      "licenseProvenance": "Original screen-space 5-slot hotbar UI overlay (stage 1/5)",
+      "sha256": "d09e83f2870b9e2742de18f549030911a9fa31231c0ea4775108ba40e8c168f3",
+      "status": "generated_original",
+      "type": "ui_overlay"
+    },
+    {
+      "file": "hotbar_overlay_slot_1_360x640.png",
+      "id": "hotbar_overlay_slot_1_360x640",
+      "licenseProvenance": "Original screen-space 5-slot hotbar UI overlay (stage 2/5)",
+      "sha256": "b6636e25383ee87e32b7e18bbe0594d76897b9dde4655ca96753a172bbbe3fde",
+      "status": "generated_original",
+      "type": "ui_overlay"
+    },
+    {
+      "file": "hotbar_overlay_slot_1_1080x1920.png",
+      "id": "hotbar_overlay_slot_1_1080x1920",
+      "licenseProvenance": "Original screen-space 5-slot hotbar UI overlay (stage 2/5)",
+      "sha256": "f56e834d46a099f4d0db11a1fd714eafdd3595a8fef97c9197ea219af6fad28a",
+      "status": "generated_original",
+      "type": "ui_overlay"
+    },
+    {
+      "file": "hotbar_overlay_slot_2_360x640.png",
+      "id": "hotbar_overlay_slot_2_360x640",
+      "licenseProvenance": "Original screen-space 5-slot hotbar UI overlay (stage 3/5)",
+      "sha256": "eb4c226eb70164a33c89b4939586187a3727fd800c9988368c41b01abc6f6cf7",
+      "status": "generated_original",
+      "type": "ui_overlay"
+    },
+    {
+      "file": "hotbar_overlay_slot_2_1080x1920.png",
+      "id": "hotbar_overlay_slot_2_1080x1920",
+      "licenseProvenance": "Original screen-space 5-slot hotbar UI overlay (stage 3/5)",
+      "sha256": "598c0cee1a32b79bec9007c544aa05bfad4dd31ebad17261fe5913bc6abd8bd4",
+      "status": "generated_original",
+      "type": "ui_overlay"
+    },
+    {
+      "file": "hotbar_overlay_slot_3_360x640.png",
+      "id": "hotbar_overlay_slot_3_360x640",
+      "licenseProvenance": "Original screen-space 5-slot hotbar UI overlay (stage 4/5)",
+      "sha256": "f59a8cccaac95ed42de3d4d9bd7238c32fab593643267c70c2f19a68b21aadc9",
+      "status": "generated_original",
+      "type": "ui_overlay"
+    },
+    {
+      "file": "hotbar_overlay_slot_3_1080x1920.png",
+      "id": "hotbar_overlay_slot_3_1080x1920",
+      "licenseProvenance": "Original screen-space 5-slot hotbar UI overlay (stage 4/5)",
+      "sha256": "465e4c223bbbebf60ce02bbd9a19cf4e346603593508eb85132091b001d674c4",
+      "status": "generated_original",
+      "type": "ui_overlay"
+    },
+    {
+      "file": "hotbar_overlay_slot_4_360x640.png",
+      "id": "hotbar_overlay_slot_4_360x640",
+      "licenseProvenance": "Original screen-space 5-slot hotbar UI overlay (stage 5/5)",
+      "sha256": "a3eb342322ea697a9b6e488b579b92029579af3bfad719797055dca655ed112b",
+      "status": "generated_original",
+      "type": "ui_overlay"
+    },
+    {
+      "file": "hotbar_overlay_slot_4_1080x1920.png",
+      "id": "hotbar_overlay_slot_4_1080x1920",
+      "licenseProvenance": "Original screen-space 5-slot hotbar UI overlay (stage 5/5)",
+      "sha256": "6c78ecc870366e53eb5f681a3e2e17f5b4b146e47f457c65ee46c5d7fcce2996",
+      "status": "generated_original",
+      "type": "ui_overlay"
+    },
+    {
       "file": "hotbar_overlay_360x640.png",
       "id": "hotbar_overlay_360x640",
       "licenseProvenance": "Original screen-space 5-slot hotbar UI overlay",
-      "sha256": "2a108f37f4940d74ba25fe5c958ba5ba44effef282c1e0318d3a9cd0a395f7c0",
+      "sha256": "84dfbf3737c74e12ee54d7a29ccf14b8e9e29f20d74015f74ffdbfa35063b505",
       "status": "generated_original",
       "type": "ui_overlay"
     },
@@ -52,11 +132,11 @@
       "file": "hotbar_overlay_1080x1920.png",
       "id": "hotbar_overlay_1080x1920",
       "licenseProvenance": "Original screen-space 5-slot hotbar UI overlay",
-      "sha256": "d1ada2ba11c814d8d8f2e291a5fa59d268be9726e2ff35cd72da7c3b026848f5",
+      "sha256": "d09e83f2870b9e2742de18f549030911a9fa31231c0ea4775108ba40e8c168f3",
       "status": "generated_original",
       "type": "ui_overlay"
     }
   ],
   "generatedAt": "2026-09-06T12:00:00Z",
-  "totalAssets": 7
+  "totalAssets": 17
 }

@@ -5,29 +5,29 @@
   "benchmarks": [
     {
       "ballCount": 100,
-      "sceneGenTimeSec": 1.634,
-      "simTimeSec": 0.235,
-      "renderTimeSec": 17.352,
+      "sceneGenTimeSec": 1.589,
+      "simTimeSec": 0.258,
+      "renderTimeSec": 18.141,
       "encodeTimeSec": 0.45,
-      "totalTimeSec": 2.209,
+      "totalTimeSec": 2.184,
       "peakMemoryMb": 50.0
     },
     {
       "ballCount": 300,
-      "sceneGenTimeSec": 15.347,
-      "simTimeSec": 0.775,
-      "renderTimeSec": 28.779,
+      "sceneGenTimeSec": 17.369,
+      "simTimeSec": 0.97,
+      "renderTimeSec": 47.408,
       "encodeTimeSec": 0.45,
-      "totalTimeSec": 16.503,
+      "totalTimeSec": 18.93,
       "peakMemoryMb": 86.0
     },
     {
       "ballCount": 500,
-      "sceneGenTimeSec": 45.601,
-      "simTimeSec": 1.442,
-      "renderTimeSec": 30.372,
+      "sceneGenTimeSec": 52.438,
+      "simTimeSec": 1.625,
+      "renderTimeSec": 34.016,
       "encodeTimeSec": 0.45,
-      "totalTimeSec": 47.459,
+      "totalTimeSec": 54.567,
       "peakMemoryMb": 122.0
     }
   ]
