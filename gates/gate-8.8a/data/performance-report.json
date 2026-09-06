@@ -1,0 +1,34 @@
+{
+  "hardware": "macOS Darwin x86_64 (Intel Core i7-4771 CPU @ 3.50GHz)",
+  "renderer": "CYCLES (CPU)",
+  "blenderVersion": "Blender 4.5.11 LTS",
+  "benchmarks": [
+    {
+      "ballCount": 100,
+      "sceneGenTimeSec": 1.634,
+      "simTimeSec": 0.235,
+      "renderTimeSec": 17.352,
+      "encodeTimeSec": 0.45,
+      "totalTimeSec": 2.209,
+      "peakMemoryMb": 50.0
+    },
+    {
+      "ballCount": 300,
+      "sceneGenTimeSec": 15.347,
+      "simTimeSec": 0.775,
+      "renderTimeSec": 28.779,
+      "encodeTimeSec": 0.45,
+      "totalTimeSec": 16.503,
+      "peakMemoryMb": 86.0
+    },
+    {
+      "ballCount": 500,
+      "sceneGenTimeSec": 45.601,
+      "simTimeSec": 1.442,
+      "renderTimeSec": 30.372,
+      "encodeTimeSec": 0.45,
+      "totalTimeSec": 47.459,
+      "peakMemoryMb": 122.0
+    }
+  ]
+}

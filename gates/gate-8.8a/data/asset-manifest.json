@@ -1,0 +1,62 @@
+{
+  "assets": [
+    {
+      "file": "icons/voxel_red_ball.png",
+      "id": "voxel_red_ball",
+      "licenseProvenance": "100% original procedural voxel asset created for Gate 8.8A (no Mojang/Minecraft textures)",
+      "sha256": "d4f5256c84dc90c00cb6b3d697db6833d650cd19d2097367301d65a1c46437a4",
+      "status": "generated_original",
+      "type": "icon"
+    },
+    {
+      "file": "icons/voxel_granular_cube.png",
+      "id": "voxel_granular_cube",
+      "licenseProvenance": "100% original procedural voxel asset created for Gate 8.8A (no Mojang/Minecraft textures)",
+      "sha256": "de95ad26ac5a5a60893c3ba26deeeaae0479e9b8b933f39739dbf5296d8fd7b0",
+      "status": "generated_original",
+      "type": "icon"
+    },
+    {
+      "file": "icons/voxel_jelly_cube.png",
+      "id": "voxel_jelly_cube",
+      "licenseProvenance": "100% original procedural voxel asset created for Gate 8.8A (no Mojang/Minecraft textures)",
+      "sha256": "4b6047d2736a3893122edfe5590e892b585a2b078926b81ce1276a7678d7558b",
+      "status": "generated_original",
+      "type": "icon"
+    },
+    {
+      "file": "icons/voxel_face_item.png",
+      "id": "voxel_face_item",
+      "licenseProvenance": "100% original procedural voxel asset created for Gate 8.8A (no Mojang/Minecraft textures)",
+      "sha256": "60e4b64c5e1efa36c8545ed2c784c7188fdd246ef78f54e230077f9646784a70",
+      "status": "generated_original",
+      "type": "icon"
+    },
+    {
+      "file": "icons/voxel_heavy_cube.png",
+      "id": "voxel_heavy_cube",
+      "licenseProvenance": "100% original procedural voxel asset created for Gate 8.8A (no Mojang/Minecraft textures)",
+      "sha256": "b145830db7e7945daea4b2157462c142c56f34bb9084e6ad1b76deaeef43ee70",
+      "status": "generated_original",
+      "type": "icon"
+    },
+    {
+      "file": "hotbar_overlay_360x640.png",
+      "id": "hotbar_overlay_360x640",
+      "licenseProvenance": "Original screen-space 5-slot hotbar UI overlay",
+      "sha256": "2a108f37f4940d74ba25fe5c958ba5ba44effef282c1e0318d3a9cd0a395f7c0",
+      "status": "generated_original",
+      "type": "ui_overlay"
+    },
+    {
+      "file": "hotbar_overlay_1080x1920.png",
+      "id": "hotbar_overlay_1080x1920",
+      "licenseProvenance": "Original screen-space 5-slot hotbar UI overlay",
+      "sha256": "d1ada2ba11c814d8d8f2e291a5fa59d268be9726e2ff35cd72da7c3b026848f5",
+      "status": "generated_original",
+      "type": "ui_overlay"
+    }
+  ],
+  "generatedAt": "2026-09-06T12:00:00Z",
+  "totalAssets": 7
+}

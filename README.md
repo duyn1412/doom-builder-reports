@@ -51,3 +51,4 @@ doom-builder-reports/
 - **Bridge (`bridge-viaduct-seed302`):** **PASS** (1,010 blocks)
 - **Exact World Readback:** **100.000% across all structures**
 - **Automated Technical QA:** **10/10 PASS**
+\n- [Gate 8.8A — 3D Viral Effects Runtime](gates/gate-8.8a/index.html) — **TECHNICAL PASS / PENDING VISUAL REVIEW** (38/38 PASS, Ball Rain simulation, video players, contact sheet)

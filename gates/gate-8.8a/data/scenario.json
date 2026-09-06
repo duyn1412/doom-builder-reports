@@ -1,0 +1,116 @@
+{
+  "actor": {
+    "pose": "idle",
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "type": "block_character"
+  },
+  "camera": {
+    "distance": 7.5,
+    "elevation": 2.2,
+    "fov": 54,
+    "profile": "viral_vertical_v1"
+  },
+  "effects": {
+    "ball_rain": {
+      "count": 300,
+      "friction": 0.55,
+      "gravity": 9.81,
+      "mass": 0.12,
+      "radiusMax": 0.2,
+      "radiusMin": 0.12,
+      "restitution": 0.25,
+      "spawnDuration": 5,
+      "spawnVolume": {
+        "depth": 4.5,
+        "maxHeight": 11.5,
+        "minHeight": 6.5,
+        "width": 5
+      },
+      "start": 1
+    }
+  },
+  "environment": {
+    "backgroundColor": "#111827",
+    "groundRadius": 8,
+    "type": "clean_stage"
+  },
+  "id": "viral-drop-001",
+  "itemQueue": {
+    "counterVisible": true,
+    "items": [
+      {
+        "effect": "granular_burial",
+        "icon": "voxel_granular_cube",
+        "id": "item-01",
+        "label": "Sand Block"
+      },
+      {
+        "effect": "soft_body_drop",
+        "icon": "voxel_jelly_cube",
+        "id": "item-02",
+        "label": "Slime Cube"
+      },
+      {
+        "effect": "character_drop",
+        "icon": "voxel_face_item",
+        "id": "item-03",
+        "label": "Creature Head"
+      },
+      {
+        "effect": "heavy_crush",
+        "icon": "voxel_heavy_cube",
+        "id": "item-04",
+        "label": "Heavy Anvil"
+      },
+      {
+        "effect": "ball_rain",
+        "icon": "voxel_red_ball",
+        "id": "red-ball",
+        "label": "Red Ball"
+      },
+      {
+        "effect": "granular_burial",
+        "icon": "voxel_granular_cube",
+        "id": "item-06",
+        "label": "Gravel Block"
+      },
+      {
+        "effect": "soft_body_drop",
+        "icon": "voxel_jelly_cube",
+        "id": "item-07",
+        "label": "Bouncy Jelly"
+      },
+      {
+        "effect": "ball_rain",
+        "icon": "voxel_red_ball",
+        "id": "item-08",
+        "label": "Blue Ball"
+      },
+      {
+        "effect": "character_drop",
+        "icon": "voxel_face_item",
+        "id": "item-09",
+        "label": "Zombie Head"
+      },
+      {
+        "effect": "heavy_crush",
+        "icon": "voxel_heavy_cube",
+        "id": "item-10",
+        "label": "Crush Weight"
+      }
+    ],
+    "startIndex": 4,
+    "totalItems": 10,
+    "visibleSlots": 5
+  },
+  "output": {
+    "aspect": "9:16",
+    "duration": 9,
+    "fps": 30
+  },
+  "seed": 1001
+}

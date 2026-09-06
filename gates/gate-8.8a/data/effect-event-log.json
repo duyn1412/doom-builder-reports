@@ -1,0 +1,65 @@
+{
+  "absoluteItemIndex": 4,
+  "causalityVerified": true,
+  "displayedCounter": "5/10",
+  "effectEndTimestamp": 8,
+  "effectPrepareTimestamp": 0.8,
+  "effectStartTimestamp": 1,
+  "effectType": "ball_rain",
+  "events": [
+    {
+      "details": {
+        "itemEffect": "ball_rain",
+        "itemId": "red-ball"
+      },
+      "timestamp": 0.5,
+      "type": "ITEM_SELECT"
+    },
+    {
+      "details": {
+        "effectStatus": "IMPLEMENTED",
+        "effectType": "ball_rain"
+      },
+      "timestamp": 0.8,
+      "type": "EFFECT_PREPARE"
+    },
+    {
+      "details": {
+        "count": 300,
+        "spawnVolume": {
+          "depth": 4.5,
+          "maxHeight": 11.5,
+          "minHeight": 6.5,
+          "width": 5
+        }
+      },
+      "timestamp": 1,
+      "type": "EFFECT_START"
+    },
+    {
+      "details": {
+        "target": "actor_and_ground"
+      },
+      "timestamp": 1.45,
+      "type": "FIRST_IMPACT"
+    },
+    {
+      "details": {
+        "midPointImpact": true
+      },
+      "timestamp": 3.5,
+      "type": "EFFECT_ACTIVE"
+    },
+    {
+      "details": {
+        "pileStabilized": true
+      },
+      "timestamp": 8,
+      "type": "EFFECT_SETTLE"
+    }
+  ],
+  "firstImpactTimestamp": 1.45,
+  "scenarioId": "viral-drop-001",
+  "selectedItemId": "red-ball",
+  "selectedSlot": 2
+}

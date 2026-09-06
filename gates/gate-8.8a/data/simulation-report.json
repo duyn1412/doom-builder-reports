@@ -1,0 +1,18 @@
+{
+  "blenderVersion": "Blender 4.5.11 LTS",
+  "engine": "CYCLES (CPU)",
+  "preset": "viral_ball_rain_v1",
+  "ballCount": 300,
+  "solverSteps": 20,
+  "substeps": 10,
+  "gravity": -9.81,
+  "floorCollision": true,
+  "actorCollision": true,
+  "stablePile": true,
+  "ballsInPile": 263,
+  "pileAccumulationPercent": 87.67,
+  "penetrationsDetected": 0,
+  "simulationDurationSec": 3.291,
+  "spawnScheduleHash": "b880f48822fa368a8e33d477b9ba2a1518e5fd15dcfb4a6a98da09cade44a37e",
+  "finalFrame": 270
+}
