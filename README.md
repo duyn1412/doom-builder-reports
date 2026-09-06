@@ -37,7 +37,7 @@ doom-builder-reports/
         ├── qa-report.json   # Machine-readable audit evidence
         └── assets/
             ├── images/      # 21 Real-Minecraft screenshots & contact sheets
-            ├── qa/          # 15 Sanitized JSON spec & test fixtures
+            ├── qa/          # 17 Sanitized JSON spec & test fixtures
             └── videos/      # Web-optimized 360p preview video streams
 ```
 
@@ -45,9 +45,9 @@ doom-builder-reports/
 
 ## 🔍 Gate 8.7B Current Review Status
 
-- **Status:** **HOLD — Pending Direct Visual Review of Tower & Bridge**
-- **House (`house-large-seed103`):** **APPROVED (VISUAL PASS)** (2,010 blocks)
-- **Tower (`tower-keep-seed202`):** **PENDING DIRECT REVIEW** (1,326 blocks)
-- **Bridge (`bridge-viaduct-seed302`):** **PENDING DIRECT REVIEW** (1,010 blocks)
+- **Status:** **FINAL PASS / FROZEN**
+- **House (`house-large-seed103`):** **PASS WITH KNOWN LIMITATIONS** (2,010 blocks)
+- **Tower (`tower-keep-seed202`):** **PASS WITH KNOWN LIMITATIONS** (1,326 blocks)
+- **Bridge (`bridge-viaduct-seed302`):** **PASS** (1,010 blocks)
 - **Exact World Readback:** **100.000% across all structures**
 - **Automated Technical QA:** **10/10 PASS**

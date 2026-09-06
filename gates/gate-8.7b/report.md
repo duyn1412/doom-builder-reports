@@ -9,16 +9,16 @@
 **Report Finalized:** 2026-09-06T04:20:00Z  
 **Repository:** `minecraft-shorts`  
 **Target Architecture:** Fabric Minecraft 1.21.11 / Sponge v2 Schematics  
-**Overall Gate 8.7B:** **HOLD / READY FOR MANUAL REVIEW**  
+**Overall Gate 8.7B:** **FINAL PASS / FROZEN**  
 **Technical QA:** **PASS (10/10 automated checks, 100.000% exact readbacks)**  
 **Visual Proof Availability:** **PASS (All multi-angle views and contact sheets generated and verified)**  
-**House Visual:** **PASS**  
-**Tower Visual:** **PENDING DIRECT REVIEW**  
-**Bridge Visual:** **PENDING DIRECT REVIEW**  
+**House Visual:** **PASS WITH KNOWN LIMITATIONS**  
+**Tower Visual:** **PASS WITH KNOWN LIMITATIONS**  
+**Bridge Visual:** **PASS**  
 **Known Visual Limitations:** **Documented (Quality notes, not technical failures)**  
 **Next Planned Gate:** Gate 8.7C (AI Minecraft Architect) — **FROZEN / NOT STARTED**
 
-> *"Gate 8.7B proves a deterministic multi-family procedural architecture grammar suitable as the deterministic substrate for Gate 8.7C AI Architect."*
+> *"Gate 8.7B proves a deterministic multi-family procedural architecture grammar. The grammar is production-valid as a deterministic substrate for Gate 8.7C, but does not yet target skilled handcrafted/Sereyka-level architectural richness."*
 
 ---
 
@@ -38,7 +38,7 @@
 | Stress Test | External Schematic Ingestion | **FROZEN / PASS** | 2,587 non-air blocks, 100.000% exact readback, 9.1 bps |
 | Gate 8.7A | Schematic Factory Core | **FROZEN / PASS** | BuildSpec -> BlockPlan -> Sponge v2 .schem -> 100% roundtrip |
 | Gate 8.7B (Tech) | Procedural Architecture Grammar Automated QA | **PASS (10/10)** | 7 packages across 3 families, 11 heuristics 100%, 2010 blk house |
-| **Gate 8.7B (Visual)** | **Real-Minecraft Visual-Proof Evidence** | **HOLD / REVIEW** | House: PASS. Tower & Bridge: PENDING DIRECT REVIEW. Proofs available. |
+| **Gate 8.7B (Visual)** | **Real-Minecraft Visual-Proof Evidence** | **FROZEN / PASS** | House: PASS W/ LIMITS. Tower: PASS W/ LIMITS. Bridge: PASS. |
 | Gate 8.7C | AI Architect / Vision Critic | **NOT STARTED / NEXT** | Semantic boundary: ArchitectureSpec output only; no raw binary Sponge/NBT. |
 | Gate 9 | FFmpeg Master Editing & Music | **NOT STARTED** | Future phase. |
 
@@ -49,7 +49,7 @@
 Visual proof rendering was executed using **strictly partitioned, scoped chunk replays** to guarantee 100% visual isolation (zero other structures in the background, mob spawning disabled).
 
 ### 2.1 Large Medieval House — `house-large-seed103`
-- **Review Decision:** **APPROVED (VISUAL PASS)**
+- **Review Decision:** **PASS WITH KNOWN LIMITATIONS**
 - **Block Count:** 2,010 blocks (target: >= 1,500)
 - **Dimensions:** 19 × 16 × 19 (W × H × L)
 - **Family:** House | **Style Profile:** Rustic-Medieval
@@ -78,7 +78,7 @@ Visual proof rendering was executed using **strictly partitioned, scoped chunk r
 ---
 
 ### 2.2 Fortified Tower Keep — `tower-keep-seed202`
-- **Review Decision:** **PENDING DIRECT VISUAL REVIEW**
+- **Review Decision:** **PASS WITH KNOWN LIMITATIONS**
 - **Block Count:** 1,326 blocks
 - **Dimensions:** 11 × 24 × 11 (W × H × L, 2.2:1 aspect ratio)
 - **Family:** Tower | **Style Profile:** Rustic-Medieval / Fortified
@@ -104,7 +104,7 @@ Visual proof rendering was executed using **strictly partitioned, scoped chunk r
 ---
 
 ### 2.3 Viaduct Bridge — `bridge-viaduct-seed302`
-- **Review Decision:** **PENDING DIRECT VISUAL REVIEW**
+- **Review Decision:** **PASS**
 - **Block Count:** 1,010 blocks
 - **Dimensions:** 9 × 10 × 27 (W × H × L)
 - **Family:** Bridge | **Style Profile:** Stone-Fortified
@@ -169,7 +169,26 @@ All evidence files are bundled in `assets/qa/` with sanitized relative paths:
 - [assets/qa/environment-report.json](assets/qa/environment-report.json) — Gate 8.6D Environment Report
 - [assets/qa/environment-visual-qa-report.json](assets/qa/environment-visual-qa-report.json) — Gate 8.6D Framing & Visual QA Report
 
-## 5. Next-Gate Boundary: Gate 8.7C — AI Minecraft Architect
+
+---
+
+## 5. Known Quality Limitations & Gate 8.7C Improvement Targets
+
+The known visual limitations above are acceptable for the Gate 8.7B procedural grammar substrate proof and do not block freeze. They become explicit improvement targets for Gate 8.7C (AI Minecraft Architect):
+
+- **Reduce obvious facade repetition**: introduce asymmetrical bay rhythms and varied window groupings.
+- **Increase massing asymmetry**: incorporate dynamic L-shapes, side wings, lean-tos, and cross-gables.
+- **Richer roof grammar**: implement dormers, hips, valleys, bell-cast eaves, and chimney intersections.
+- **Stronger facade depth**: multi-layer relief, overhang brackets, flower boxes, shutters, and recessed entries.
+- **Richer interiors**: move beyond single-room hall cavities to full domestic and functional environments.
+- **Functional room partitioning**: dedicated kitchens, living halls, sleeping lofts, and cellar access.
+- **Furniture & decor placement**: localized tables, chairs, shelving, hearths, storage, and lighting fixtures.
+- **Better focal hierarchy**: clear entrance accentuation and focal framing from hero camera angles.
+- **More architecturally intentional detail**: materials chosen to reflect structural load, weathering, and architectural purpose.
+
+---
+
+## 6. Next-Gate Boundary: Gate 8.7C — AI Minecraft Architect
 
 ```text
 User Prompt / Reference
@@ -190,11 +209,16 @@ Multi-angle Visual Proof
         ↓
    Vision Critic
         ↓
-Semantic Repair Loop
+Semantic Repair Instructions
+        ↓
+ArchitectureSpec Revision
+        ↓
+   Repair Loop
 ```
 
 ### Critical Rules for Gate 8.7C
 - The LLM must **NEVER** generate Sponge/NBT binary directly.
-- AI output must remain strictly semantic: declarative `ArchitectureSpec` and semantic repair instructions.
-- The deterministic compiler (Gate 8.7A) and grammar (Gate 8.7B) remain authoritative.
+- The AI is responsible for semantic design decisions.
+- AI output must remain strictly semantic: high-level `ArchitectureSpec` and semantic repair instructions.
+- The deterministic Gate 8.7B grammar and Gate 8.7A compiler remain authoritative for block realization.
 

@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-09-06T04:33:40.678341+00:00",
+  "timestamp": "2026-09-06T05:08:20.959188+00:00",
   "targetDirectory": "ftp.wptopd3v.com/reports.wptopd3v.com/mine",
   "status": "PASS",
   "gate": "8.7B",
-  "overallGate87b": "HOLD / READY FOR MANUAL REVIEW",
+  "overallGate87b": "FINAL PASS / FROZEN",
   "technicalQA": "PASS",
   "visualProofAvailability": "PASS",
-  "houseVisual": "PASS",
-  "towerVisual": "PENDING DIRECT REVIEW",
-  "bridgeVisual": "PENDING DIRECT REVIEW",
+  "houseVisual": "PASS WITH KNOWN LIMITATIONS",
+  "towerVisual": "PASS WITH KNOWN LIMITATIONS",
+  "bridgeVisual": "PASS",
   "exactReadbackEvidence": {
     "house": {
       "verified": true,
@@ -149,7 +149,7 @@
     "contentType": "text/html",
     "assetCountChecked": 32,
     "failedAssetUrls": [],
-    "timestamp": "2026-09-06T04:33:40.678341+00:00",
+    "timestamp": "2026-09-06T05:08:20.959188+00:00",
     "overallStatus": "PASS",
     "targetEndpoints": {
       "indexHtml": {
@@ -369,5 +369,64 @@
     "gate87bUrl": "https://duyn1412.github.io/doom-builder-reports/gates/gate-8.7b/index.html",
     "gate87bReportMd": "https://duyn1412.github.io/doom-builder-reports/gates/gate-8.7b/report.md",
     "gate87bQaJson": "https://duyn1412.github.io/doom-builder-reports/gates/gate-8.7b/qa-report.json"
-  }
+  },
+  "visualProof": "PASS",
+  "positioningStatement": "Gate 8.7B proves a deterministic multi-family procedural architecture grammar. The grammar is production-valid as a deterministic substrate for Gate 8.7C, but does not yet target skilled handcrafted/Sereyka-level architectural richness.",
+  "visualDecisions": {
+    "house": {
+      "decision": "PASS WITH KNOWN LIMITATIONS",
+      "strengths": [
+        "clear readable 2-storey medieval house silhouette",
+        "coherent timber + cobblestone material language",
+        "usable exterior facade depth",
+        "exterior framing works from multiple angles"
+      ],
+      "limitations": [
+        "interior is very sparse",
+        "footprint/massing remains fairly rectangular",
+        "window rhythm is repetitive / procedural",
+        "some facade accents are visually regular"
+      ],
+      "note": "Acceptable as a procedural grammar proof. Does not yet target skilled handcrafted/Sereyka-level architectural richness."
+    },
+    "tower": {
+      "decision": "PASS WITH KNOWN LIMITATIONS",
+      "strengths": [
+        "strong readable fortified tower silhouette",
+        "vertical proportions are convincing",
+        "battlement/crown reads correctly",
+        "low-angle and hero views are usable"
+      ],
+      "limitations": [
+        "facade is simple",
+        "repeated slit/window rhythm is visible",
+        "overall architecture is still clearly procedural"
+      ],
+      "note": "Acceptable for Gate 8.7B grammar proof."
+    },
+    "bridge": {
+      "decision": "PASS",
+      "strengths": [
+        "strongest visual result of the three",
+        "believable civil/medieval infrastructure",
+        "modular repetition is appropriate for a bridge",
+        "side, approach, underside and hero views all read well",
+        "material/structural logic is coherent"
+      ],
+      "limitations": [
+        "still grammar-driven, but repetition is architecturally appropriate"
+      ]
+    }
+  },
+  "gate87cImprovementTargets": [
+    "reduce obvious facade repetition",
+    "increase massing asymmetry",
+    "richer roof grammar",
+    "stronger facade depth",
+    "richer interiors",
+    "functional room partitioning",
+    "furniture/decor placement",
+    "better focal hierarchy",
+    "more architecturally intentional detail"
+  ]
 }
