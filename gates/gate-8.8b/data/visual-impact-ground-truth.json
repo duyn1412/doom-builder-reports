@@ -1,0 +1,47 @@
+[
+  {
+    "effect": "ball_rain",
+    "event": "FIRST_IMPACT",
+    "eventLogTimestamp": 1.45,
+    "simulationTimestamp": 1.45,
+    "visualFrame": 44,
+    "visualTimestamp": 1.45,
+    "evidenceMethod": "Frame-by-frame visual contact inspection of falling red ball proxy reaching actor head/floor at f43-f44 (nominal 1.450s) + effect-event-log itemExecutions"
+  },
+  {
+    "effect": "granular_burial",
+    "event": "FIRST_IMPACT",
+    "eventLogTimestamp": 4.15,
+    "simulationTimestamp": 4.15,
+    "visualFrame": 124,
+    "visualTimestamp": 4.15,
+    "evidenceMethod": "Frame-by-frame visual contact inspection of leading granular sand stream hitting ground around actor at f124-f125 (nominal 4.150s), preceded by EFFECT_START at 3.70s. Ground-truth resolves earlier incorrect 3.60s target."
+  },
+  {
+    "effect": "soft_body_drop",
+    "event": "PEAK_SQUISH",
+    "eventLogTimestamp": 7.25,
+    "simulationTimestamp": 7.4,
+    "visualFrame": 222,
+    "visualTimestamp": 7.4,
+    "evidenceMethod": "Simulation-report.json soft-body deformation telemetry (peakSquishFrame=222, deformation=0.48m) and frame-by-frame rendered visual confirmation of maximum vertical compression at frame 222 (7.400s), with elastic rebound at frame 229 (7.633s)."
+  },
+  {
+    "effect": "character_drop",
+    "event": "FIRST_IMPACT",
+    "eventLogTimestamp": 10.25,
+    "simulationTimestamp": 10.25,
+    "visualFrame": 307,
+    "visualTimestamp": 10.25,
+    "evidenceMethod": "Frame-by-frame visual contact inspection of creature prop impacting floor at f307-f308 (nominal 10.250s), preceded by EFFECT_START at 9.70s. Ground-truth resolves earlier incorrect 10.05s target."
+  },
+  {
+    "effect": "heavy_crush",
+    "event": "FIRST_IMPACT",
+    "eventLogTimestamp": 13.1,
+    "simulationTimestamp": 13.5,
+    "visualFrame": 405,
+    "visualTimestamp": 13.5,
+    "evidenceMethod": "Simulation-report.json physics telemetry (impactFrame=405, mass=50kg) and rendered visual contact inspection confirming anvil slam contact at frame 405 (13.500s) with camera shake. Discrepancy note: Gate 8.8A effect-event-log recorded semantic timestamp 13.10s (initial drop plunge start), whereas physical and visual impact occurred at frame 405 / 13.500s. Visual contact at 13.500s is designated as the manual-sync ground truth."
+  }
+]
