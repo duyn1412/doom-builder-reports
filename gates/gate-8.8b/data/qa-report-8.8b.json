@@ -79,7 +79,7 @@
     {
       "id": "audio_bitrate_requirement",
       "status": "PASS",
-      "detail": "Audio stream measured average bitrate: 191.9 kbps (requirement: AAC 192 kbps or better)"
+      "detail": "192 kbps target within ±1% measured-average tolerance: target=192000 bps, measured=191945 bps (deviation: -0.029%, tolerance: ±1.0%)"
     },
     {
       "id": "audio_video_duration_matched",

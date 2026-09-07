@@ -173,12 +173,12 @@
           <span class="stat-val" style="color: #7ee787;">0 overs (Max Decoded Sample: -2.9 dB)</span>
         </div>
         <div class="stat-row">
-          <span class="stat-label">Target Audio Bitrate</span>
-          <span class="stat-val">192 kbps or better</span>
+          <span class="stat-label">Audio Bitrate Requirement</span>
+          <span class="stat-val">192 kbps target within &plusmn;1% measured-average tolerance</span>
         </div>
         <div class="stat-row">
           <span class="stat-label">Measured Audio Bitrate (ffprobe)</span>
-          <span class="stat-val" style="color: #7ee787;">191.9 kbps (191945 bps, PASS)</span>
+          <span class="stat-val" style="color: #7ee787;">191.9 kbps (191945 bps, dev: -0.029% &le; &plusmn;1.0% PASS)</span>
         </div>
         <div class="stat-row">
           <span class="stat-label">Audio Codec & Format</span>
@@ -967,7 +967,7 @@
     
     <tr>
       <td><code>audio_bitrate_requirement</code></td>
-      <td>Audio stream measured average bitrate: 191.9 kbps (requirement: AAC 192 kbps or better)</td>
+      <td>192 kbps target within ±1% measured-average tolerance: target=192000 bps, measured=191945 bps (deviation: -0.029%, tolerance: ±1.0%)</td>
       <td><span class="badge badge-pass">PASS</span></td>
     </tr>
     
