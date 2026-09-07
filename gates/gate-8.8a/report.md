@@ -9,8 +9,8 @@
 **Accepted Visual Baseline**: `production(3)-equivalent authoritative render is the accepted visual baseline`  
 **Render Host**: macOS Duys-MacBook-Pro.local (arm64, Apple Silicon M2)  
 **Blender Version**: Blender 5.2.0 LTS  
-**Renderer**: CYCLES (CPU/Metal, samples=4)  
-**Generated At**: 2026-09-07 04:03:33 UTC  
+**Renderer**: CYCLES (CPU/Metal, production samples=64, preview samples=32)  
+**Generated At**: 2026-09-07 04:06:02 UTC  
 
 ---
 
