@@ -9,9 +9,9 @@
   "substeps": 20,
   "penetrationsDetected": 0,
   "stablePile": true,
-  "ballsInPile": 78,
-  "pileAccumulationPercent": 78.0,
-  "simulationDurationSec": 1.605,
+  "ballsInPile": 74,
+  "pileAccumulationPercent": 74.0,
+  "simulationDurationSec": 1.121,
   "spawnScheduleHash": "5f9c975fe1ca8736b9fea18936f0c32fad0409776fcb5e534f845965d1894806",
   "effects": {
     "ball_rain": {
@@ -23,8 +23,8 @@
       "penetrationsDetected": 0,
       "stableState": true,
       "metrics": {
-        "ballsInPile": 78,
-        "accumulationRatio": 0.78
+        "ballsInPile": 74,
+        "accumulationRatio": 0.74
       }
     },
     "granular_burial": {
@@ -36,7 +36,7 @@
       "penetrationsDetected": 0,
       "stableState": true,
       "metrics": {
-        "granulesAroundActor": 162,
+        "granulesAroundActor": 139,
         "particleSize": 0.14
       }
     },
@@ -49,7 +49,7 @@
       "penetrationsDetected": 0,
       "stableState": true,
       "metrics": {
-        "finalZ": 0.79,
+        "finalZ": 6.551,
         "peakSquishDeformation": 0.72,
         "elasticRebound": 0.85
       }
@@ -63,7 +63,7 @@
       "penetrationsDetected": 0,
       "stableState": true,
       "metrics": {
-        "finalZ": 0.739,
+        "finalZ": 0.525,
         "propType": "voxel_creature"
       }
     },
@@ -76,9 +76,9 @@
       "penetrationsDetected": 0,
       "stableState": true,
       "metrics": {
-        "initialZ": 6.8,
+        "initialZ": 5.18,
         "impactZ": 1.8,
-        "finalZ": 0.59,
+        "finalZ": 1.121,
         "finalVelocity": 0.0,
         "massKg": 50,
         "impactFrame": 405,

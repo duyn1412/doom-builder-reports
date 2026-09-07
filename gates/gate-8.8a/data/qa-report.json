@@ -79,17 +79,17 @@
     {
       "id": "final_ball_pile_exists",
       "status": "PASS",
-      "detail": "Final ball pile formed: 78/100 balls accumulated (78%)"
+      "detail": "Final ball pile formed: 74/100 balls accumulated (74%)"
     },
     {
       "id": "preview_render_succeeds",
       "status": "PASS",
-      "detail": "Preview video generated: preview.mp4 (1475835 bytes)"
+      "detail": "Preview video generated: preview.mp4 (1356200 bytes)"
     },
     {
       "id": "production_render_succeeds",
       "status": "PASS",
-      "detail": "Production video generated: production.mp4 (11177906 bytes)"
+      "detail": "Production video generated: production.mp4 (10562106 bytes)"
     },
     {
       "id": "mp4_codec_fps_aspect_valid",
@@ -169,7 +169,7 @@
     {
       "id": "effect_1_ball_rain_telemetry",
       "status": "PASS",
-      "detail": "Ball Rain telemetry PASS: 100 spheres, 78 in pile (78%), 0 penetrations"
+      "detail": "Ball Rain telemetry PASS: 100 spheres, 74 in pile (74%), 0 penetrations"
     },
     {
       "id": "effect_2_granular_burial_telemetry",
@@ -189,7 +189,7 @@
     {
       "id": "effect_5_heavy_crush_telemetry",
       "status": "PASS",
-      "detail": "Heavy Crush telemetry PASS: 50kg anvil impact shock, camera punch-in/shake, finalZ=0.59m, 0 penetrations"
+      "detail": "Heavy Crush telemetry PASS: 50kg anvil impact shock, camera punch-in/shake, finalZ=1.121m, 0 penetrations"
     },
     {
       "id": "simulation_provenance_recorded",
@@ -371,9 +371,9 @@
     "substeps": 20,
     "penetrationsDetected": 0,
     "stablePile": true,
-    "ballsInPile": 78,
-    "pileAccumulationPercent": 78,
-    "simulationDurationSec": 1.605,
+    "ballsInPile": 74,
+    "pileAccumulationPercent": 74,
+    "simulationDurationSec": 1.121,
     "spawnScheduleHash": "5f9c975fe1ca8736b9fea18936f0c32fad0409776fcb5e534f845965d1894806",
     "effects": {
       "ball_rain": {
@@ -385,8 +385,8 @@
         "penetrationsDetected": 0,
         "stableState": true,
         "metrics": {
-          "ballsInPile": 78,
-          "accumulationRatio": 0.78
+          "ballsInPile": 74,
+          "accumulationRatio": 0.74
         }
       },
       "granular_burial": {
@@ -398,7 +398,7 @@
         "penetrationsDetected": 0,
         "stableState": true,
         "metrics": {
-          "granulesAroundActor": 162,
+          "granulesAroundActor": 139,
           "particleSize": 0.14
         }
       },
@@ -411,7 +411,7 @@
         "penetrationsDetected": 0,
         "stableState": true,
         "metrics": {
-          "finalZ": 0.79,
+          "finalZ": 6.551,
           "peakSquishDeformation": 0.72,
           "elasticRebound": 0.85
         }
@@ -425,7 +425,7 @@
         "penetrationsDetected": 0,
         "stableState": true,
         "metrics": {
-          "finalZ": 0.739,
+          "finalZ": 0.525,
           "propType": "voxel_creature"
         }
       },
@@ -438,9 +438,9 @@
         "penetrationsDetected": 0,
         "stableState": true,
         "metrics": {
-          "initialZ": 6.8,
+          "initialZ": 5.18,
           "impactZ": 1.8,
-          "finalZ": 0.59,
+          "finalZ": 1.121,
           "finalVelocity": 0,
           "massKg": 50,
           "impactFrame": 405,
