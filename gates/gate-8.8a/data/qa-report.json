@@ -1,7 +1,7 @@
 {
   "gate": "8.8A",
-  "title": "Gate 8.8A — 3D Viral Effects Runtime Acceptance",
-  "status": "TECHNICAL PASS / READY FOR MANUAL VISUAL REVIEW",
+  "title": "Gate 8.8A \u2014 3D Viral Effects Runtime Acceptance",
+  "status": "FINAL PASS / FROZEN",
   "totalChecks": 41,
   "passedChecks": 41,
   "failedChecks": 0,
@@ -134,12 +134,12 @@
     {
       "id": "ui_stays_inside_vertical_safe_area",
       "status": "PASS",
-      "detail": "Screen-space hotbar UI occupies top 4.5%–14.5% vertical safe area"
+      "detail": "Screen-space hotbar UI occupies top 4.5%\u201314.5% vertical safe area"
     },
     {
       "id": "ui_does_not_cover_actor_focal_region",
       "status": "PASS",
-      "detail": "Actor is framed at vertical center (Y: 45%–65%), zero overlap with top hotbar"
+      "detail": "Actor is framed at vertical center (Y: 45%\u201365%), zero overlap with top hotbar"
     },
     {
       "id": "per_effect_image_stills_complete",
@@ -199,17 +199,17 @@
     {
       "id": "benchmark_100_balls_recorded",
       "status": "PASS",
-      "detail": "100 balls benchmark: gen=0.41s, sim=0.143s, total=0.808s"
+      "detail": "100 balls benchmark: gen=0.41s, sim=0.143s, fullPipeline=20.162s"
     },
     {
       "id": "benchmark_300_balls_recorded",
       "status": "PASS",
-      "detail": "300 balls benchmark (main target): gen=2.876s, sim=0.358s, total=3.44s"
+      "detail": "300 balls benchmark (main target): gen=2.876s, sim=0.358s, fullPipeline=19.303s"
     },
     {
       "id": "benchmark_500_balls_recorded",
       "status": "PASS",
-      "detail": "500 balls benchmark: gen=10.485s, sim=0.7s, total=11.421s"
+      "detail": "500 balls benchmark: gen=10.485s, sim=0.7s, fullPipeline=29.909s"
     }
   ],
   "scenarioSpec": {
@@ -468,8 +468,11 @@
         "simTimeSec": 0.143,
         "renderTimeSec": 19.159,
         "encodeTimeSec": 0.45,
-        "totalTimeSec": 0.808,
-        "peakMemoryMb": 50
+        "totalTimeSec": 20.162,
+        "peakMemoryMb": 50,
+        "simulationOnlyTimeSec": 0.143,
+        "totalPipelineTimeSec": 20.162,
+        "fullPipelineTimeSec": 20.162
       },
       {
         "ballCount": 300,
@@ -477,8 +480,11 @@
         "simTimeSec": 0.358,
         "renderTimeSec": 15.619,
         "encodeTimeSec": 0.45,
-        "totalTimeSec": 3.44,
-        "peakMemoryMb": 86
+        "totalTimeSec": 19.303,
+        "peakMemoryMb": 86,
+        "simulationOnlyTimeSec": 0.358,
+        "totalPipelineTimeSec": 19.303,
+        "fullPipelineTimeSec": 19.303
       },
       {
         "ballCount": 500,
@@ -486,8 +492,11 @@
         "simTimeSec": 0.7,
         "renderTimeSec": 18.274,
         "encodeTimeSec": 0.45,
-        "totalTimeSec": 11.421,
-        "peakMemoryMb": 122
+        "totalTimeSec": 29.909,
+        "peakMemoryMb": 122,
+        "simulationOnlyTimeSec": 0.7,
+        "totalPipelineTimeSec": 29.909,
+        "fullPipelineTimeSec": 29.909
       }
     ]
   },
@@ -831,5 +840,9 @@
         }
       }
     ]
-  }
+  },
+  "technicalStatus": "PASS",
+  "manualVisualStatus": "PASS",
+  "overallStatus": "FINAL PASS / FROZEN",
+  "acceptedVisualBaseline": "production(3)-equivalent authoritative render is the accepted visual baseline"
 }

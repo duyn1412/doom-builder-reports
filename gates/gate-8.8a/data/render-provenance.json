@@ -1,0 +1,52 @@
+{
+  "hardware": "MacBook M2 / arm64 (Apple Silicon M2)",
+  "os": "macOS (Darwin 24.6.0 arm64)",
+  "blenderVersion": "Blender 5.2.0 LTS",
+  "renderEngine": "CYCLES",
+  "renderDevice": "CPU / Metal",
+  "renderSettings": {
+    "production": {
+      "resolution": "1080x1920",
+      "fps": 30,
+      "frames": 450,
+      "durationSec": 15.0,
+      "aspectRatio": "9:16",
+      "samples": 64,
+      "colorSpace": "sRGB",
+      "compositing": "5-slot dynamic screen-space hotbar UI (1/5 -> 5/5)"
+    },
+    "preview": {
+      "resolution": "360x640",
+      "fps": 30,
+      "frames": 450,
+      "durationSec": 15.0,
+      "aspectRatio": "9:16",
+      "samples": 32,
+      "colorSpace": "sRGB",
+      "compositing": "5-slot dynamic screen-space hotbar UI (1/5 -> 5/5)"
+    }
+  },
+  "authoritativeProductionArtifact": {
+    "filename": "production.mp4",
+    "sha256": "af3f48b6121a2f8ba2d32ec9023525a75fd9c26edb536cbf07326247069ff73e",
+    "filesizeBytes": 13166982,
+    "format": "H.264 / QuickTime MOV/MP4",
+    "resolution": "1080x1920",
+    "fps": 30,
+    "frames": 450,
+    "durationSec": 15.0,
+    "status": "ACCEPTED_VISUAL_BASELINE"
+  },
+  "authoritativePreviewArtifact": {
+    "filename": "preview.mp4",
+    "sha256": "71aaabf9f3cebd1556d80d6055be3906418774d7fcbe347d29e72c0797a8c2af",
+    "filesizeBytes": 1669152,
+    "resolution": "360x640"
+  },
+  "acceptedVisualBaseline": "production(3)-equivalent authoritative render is the accepted visual baseline",
+  "gateStatus": {
+    "technicalStatus": "PASS",
+    "manualVisualStatus": "PASS",
+    "overallStatus": "FINAL PASS / FROZEN"
+  }
+}

@@ -102,10 +102,10 @@
       <h1>Gate 8.8A Dossier: Full 5-Item / 5-Effect Viral Sequence</h1>
       <div class="subtitle">Complete reference interaction pattern: 5 visible items → 5 sequential selections → 5 real physical effects across 15.0 seconds</div>
       <div class="badges">
-        <span class="badge badge-pass">Technical QA: 41 / 41 PASS</span>
-        <span class="badge badge-pass">All 5 Effects: IMPLEMENTED (0 Placeholders)</span>
-        <span class="badge badge-pass">Bullet Solver: 0 Penetrations</span>
-        <span class="badge badge-review">Visual Status: PENDING DIRECT VIDEO REVIEW</span>
+        <span class="badge badge-pass">Gate 8.8A Technical: PASS (41 / 41)</span>
+        <span class="badge badge-pass">Gate 8.8A Manual Visual: PASS</span>
+        <span class="badge badge-pass" style="background: rgba(88, 166, 255, 0.15); color: #58a6ff; border-color: #58a6ff;">Gate 8.8A Overall: FINAL PASS / FROZEN</span>
+        <span class="badge badge-pass">Baseline: production(3)-equivalent authoritative</span>
       </div>
     </header>
 
@@ -118,8 +118,12 @@
           <source src="renders/production.mp4" type="video/mp4">
           Your browser does not support HTML5 video.
         </video>
-        <div style="margin-top: 12px; font-size: 0.85rem;">
+        <div style="margin-top: 12px; font-size: 0.85rem; color: #8b949e;">
           <a href="renders/production.mp4" download>Download Master MP4 (1080x1920)</a>
+          <br>
+          <span style="font-family: monospace; font-size: 0.75rem;">SHA-256: af3f48b6121a2f8ba2d32ec9023525a75fd9c26edb536cbf07326247069ff73e</span>
+          <br>
+          <span style="font-size: 0.8rem; color: #3fb950; font-weight: 500;">✓ Accepted Visual Baseline (production(3)-equivalent authoritative render)</span>
         </div>
       </div>
 
@@ -370,15 +374,16 @@
     <div class="grid-2">
       <div class="card">
         <h2>Physics Scaling Benchmarks</h2>
-        <p style="font-size: 0.85rem; color: #8b949e; margin-bottom: 12px;">Headless Bullet rigid-body evaluation on Darwin x86_64.</p>
+        <p style="font-size: 0.85rem; color: #8b949e; margin-bottom: 12px;">Headless Bullet rigid-body evaluation on MacBook M2 / arm64. Separates simulation-only vs full end-to-end pipeline time.</p>
         <table>
           <thead>
             <tr>
               <th>Tier</th>
               <th>Scene Gen</th>
-              <th>Sim Time</th>
+              <th>Sim Only</th>
               <th>Render Est</th>
-              <th>Total</th>
+              <th>Encode</th>
+              <th>Full Pipeline Total</th>
               <th>Peak Mem</th>
             </tr>
           </thead>
@@ -389,7 +394,8 @@
       <td>0.41s</td>
       <td>0.143s</td>
       <td>19.159s</td>
-      <td>0.808s</td>
+      <td>0.45s</td>
+      <td><strong>20.162s</strong></td>
       <td>50.0 MB</td>
     </tr>
     
@@ -398,7 +404,8 @@
       <td>2.876s</td>
       <td>0.358s</td>
       <td>15.619s</td>
-      <td>3.44s</td>
+      <td>0.45s</td>
+      <td><strong>19.303s</strong></td>
       <td>86.0 MB</td>
     </tr>
     
@@ -407,7 +414,8 @@
       <td>10.485s</td>
       <td>0.7s</td>
       <td>18.274s</td>
-      <td>11.421s</td>
+      <td>0.45s</td>
+      <td><strong>29.909s</strong></td>
       <td>122.0 MB</td>
     </tr>
     
@@ -1015,19 +1023,19 @@
     <tr>
       <td class="mono">benchmark_100_balls_recorded</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>100 balls benchmark: gen=0.41s, sim=0.143s, total=0.808s</td>
+      <td>100 balls benchmark: gen=0.41s, sim=0.143s, fullPipeline=20.162s</td>
     </tr>
     
     <tr>
       <td class="mono">benchmark_300_balls_recorded</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>300 balls benchmark (main target): gen=2.876s, sim=0.358s, total=3.44s</td>
+      <td>300 balls benchmark (main target): gen=2.876s, sim=0.358s, fullPipeline=19.303s</td>
     </tr>
     
     <tr>
       <td class="mono">benchmark_500_balls_recorded</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>500 balls benchmark: gen=10.485s, sim=0.7s, total=11.421s</td>
+      <td>500 balls benchmark: gen=10.485s, sim=0.7s, fullPipeline=29.909s</td>
     </tr>
     
         </tbody>
@@ -1035,7 +1043,7 @@
     </div>
 
     <footer style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); color: #8b949e; font-size: 0.85rem; text-align: center;">
-      Gate 8.8A Dossier Generated on 2026-09-07 03:48:12 UTC | Antigravity AI Autonomous Pipeline
+      Gate 8.8A Dossier Generated on 2026-09-07 04:03:33 UTC | Antigravity AI Autonomous Pipeline
     </footer>
   </div>
 </body>

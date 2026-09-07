@@ -4,11 +4,13 @@
 **Target Scenario**: `viral-drop-001`  
 **Full Sequence Duration**: 15.0 seconds (450 frames @ 30fps)  
 **Technical QA Status**: **PASS** (41/41 checks passed)  
-**Manual Visual Review Status**: **PENDING DIRECT VIDEO REVIEW**  
+**Manual Visual Review Status**: **PASS**  
+**Overall Gate Status**: **FINAL PASS / FROZEN**  
+**Accepted Visual Baseline**: `production(3)-equivalent authoritative render is the accepted visual baseline`  
 **Render Host**: macOS Duys-MacBook-Pro.local (arm64, Apple Silicon M2)  
 **Blender Version**: Blender 5.2.0 LTS  
 **Renderer**: CYCLES (CPU/Metal, samples=4)  
-**Generated At**: 2026-09-07 03:48:12 UTC  
+**Generated At**: 2026-09-07 04:03:33 UTC  
 
 ---
 
@@ -33,10 +35,13 @@ Gate 8.8A proves the COMPLETE reference interaction pattern for viral Minecraft-
 
 ---
 
-## 3. Media Artifacts
+## 3. Media Artifacts & Reports
 
-- **Production Video (1080x1920)**: `renders/production.mp4`
-- **Preview Video (360x640)**: `renders/preview.mp4`
+- **Production Video (1080x1920 @ 30fps)**: `renders/production.mp4` (SHA-256: `af3f48b6121a2f8ba2d32ec9023525a75fd9c26edb536cbf07326247069ff73e`)
+- **Preview Video (360x640 @ 30fps)**: `renders/preview.mp4` (SHA-256: `71aaabf9f3cebd1556d80d6055be3906418774d7fcbe347d29e72c0797a8c2af`)
+- **Render Provenance**: `data/render-provenance.json` (MacBook M2, arm64, macOS, Blender 5.2.0 LTS, Cycles Metal/CPU)
+- **Video Probe (FFprobe)**: `data/video-probe.json` (Real ffprobe stream metadata for production.mp4 and preview.mp4)
+- **Performance Report**: `data/performance-report.json` (Separated simulation-only vs full pipeline timing)
 - **Full Sequence Contact Sheet**: `images/full-sequence-contact-sheet.png`
 - **Per-Effect Review Stills (Gate 8.8A Visual Remediation Sets)**:
   - Effect 1 (Ball Rain): `images/effect-01-ball/{before,impact,after}.png`
@@ -64,7 +69,9 @@ All 41 technical verification checks passed cleanly, covering ScenarioSpec valid
 ## 5. Gate Boundaries
 
 - **Gate 8.8A Technical Status**: **PASS**
-- **Gate 8.8A Visual Status**: **PENDING DIRECT VIDEO REVIEW**
-- **Gate 8.8B**: **DO NOT START** (Frozen pending visual approval)
+- **Gate 8.8A Manual Visual Status**: **PASS**
+- **Gate 8.8A Overall Status**: **FINAL PASS / FROZEN**
+- **Accepted Visual Baseline**: `production(3)-equivalent authoritative render is the accepted visual baseline`
+- **Gate 8.8B**: **DO NOT START AUTOMATICALLY** (Awaiting explicit instruction)
 - **Gate 8.7C**: **HOLD / PAUSED**
 - **Gate 8.7A / 8.7B**: **FROZEN**
