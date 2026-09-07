@@ -11,7 +11,7 @@
   "stablePile": true,
   "ballsInPile": 93,
   "pileAccumulationPercent": 93.0,
-  "simulationDurationSec": 1.976,
+  "simulationDurationSec": 2.318,
   "spawnScheduleHash": "5f9c975fe1ca8736b9fea18936f0c32fad0409776fcb5e534f845965d1894806",
   "effects": {
     "ball_rain": {
@@ -36,7 +36,7 @@
       "penetrationsDetected": 0,
       "stableState": true,
       "metrics": {
-        "granulesAroundActor": 169,
+        "granulesAroundActor": 167,
         "particleSize": 0.14
       }
     },
@@ -86,7 +86,7 @@
       "metrics": {
         "initialZ": 5.18,
         "impactZ": 1.8,
-        "finalZ": 0.761,
+        "finalZ": 0.719,
         "finalVelocity": 0.0,
         "massKg": 50,
         "impactFrame": 405,

@@ -103,7 +103,7 @@
         },
         "soft_body_drop": {
           "centroid": [
-            516.2,
+            516.1,
             1127.7
           ],
           "ok": true
@@ -111,19 +111,26 @@
         "character_drop": {
           "centroid": [
             512.9,
-            1135.3
+            1135.4
           ],
           "ok": true
         },
-        "heavy_crush": {
+        "heavy_crush_impact": {
           "centroid": [
-            504.3,
-            1215.7
+            506.1,
+            1219.3
+          ],
+          "ok": true
+        },
+        "heavy_crush_settled": {
+          "centroid": [
+            503.6,
+            1220.1
           ],
           "ok": true
         }
       },
-      "detail": "All 5 key impact centroids stay within primary safe area [60..900] x [220..1580]"
+      "detail": "All key impact and settled centroids stay within primary safe area [60..900] x [220..1580]"
     },
     "no_critical_overlay_in_bottom_unsafe_zone": {
       "status": "PASS",
@@ -136,10 +143,15 @@
     "no_critical_overlay_in_right_unsafe_zone": {
       "status": "PASS",
       "hotbarMaxX": 888,
-      "actorMaxX": 779,
+      "actorMaxX": 726.6,
+      "anvilMaxX": 887.7,
+      "worstCaseCombinedX": 887.7,
       "unsafeRightBoundary": 920,
-      "clearancePx": 32,
-      "detail": "Zero UI or actor geometry in right rail unsafe zone (x: 920..1080). Clearance: 32px"
+      "primarySafeBoundary": 900,
+      "clearanceToUnsafeRailPx": 32,
+      "clearanceToPrimarySafePx": 12,
+      "intervalEvaluated": "Frames 395..450 (13.17s..15.00s)",
+      "detail": "Zero UI, actor, or anvil geometry in right rail unsafe zone (x: 920..1080). Per-frame worst-case X=887.7px <= 900px across full Heavy Crush interval. Clearance: 32px to right unsafe rail (12px to primary safe border)"
     }
   },
   "status": "SAFE-AREA TECHNICAL PASS / READY FOR MANUAL YOUTUBE SHORTS REVIEW"

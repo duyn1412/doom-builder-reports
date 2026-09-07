@@ -1,7 +1,7 @@
 {
-  "gate": "8.8A",
-  "title": "Gate 8.8A — 3D Viral Effects Runtime Acceptance",
-  "status": "TECHNICAL PASS / READY FOR MANUAL VISUAL REVIEW",
+  "gate": "8.8",
+  "title": "Gate 8.8 — YouTube Shorts Safe-Area Compliance",
+  "status": "SAFE-AREA TECHNICAL PASS / READY FOR MANUAL YOUTUBE SHORTS REVIEW",
   "totalChecks": 45,
   "passedChecks": 45,
   "failedChecks": 0,
@@ -84,12 +84,12 @@
     {
       "id": "preview_render_succeeds",
       "status": "PASS",
-      "detail": "Preview video generated: preview.mp4 (2352273 bytes)"
+      "detail": "Preview video generated: preview.mp4 (2335993 bytes)"
     },
     {
       "id": "production_render_succeeds",
       "status": "PASS",
-      "detail": "Production video generated: production.mp4 (19185250 bytes)"
+      "detail": "Production video generated: production.mp4 (19113886 bytes)"
     },
     {
       "id": "mp4_codec_fps_aspect_valid",
@@ -149,7 +149,7 @@
     {
       "id": "key_impact_centroid_inside_safe_area",
       "status": "PASS",
-      "detail": "All 5 key impact centroids stay within primary safe area [60..900] x [220..1580]"
+      "detail": "All key impact and settled centroids stay within primary safe area [60..900] x [220..1580]"
     },
     {
       "id": "no_critical_overlay_in_bottom_unsafe_zone",
@@ -159,7 +159,7 @@
     {
       "id": "no_critical_overlay_in_right_unsafe_zone",
       "status": "PASS",
-      "detail": "Zero UI or actor geometry in right rail unsafe zone (x: 920..1080). Clearance: 32px"
+      "detail": "Zero UI, actor, or anvil geometry in right rail unsafe zone (x: 920..1080). Per-frame worst-case X=887.7px <= 900px across full Heavy Crush interval. Clearance: 32px to right unsafe rail (12px to primary safe border)"
     },
     {
       "id": "per_effect_image_stills_complete",
@@ -209,7 +209,7 @@
     {
       "id": "effect_5_heavy_crush_telemetry",
       "status": "PASS",
-      "detail": "Heavy Crush telemetry PASS: 50kg anvil impact shock, camera punch-in/shake, finalZ=0.761m, 0 penetrations"
+      "detail": "Heavy Crush telemetry PASS: 50kg anvil impact shock, camera punch-in/shake, finalZ=0.719m, 0 penetrations"
     },
     {
       "id": "simulation_provenance_recorded",
@@ -393,7 +393,7 @@
     "stablePile": true,
     "ballsInPile": 93,
     "pileAccumulationPercent": 93,
-    "simulationDurationSec": 1.976,
+    "simulationDurationSec": 2.318,
     "spawnScheduleHash": "5f9c975fe1ca8736b9fea18936f0c32fad0409776fcb5e534f845965d1894806",
     "effects": {
       "ball_rain": {
@@ -418,7 +418,7 @@
         "penetrationsDetected": 0,
         "stableState": true,
         "metrics": {
-          "granulesAroundActor": 169,
+          "granulesAroundActor": 167,
           "particleSize": 0.14
         }
       },
@@ -468,7 +468,7 @@
         "metrics": {
           "initialZ": 5.18,
           "impactZ": 1.8,
-          "finalZ": 0.761,
+          "finalZ": 0.719,
           "finalVelocity": 0,
           "massKg": 50,
           "impactFrame": 405,
