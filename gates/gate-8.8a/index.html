@@ -251,19 +251,41 @@
       <div class="still-gallery" style="grid-template-columns: repeat(4, 1fr);">
         <div class="still-item">
           <img src="images/effect-03-jelly/before.png" alt="Soft Body Before">
-          <div class="still-label">Before Selection (6.80s)</div>
+          <div class="still-label">Before Selection (6.33s)</div>
         </div>
         <div class="still-item">
           <img src="images/effect-03-jelly/peak-squish.png" alt="Soft Body Peak Squish">
-          <div class="still-label">Peak Squish (7.70s)</div>
+          <div class="still-label">Peak Squish (7.40s)</div>
         </div>
         <div class="still-item">
           <img src="images/effect-03-jelly/rebound.png" alt="Soft Body Elastic Rebound">
-          <div class="still-label">Elastic Rebound (7.90s)</div>
+          <div class="still-label">Elastic Rebound (7.63s)</div>
         </div>
         <div class="still-item">
           <img src="images/effect-03-jelly/after.png" alt="Soft Body Settle">
           <div class="still-label">Settled Slime (8.50s)</div>
+        </div>
+      </div>
+
+      <!-- Dedicated Diagnostic Jelly Review -->
+      <div style="margin-top: 16px; background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 16px;">
+        <h4 style="color: #58a6ff; margin-bottom: 8px;">Gate 8.8A Jelly Visual Remediation Diagnostic Preview (Frames 186–276, 6.20s–9.20s)</h4>
+        <p style="font-size: 0.85rem; color: #8b949e; margin-bottom: 12px;">
+          Physics collision layer isolation (Layer 2 Bullet group), spawn inside camera FOV (Z=5.15m), 48% squish compression, and vibrant neon emerald slime shader.
+        </p>
+        <div style="max-width: 320px; margin-bottom: 16px;">
+          <video controls loop muted playsinline poster="diagnostic-jelly/jelly-peak-squish.png" style="width: 100%; border-radius: 6px;">
+            <source src="diagnostic-jelly/jelly-preview.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+        </div>
+        <div class="still-gallery" style="grid-template-columns: repeat(6, 1fr);">
+          <div class="still-item"><img src="diagnostic-jelly/jelly-before.png" alt="Diagnostic Before"><div class="still-label">Before (6.33s)</div></div>
+          <div class="still-item"><img src="diagnostic-jelly/jelly-falling.png" alt="Diagnostic Falling"><div class="still-label">Falling (6.87s)</div></div>
+          <div class="still-item"><img src="diagnostic-jelly/jelly-pre-impact.png" alt="Diagnostic Pre-Impact"><div class="still-label">Pre-Impact (7.20s)</div></div>
+          <div class="still-item"><img src="diagnostic-jelly/jelly-peak-squish.png" alt="Diagnostic Peak Squish"><div class="still-label">Peak Squish (7.40s)</div></div>
+          <div class="still-item"><img src="diagnostic-jelly/jelly-rebound.png" alt="Diagnostic Rebound"><div class="still-label">Rebound (7.63s)</div></div>
+          <div class="still-item"><img src="diagnostic-jelly/jelly-after.png" alt="Diagnostic Settle"><div class="still-label">Settled (8.50s)</div></div>
         </div>
       </div>
 
@@ -327,7 +349,7 @@
         <h2>Physics Solver Telemetry</h2>
         <div class="stat-row"><span class="stat-label">Physics Engine</span><span class="stat-val">Bullet Rigid-Body</span></div>
         <div class="stat-row"><span class="stat-label">Substeps / Iterations</span><span class="stat-val">20 / 30</span></div>
-        <div class="stat-row"><span class="stat-label">Sim Bake Time</span><span class="stat-val">1.121s</span></div>
+        <div class="stat-row"><span class="stat-label">Sim Bake Time</span><span class="stat-val">1.5s</span></div>
         <div class="stat-row"><span class="stat-label">Floor Penetrations</span><span class="stat-val" style="color: var(--pass);">0 detected (PASS)</span></div>
         <div class="stat-row"><span class="stat-label">Actor Deflection</span><span class="stat-val" style="color: var(--pass);">Verified (All 5 Effects)</span></div>
         <div class="stat-row"><span class="stat-label">Explosion / Instability</span><span class="stat-val" style="color: var(--pass);">0 (Stable)</span></div>
@@ -849,19 +871,19 @@
     <tr>
       <td class="mono">final_ball_pile_exists</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Final ball pile formed: 74/100 balls accumulated (74%)</td>
+      <td>Final ball pile formed: 93/100 balls accumulated (93%)</td>
     </tr>
     
     <tr>
       <td class="mono">preview_render_succeeds</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Preview video generated: preview.mp4 (1356200 bytes)</td>
+      <td>Preview video generated: preview.mp4 (1669152 bytes)</td>
     </tr>
     
     <tr>
       <td class="mono">production_render_succeeds</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Production video generated: production.mp4 (10562106 bytes)</td>
+      <td>Production video generated: production.mp4 (13166982 bytes)</td>
     </tr>
     
     <tr>
@@ -957,7 +979,7 @@
     <tr>
       <td class="mono">effect_1_ball_rain_telemetry</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Ball Rain telemetry PASS: 100 spheres, 74 in pile (74%), 0 penetrations</td>
+      <td>Ball Rain telemetry PASS: 100 spheres, 93 in pile (93%), 0 penetrations</td>
     </tr>
     
     <tr>
@@ -969,7 +991,7 @@
     <tr>
       <td class="mono">effect_3_soft_body_telemetry</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Soft Body Drop telemetry PASS: slime cube elastic rebound, deformation=0.72m, 0 penetrations</td>
+      <td>Soft Body Drop telemetry PASS: slime cube elastic rebound, deformation=0.48m, 0 penetrations</td>
     </tr>
     
     <tr>
@@ -981,7 +1003,7 @@
     <tr>
       <td class="mono">effect_5_heavy_crush_telemetry</td>
       <td><span class="badge badge-pass">PASS</span></td>
-      <td>Heavy Crush telemetry PASS: 50kg anvil impact shock, camera punch-in/shake, finalZ=1.121m, 0 penetrations</td>
+      <td>Heavy Crush telemetry PASS: 50kg anvil impact shock, camera punch-in/shake, finalZ=0.761m, 0 penetrations</td>
     </tr>
     
     <tr>
@@ -1013,7 +1035,7 @@
     </div>
 
     <footer style="margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); color: #8b949e; font-size: 0.85rem; text-align: center;">
-      Gate 8.8A Dossier Generated on 2026-09-07 02:35:13 UTC | Antigravity AI Autonomous Pipeline
+      Gate 8.8A Dossier Generated on 2026-09-07 03:48:12 UTC | Antigravity AI Autonomous Pipeline
     </footer>
   </div>
 </body>

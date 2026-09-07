@@ -79,17 +79,17 @@
     {
       "id": "final_ball_pile_exists",
       "status": "PASS",
-      "detail": "Final ball pile formed: 74/100 balls accumulated (74%)"
+      "detail": "Final ball pile formed: 93/100 balls accumulated (93%)"
     },
     {
       "id": "preview_render_succeeds",
       "status": "PASS",
-      "detail": "Preview video generated: preview.mp4 (1356200 bytes)"
+      "detail": "Preview video generated: preview.mp4 (1669152 bytes)"
     },
     {
       "id": "production_render_succeeds",
       "status": "PASS",
-      "detail": "Production video generated: production.mp4 (10562106 bytes)"
+      "detail": "Production video generated: production.mp4 (13166982 bytes)"
     },
     {
       "id": "mp4_codec_fps_aspect_valid",
@@ -169,7 +169,7 @@
     {
       "id": "effect_1_ball_rain_telemetry",
       "status": "PASS",
-      "detail": "Ball Rain telemetry PASS: 100 spheres, 74 in pile (74%), 0 penetrations"
+      "detail": "Ball Rain telemetry PASS: 100 spheres, 93 in pile (93%), 0 penetrations"
     },
     {
       "id": "effect_2_granular_burial_telemetry",
@@ -179,7 +179,7 @@
     {
       "id": "effect_3_soft_body_telemetry",
       "status": "PASS",
-      "detail": "Soft Body Drop telemetry PASS: slime cube elastic rebound, deformation=0.72m, 0 penetrations"
+      "detail": "Soft Body Drop telemetry PASS: slime cube elastic rebound, deformation=0.48m, 0 penetrations"
     },
     {
       "id": "effect_4_character_drop_telemetry",
@@ -189,7 +189,7 @@
     {
       "id": "effect_5_heavy_crush_telemetry",
       "status": "PASS",
-      "detail": "Heavy Crush telemetry PASS: 50kg anvil impact shock, camera punch-in/shake, finalZ=1.121m, 0 penetrations"
+      "detail": "Heavy Crush telemetry PASS: 50kg anvil impact shock, camera punch-in/shake, finalZ=0.761m, 0 penetrations"
     },
     {
       "id": "simulation_provenance_recorded",
@@ -371,9 +371,9 @@
     "substeps": 20,
     "penetrationsDetected": 0,
     "stablePile": true,
-    "ballsInPile": 74,
-    "pileAccumulationPercent": 74,
-    "simulationDurationSec": 1.121,
+    "ballsInPile": 93,
+    "pileAccumulationPercent": 93,
+    "simulationDurationSec": 1.5,
     "spawnScheduleHash": "5f9c975fe1ca8736b9fea18936f0c32fad0409776fcb5e534f845965d1894806",
     "effects": {
       "ball_rain": {
@@ -385,8 +385,8 @@
         "penetrationsDetected": 0,
         "stableState": true,
         "metrics": {
-          "ballsInPile": 74,
-          "accumulationRatio": 0.74
+          "ballsInPile": 93,
+          "accumulationRatio": 0.93
         }
       },
       "granular_burial": {
@@ -398,7 +398,7 @@
         "penetrationsDetected": 0,
         "stableState": true,
         "metrics": {
-          "granulesAroundActor": 139,
+          "granulesAroundActor": 169,
           "particleSize": 0.14
         }
       },
@@ -411,9 +411,17 @@
         "penetrationsDetected": 0,
         "stableState": true,
         "metrics": {
-          "finalZ": 6.551,
-          "peakSquishDeformation": 0.72,
-          "elasticRebound": 0.85
+          "initialZ": 5.15,
+          "impactZ": 2.169,
+          "minimumZ": 1.475,
+          "finalZ": 2.549,
+          "finalVelocity": 0,
+          "peakSquishFrame": 222,
+          "peakSquishDeformation": 0.48,
+          "elasticRebound": 0.8,
+          "jellyVisibleDuringFall": true,
+          "jellyVisibleAtImpact": true,
+          "jellyVisibleAtPeakSquish": true
         }
       },
       "character_drop": {
@@ -440,7 +448,7 @@
         "metrics": {
           "initialZ": 5.18,
           "impactZ": 1.8,
-          "finalZ": 1.121,
+          "finalZ": 0.761,
           "finalVelocity": 0,
           "massKg": 50,
           "impactFrame": 405,

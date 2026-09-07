@@ -1,0 +1,205 @@
+{
+  "diagnosticName": "Gate 8.8A Jelly Diagnostic QA",
+  "host": "Duys-MacBook-Pro.local (arm64, Apple Silicon M2)",
+  "blenderVersion": "Blender 5.2.0 LTS",
+  "renderDurationSec": 26.2,
+  "frameCount": 91,
+  "frameRange": [
+    186,
+    276
+  ],
+  "timeRangeSec": [
+    6.2,
+    9.2
+  ],
+  "metrics": {
+    "initialZ": 5.144,
+    "firstVisibleFrame": 198,
+    "firstContactFrame": 216,
+    "impactZ": 3.212,
+    "peakSquishFrame": 222,
+    "minimumZ": 1.541,
+    "reboundFrame": 229,
+    "reboundZ": 1.864,
+    "finalZ": 2.549,
+    "finalVelocity": -2.844,
+    "verticalCompressionPercent": 48.0,
+    "jellyVisibleDuringFall": true,
+    "jellyVisibleAtImpact": true,
+    "jellyVisibleAtPeakSquish": true,
+    "jellyVisibleAtRebound": true,
+    "jellyVisibleAtSettle": true,
+    "floorPenetrations": 0
+  },
+  "keyframes": {
+    "before_drop": {
+      "frame": 190,
+      "timeSec": 6.333,
+      "worldCenterZ": 5.15,
+      "minZ": 4.625,
+      "maxZ": 5.675,
+      "heightM": 1.05,
+      "widthM": 1.05,
+      "screenCenter": [
+        0.5,
+        0.94
+      ],
+      "screenBbox": [
+        0.33,
+        0.819,
+        0.67,
+        1.08
+      ],
+      "visibleInFrame": false,
+      "hideRender": true
+    },
+    "first_visible": {
+      "frame": 198,
+      "timeSec": 6.6,
+      "worldCenterZ": 5.144,
+      "minZ": 4.62,
+      "maxZ": 5.669,
+      "heightM": 1.049,
+      "widthM": 1.051,
+      "screenCenter": [
+        0.5,
+        0.939
+      ],
+      "screenBbox": [
+        0.33,
+        0.818,
+        0.67,
+        1.079
+      ],
+      "visibleInFrame": true,
+      "hideRender": false
+    },
+    "falling_midair": {
+      "frame": 206,
+      "timeSec": 6.867,
+      "worldCenterZ": 4.71,
+      "minZ": 4.209,
+      "maxZ": 5.211,
+      "heightM": 1.002,
+      "widthM": 1.08,
+      "screenCenter": [
+        0.5,
+        0.871
+      ],
+      "screenBbox": [
+        0.323,
+        0.757,
+        0.677,
+        1.005
+      ],
+      "visibleInFrame": true,
+      "hideRender": false
+    },
+    "pre_impact": {
+      "frame": 216,
+      "timeSec": 7.2,
+      "worldCenterZ": 3.212,
+      "minZ": 2.687,
+      "maxZ": 3.737,
+      "heightM": 1.05,
+      "widthM": 1.05,
+      "screenCenter": [
+        0.5,
+        0.629
+      ],
+      "screenBbox": [
+        0.322,
+        0.527,
+        0.678,
+        0.749
+      ],
+      "visibleInFrame": true,
+      "hideRender": false
+    },
+    "peak_squish": {
+      "frame": 222,
+      "timeSec": 7.4,
+      "worldCenterZ": 1.814,
+      "minZ": 1.541,
+      "maxZ": 2.087,
+      "heightM": 0.546,
+      "widthM": 1.449,
+      "screenCenter": [
+        0.5,
+        0.389
+      ],
+      "screenBbox": [
+        0.237,
+        0.334,
+        0.763,
+        0.446
+      ],
+      "visibleInFrame": true,
+      "hideRender": false
+    },
+    "rebound": {
+      "frame": 229,
+      "timeSec": 7.633,
+      "worldCenterZ": 1.474,
+      "minZ": 1.083,
+      "maxZ": 1.864,
+      "heightM": 0.78,
+      "widthM": 1.223,
+      "screenCenter": [
+        0.5,
+        0.328
+      ],
+      "screenBbox": [
+        0.281,
+        0.242,
+        0.719,
+        0.4
+      ],
+      "visibleInFrame": true,
+      "hideRender": false
+    },
+    "settling": {
+      "frame": 240,
+      "timeSec": 8.0,
+      "worldCenterZ": 2.839,
+      "minZ": 2.361,
+      "maxZ": 3.317,
+      "heightM": 0.957,
+      "widthM": 1.124,
+      "screenCenter": [
+        0.5,
+        0.567
+      ],
+      "screenBbox": [
+        0.307,
+        0.475,
+        0.693,
+        0.676
+      ],
+      "visibleInFrame": true,
+      "hideRender": false
+    },
+    "settled_flush": {
+      "frame": 255,
+      "timeSec": 8.5,
+      "worldCenterZ": 2.549,
+      "minZ": 2.024,
+      "maxZ": 3.074,
+      "heightM": 1.05,
+      "widthM": 1.05,
+      "screenCenter": [
+        0.5,
+        0.517
+      ],
+      "screenBbox": [
+        0.319,
+        0.422,
+        0.681,
+        0.629
+      ],
+      "visibleInFrame": true,
+      "hideRender": false
+    }
+  },
+  "verdict": "FAIL"
+}
