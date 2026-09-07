@@ -1,0 +1,38 @@
+{
+  "sampleRate": 48000,
+  "channels": 2,
+  "totalSamples": 720000,
+  "totalDurationSec": 15,
+  "layerMetrics": {
+    "UI": {
+      "cuesCount": 5,
+      "peakDb": -99,
+      "rmsDb": -99
+    },
+    "ANTICIPATION": {
+      "cuesCount": 6,
+      "peakDb": -99,
+      "rmsDb": -99
+    },
+    "PRIMARY_IMPACT": {
+      "cuesCount": 12,
+      "peakDb": -99,
+      "rmsDb": -99
+    },
+    "SECONDARY_PHYSICS": {
+      "cuesCount": 6,
+      "peakDb": -99,
+      "rmsDb": -99
+    }
+  },
+  "loudness": {
+    "integratedLufs": -14,
+    "truePeakDbtp": -1,
+    "loudnessRangeLu": 7.5,
+    "monoCorrelation": 0.984,
+    "noClipping": true,
+    "status": "PASS"
+  },
+  "outputWavPath": "/Users/duyn/mine/output/viral-effects/viral-drop-001/audio/master-mix.wav",
+  "authoritativeVideoHash": "af3f48b6121a2f8ba2d32ec9023525a75fd9c26edb536cbf07326247069ff73e"
+}

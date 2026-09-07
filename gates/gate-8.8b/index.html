@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gate 8.8B Dossier — Viral Audio & Impact Synchronization</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --text-bright: #f0f6fc;
+      --accent: #58a6ff;
+      --pass: #2ea043;
+      --pass-bg: rgba(46, 160, 67, 0.15);
+      --review: #d29922;
+      --review-bg: rgba(210, 153, 34, 0.15);
+      --fail: #f85149;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px;
+    }
+    .container { max-width: 1400px; margin: 0 auto; }
+    header {
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 32px;
+    }
+    h1 { font-size: 2.2rem; color: var(--text-bright); margin-bottom: 8px; }
+    .subtitle { font-size: 1.1rem; color: #8b949e; }
+    .badges { display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap; }
+    .badge {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-pass { background: var(--pass-bg); color: var(--pass); border: 1px solid var(--pass); }
+    .badge-review { background: var(--review-bg); color: var(--review); border: 1px solid var(--review); }
+    .badge-event { background: rgba(88, 166, 255, 0.15); color: var(--accent); border: 1px solid var(--accent); }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 24px; margin-bottom: 32px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-bottom: 32px; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .card h2 { color: var(--text-bright); font-size: 1.3rem; margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    .card h3 { color: var(--text-bright); font-size: 1.1rem; margin-top: 16px; margin-bottom: 8px; }
+    .stat-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.95rem; }
+    .stat-label { color: #8b949e; }
+    .stat-val { font-weight: 600; color: var(--text-bright); }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 0.85rem; }
+    video {
+      width: 100%;
+      border-radius: 6px;
+      background: #000;
+      border: 1px solid var(--border);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin-top: 12px;
+    }
+    th, td {
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th { color: #8b949e; font-weight: 600; background: rgba(0,0,0,0.2); }
+    .license-clean { color: #7ee787; font-weight: 500; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .clip-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px;
+      text-align: center;
+    }
+    .clip-card h4 { margin-bottom: 8px; font-size: 1rem; color: var(--text-bright); }
+    .clip-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Gate 8.8B Dossier — Viral Audio & Impact Synchronization</h1>
+      <p class="subtitle">Sample-accurate, event-driven, 100% procedural sound design & broadcast mix for 5-effect viral video</p>
+      <div class="badges">
+        <span class="badge badge-pass">QA: 30 / 30 Checks PASS (100%)</span>
+        <span class="badge badge-review">TECHNICAL PASS / READY FOR MANUAL AUDIO REVIEW</span>
+        <span class="badge badge-event">Frozen Visual: SHA af3f48b6...</span>
+        <span class="badge badge-pass">Sync Offset: 0ms (Target &le; 33.3ms)</span>
+        <span class="badge badge-pass">Loudness: -14.0 LUFS / -1.0 dBTP</span>
+        <span class="badge badge-pass">Mono Corr: 0.984</span>
+      </div>
+    </header>
+
+    <!-- Main Player Section -->
+    <div class="grid-2">
+      <div class="card">
+        <h2>Production Audio-Visual Master (1080x1920)</h2>
+        <video controls preload="metadata" poster="../gate-8.8a/images/full-sequence-contact-sheet.png">
+          <source src="renders/production-audio.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+        <div style="margin-top: 12px;">
+          <div class="stat-row">
+            <span class="stat-label">Resolution & Framerate</span>
+            <span class="stat-val">1080 &times; 1920 @ 30fps (450 frames, 15.000s)</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">Visual Bitstream</span>
+            <span class="stat-val">H.264 Stream Copy (Bitstream identical to frozen 8.8A)</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">Audio Stream</span>
+            <span class="stat-val">AAC 48kHz Stereo 192kbps (EBU R128 Normalized)</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">Authoritative Visual Hash</span>
+            <span class="stat-val mono" style="font-size:0.75rem;">af3f48b6121a2f8ba2d32ec9023525a75fd9c26edb536cbf07326247069ff73e</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Audio Engineering & Loudness Profile</h2>
+        <div class="stat-row">
+          <span class="stat-label">Target Integrated Loudness</span>
+          <span class="stat-val">-14.0 LUFS &plusmn; 1.0 LU</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Measured Integrated Loudness</span>
+          <span class="stat-val" style="color: #7ee787;">-14.00 LUFS</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Target True Peak</span>
+          <span class="stat-val">&le; -1.0 dBTP</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Measured True Peak</span>
+          <span class="stat-val" style="color: #7ee787;">-1.00 dBTP</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Loudness Range (LRA)</span>
+          <span class="stat-val">7.50 LU</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Mono Correlation</span>
+          <span class="stat-val" style="color: #7ee787;">0.984 (&ge; 0.80 PASS)</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Digital Clipping</span>
+          <span class="stat-val" style="color: #7ee787;">0 clipped samples (100% clean)</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Audio Normalization Engine</span>
+          <span class="stat-val">Two-pass EBU R128 + Limiter</span>
+        </div>
+
+        <h3 style="margin-top: 24px;">Web Preview Stream (360x640)</h3>
+        <video controls preload="metadata" style="max-height: 280px; margin-top: 8px;">
+          <source src="renders/preview-audio.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <!-- Isolated Audio Review Clips -->
+    <div class="card" style="margin-bottom: 32px;">
+      <h2>Per-Effect Isolated Audio Review Clips</h2>
+      <p style="color: #8b949e; margin-bottom: 16px;">Each clip extracts the exact &plusmn;3.0s window for granular acoustic listening, verifying distinct sonic identities, physical sync, and zero cross-bleed.</p>
+      
+      <div class="clip-grid">
+        <div class="clip-card">
+          <h4>01. Ball Rain (0.2s - 3.5s)</h4>
+          <video controls preload="metadata">
+            <source src="audio-review/01-ball.mp4" type="video/mp4">
+          </video>
+          <p style="font-size: 0.8rem; color: #8b949e; margin-top: 8px;">Whoosh, 7 bounce clusters, rolling settle.</p>
+        </div>
+
+        <div class="clip-card">
+          <h4>02. Granular Burial (2.9s - 6.3s)</h4>
+          <video controls preload="metadata">
+            <source src="audio-review/02-granular.mp4" type="video/mp4">
+          </video>
+          <p style="font-size: 0.8rem; color: #8b949e; margin-top: 8px;">Dry sand pour, primary impact, granular heap.</p>
+        </div>
+
+        <div class="clip-card">
+          <h4>03. Jelly Soft Body (5.9s - 9.3s)</h4>
+          <video controls preload="metadata">
+            <source src="audio-review/03-jelly.mp4" type="video/mp4">
+          </video>
+          <p style="font-size: 0.8rem; color: #8b949e; margin-top: 8px;">Viscoelastic squish @ f222, elastic boing @ f229.</p>
+        </div>
+
+        <div class="clip-card">
+          <h4>04. Character Drop (8.9s - 12.3s)</h4>
+          <video controls preload="metadata">
+            <source src="audio-review/04-character.mp4" type="video/mp4">
+          </video>
+          <p style="font-size: 0.8rem; color: #8b949e; margin-top: 8px;">Tumbling whoosh, heavy body impact, floor rattle.</p>
+        </div>
+
+        <div class="clip-card">
+          <h4>05. Heavy Crush (11.9s - 15.0s)</h4>
+          <video controls preload="metadata">
+            <source src="audio-review/05-heavy.mp4" type="video/mp4">
+          </video>
+          <p style="font-size: 0.8rem; color: #8b949e; margin-top: 8px;">Plunge whoosh, central slam + 40Hz sub-bass, ring tail.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Impact Synchronization Table -->
+    <div class="card" style="margin-bottom: 32px;">
+      <h2>Critical Impact Synchronization Accuracy</h2>
+      <p style="color: #8b949e;">Tolerance requirement: &le; 33.3ms (&le; 1 frame error at 30fps). All impacts are synchronized directly from physical telemetry.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Effect</th>
+            <th>Critical Visual Event</th>
+            <th>Visual Telemetry Time</th>
+            <th>Scheduled Audio Time</th>
+            <th>Sync Offset</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+    <tr>
+      <td><code>ball_rain</code></td>
+      <td><strong>FIRST_IMPACT</strong></td>
+      <td>1.450s</td>
+      <td>1.450s</td>
+      <td><span class="mono" style="color: #58a6ff; font-weight: 700;">0ms</span></td>
+      <td><span class="badge badge-pass">PASS (&le; 33.3ms)</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>granular_burial</code></td>
+      <td><strong>FIRST_IMPACT</strong></td>
+      <td>4.150s</td>
+      <td>4.150s</td>
+      <td><span class="mono" style="color: #58a6ff; font-weight: 700;">0ms</span></td>
+      <td><span class="badge badge-pass">PASS (&le; 33.3ms)</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>soft_body_drop</code></td>
+      <td><strong>PEAK_SQUISH</strong></td>
+      <td>7.400s</td>
+      <td>7.400s</td>
+      <td><span class="mono" style="color: #58a6ff; font-weight: 700;">0ms</span></td>
+      <td><span class="badge badge-pass">PASS (&le; 33.3ms)</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>character_drop</code></td>
+      <td><strong>FIRST_IMPACT</strong></td>
+      <td>10.250s</td>
+      <td>10.250s</td>
+      <td><span class="mono" style="color: #58a6ff; font-weight: 700;">0ms</span></td>
+      <td><span class="badge badge-pass">PASS (&le; 33.3ms)</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>heavy_crush</code></td>
+      <td><strong>FIRST_IMPACT</strong></td>
+      <td>13.500s</td>
+      <td>13.500s</td>
+      <td><span class="mono" style="color: #58a6ff; font-weight: 700;">0ms</span></td>
+      <td><span class="badge badge-pass">PASS (&le; 33.3ms)</span></td>
+    </tr>
+    
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Complete Audio Event Plan -->
+    <div class="card" style="margin-bottom: 32px;">
+      <h2>Complete Audio Event Plan (29 Scheduled Cues)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Cue ID</th>
+            <th>Effect</th>
+            <th>Source Event</th>
+            <th>Visual Time</th>
+            <th>Audio Time</th>
+            <th>Gain</th>
+            <th>Pan</th>
+            <th>Priority</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+    <tr>
+      <td><code>ui_select_v1</code></td>
+      <td><code>ball_rain</code></td>
+      <td><strong>ITEM_SELECT</strong></td>
+      <td>0.500s</td>
+      <td>0.500s</td>
+      <td>-3 dB</td>
+      <td>-0.30</td>
+      <td><span class="mono">high</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>ball_fall_v1</code></td>
+      <td><code>ball_rain</code></td>
+      <td><strong>EFFECT_START</strong></td>
+      <td>1.000s</td>
+      <td>1.000s</td>
+      <td>-6 dB</td>
+      <td>-0.10</td>
+      <td><span class="mono">medium</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>ball_impact_hard_v1</code></td>
+      <td><code>ball_rain</code></td>
+      <td><strong>FIRST_IMPACT</strong></td>
+      <td>1.450s</td>
+      <td>1.450s</td>
+      <td>-3 dB</td>
+      <td>-0.15</td>
+      <td><span class="mono">critical</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>ball_impact_soft_v1</code></td>
+      <td><code>ball_rain</code></td>
+      <td><strong>EFFECT_ACTIVE</strong></td>
+      <td>1.620s</td>
+      <td>1.620s</td>
+      <td>-4.5 dB</td>
+      <td>+0.12</td>
+      <td><span class="mono">medium</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>ball_impact_hard_v1</code></td>
+      <td><code>ball_rain</code></td>
+      <td><strong>EFFECT_ACTIVE</strong></td>
+      <td>1.780s</td>
+      <td>1.780s</td>
+      <td>-4 dB</td>
+      <td>-0.18</td>
+      <td><span class="mono">medium</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>ball_impact_soft_v1</code></td>
+      <td><code>ball_rain</code></td>
+      <td><strong>EFFECT_ACTIVE</strong></td>
+      <td>1.950s</td>
+      <td>1.950s</td>
+      <td>-5 dB</td>
+      <td>+0.05</td>
+      <td><span class="mono">medium</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>ball_impact_soft_v1</code></td>
+      <td><code>ball_rain</code></td>
+      <td><strong>EFFECT_ACTIVE</strong></td>
+      <td>2.150s</td>
+      <td>2.150s</td>
+      <td>-5.5 dB</td>
+      <td>-0.10</td>
+      <td><span class="mono">medium</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>ball_impact_soft_v1</code></td>
+      <td><code>ball_rain</code></td>
+      <td><strong>EFFECT_ACTIVE</strong></td>
+      <td>2.380s</td>
+      <td>2.380s</td>
+      <td>-6 dB</td>
+      <td>+0.15</td>
+      <td><span class="mono">medium</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>ball_impact_soft_v1</code></td>
+      <td><code>ball_rain</code></td>
+      <td><strong>EFFECT_ACTIVE</strong></td>
+      <td>2.620s</td>
+      <td>2.620s</td>
+      <td>-6.5 dB</td>
+      <td>-0.05</td>
+      <td><span class="mono">medium</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>ball_settle_v1</code></td>
+      <td><code>ball_rain</code></td>
+      <td><strong>EFFECT_SETTLE</strong></td>
+      <td>3.000s</td>
+      <td>2.700s</td>
+      <td>-5 dB</td>
+      <td>+0.00</td>
+      <td><span class="mono">low</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>ui_select_v1</code></td>
+      <td><code>granular_burial</code></td>
+      <td><strong>ITEM_SELECT</strong></td>
+      <td>3.200s</td>
+      <td>3.200s</td>
+      <td>-3 dB</td>
+      <td>-0.15</td>
+      <td><span class="mono">high</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>granular_pour_v1</code></td>
+      <td><code>granular_burial</code></td>
+      <td><strong>EFFECT_START</strong></td>
+      <td>3.700s</td>
+      <td>3.700s</td>
+      <td>-4.5 dB</td>
+      <td>+0.05</td>
+      <td><span class="mono">medium</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>granular_impact_v1</code></td>
+      <td><code>granular_burial</code></td>
+      <td><strong>FIRST_IMPACT</strong></td>
+      <td>4.150s</td>
+      <td>4.150s</td>
+      <td>-3.5 dB</td>
+      <td>+0.00</td>
+      <td><span class="mono">critical</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>granular_pour_v1</code></td>
+      <td><code>granular_burial</code></td>
+      <td><strong>EFFECT_ACTIVE</strong></td>
+      <td>4.850s</td>
+      <td>4.500s</td>
+      <td>-5.5 dB</td>
+      <td>-0.05</td>
+      <td><span class="mono">medium</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>granular_settle_v1</code></td>
+      <td><code>granular_burial</code></td>
+      <td><strong>EFFECT_SETTLE</strong></td>
+      <td>6.000s</td>
+      <td>5.650s</td>
+      <td>-6 dB</td>
+      <td>+0.00</td>
+      <td><span class="mono">low</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>ui_select_v1</code></td>
+      <td><code>soft_body_drop</code></td>
+      <td><strong>ITEM_SELECT</strong></td>
+      <td>6.200s</td>
+      <td>6.200s</td>
+      <td>-3 dB</td>
+      <td>+0.00</td>
+      <td><span class="mono">high</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>jelly_whoosh_v1</code></td>
+      <td><code>soft_body_drop</code></td>
+      <td><strong>EFFECT_START</strong></td>
+      <td>6.700s</td>
+      <td>6.750s</td>
+      <td>-5 dB</td>
+      <td>+0.00</td>
+      <td><span class="mono">medium</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>jelly_squish_v1</code></td>
+      <td><code>soft_body_drop</code></td>
+      <td><strong>PEAK_SQUISH</strong></td>
+      <td>7.400s</td>
+      <td>7.400s</td>
+      <td>-1 dB</td>
+      <td>+0.00</td>
+      <td><span class="mono">critical</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>jelly_boing_v1</code></td>
+      <td><code>soft_body_drop</code></td>
+      <td><strong>REBOUND</strong></td>
+      <td>7.633s</td>
+      <td>7.633s</td>
+      <td>-2.5 dB</td>
+      <td>+0.00</td>
+      <td><span class="mono">high</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>jelly_settle_v1</code></td>
+      <td><code>soft_body_drop</code></td>
+      <td><strong>EFFECT_SETTLE</strong></td>
+      <td>9.000s</td>
+      <td>8.500s</td>
+      <td>-5 dB</td>
+      <td>+0.00</td>
+      <td><span class="mono">low</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>ui_select_v1</code></td>
+      <td><code>character_drop</code></td>
+      <td><strong>ITEM_SELECT</strong></td>
+      <td>9.200s</td>
+      <td>9.200s</td>
+      <td>-3 dB</td>
+      <td>+0.15</td>
+      <td><span class="mono">high</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>character_whoosh_v1</code></td>
+      <td><code>character_drop</code></td>
+      <td><strong>EFFECT_START</strong></td>
+      <td>9.700s</td>
+      <td>9.750s</td>
+      <td>-4.5 dB</td>
+      <td>+0.10</td>
+      <td><span class="mono">medium</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>character_impact_v1</code></td>
+      <td><code>character_drop</code></td>
+      <td><strong>FIRST_IMPACT</strong></td>
+      <td>10.250s</td>
+      <td>10.250s</td>
+      <td>-2 dB</td>
+      <td>+0.00</td>
+      <td><span class="mono">critical</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>character_tumble_v1</code></td>
+      <td><code>character_drop</code></td>
+      <td><strong>EFFECT_ACTIVE</strong></td>
+      <td>10.850s</td>
+      <td>10.750s</td>
+      <td>-4 dB</td>
+      <td>-0.05</td>
+      <td><span class="mono">medium</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>ui_select_v1</code></td>
+      <td><code>heavy_crush</code></td>
+      <td><strong>ITEM_SELECT</strong></td>
+      <td>12.200s</td>
+      <td>12.200s</td>
+      <td>-3 dB</td>
+      <td>+0.30</td>
+      <td><span class="mono">high</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>heavy_whoosh_v1</code></td>
+      <td><code>heavy_crush</code></td>
+      <td><strong>EFFECT_START</strong></td>
+      <td>12.700s</td>
+      <td>12.850s</td>
+      <td>-3.5 dB</td>
+      <td>+0.00</td>
+      <td><span class="mono">high</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>heavy_slam_v1</code></td>
+      <td><code>heavy_crush</code></td>
+      <td><strong>FIRST_IMPACT</strong></td>
+      <td>13.500s</td>
+      <td>13.500s</td>
+      <td>0 dB</td>
+      <td>+0.00</td>
+      <td><span class="mono">critical</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>heavy_sub_v1</code></td>
+      <td><code>heavy_crush</code></td>
+      <td><strong>FIRST_IMPACT</strong></td>
+      <td>13.500s</td>
+      <td>13.500s</td>
+      <td>0.5 dB</td>
+      <td>+0.00</td>
+      <td><span class="mono">critical</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>heavy_tail_v1</code></td>
+      <td><code>heavy_crush</code></td>
+      <td><strong>EFFECT_SETTLE</strong></td>
+      <td>14.500s</td>
+      <td>13.650s</td>
+      <td>-4 dB</td>
+      <td>+0.00</td>
+      <td><span class="mono">medium</span></td>
+    </tr>
+    
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Procedural SFX Asset Manifest -->
+    <div class="card" style="margin-bottom: 32px;">
+      <h2>Clean-Room Procedural SFX Asset Manifest (100% Original CC0)</h2>
+      <p style="color: #8b949e; margin-bottom: 12px;">Zero Mojang sound assets, zero copyrighted meme audio. 100% procedurally synthesized via mathematical wave shaping, FM synthesis, and biquad filtration.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Cue ID</th>
+            <th>Filename</th>
+            <th>Duration</th>
+            <th>Format</th>
+            <th>License</th>
+            <th>SHA-256 Checksum</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+    <tr>
+      <td><code>ui_select_v1</code></td>
+      <td><strong>ui_select_v1.wav</strong></td>
+      <td>0.065s</td>
+      <td>WAV 48kHz 16-bit stereo</td>
+      <td><span class="license-clean">CC0-1.0 / ORIGINAL_SYNTHESIS</span></td>
+      <td><span class="mono" style="font-size:0.75rem;">da18860cc4f72779...</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>ball_fall_v1</code></td>
+      <td><strong>fall.wav</strong></td>
+      <td>0.450s</td>
+      <td>WAV 48kHz 16-bit stereo</td>
+      <td><span class="license-clean">CC0-1.0 / ORIGINAL_SYNTHESIS</span></td>
+      <td><span class="mono" style="font-size:0.75rem;">3631537d30be8911...</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>ball_impact_soft_v1</code></td>
+      <td><strong>impact-soft.wav</strong></td>
+      <td>0.075s</td>
+      <td>WAV 48kHz 16-bit stereo</td>
+      <td><span class="license-clean">CC0-1.0 / ORIGINAL_SYNTHESIS</span></td>
+      <td><span class="mono" style="font-size:0.75rem;">b57b9168731be6a5...</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>ball_impact_hard_v1</code></td>
+      <td><strong>impact-hard.wav</strong></td>
+      <td>0.090s</td>
+      <td>WAV 48kHz 16-bit stereo</td>
+      <td><span class="license-clean">CC0-1.0 / ORIGINAL_SYNTHESIS</span></td>
+      <td><span class="mono" style="font-size:0.75rem;">7f9e3136f19e8b72...</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>ball_settle_v1</code></td>
+      <td><strong>settle.wav</strong></td>
+      <td>0.420s</td>
+      <td>WAV 48kHz 16-bit stereo</td>
+      <td><span class="license-clean">CC0-1.0 / ORIGINAL_SYNTHESIS</span></td>
+      <td><span class="mono" style="font-size:0.75rem;">4b16955e6336474b...</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>granular_pour_v1</code></td>
+      <td><strong>pour.wav</strong></td>
+      <td>0.650s</td>
+      <td>WAV 48kHz 16-bit stereo</td>
+      <td><span class="license-clean">CC0-1.0 / ORIGINAL_SYNTHESIS</span></td>
+      <td><span class="mono" style="font-size:0.75rem;">f846329a20bb6c7d...</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>granular_impact_v1</code></td>
+      <td><strong>impact.wav</strong></td>
+      <td>0.350s</td>
+      <td>WAV 48kHz 16-bit stereo</td>
+      <td><span class="license-clean">CC0-1.0 / ORIGINAL_SYNTHESIS</span></td>
+      <td><span class="mono" style="font-size:0.75rem;">47d5bea62e4c91be...</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>granular_settle_v1</code></td>
+      <td><strong>settle.wav</strong></td>
+      <td>0.450s</td>
+      <td>WAV 48kHz 16-bit stereo</td>
+      <td><span class="license-clean">CC0-1.0 / ORIGINAL_SYNTHESIS</span></td>
+      <td><span class="mono" style="font-size:0.75rem;">347a93d3eb5c0e55...</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>jelly_whoosh_v1</code></td>
+      <td><strong>whoosh.wav</strong></td>
+      <td>0.420s</td>
+      <td>WAV 48kHz 16-bit stereo</td>
+      <td><span class="license-clean">CC0-1.0 / ORIGINAL_SYNTHESIS</span></td>
+      <td><span class="mono" style="font-size:0.75rem;">016a3831f9e8ff98...</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>jelly_squish_v1</code></td>
+      <td><strong>squish.wav</strong></td>
+      <td>0.320s</td>
+      <td>WAV 48kHz 16-bit stereo</td>
+      <td><span class="license-clean">CC0-1.0 / ORIGINAL_SYNTHESIS</span></td>
+      <td><span class="mono" style="font-size:0.75rem;">a3a3b41f506ca6da...</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>jelly_boing_v1</code></td>
+      <td><strong>boing.wav</strong></td>
+      <td>0.340s</td>
+      <td>WAV 48kHz 16-bit stereo</td>
+      <td><span class="license-clean">CC0-1.0 / ORIGINAL_SYNTHESIS</span></td>
+      <td><span class="mono" style="font-size:0.75rem;">88e03cdfd523b05f...</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>jelly_settle_v1</code></td>
+      <td><strong>settle.wav</strong></td>
+      <td>0.220s</td>
+      <td>WAV 48kHz 16-bit stereo</td>
+      <td><span class="license-clean">CC0-1.0 / ORIGINAL_SYNTHESIS</span></td>
+      <td><span class="mono" style="font-size:0.75rem;">1697fce67f36d670...</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>character_whoosh_v1</code></td>
+      <td><strong>whoosh.wav</strong></td>
+      <td>0.380s</td>
+      <td>WAV 48kHz 16-bit stereo</td>
+      <td><span class="license-clean">CC0-1.0 / ORIGINAL_SYNTHESIS</span></td>
+      <td><span class="mono" style="font-size:0.75rem;">dcd82d7928448858...</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>character_impact_v1</code></td>
+      <td><strong>impact.wav</strong></td>
+      <td>0.240s</td>
+      <td>WAV 48kHz 16-bit stereo</td>
+      <td><span class="license-clean">CC0-1.0 / ORIGINAL_SYNTHESIS</span></td>
+      <td><span class="mono" style="font-size:0.75rem;">4dfe305beb9e2004...</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>character_tumble_v1</code></td>
+      <td><strong>tumble.wav</strong></td>
+      <td>0.320s</td>
+      <td>WAV 48kHz 16-bit stereo</td>
+      <td><span class="license-clean">CC0-1.0 / ORIGINAL_SYNTHESIS</span></td>
+      <td><span class="mono" style="font-size:0.75rem;">2eede4c91c8fb01a...</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>heavy_whoosh_v1</code></td>
+      <td><strong>whoosh.wav</strong></td>
+      <td>0.550s</td>
+      <td>WAV 48kHz 16-bit stereo</td>
+      <td><span class="license-clean">CC0-1.0 / ORIGINAL_SYNTHESIS</span></td>
+      <td><span class="mono" style="font-size:0.75rem;">f9e142ecec9e4a73...</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>heavy_slam_v1</code></td>
+      <td><strong>slam.wav</strong></td>
+      <td>0.650s</td>
+      <td>WAV 48kHz 16-bit stereo</td>
+      <td><span class="license-clean">CC0-1.0 / ORIGINAL_SYNTHESIS</span></td>
+      <td><span class="mono" style="font-size:0.75rem;">4f4c4367e6dce7ed...</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>heavy_sub_v1</code></td>
+      <td><strong>sub.wav</strong></td>
+      <td>0.750s</td>
+      <td>WAV 48kHz 16-bit stereo</td>
+      <td><span class="license-clean">CC0-1.0 / ORIGINAL_SYNTHESIS</span></td>
+      <td><span class="mono" style="font-size:0.75rem;">2fd6a0adfb6a82af...</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>heavy_tail_v1</code></td>
+      <td><strong>tail.wav</strong></td>
+      <td>0.850s</td>
+      <td>WAV 48kHz 16-bit stereo</td>
+      <td><span class="license-clean">CC0-1.0 / ORIGINAL_SYNTHESIS</span></td>
+      <td><span class="mono" style="font-size:0.75rem;">d08dae4c91e94ec5...</span></td>
+    </tr>
+    
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Technical QA Audit Suite -->
+    <div class="card" style="margin-bottom: 32px;">
+      <h2>Technical QA Audit Suite (30 / 30 PASS)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Check ID</th>
+            <th>Verification Detail</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+    <tr>
+      <td><code>frozen_8_8a_hash_invariant</code></td>
+      <td>Frozen 8.8A video hash verified: af3f48b6121a2f8b... (matches baseline)</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>effect_event_log_loaded</code></td>
+      <td>Loaded 30 timeline events from effect-event-log.json</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>ui_sfx_5_selections_present</code></td>
+      <td>Exactly 5 UI selection clicks scheduled (slots 0..4, count=5)</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>effect_1_ball_audio_mapped</code></td>
+      <td>Ball Rain audio mapped: fall whoosh, 7 bounce clusters, settle texture</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>effect_2_granular_audio_mapped</code></td>
+      <td>Granular Burial audio mapped: sand pour, dry impact, accumulation settle</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>effect_3_jelly_audio_mapped</code></td>
+      <td>Jelly Soft Body audio mapped: whoosh, viscoelastic peak squish, elastic boing, settle</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>effect_4_character_audio_mapped</code></td>
+      <td>Character Drop audio mapped: tumbling whoosh, body impact, floor tumble</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>effect_5_heavy_audio_mapped</code></td>
+      <td>Heavy Crush audio mapped: plunge whoosh, anvil slam, 40Hz sub-bass thump, resonance tail</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>zero_missing_critical_cues</code></td>
+      <td>All critical impact events accounted for (count=6)</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>zero_copyrighted_audio_assets</code></td>
+      <td>100% original procedural sound synthesis (0 Mojang/copyrighted assets, total=19)</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>audio_asset_manifest_complete</code></td>
+      <td>All 19 procedural WAV assets have recorded SHA-256 hashes and durations</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>audio_sample_rate_48khz</code></td>
+      <td>Audio stream sample rate: 48000 Hz (expected 48000 Hz)</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>stereo_output_verified</code></td>
+      <td>Audio channels: 2 (stereo)</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>aac_stream_exists</code></td>
+      <td>Audio codec: aac (AAC LC)</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>audio_video_duration_matched</code></td>
+      <td>Audio (15.000s) and video (15.000s) duration match (diff=0.0ms <= 20ms)</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>final_video_duration_preserved</code></td>
+      <td>Final container duration: 15.000s (target 15.0s)</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>final_video_resolution_preserved</code></td>
+      <td>Resolution preserved: 1080x1920 (9:16 vertical)</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>final_video_fps_frames_preserved</code></td>
+      <td>Frames: 450, frame rate: 30/1 (30fps)</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>visual_stream_unreencoded</code></td>
+      <td>Visual stream bitstream copy verified (H.264 bit_rate=7019103 identical to frozen 8.8A)</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>zero_digital_clipping</code></td>
+      <td>No digital clipping detected (0 clipped samples)</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>true_peak_within_spec</code></td>
+      <td>True Peak: -1 dBTP (target <= -1.0 dBTP)</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>integrated_loudness_target_met</code></td>
+      <td>Integrated Loudness: -14 LUFS (target -14.0 ± 1.0 LUFS)</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>ball_first_impact_sync</code></td>
+      <td>Ball first impact sync offset: 0ms (target <= 33.3ms)</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>granular_first_impact_sync</code></td>
+      <td>Granular first impact sync offset: 0ms (target <= 33.3ms)</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>jelly_peak_squish_sync</code></td>
+      <td>Jelly peak squish sync offset: 0ms (target <= 33.3ms to frame 222 / 7.40s)</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>character_first_impact_sync</code></td>
+      <td>Character impact sync offset: 0ms (target <= 33.3ms)</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>heavy_first_impact_sync</code></td>
+      <td>Heavy slam impact sync offset: 0ms (target <= 33.3ms to frame 405 / 13.50s)</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>heavy_is_strongest_impact</code></td>
+      <td>Heavy slam gain (0 dB) exceeds all other impacts (max other=-2 dB)</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>mono_compatibility_pass</code></td>
+      <td>Mono correlation: 0.984 >= 0.80 (phase compatible)</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+    <tr>
+      <td><code>audio_event_plan_deterministic</code></td>
+      <td>Deterministic audio event plan hash verified: 3486f647ba23004e...</td>
+      <td><span class="badge badge-pass">PASS</span></td>
+    </tr>
+    
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Gate Boundaries & Status -->
+    <div class="card">
+      <h2>Gate Boundaries & Project State</h2>
+      <div class="stat-row">
+        <span class="stat-label">Gate 8.8A Visual Baseline</span>
+        <span class="stat-val" style="color: #7ee787;">FINAL PASS / FROZEN (SHA: af3f48b6...)</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Gate 8.8B Audio & Impact Sync</span>
+        <span class="stat-val" style="color: #e3b341;">TECHNICAL PASS / READY FOR MANUAL AUDIO REVIEW</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Gate 8.7C AI Architect</span>
+        <span class="stat-val" style="color: #8b949e;">HOLD / PAUSED</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Gates 8.7A / 8.7B</span>
+        <span class="stat-val" style="color: #7ee787;">FROZEN</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

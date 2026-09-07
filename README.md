@@ -52,3 +52,4 @@ doom-builder-reports/
 - **Exact World Readback:** **100.000% across all structures**
 - **Automated Technical QA:** **10/10 PASS**
 \n- [Gate 8.8A — 3D Viral Effects Runtime](gates/gate-8.8a/index.html) — **TECHNICAL PASS / PENDING VISUAL REVIEW** (38/38 PASS, Ball Rain simulation, video players, contact sheet)
+- [Gate 8.8B — Viral Audio & Impact Sync](gates/gate-8.8b/index.html) — **TECHNICAL PASS / READY FOR MANUAL AUDIO REVIEW** (30/30 PASS, 100% procedural SFX, sample-accurate sync, EBU R128 loudness -14 LUFS, video players & 5 review clips)

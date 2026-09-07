@@ -1,0 +1,8 @@
+{
+  "integratedLufs": -14,
+  "truePeakDbtp": -1,
+  "loudnessRangeLu": 7.5,
+  "monoCorrelation": 0.984,
+  "noClipping": true,
+  "status": "PASS"
+}

@@ -1,0 +1,216 @@
+{
+  "generatedAt": "2026-09-07T03:20:10.045Z",
+  "totalAssets": 19,
+  "provenancePolicy": "100% Procedurally Synthesized Clean-Room Audio. Zero Mojang/Minecraft sound assets, zero copyrighted meme audio, zero unlicensed samples.",
+  "assets": [
+    {
+      "id": "ui_select_v1",
+      "filename": "ui_select_v1.wav",
+      "path": "sfx/ui_select_v1.wav",
+      "source": "ORIGINAL_PROCEDURAL",
+      "license": "CC0-1.0 / ORIGINAL_SYNTHESIS",
+      "author": "Minecraft Shorts Audio Engine (Procedural DSP)",
+      "format": "WAV 48kHz 16-bit stereo",
+      "sha256": "da18860cc4f727792b2ea421ec4bb993825623a9acfa3ae7ca992c727db2a07d",
+      "durationSec": 0.065
+    },
+    {
+      "id": "ball_fall_v1",
+      "filename": "fall.wav",
+      "path": "sfx/ball/fall.wav",
+      "source": "ORIGINAL_PROCEDURAL",
+      "license": "CC0-1.0 / ORIGINAL_SYNTHESIS",
+      "author": "Minecraft Shorts Audio Engine (Procedural DSP)",
+      "format": "WAV 48kHz 16-bit stereo",
+      "sha256": "3631537d30be89115b184aaa005beb2dab5b835028e71042850bc1c186d1d4d1",
+      "durationSec": 0.45
+    },
+    {
+      "id": "ball_impact_soft_v1",
+      "filename": "impact-soft.wav",
+      "path": "sfx/ball/impact-soft.wav",
+      "source": "ORIGINAL_PROCEDURAL",
+      "license": "CC0-1.0 / ORIGINAL_SYNTHESIS",
+      "author": "Minecraft Shorts Audio Engine (Procedural DSP)",
+      "format": "WAV 48kHz 16-bit stereo",
+      "sha256": "b57b9168731be6a53d4724a7d211d6582ac97df693ac1266133a2b59ec764f42",
+      "durationSec": 0.075
+    },
+    {
+      "id": "ball_impact_hard_v1",
+      "filename": "impact-hard.wav",
+      "path": "sfx/ball/impact-hard.wav",
+      "source": "ORIGINAL_PROCEDURAL",
+      "license": "CC0-1.0 / ORIGINAL_SYNTHESIS",
+      "author": "Minecraft Shorts Audio Engine (Procedural DSP)",
+      "format": "WAV 48kHz 16-bit stereo",
+      "sha256": "7f9e3136f19e8b72150eaf15f161fe6de78c15406e42af6b3b1069892440df38",
+      "durationSec": 0.09
+    },
+    {
+      "id": "ball_settle_v1",
+      "filename": "settle.wav",
+      "path": "sfx/ball/settle.wav",
+      "source": "ORIGINAL_PROCEDURAL",
+      "license": "CC0-1.0 / ORIGINAL_SYNTHESIS",
+      "author": "Minecraft Shorts Audio Engine (Procedural DSP)",
+      "format": "WAV 48kHz 16-bit stereo",
+      "sha256": "4b16955e6336474b4f0a3a30f7d00186c8b767d0e62d59c738e5521c8481e2ee",
+      "durationSec": 0.42
+    },
+    {
+      "id": "granular_pour_v1",
+      "filename": "pour.wav",
+      "path": "sfx/granular/pour.wav",
+      "source": "ORIGINAL_PROCEDURAL",
+      "license": "CC0-1.0 / ORIGINAL_SYNTHESIS",
+      "author": "Minecraft Shorts Audio Engine (Procedural DSP)",
+      "format": "WAV 48kHz 16-bit stereo",
+      "sha256": "f846329a20bb6c7ddbb1b379926c5431801213bddf3324b38e4d5bdc1f7e2e7b",
+      "durationSec": 0.65
+    },
+    {
+      "id": "granular_impact_v1",
+      "filename": "impact.wav",
+      "path": "sfx/granular/impact.wav",
+      "source": "ORIGINAL_PROCEDURAL",
+      "license": "CC0-1.0 / ORIGINAL_SYNTHESIS",
+      "author": "Minecraft Shorts Audio Engine (Procedural DSP)",
+      "format": "WAV 48kHz 16-bit stereo",
+      "sha256": "47d5bea62e4c91be80f7f531969de6ec2f30f15b927b1b205e8e5135d82ae6eb",
+      "durationSec": 0.35
+    },
+    {
+      "id": "granular_settle_v1",
+      "filename": "settle.wav",
+      "path": "sfx/granular/settle.wav",
+      "source": "ORIGINAL_PROCEDURAL",
+      "license": "CC0-1.0 / ORIGINAL_SYNTHESIS",
+      "author": "Minecraft Shorts Audio Engine (Procedural DSP)",
+      "format": "WAV 48kHz 16-bit stereo",
+      "sha256": "347a93d3eb5c0e55d61716402c2d129657df52b4b4d607996bad8e2d51c94a64",
+      "durationSec": 0.45
+    },
+    {
+      "id": "jelly_whoosh_v1",
+      "filename": "whoosh.wav",
+      "path": "sfx/jelly/whoosh.wav",
+      "source": "ORIGINAL_PROCEDURAL",
+      "license": "CC0-1.0 / ORIGINAL_SYNTHESIS",
+      "author": "Minecraft Shorts Audio Engine (Procedural DSP)",
+      "format": "WAV 48kHz 16-bit stereo",
+      "sha256": "016a3831f9e8ff98c6d133c9ab242983df8fdcc4acd4300f52f8f447e77be103",
+      "durationSec": 0.42
+    },
+    {
+      "id": "jelly_squish_v1",
+      "filename": "squish.wav",
+      "path": "sfx/jelly/squish.wav",
+      "source": "ORIGINAL_PROCEDURAL",
+      "license": "CC0-1.0 / ORIGINAL_SYNTHESIS",
+      "author": "Minecraft Shorts Audio Engine (Procedural DSP)",
+      "format": "WAV 48kHz 16-bit stereo",
+      "sha256": "a3a3b41f506ca6dafaa81dabe9605c2604c1a70a0149f6a9ebee1eb2f2de4646",
+      "durationSec": 0.32
+    },
+    {
+      "id": "jelly_boing_v1",
+      "filename": "boing.wav",
+      "path": "sfx/jelly/boing.wav",
+      "source": "ORIGINAL_PROCEDURAL",
+      "license": "CC0-1.0 / ORIGINAL_SYNTHESIS",
+      "author": "Minecraft Shorts Audio Engine (Procedural DSP)",
+      "format": "WAV 48kHz 16-bit stereo",
+      "sha256": "88e03cdfd523b05f487a62c6d6aa8f5eb5a16a1b6d5173472e634cbcf1d7c1e3",
+      "durationSec": 0.34
+    },
+    {
+      "id": "jelly_settle_v1",
+      "filename": "settle.wav",
+      "path": "sfx/jelly/settle.wav",
+      "source": "ORIGINAL_PROCEDURAL",
+      "license": "CC0-1.0 / ORIGINAL_SYNTHESIS",
+      "author": "Minecraft Shorts Audio Engine (Procedural DSP)",
+      "format": "WAV 48kHz 16-bit stereo",
+      "sha256": "1697fce67f36d67088f358c282df727d7e560744322c6d294dc6493e4f055b58",
+      "durationSec": 0.22
+    },
+    {
+      "id": "character_whoosh_v1",
+      "filename": "whoosh.wav",
+      "path": "sfx/character/whoosh.wav",
+      "source": "ORIGINAL_PROCEDURAL",
+      "license": "CC0-1.0 / ORIGINAL_SYNTHESIS",
+      "author": "Minecraft Shorts Audio Engine (Procedural DSP)",
+      "format": "WAV 48kHz 16-bit stereo",
+      "sha256": "dcd82d79284488583eee72f463798f70a7276c7bdf1a6ea14e008db1e5d14a33",
+      "durationSec": 0.38
+    },
+    {
+      "id": "character_impact_v1",
+      "filename": "impact.wav",
+      "path": "sfx/character/impact.wav",
+      "source": "ORIGINAL_PROCEDURAL",
+      "license": "CC0-1.0 / ORIGINAL_SYNTHESIS",
+      "author": "Minecraft Shorts Audio Engine (Procedural DSP)",
+      "format": "WAV 48kHz 16-bit stereo",
+      "sha256": "4dfe305beb9e200406166193f2b31ea97675885fdeb4c87941503a0c8fe15dba",
+      "durationSec": 0.24
+    },
+    {
+      "id": "character_tumble_v1",
+      "filename": "tumble.wav",
+      "path": "sfx/character/tumble.wav",
+      "source": "ORIGINAL_PROCEDURAL",
+      "license": "CC0-1.0 / ORIGINAL_SYNTHESIS",
+      "author": "Minecraft Shorts Audio Engine (Procedural DSP)",
+      "format": "WAV 48kHz 16-bit stereo",
+      "sha256": "2eede4c91c8fb01ac3be8d5112d4099df49be8b0b6f6e9d3167ebf3b49a1686b",
+      "durationSec": 0.32
+    },
+    {
+      "id": "heavy_whoosh_v1",
+      "filename": "whoosh.wav",
+      "path": "sfx/heavy/whoosh.wav",
+      "source": "ORIGINAL_PROCEDURAL",
+      "license": "CC0-1.0 / ORIGINAL_SYNTHESIS",
+      "author": "Minecraft Shorts Audio Engine (Procedural DSP)",
+      "format": "WAV 48kHz 16-bit stereo",
+      "sha256": "f9e142ecec9e4a73e5604d47a42f24e45c6bc6643dbfe60b19050631665e41cc",
+      "durationSec": 0.55
+    },
+    {
+      "id": "heavy_slam_v1",
+      "filename": "slam.wav",
+      "path": "sfx/heavy/slam.wav",
+      "source": "ORIGINAL_PROCEDURAL",
+      "license": "CC0-1.0 / ORIGINAL_SYNTHESIS",
+      "author": "Minecraft Shorts Audio Engine (Procedural DSP)",
+      "format": "WAV 48kHz 16-bit stereo",
+      "sha256": "4f4c4367e6dce7ede9d56a56e7dd10d0453691f464c06e3a61a048a041de660e",
+      "durationSec": 0.65
+    },
+    {
+      "id": "heavy_sub_v1",
+      "filename": "sub.wav",
+      "path": "sfx/heavy/sub.wav",
+      "source": "ORIGINAL_PROCEDURAL",
+      "license": "CC0-1.0 / ORIGINAL_SYNTHESIS",
+      "author": "Minecraft Shorts Audio Engine (Procedural DSP)",
+      "format": "WAV 48kHz 16-bit stereo",
+      "sha256": "2fd6a0adfb6a82af1e4be91ec23dc1c183339f78f80dfb1da00db0a0a129db1e",
+      "durationSec": 0.75
+    },
+    {
+      "id": "heavy_tail_v1",
+      "filename": "tail.wav",
+      "path": "sfx/heavy/tail.wav",
+      "source": "ORIGINAL_PROCEDURAL",
+      "license": "CC0-1.0 / ORIGINAL_SYNTHESIS",
+      "author": "Minecraft Shorts Audio Engine (Procedural DSP)",
+      "format": "WAV 48kHz 16-bit stereo",
+      "sha256": "d08dae4c91e94ec5132a441326f91e0b753712a3a3f83a5132cec331bb4cc1a9",
+      "durationSec": 0.85
+    }
+  ]
+}
