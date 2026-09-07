@@ -1,0 +1,146 @@
+{
+  "gate": "8.8",
+  "title": "YouTube Shorts Safe-Area Compliance QA",
+  "resolution": "1080x1920",
+  "safeArea": {
+    "primary": {
+      "x": [
+        60,
+        900
+      ],
+      "y": [
+        220,
+        1580
+      ]
+    },
+    "unsafeTop": {
+      "y": [
+        0,
+        220
+      ]
+    },
+    "unsafeBottom": {
+      "y": [
+        1580,
+        1920
+      ]
+    },
+    "unsafeRight": {
+      "x": [
+        920,
+        1080
+      ]
+    },
+    "cautionLeft": {
+      "x": [
+        0,
+        60
+      ]
+    }
+  },
+  "checks": {
+    "hotbar_bounding_box_inside_safe_area": {
+      "status": "PASS",
+      "bbox": [
+        192,
+        232,
+        888,
+        430
+      ],
+      "center": [
+        540.0,
+        331.0
+      ],
+      "width": 697,
+      "height": 199,
+      "detail": "Hotbar bounds X=[192, 888], Y=[232, 430] strictly within [60, 900] x [220, 1580]"
+    },
+    "counter_inside_safe_area": {
+      "status": "PASS",
+      "bbox": [
+        516,
+        389,
+        561,
+        410
+      ],
+      "center": [
+        538.5,
+        399.5
+      ],
+      "detail": "Counter bounds X=[516, 561], Y=[389, 410] strictly within safe area"
+    },
+    "actor_centroid_inside_safe_area": {
+      "status": "PASS",
+      "centroid": [
+        541.8,
+        1048.2
+      ],
+      "bbox": [
+        300,
+        667,
+        779,
+        1319
+      ],
+      "clearanceAboveBottomUnsafe": 261,
+      "detail": "Actor centroid (541.8, 1048.2) centered in safe area; body/feet Y=[667, 1319] (clearance 261px > 0)"
+    },
+    "key_impact_centroid_inside_safe_area": {
+      "status": "PASS",
+      "effects": {
+        "ball_rain": {
+          "centroid": [
+            513.5,
+            1167.1
+          ],
+          "ok": true
+        },
+        "granular_burial": {
+          "centroid": [
+            510.7,
+            1170.3
+          ],
+          "ok": true
+        },
+        "soft_body_drop": {
+          "centroid": [
+            516.2,
+            1127.7
+          ],
+          "ok": true
+        },
+        "character_drop": {
+          "centroid": [
+            512.9,
+            1135.3
+          ],
+          "ok": true
+        },
+        "heavy_crush": {
+          "centroid": [
+            504.3,
+            1215.7
+          ],
+          "ok": true
+        }
+      },
+      "detail": "All 5 key impact centroids stay within primary safe area [60..900] x [220..1580]"
+    },
+    "no_critical_overlay_in_bottom_unsafe_zone": {
+      "status": "PASS",
+      "actorMaxY": 1319,
+      "hotbarMaxY": 430,
+      "unsafeBottomBoundary": 1580,
+      "clearancePx": 261,
+      "detail": "Zero UI or actor geometry in bottom unsafe zone (y: 1580..1920). Clearance: 261px"
+    },
+    "no_critical_overlay_in_right_unsafe_zone": {
+      "status": "PASS",
+      "hotbarMaxX": 888,
+      "actorMaxX": 779,
+      "unsafeRightBoundary": 920,
+      "clearancePx": 32,
+      "detail": "Zero UI or actor geometry in right rail unsafe zone (x: 920..1080). Clearance: 32px"
+    }
+  },
+  "status": "SAFE-AREA TECHNICAL PASS / READY FOR MANUAL YOUTUBE SHORTS REVIEW"
+}
