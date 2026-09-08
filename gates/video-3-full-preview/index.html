@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video #3: 6 PHYSICS TRAPS vs ONE VOXEL GUY — Full Preview Dossier</title>
+  <style>
+    :root {
+      --bg-base: #0a0e17;
+      --bg-surface: #111827;
+      --bg-card: #162032;
+      --bg-card-hover: #1e2c45;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(56, 189, 248, 0.3);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-faint: #64748b;
+      --accent-cyan: #38bdf8;
+      --accent-blue: #60a5fa;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-purple: #a855f7;
+      --accent-rose: #f43f5e;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    header.top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(17, 24, 39, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+    .brand .logo-badge {
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.25rem 0.5rem;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .nav-links { display: flex; gap: 1rem; align-items: center; }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--text-main); }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.825rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .pill-pass { background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald); border: 1px solid rgba(16, 185, 129, 0.3); }
+
+    main.content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+    }
+
+    .hero {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-cyan);
+      margin-bottom: 0.5rem;
+    }
+    .hero h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+      line-height: 1.25;
+    }
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 850px;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .metric-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+    }
+    .metric-card .label {
+      font-size: 0.75rem;
+      color: var(--text-faint);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.35rem;
+    }
+    .metric-card .value {
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+
+    .card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .card h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+    .card p.desc {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .player-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      max-width: 480px;
+      margin: 0 auto 2rem;
+    }
+    .player-container video {
+      width: 100%;
+      border-radius: var(--radius-sm);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.6);
+      background: #000;
+    }
+
+    .trap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .trap-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      border-left: 4px solid var(--accent-cyan);
+    }
+    .trap-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+      color: var(--accent-cyan);
+    }
+    .trap-card .timing {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent-amber);
+      margin-bottom: 0.5rem;
+    }
+    .trap-card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .visual-comparison {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .visual-comparison img {
+      width: 100%;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    table.qa-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    table.qa-table th, table.qa-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    table.qa-table th {
+      background: var(--bg-card);
+      color: var(--text-faint);
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+    table.qa-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .badge-pass {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--accent-emerald);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 0.2rem 0.5rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .code-badge {
+      font-family: var(--font-mono);
+      background: rgba(255, 255, 255, 0.06);
+      padding: 0.15rem 0.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      color: var(--accent-cyan);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-nav">
+    <a class="brand" href="../../index.html">
+      <span class="logo-badge">Video #3</span>
+      <span>Full Preview Review</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../../index.html">&larr; Portal Home</a>
+      <a href="../video-3-prototypes/index.html">Prototypes Dossier</a>
+      <a href="../gate-8.8-safe-area/index.html">Gate 8.8 (Safe-Area)</a>
+      <a href="https://github.com/duyn1412/doom-builder-reports" target="_blank">GitHub Repo &nearr;</a>
+    </nav>
+    <div>
+      <span class="status-pill pill-pass">READY FOR MANUAL QA</span>
+    </div>
+  </header>
+
+  <main class="content">
+
+    <div class="hero">
+      <div class="hero-badge">Video #3 · 6 Physics Traps vs One Voxel Guy · Full Preview</div>
+      <h1>Complete Sequence Preview (18.63s / 559 Frames @ 30fps)</h1>
+      <p>Continuous vertical Shorts simulation testing 6 sequential distinct physical traps with dynamic 6-slot animated hotbar overlay, opening hook impact at 0.47s, volume-conserving elastic squash, rigid-body collisions, and comedic causal collapse aftermath.</p>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="label">Total Duration</div>
+          <div class="value" style="color: var(--accent-emerald);">18.63s (559f)</div>
+        </div>
+        <div class="metric-card">
+          <div class="label">Physics Traps</div>
+          <div class="value" style="color: var(--accent-cyan);">6 Traps (100% Unique)</div>
+        </div>
+        <div class="metric-card">
+          <div class="label">Opening Hook</div>
+          <div class="value" style="color: var(--accent-amber);">0.47s (f=14 Contact)</div>
+        </div>
+        <div class="metric-card">
+          <div class="label">Hotbar UI</div>
+          <div class="value" style="color: var(--accent-purple);">6 Slots (Safe Area PASS)</div>
+        </div>
+        <div class="metric-card">
+          <div class="label">Manual QA Status</div>
+          <div class="value" style="color: var(--accent-emerald);">READY FOR QA</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 1: Video Player -->
+    <div class="card">
+      <h2>1. Full Preview Video Player (Silent 360&times;640 @ 30fps)</h2>
+      <p class="desc">Play the complete 18.63-second sequence to inspect pacing, opening hook impact, slot transitions, physical weight, and comedic reactions.</p>
+      
+      <div class="player-container">
+        <video controls playsinline preload="metadata" loop>
+          <source src="renders/preview.mp4" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+        <div style="margin-top: 12px; font-size: 12px; color: var(--text-faint); font-family: var(--font-mono);">
+          renders/preview.mp4 &middot; H.264 &middot; 559 frames &middot; 30 fps &middot; 635 KB
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: 6 Physics Traps Breakdown -->
+    <div class="card">
+      <h2>2. Six Physical Traps — Motion & Timing Breakdown</h2>
+      <p class="desc">Each trap executes a completely distinct physical principle with dedicated pixel hotbar icons and facial reactions:</p>
+      
+      <div class="trap-grid">
+        <div class="trap-card" style="border-left-color: #06b6d4;">
+          <h3>Trap 1/6: Ball Wave</h3>
+          <div class="timing">Slot 0 &middot; 0.0s &ndash; 2.80s (84 frames) &middot; Hook Contact f=14 (0.47s)</div>
+          <p><strong>Motion Grammar:</strong> Lateral Swarm Fluid Rush &rarr; Contact &rarr; Accumulation</p>
+          <p>150 Cyan rigid-body spheres rush horizontally from X=-3.0m at 6.5m/s. Instant action at frame 1, hitting actor at frame 14.</p>
+        </div>
+
+        <div class="trap-card" style="border-left-color: #10b981;">
+          <h3>Trap 2/6: Jelly Press</h3>
+          <div class="timing">Slot 1 &middot; 2.80s &ndash; 5.70s (87 frames) &middot; Peak Squash f=124 (4.13s)</div>
+          <p><strong>Motion Grammar:</strong> Horizontal Compression &rarr; Elastic Squish &rarr; Rebound</p>
+          <p>Dual emerald and amethyst translucent jelly blocks press from left and right. Actor torso squishes to X=0.58, Y/Z=1.25 with elastic pop-out.</p>
+        </div>
+
+        <div class="trap-card" style="border-left-color: #f59e0b;">
+          <h3>Trap 3/6: Pendulum Smash</h3>
+          <div class="timing">Slot 2 &middot; 5.70s &ndash; 8.70s (90 frames) &middot; Peak Impact f=197 (6.57s)</div>
+          <p><strong>Motion Grammar:</strong> Gravity-Driven Overhead Arc &rarr; Lateral Slide</p>
+          <p>100kg steel hazard block on a 2.8m rigid swing arm swings from 65 deg at 8.2m/s, flinging the actor 0.52m sideways.</p>
+        </div>
+
+        <div class="trap-card" style="border-left-color: #f97316;">
+          <h3>Trap 4/6: Rotating Sweeper</h3>
+          <div class="timing">Slot 3 &middot; 8.70s &ndash; 11.70s (90 frames) &middot; Impact f=287 (9.57s)</div>
+          <p><strong>Motion Grammar:</strong> Powered Turntable Sweep &rarr; Rotational Knockback</p>
+          <p>Industrial turntable hub at X=-1.25m with visible 180 deg counterweight sweeps 325 deg arc, spinning actor into a stumble.</p>
+        </div>
+
+        <div class="trap-card" style="border-left-color: #a855f7;">
+          <h3>Trap 5/6: Tilting Platform</h3>
+          <div class="timing">Slot 4 &middot; 11.70s &ndash; 14.80s (93 frames) &middot; Incline Dump f=419 (13.97s)</div>
+          <p><strong>Motion Grammar:</strong> Dynamic Incline Deck &rarr; Multi-Body Slide</p>
+          <p>Platform pitches from 0 deg to 38 deg. 14 crates, barrels, and concrete blocks slide down slope before actor loses footing and slides into debris pile.</p>
+        </div>
+
+        <div class="trap-card" style="border-left-color: #ef4444;">
+          <h3>Trap 6/6: Chain-Reaction Collapse</h3>
+          <div class="timing">Slot 5 &middot; 14.80s &ndash; 18.63s (115 frames) &middot; Floor Drop f=538 (17.93s)</div>
+          <p><strong>Motion Grammar:</strong> Causal Multi-Stage Structural Catastrophe &rarr; Plunge</p>
+          <p>Trigger ball &rarr; 3 dominoes &rarr; trip hammer &rarr; crimson keystone ejection &rarr; column buckle &rarr; floor plunge &rarr; dazed sit in rubble aftermath.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Full Sequence Contact Sheet -->
+    <div class="card">
+      <h2>3. Full Sequence Peak Impact Contact Sheet</h2>
+      <p class="desc">Side-by-side proof of peak impact and comedic choreography across all 6 slots:</p>
+      <div class="visual-comparison">
+        <img src="images/video3-full-sequence-contact-sheet.png" alt="Video #3 Full Sequence Contact Sheet" />
+      </div>
+    </div>
+
+    <!-- Section 4: Safe Area QA Contact Sheet -->
+    <div class="card">
+      <h2>4. YouTube Shorts Safe Area QA Overlay Contact Sheet</h2>
+      <p class="desc">Rigorous validation against YouTube Shorts UI overlay zones (top header rail, right sidebar interaction, bottom metadata):</p>
+      <div class="visual-comparison">
+        <img src="images/video3-safe-area-contact-sheet.png" alt="Video #3 Safe Area Contact Sheet" />
+      </div>
+    </div>
+
+    <!-- Section 5: QA Criteria Table -->
+    <div class="card">
+      <h2>5. QA Verification Checklist & Audit Summary</h2>
+      <table class="qa-table">
+        <thead>
+          <tr>
+            <th>QA Criterion</th>
+            <th>Requirement Specification</th>
+            <th>Measured Outcome</th>
+            <th>Verdict</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Hook Speed</strong></td>
+            <td>First physical contact &le; 0.50s; action at frame 1</td>
+            <td>Action at frame 1; contact at frame 14 (0.467s)</td>
+            <td><span class="badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td><strong>Motion Diversity</strong></td>
+            <td>6 distinct motion identities (Wave, Press, Swing, Rotate, Slide, Collapse)</td>
+            <td>Zero repetition; each trap uses a unique physical system</td>
+            <td><span class="badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td><strong>Safe Area Clearance</strong></td>
+            <td>100% inside Primary Safe Area; clear of top rail, right icons, bottom metadata</td>
+            <td>Centered at X=160 (preview), Y=82; margins &ge; 28px left/right, 9px top</td>
+            <td><span class="badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td><strong>Facial Timing</strong></td>
+            <td>Anticipation &rarr; Reaction &rarr; Impact &rarr; Aftermath</td>
+            <td>10 UV pixel states keyframed across all 6 clips</td>
+            <td><span class="badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td><strong>Atmospheric Studio</strong></td>
+            <td>R=4.5m cove, DoF f/5.6, crisp foreground, zero raw noise</td>
+            <td>Rendered with Apple Silicon Metal acceleration, OIDN denoise</td>
+            <td><span class="badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td><strong>Sequence Continuity</strong></td>
+            <td>18.0 &ndash; 20.0s total duration range</td>
+            <td>559 frames (18.633s @ 30fps)</td>
+            <td><span class="badge-pass">PASS</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+</body>
+</html>

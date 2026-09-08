@@ -1,0 +1,54 @@
+{
+  "title": "Video #3 Full Production Scenario Specification",
+  "concept": "6 PHYSICS TRAPS vs ONE VOXEL GUY",
+  "target_audience": "Short-form viral entertainment (YouTube Shorts / TikTok / Reels)",
+  "duration_seconds": 18.633,
+  "total_frames": 559,
+  "fps": 30,
+  "resolution": "360x640 (preview) / 1080x1920 (production bundle)",
+  "art_direction": {
+    "background": "Soft atmospheric studio cove (R=4.5m cylinder, H=6.0m, soft cool grey #2C3345)",
+    "camera_depth_of_field": "f/5.6 on 48mm lens with actor as focal target (crisp foreground, soft background)",
+    "actor_rig": "Modular voxel actor with 10-state spritesheet animated facial system",
+    "hotbar": "Centered 6-slot pixel Minecraft hotbar with active highlight pulse & voxel trap icons"
+  },
+  "six_traps": [
+    {
+      "slot": 0,
+      "name": "Ball Wave",
+      "duration_s": 2.8,
+      "motion": "Lateral swarm flow"
+    },
+    {
+      "slot": 1,
+      "name": "Jelly Press",
+      "duration_s": 2.9,
+      "motion": "Horizontal compression"
+    },
+    {
+      "slot": 2,
+      "name": "Pendulum Smash",
+      "duration_s": 3.0,
+      "motion": "Gravity swing"
+    },
+    {
+      "slot": 3,
+      "name": "Rotating Sweeper",
+      "duration_s": 3.0,
+      "motion": "Turntable sweep"
+    },
+    {
+      "slot": 4,
+      "name": "Tilting Platform",
+      "duration_s": 3.1,
+      "motion": "Dynamic incline slide"
+    },
+    {
+      "slot": 5,
+      "name": "Chain-Reaction Collapse",
+      "duration_s": 3.833,
+      "motion": "Causal catastrophe & plunge"
+    }
+  ],
+  "qa_status": "READY FOR MANUAL QA REVIEW"
+}

@@ -1,0 +1,67 @@
+{
+  "total_frames": 559,
+  "fps": 30,
+  "duration_seconds": 18.633333333333333,
+  "clips": [
+    {
+      "id": "ball_wave",
+      "name": "Ball Wave",
+      "active_slot": 0,
+      "master_start_frame": 1,
+      "master_end_frame": 84,
+      "frame_count": 84,
+      "start_time_s": 0.0,
+      "end_time_s": 2.8
+    },
+    {
+      "id": "jelly_press",
+      "name": "Jelly Press",
+      "active_slot": 1,
+      "master_start_frame": 85,
+      "master_end_frame": 171,
+      "frame_count": 87,
+      "start_time_s": 2.8,
+      "end_time_s": 5.7
+    },
+    {
+      "id": "pendulum_smash",
+      "name": "Pendulum Smash",
+      "active_slot": 2,
+      "master_start_frame": 172,
+      "master_end_frame": 261,
+      "frame_count": 90,
+      "start_time_s": 5.7,
+      "end_time_s": 8.7
+    },
+    {
+      "id": "rotating_sweeper",
+      "name": "Rotating Sweeper",
+      "active_slot": 3,
+      "master_start_frame": 262,
+      "master_end_frame": 351,
+      "frame_count": 90,
+      "start_time_s": 8.7,
+      "end_time_s": 11.7
+    },
+    {
+      "id": "tilting_platform",
+      "name": "Tilting Platform",
+      "active_slot": 4,
+      "master_start_frame": 352,
+      "master_end_frame": 444,
+      "frame_count": 93,
+      "start_time_s": 11.7,
+      "end_time_s": 14.8
+    },
+    {
+      "id": "chain_collapse",
+      "name": "Chain-Reaction Collapse",
+      "active_slot": 5,
+      "master_start_frame": 445,
+      "master_end_frame": 559,
+      "frame_count": 115,
+      "start_time_s": 14.8,
+      "end_time_s": 18.633
+    }
+  ]
+}

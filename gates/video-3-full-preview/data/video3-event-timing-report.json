@@ -1,0 +1,250 @@
+{
+  "title": "Video #3 Event Timing & Hook Report",
+  "video_duration_seconds": 18.633,
+  "total_frames": 559,
+  "fps": 30,
+  "opening_hook": {
+    "requirement": "Immediate action at frame 1, contact <= 0.5s",
+    "frame_1_state": "Ball Wave lateral swarm already launched and entering camera view",
+    "first_contact_frame": 14,
+    "first_contact_time_seconds": 0.467,
+    "status": "PASS (0.47s < 0.50s target threshold)"
+  },
+  "sequence_flow": [
+    {
+      "slot": 0,
+      "effect": "Ball Wave",
+      "start_frame": 1,
+      "end_frame": 84,
+      "start_time_s": 0.0,
+      "end_time_s": 2.8,
+      "key_events": [
+        {
+          "frame": 1,
+          "time_s": 0.033,
+          "event": "150 Cyan balls rush from left at 6.5m/s"
+        },
+        {
+          "frame": 10,
+          "time_s": 0.333,
+          "event": "Actor spots swarm, facial expression turns LOOK_LEFT"
+        },
+        {
+          "frame": 14,
+          "time_s": 0.467,
+          "event": "FIRST CONTACT: Front wave strikes actor lower limbs"
+        },
+        {
+          "frame": 24,
+          "time_s": 0.8,
+          "event": "PEAK IMPACT: Wave crest hits torso, actor leans into flinch"
+        },
+        {
+          "frame": 45,
+          "time_s": 1.5,
+          "event": "Ball accumulation pile forms around actor"
+        },
+        {
+          "frame": 75,
+          "time_s": 2.5,
+          "event": "Balls bounce and settle; actor recovers balance"
+        }
+      ]
+    },
+    {
+      "slot": 1,
+      "effect": "Jelly Press",
+      "start_frame": 85,
+      "end_frame": 171,
+      "start_time_s": 2.8,
+      "end_time_s": 5.7,
+      "key_events": [
+        {
+          "frame": 85,
+          "time_s": 2.833,
+          "event": "Hotbar switches to Slot 1; Emerald and Amethyst jelly blocks glide inward"
+        },
+        {
+          "frame": 97,
+          "time_s": 3.233,
+          "event": "Actor notices blocks, looks left then right in confusion"
+        },
+        {
+          "frame": 118,
+          "time_s": 3.933,
+          "event": "FIRST CONTACT: Jelly blocks contact actor shoulders and sides"
+        },
+        {
+          "frame": 124,
+          "time_s": 4.133,
+          "event": "PEAK SQUASH: Volume-conserving compression (X=0.58, Y/Z=1.25)"
+        },
+        {
+          "frame": 133,
+          "time_s": 4.433,
+          "event": "HOLD SQUEEZE: Cheeks compressed, eyes shut SQUISHED"
+        },
+        {
+          "frame": 140,
+          "time_s": 4.667,
+          "event": "ELASTIC REBOUND: Blocks release, actor pops out with wobble"
+        },
+        {
+          "frame": 158,
+          "time_s": 5.267,
+          "event": "Dizzy recovery settle as blocks retract"
+        }
+      ]
+    },
+    {
+      "slot": 2,
+      "effect": "Pendulum Smash",
+      "start_frame": 172,
+      "end_frame": 261,
+      "start_time_s": 5.7,
+      "end_time_s": 8.7,
+      "key_events": [
+        {
+          "frame": 172,
+          "time_s": 5.733,
+          "event": "Hotbar switches to Slot 2; 100kg steel pendulum released from 65 deg"
+        },
+        {
+          "frame": 184,
+          "time_s": 6.133,
+          "event": "Actor anticipates swinging block; PANIC expression"
+        },
+        {
+          "frame": 197,
+          "time_s": 6.567,
+          "event": "PEAK IMPACT: Hazard block strikes actor chest at 8.2m/s"
+        },
+        {
+          "frame": 215,
+          "time_s": 7.167,
+          "event": "Pendulum swings through arc; actor slides 0.52m sideways"
+        },
+        {
+          "frame": 245,
+          "time_s": 8.167,
+          "event": "Pendulum secondary swing settle; actor recovers"
+        }
+      ]
+    },
+    {
+      "slot": 3,
+      "effect": "Rotating Sweeper",
+      "start_frame": 262,
+      "end_frame": 351,
+      "start_time_s": 8.7,
+      "end_time_s": 11.7,
+      "key_events": [
+        {
+          "frame": 262,
+          "time_s": 8.733,
+          "event": "Hotbar switches to Slot 3; Turntable hub spins 325 deg arc"
+        },
+        {
+          "frame": 274,
+          "time_s": 9.133,
+          "event": "Actor spots approaching sweeper arm; PANIC expression"
+        },
+        {
+          "frame": 287,
+          "time_s": 9.567,
+          "event": "PEAK IMPACT: Sweeper paddle strikes actor at mid-height"
+        },
+        {
+          "frame": 305,
+          "time_s": 10.167,
+          "event": "Actor pushed and rotated in stumble"
+        },
+        {
+          "frame": 335,
+          "time_s": 11.167,
+          "event": "Sweeper completes 325 deg rotation to resting angle; actor regains footing"
+        }
+      ]
+    },
+    {
+      "slot": 4,
+      "effect": "Tilting Platform",
+      "start_frame": 352,
+      "end_frame": 444,
+      "start_time_s": 11.7,
+      "end_time_s": 14.8,
+      "key_events": [
+        {
+          "frame": 352,
+          "time_s": 11.733,
+          "event": "Hotbar switches to Slot 4; Platform deck starts level with 14 props"
+        },
+        {
+          "frame": 374,
+          "time_s": 12.467,
+          "event": "Tilt begins (14 deg); loose crates and barrels slide right before actor"
+        },
+        {
+          "frame": 392,
+          "time_s": 13.067,
+          "event": "Actor counter-leans left, flailing arms for balance"
+        },
+        {
+          "frame": 419,
+          "time_s": 13.967,
+          "event": "PEAK INCLINE (38 deg): Actor footing slips; slides down deck"
+        },
+        {
+          "frame": 435,
+          "time_s": 14.5,
+          "event": "Actor settles into foreground debris pile in sitting dazed pose"
+        }
+      ]
+    },
+    {
+      "slot": 5,
+      "effect": "Chain-Reaction Collapse",
+      "start_frame": 445,
+      "end_frame": 559,
+      "start_time_s": 14.8,
+      "end_time_s": 18.633,
+      "key_events": [
+        {
+          "frame": 445,
+          "time_s": 14.833,
+          "event": "Hotbar switches to Slot 5; Trigger sphere released on elevated ramp"
+        },
+        {
+          "frame": 460,
+          "time_s": 15.333,
+          "event": "Sphere knocks Domino 1, cascading through Domino 2 & 3"
+        },
+        {
+          "frame": 481,
+          "time_s": 16.033,
+          "event": "Domino trips weighted iron hammer lever"
+        },
+        {
+          "frame": 497,
+          "time_s": 16.567,
+          "event": "Trip hammer strikes Crimson Keystone, violently ejecting it outward"
+        },
+        {
+          "frame": 513,
+          "time_s": 17.1,
+          "event": "Support column buckles; platform deck loses left footing"
+        },
+        {
+          "frame": 538,
+          "time_s": 17.933,
+          "event": "FULL COLLAPSE: Floor drops out completely, actor plunges into rubble"
+        },
+        {
+          "frame": 550,
+          "time_s": 18.333,
+          "event": "COMEDIC AFTERMATH: Actor sitting dazed amidst rubble slabs, head cocked"
+        }
+      ]
+    }
+  ]
+}

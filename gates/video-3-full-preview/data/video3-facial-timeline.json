@@ -1,0 +1,241 @@
+{
+  "title": "Video #3 Facial Expression Progression Timeline",
+  "system": "10-State Spritesheet (1280x128 UV Tile Shift)",
+  "total_clips": 6,
+  "timeline": [
+    {
+      "clip": "Ball Wave",
+      "master_frames": [
+        1,
+        84
+      ],
+      "keyframes": [
+        {
+          "frame": 1,
+          "expression": "NEUTRAL",
+          "reason": "Standing relaxed before wave"
+        },
+        {
+          "frame": 10,
+          "expression": "LOOK_LEFT",
+          "reason": "Notices lateral cyan swarm approaching"
+        },
+        {
+          "frame": 14,
+          "expression": "PANIC",
+          "reason": "First ball impact"
+        },
+        {
+          "frame": 24,
+          "expression": "IMPACT",
+          "reason": "Wave crest strikes torso"
+        },
+        {
+          "frame": 55,
+          "expression": "DIZZY",
+          "reason": "Submerged in ball pile"
+        }
+      ]
+    },
+    {
+      "clip": "Jelly Press",
+      "master_frames": [
+        85,
+        171
+      ],
+      "keyframes": [
+        {
+          "frame": 85,
+          "expression": "NEUTRAL",
+          "reason": "Scene transition"
+        },
+        {
+          "frame": 97,
+          "expression": "LOOK_LEFT",
+          "reason": "Spots emerald block left"
+        },
+        {
+          "frame": 107,
+          "expression": "LOOK_RIGHT",
+          "reason": "Double takes amethyst block right"
+        },
+        {
+          "frame": 113,
+          "expression": "PANIC",
+          "reason": "Blocks closing in"
+        },
+        {
+          "frame": 120,
+          "expression": "SQUISHED",
+          "reason": "Torso squeezed between jelly blocks"
+        },
+        {
+          "frame": 140,
+          "expression": "DIZZY",
+          "reason": "Elastic pop-out wobble"
+        },
+        {
+          "frame": 157,
+          "expression": "RECOVER",
+          "reason": "Regaining composure"
+        }
+      ]
+    },
+    {
+      "clip": "Pendulum Smash",
+      "master_frames": [
+        172,
+        261
+      ],
+      "keyframes": [
+        {
+          "frame": 172,
+          "expression": "NEUTRAL",
+          "reason": "Scene transition"
+        },
+        {
+          "frame": 184,
+          "expression": "LOOK_LEFT",
+          "reason": "Spots incoming pendulum hazard"
+        },
+        {
+          "frame": 190,
+          "expression": "PANIC",
+          "reason": "Bracing for swing"
+        },
+        {
+          "frame": 197,
+          "expression": "IMPACT",
+          "reason": "Hazard block smashes chest"
+        },
+        {
+          "frame": 218,
+          "expression": "DIZZY",
+          "reason": "Sliding stumble"
+        },
+        {
+          "frame": 245,
+          "expression": "RECOVER",
+          "reason": "Stands back up"
+        }
+      ]
+    },
+    {
+      "clip": "Rotating Sweeper",
+      "master_frames": [
+        262,
+        351
+      ],
+      "keyframes": [
+        {
+          "frame": 262,
+          "expression": "NEUTRAL",
+          "reason": "Scene transition"
+        },
+        {
+          "frame": 274,
+          "expression": "LOOK_LEFT",
+          "reason": "Spots turntable arm sweeping"
+        },
+        {
+          "frame": 280,
+          "expression": "PANIC",
+          "reason": "Cannot dodge sweeping arc"
+        },
+        {
+          "frame": 287,
+          "expression": "IMPACT",
+          "reason": "Sweeper paddle contacts actor"
+        },
+        {
+          "frame": 308,
+          "expression": "DIZZY",
+          "reason": "Spinning stumble"
+        },
+        {
+          "frame": 335,
+          "expression": "RECOVER",
+          "reason": "Recovers footing"
+        }
+      ]
+    },
+    {
+      "clip": "Tilting Platform",
+      "master_frames": [
+        352,
+        444
+      ],
+      "keyframes": [
+        {
+          "frame": 352,
+          "expression": "NEUTRAL",
+          "reason": "Standing on level platform"
+        },
+        {
+          "frame": 376,
+          "expression": "LOOK_RIGHT",
+          "reason": "Watches crates start sliding"
+        },
+        {
+          "frame": 392,
+          "expression": "ALERT",
+          "reason": "Platform slope increasing"
+        },
+        {
+          "frame": 407,
+          "expression": "PANIC",
+          "reason": "Losing footing"
+        },
+        {
+          "frame": 424,
+          "expression": "SQUISHED",
+          "reason": "Sliding down deck with debris"
+        },
+        {
+          "frame": 440,
+          "expression": "DIZZY",
+          "reason": "Sitting dazed in pile"
+        }
+      ]
+    },
+    {
+      "clip": "Chain-Reaction Collapse",
+      "master_frames": [
+        445,
+        559
+      ],
+      "keyframes": [
+        {
+          "frame": 445,
+          "expression": "NEUTRAL",
+          "reason": "Standing on platform"
+        },
+        {
+          "frame": 461,
+          "expression": "LOOK_LEFT",
+          "reason": "Watches trigger sphere and dominoes"
+        },
+        {
+          "frame": 483,
+          "expression": "ALERT",
+          "reason": "Watches trip hammer swing"
+        },
+        {
+          "frame": 499,
+          "expression": "PANIC",
+          "reason": "Keystone ejected, column buckling"
+        },
+        {
+          "frame": 533,
+          "expression": "IMPACT",
+          "reason": "Free-fall plunge as floor drops"
+        },
+        {
+          "frame": 551,
+          "expression": "DIZZY",
+          "reason": "Dazed aftermath sitting in rubble"
+        }
+      ]
+    }
+  ]
+}

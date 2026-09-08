@@ -1,0 +1,56 @@
+{
+  "title": "Video #3 Layout & Safe Area QA Report",
+  "resolution": "360x640 (preview) / 1080x1920 (production spec)",
+  "aspect_ratio": "9:16 Vertical Shorts",
+  "safe_area_guidelines": {
+    "top_unsafe_rail_y": [
+      0,
+      73
+    ],
+    "bottom_unsafe_metadata_y": [
+      527,
+      640
+    ],
+    "right_unsafe_sidebar_x": [
+      300,
+      360
+    ],
+    "left_unsafe_rail_x": [
+      0,
+      20
+    ],
+    "primary_safe_area_box": [
+      20,
+      73,
+      300,
+      527
+    ]
+  },
+  "hotbar_overlay_qa": {
+    "slot_count": 6,
+    "hotbar_box_preview": [
+      48,
+      82,
+      272,
+      137
+    ],
+    "top_clearance_px": 9,
+    "left_clearance_px": 28,
+    "right_clearance_px": 28,
+    "status": "PASS \u2014 100% inside Primary Safe Area, zero overlap with Shorts UI"
+  },
+  "actor_staging_qa": {
+    "camera_position": [
+      0.0,
+      -3.85,
+      1.45
+    ],
+    "camera_lens_mm": 48,
+    "camera_dof_fstop": 5.6,
+    "actor_head_y_preview": 280,
+    "actor_feet_y_preview": 470,
+    "drop_anticipation_window_px": 143,
+    "status": "PASS \u2014 Actor remains 100% visible and un-obscured in all 6 clips"
+  },
+  "overall_layout_verdict": "PASS \u2014 ALL CRITERIA MET"
+}
