@@ -123,11 +123,12 @@
       "impactTimeSec": 1.2,
       "framesDir": "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/frames_sweeper",
       "mp4": "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/rotating_sweeper_preview.mp4",
+      "contactStrip": "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/rotating_sweeper_contact_strip.png",
       "keyFrames": [
         1,
         24,
         36,
-        50,
+        44,
         75
       ],
       "facialTimeline": [
@@ -135,53 +136,53 @@
           "frame": 1,
           "timeSec": 0.033,
           "expression": "NEUTRAL",
-          "context": "Powered arm starts rotational sweep"
+          "context": "Powered arm starts rotational sweep behind pivot at -140 deg"
         },
         {
           "frame": 17,
           "timeSec": 0.567,
           "expression": "LOOK_LEFT",
-          "context": "Actor spots sweeper circling forward"
+          "context": "Actor spots sweeper circling forward through arc"
         },
         {
           "frame": 27,
           "timeSec": 0.9,
           "expression": "ALERT",
-          "context": "Arm accelerates into sweeping range"
+          "context": "Arm accelerates into sweeping range (-80 deg)"
         },
         {
           "frame": 33,
           "timeSec": 1.1,
           "expression": "PANIC",
-          "context": "Anticipation beat right before impact"
+          "context": "Anticipation beat right before impact (-35 deg)"
         },
         {
           "frame": 36,
           "timeSec": 1.2,
           "expression": "IMPACT",
-          "context": "Lateral strike at waist/chest height"
+          "context": "Lateral strike at waist height (-7 deg)"
         },
         {
           "frame": 44,
           "timeSec": 1.467,
           "expression": "DIZZY",
-          "context": "Actor swept off feet into mid-air 180 deg spin"
+          "context": "Actor swept off feet into mid-air spin (+28 deg sweep-through)"
         },
         {
           "frame": 64,
           "timeSec": 2.133,
           "expression": "RECOVER",
-          "context": "Sweeper completes 360 sweep, actor recovers on floor"
+          "context": "Sweeper completes 325-deg sweep, actor settles into sitting dazed pose"
         }
       ],
       "physicsSummary": {
-        "mechanism": "Vertical motor column at (-1.6, 0.4) driving 2.45m horizontal industrial beam",
-        "impactor": "Padded steel bumper with yellow/black hazard bands",
+        "mechanism": "Fixed turntable motor column at (-1.25, 0.15) with floor guide collar, rotating turntable disk (R=0.48m), and central axle spindle pin",
+        "assembly": "Dual-ended rotating assembly: 2.05m forward yellow hazard sweep arm + 0.65m heavy cast counterweight at 180 deg",
         "rotationAxis": "Z-axis fixed pivot",
         "sweepHeightM": 0.9,
         "actorDisplacementM": 1.52,
-        "secondaryMotion": "Full 360-deg sweep follow-through with smooth motor deceleration",
-        "status": "PASS - STABLE & DETERMINISTIC"
+        "secondaryMotion": "Full 325-deg sweep-through follow-through with smooth motor deceleration",
+        "status": "PASS - POLISHED & READY FOR MANUAL QA"
       }
     },
     {
@@ -252,64 +253,69 @@
       "id": "chain_reaction_collapse",
       "name": "PROTOTYPE D: CHAIN-REACTION COLLAPSE",
       "grammar": "CHAIN REACTION / STRUCTURAL COLLAPSE",
-      "durationSec": 3.8,
-      "frames": 114,
-      "impactFrame": 80,
-      "impactTimeSec": 2.67,
+      "durationSec": 4.5,
+      "frames": 135,
+      "impactFrame": 88,
+      "impactTimeSec": 2.93,
       "framesDir": "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/frames_collapse",
       "mp4": "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/chain_reaction_collapse_preview.mp4",
+      "contactStrip": "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/chain_reaction_collapse_contact_strip.png",
       "keyFrames": [
-        1,
-        24,
-        44,
-        68,
-        95
+        16,
+        30,
+        48,
+        56,
+        72,
+        88,
+        115
       ],
       "facialTimeline": [
         {
           "frame": 1,
           "timeSec": 0.033,
           "expression": "NEUTRAL",
-          "context": "Actor stands on elevated 1.45m stone platform"
+          "context": "Actor stands on elevated stone platform"
         },
         {
-          "frame": 19,
-          "timeSec": 0.633,
+          "frame": 16,
+          "timeSec": 0.533,
           "expression": "LOOK_LEFT",
-          "context": "Spots brass trigger ball rolling down ramp"
+          "context": "Spots brass trigger ball rolling down elevated ramp"
         },
         {
-          "frame": 34,
-          "timeSec": 1.133,
+          "frame": 38,
+          "timeSec": 1.267,
           "expression": "ALERT",
-          "context": "Domino cascade knocks into support keystone"
+          "context": "Domino cascade trips pivoted striker hammer swinging down"
         },
         {
-          "frame": 50,
-          "timeSec": 1.667,
+          "frame": 54,
+          "timeSec": 1.8,
           "expression": "PANIC",
-          "context": "Support column buckles, floor begins tilting"
+          "context": "Hammer smashes keystone pin, diagonal brace fails"
         },
         {
-          "frame": 68,
-          "timeSec": 2.267,
+          "frame": 88,
+          "timeSec": 2.933,
           "expression": "IMPACT",
-          "context": "Platform drops out, actor plunges through air"
+          "context": "Left column topples, floor slabs plunge, actor free-falls"
         },
         {
-          "frame": 84,
-          "timeSec": 2.8,
+          "frame": 106,
+          "timeSec": 3.533,
           "expression": "DIZZY",
-          "context": "Lands amidst fallen stone slabs, debris settles"
+          "context": "Lands amidst fallen stone slabs, dazed settle in rubble"
         }
       ],
       "physicsSummary": {
-        "mechanism": "Sequential 5-stage causal chain: Trigger ball -> Domino chain -> Keystone pin -> Buckling column -> Deck collapse",
-        "triggerBall": "Brass sphere (r=0.15m) rolling down 12 deg ramp",
-        "dominoChain": "4 heavy stone slabs with sequential domino tumble",
+        "mechanism": "Sequential 7-stage causal chain: Trigger sphere (f=1-18) -> Sequential domino cascade (f=18-36) -> Pivoted trip-hammer swing (f=36-52) -> Keystone pin ejection (f=52-62) -> Column buckle & collapse (f=62-78) -> Deck slabs drop (f=76-92) -> Actor plunge (f=86-102) -> Rubble settles & dazed settle aftermath (f=102-135)",
+        "triggerSphere": "Brass sphere (r=0.16m) on 14-deg elevated wooden chute",
+        "dominoChain": "3 heavy stone slabs with sequential domino tumble",
+        "tripHammer": "Pivoted heavy brass/iron striker swinging through 75-deg arc",
+        "keystone": "Crimson keystone shear pin ejected violently with strut collapse",
         "platformHeightM": 1.45,
-        "secondaryMotion": "Slabs and actor crash into ground with natural rubble settling",
-        "status": "PASS - STABLE & DETERMINISTIC"
+        "secondaryMotion": "Slabs crash to floor with natural rubble settling and comedic seated actor aftermath",
+        "status": "PASS - REMEDIATED & READY FOR MANUAL QA"
       }
     }
   ],
@@ -321,6 +327,10 @@
       "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/chain_reaction_collapse_preview.mp4"
     ],
     "comparisonContactSheet": "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/video3-prototype-contact-sheet.png",
+    "contactStrips": [
+      "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/rotating_sweeper_contact_strip.png",
+      "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/chain_reaction_collapse_contact_strip.png"
+    ],
     "facialExpressionSheet": "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/actor-facial-expressions-sheet.png",
     "backgroundQAFrame": "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/background-softness-qa-frame.png"
   },
