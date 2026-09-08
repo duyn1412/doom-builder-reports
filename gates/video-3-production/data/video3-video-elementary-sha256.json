@@ -1,0 +1,6 @@
+{
+  "source_visual_h264_sha256": "b0b5d856ec5775d1f89998ad13319324096beecf6c8340f9d43e7fbbcab5c313",
+  "muxed_video_h264_sha256": "b0b5d856ec5775d1f89998ad13319324096beecf6c8340f9d43e7fbbcab5c313",
+  "bit_for_bit_identical": true,
+  "verdict": "PASS - Video elementary stream preserved bit-for-bit via stream copy (-c:v copy)"
+}

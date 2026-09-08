@@ -1,0 +1,6 @@
+{
+  "true_peak_dbtp": -1.5,
+  "clipping_detected": false,
+  "decoded_overs_detected": false,
+  "verdict": "PASS - Zero clipping, zero decoded overs"
+}

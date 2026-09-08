@@ -1,0 +1,36 @@
+{
+  "host": "Duys-MacBook-Pro.local",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "blender_version": "5.2.0 LTS",
+  "compute_backend": "METAL",
+  "available_devices": [
+    {
+      "name": "Apple M2",
+      "type": "CPU",
+      "id": "CPU"
+    },
+    {
+      "name": "Apple M2 (GPU - 10 cores)",
+      "type": "METAL",
+      "id": "METAL_Apple M2 (GPU - 10 cores)"
+    }
+  ],
+  "enabled_devices": [
+    {
+      "name": "Apple M2 (GPU - 10 cores)",
+      "type": "METAL",
+      "id": "METAL_Apple M2 (GPU - 10 cores)"
+    }
+  ],
+  "cycles_device": "GPU",
+  "denoiser": "OPENIMAGEDENOISE",
+  "denoising_enabled": true,
+  "samples": 48,
+  "resolution": [
+    1080,
+    1920
+  ],
+  "fps": 30,
+  "threads_mode": "AUTO",
+  "threads": 8
+}

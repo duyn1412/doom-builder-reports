@@ -1,0 +1,135 @@
+{
+  "total_deliverables": 16,
+  "passed_deliverables": 16,
+  "all_deliverables_present": true,
+  "deliverables": [
+    {
+      "index": 1,
+      "name": "production visual MP4",
+      "path": "/Users/duyn/mine/output/viral-effects/viral-drop-003/renders/production_visual.mp4",
+      "exists": true,
+      "bytes": 4870946,
+      "status": "PASS"
+    },
+    {
+      "index": 2,
+      "name": "final audio master WAV",
+      "path": "/Users/duyn/mine/output/viral-effects/viral-drop-003/audio/final_audio_master.wav",
+      "exists": true,
+      "bytes": 5366502,
+      "status": "PASS"
+    },
+    {
+      "index": 3,
+      "name": "audio-muxed production MP4",
+      "path": "/Users/duyn/mine/output/viral-effects/viral-drop-003/renders/production_muxed.mp4",
+      "exists": true,
+      "bytes": 5158294,
+      "status": "PASS"
+    },
+    {
+      "index": 4,
+      "name": "production contact sheet",
+      "path": "/Users/duyn/mine/output/viral-effects/viral-drop-003/reports/video3-production-contact-sheet.png",
+      "exists": true,
+      "bytes": 841536,
+      "status": "PASS"
+    },
+    {
+      "index": 5,
+      "name": "safe-area contact sheet",
+      "path": "/Users/duyn/mine/output/viral-effects/viral-drop-003/reports/video3-safe-area-contact-sheet.png",
+      "exists": true,
+      "bytes": 833915,
+      "status": "PASS"
+    },
+    {
+      "index": 6,
+      "name": "render telemetry",
+      "path": "/Users/duyn/mine/output/viral-effects/viral-drop-003/reports/video3-render-telemetry.json",
+      "exists": true,
+      "bytes": 742,
+      "status": "PASS"
+    },
+    {
+      "index": 7,
+      "name": "actual rendered event timing report",
+      "path": "/Users/duyn/mine/output/viral-effects/viral-drop-003/reports/video3-actual-rendered-event-timing.json",
+      "exists": true,
+      "bytes": 6894,
+      "status": "PASS"
+    },
+    {
+      "index": 8,
+      "name": "audio cue/sync report",
+      "path": "/Users/duyn/mine/output/viral-effects/viral-drop-003/reports/video3-audio-cue-sync-report.json",
+      "exists": true,
+      "bytes": 4413,
+      "status": "PASS"
+    },
+    {
+      "index": 9,
+      "name": "loudness report",
+      "path": "/Users/duyn/mine/output/viral-effects/viral-drop-003/reports/video3-loudness-report.json",
+      "exists": true,
+      "bytes": 121,
+      "status": "PASS"
+    },
+    {
+      "index": 10,
+      "name": "true-peak report",
+      "path": "/Users/duyn/mine/output/viral-effects/viral-drop-003/reports/video3-true-peak-report.json",
+      "exists": true,
+      "bytes": 92,
+      "status": "PASS"
+    },
+    {
+      "index": 11,
+      "name": "decoded overs/clipping check",
+      "path": "/Users/duyn/mine/output/viral-effects/viral-drop-003/reports/video3-decoded-overs-check.json",
+      "exists": true,
+      "bytes": 150,
+      "status": "PASS"
+    },
+    {
+      "index": 12,
+      "name": "tonal-noise / spectrum check",
+      "path": "/Users/duyn/mine/output/viral-effects/viral-drop-003/reports/video3-tonal-noise-spectrum-check.json",
+      "exists": true,
+      "bytes": 1470,
+      "status": "PASS"
+    },
+    {
+      "index": 13,
+      "name": "layout QA report",
+      "path": "/Users/duyn/mine/output/viral-effects/viral-drop-003/reports/video3-layout-qa-report.json",
+      "exists": true,
+      "bytes": 1067,
+      "status": "PASS"
+    },
+    {
+      "index": 14,
+      "name": "whole-file SHA-256",
+      "path": "/Users/duyn/mine/output/viral-effects/viral-drop-003/reports/video3-whole-file-sha256.json",
+      "exists": true,
+      "bytes": 705,
+      "status": "PASS"
+    },
+    {
+      "index": 15,
+      "name": "video elementary-stream SHA-256",
+      "path": "/Users/duyn/mine/output/viral-effects/viral-drop-003/reports/video3-video-elementary-sha256.json",
+      "exists": true,
+      "bytes": 328,
+      "status": "PASS"
+    },
+    {
+      "index": 16,
+      "name": "audio elementary-stream SHA-256",
+      "path": "/Users/duyn/mine/output/viral-effects/viral-drop-003/reports/video3-audio-elementary-sha256.json",
+      "exists": true,
+      "bytes": 238,
+      "status": "PASS"
+    }
+  ]
+}

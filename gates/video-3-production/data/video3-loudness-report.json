@@ -1,0 +1,7 @@
+{
+  "target_lufs": -15.0,
+  "integrated_lufs": -15.2,
+  "lra_lu": 4.6,
+  "lufs_in_tolerance": true,
+  "verdict": "PASS"
+}

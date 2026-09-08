@@ -1,0 +1,17 @@
+{
+  "production_visual_mp4": {
+    "path": "/Users/duyn/mine/output/viral-effects/viral-drop-003/renders/production_visual.mp4",
+    "sha256": "d4384c2ce2917e5cda1dbfd67f0e59c98ac4d174b5c2ec48930e49400567a901",
+    "bytes": 4870946
+  },
+  "final_audio_master_wav": {
+    "path": "/Users/duyn/mine/output/viral-effects/viral-drop-003/audio/final_audio_master.wav",
+    "sha256": "c4bc1f62ff99ed92101aefa6ab5c04e8b085993d627eb7e665b85832055026b5",
+    "bytes": 5366502
+  },
+  "production_muxed_mp4": {
+    "path": "/Users/duyn/mine/output/viral-effects/viral-drop-003/renders/production_muxed.mp4",
+    "sha256": "348494d14053e643176a9ceca25bed974648cbe6d72f2254855e3d18ec5fc60f",
+    "bytes": 5158294
+  }
+}

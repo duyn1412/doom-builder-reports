@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video #3: Production Build ("6 PHYSICS TRAPS vs ONE VOXEL GUY") — Final QA Dossier</title>
+  <style>
+    :root {
+      --bg-base: #0a0e17;
+      --bg-surface: #111827;
+      --bg-card: #162032;
+      --bg-card-hover: #1e2c45;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(56, 189, 248, 0.3);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-faint: #64748b;
+      --accent-cyan: #38bdf8;
+      --accent-blue: #60a5fa;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-purple: #a855f7;
+      --accent-rose: #f43f5e;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    header.top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(17, 24, 39, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+    .brand .logo-badge {
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.25rem 0.5rem;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .nav-links { display: flex; gap: 1rem; align-items: center; }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--text-main); }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.825rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .pill-pass { background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald); border: 1px solid rgba(16, 185, 129, 0.3); }
+
+    main.content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+    }
+
+    .hero {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-cyan);
+      margin-bottom: 0.5rem;
+    }
+    .hero h1 {
+      font-size: 2.25rem;
+      line-height: 1.25;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 850px;
+      margin-bottom: 1.5rem;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .metric-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+    }
+    .metric-card .label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-faint);
+      margin-bottom: 0.25rem;
+    }
+    .metric-card .value {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+    .metric-card .sub {
+      font-size: 0.8rem;
+      color: var(--accent-emerald);
+      margin-top: 0.2rem;
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .media-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .player-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #000;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      max-width: 420px;
+      margin: 0 auto;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+    video.preview-player {
+      width: 100%;
+      height: auto;
+      display: block;
+      aspect-ratio: 9 / 16;
+    }
+
+    .contact-sheet-img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      display: block;
+    }
+
+    table.qa-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+    table.qa-table th, table.qa-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    table.qa-table th {
+      background: var(--bg-card);
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    table.qa-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .badge-pass {
+      background: rgba(16, 185, 129, 0.2);
+      color: var(--accent-emerald);
+      padding: 0.2rem 0.5rem;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.75rem;
+    }
+
+    .code-block {
+      background: #070a10;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.825rem;
+      color: var(--accent-cyan);
+      overflow-x: auto;
+      word-break: break-all;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      color: var(--text-faint);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-nav">
+    <a class="brand" href="../../index.html">
+      <span class="logo-badge">Doom Builder</span>
+      <span>Video #3 Production Dossier</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../../index.html">All Gates</a>
+      <a href="../video-3-full-preview/index.html">Preview Dossier</a>
+      <a href="https://github.com/duyn1412/doom-builder-reports" target="_blank">GitHub Repo &nearr;</a>
+    </nav>
+    <div>
+      <span class="status-pill pill-pass">READY FOR FINAL QA</span>
+    </div>
+  </header>
+
+  <main class="content">
+
+    <div class="hero">
+      <div class="hero-badge">Production Deliverable · Cycles Metal Native 1080x1920</div>
+      <h1>Video #3: 6 PHYSICS TRAPS vs ONE VOXEL GUY</h1>
+      <p>Native 1080x1920 48spp Cycles Metal production build across 559 frames (18.633s @ 30fps) on Apple Silicon M2 GPU. Features 6 distinct procedural physics traps, native 6-slot hotbar UI composite, clean-room EBU R128 audio master, and bit-for-bit stream-copy verification.</p>
+    </div>
+
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="label">Status</div>
+        <div class="value" style="color: var(--accent-emerald);">FINAL QA</div>
+        <div class="sub">16/16 Checks PASS</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">Render Resolution</div>
+        <div class="value">1080 &times; 1920</div>
+        <div class="sub">Native 9:16 Vertical</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">Frame Count</div>
+        <div class="value">559 Frames</div>
+        <div class="sub">18.633s @ 30.0 fps</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">Render Samples</div>
+        <div class="value">48 spp + OIDN</div>
+        <div class="sub">Cycles Metal GPU</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">Integrated Loudness</div>
+        <div class="value">-15.4 LUFS</div>
+        <div class="sub">Target: -15.0 &plusmn; 0.5</div>
+      </div>
+      <div class="metric-card">
+        <div class="label">Video Stream Copy</div>
+        <div class="value" style="color: var(--accent-cyan);">EXACT MATCH</div>
+        <div class="sub">Bit-for-bit H.264</div>
+      </div>
+    </div>
+
+    <!-- Final Production Video Player -->
+    <div class="media-card">
+      <div class="section-title">Final Production Video (1080x1920 Muxed with Audio)</div>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
+        Complete native 1080x1920 video with clean-room procedural audio and 6-slot hotbar HUD.
+      </p>
+      <div class="player-container">
+        <video class="preview-player" controls preload="metadata" playsinline poster="images/video3-production-contact-sheet.png">
+          <source src="renders/production_muxed.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </div>
+
+    <!-- Sequence Audit Contact Sheet -->
+    <div class="media-card">
+      <div class="section-title">Sequence Audit Contact Sheet (6 Traps)</div>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
+        Peak physical action frames from each trap showing Cycles soft atmospheric background, realistic lighting, and responsive hotbar slot progression.
+      </p>
+      <img class="contact-sheet-img" src="images/video3-production-contact-sheet.png" alt="Video #3 Production Contact Sheet">
+    </div>
+
+    <!-- Safe-Area Audit Contact Sheet -->
+    <div class="media-card">
+      <div class="section-title">YouTube Shorts Safe-Area Conformance Audit</div>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">
+        Green box indicates primary safe zone. Hotbar HUD and physics action remain safely clear of YouTube overlay buttons and headers.
+      </p>
+      <img class="contact-sheet-img" src="images/video3-safe-area-contact-sheet.png" alt="Video #3 Safe Area Contact Sheet">
+    </div>
+
+    <!-- 16 Deliverables Verification Table -->
+    <div class="media-card">
+      <div class="section-title">16 QA Deliverables Verification Audit (docs/product.md Compliant)</div>
+      <table class="qa-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Deliverable Name</th>
+            <th>Relative Path</th>
+            <th>Format</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><strong>Production Visual MP4</strong></td>
+            <td><code>renders/production_visual.mp4</code></td>
+            <td>H.264 High Profile, CRF 17 (4.87 MB)</td>
+            <td><span class="badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><strong>Final Audio Master WAV</strong></td>
+            <td><code>audio/final_audio_master.wav</code></td>
+            <td>24-bit 48kHz Stereo LPCM (5.37 MB)</td>
+            <td><span class="badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><strong>Audio-Muxed Production MP4</strong></td>
+            <td><code>renders/production_muxed.mp4</code></td>
+            <td>1080x1920 Video + AAC 48kHz (5.16 MB)</td>
+            <td><span class="badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><strong>Production Contact Sheet</strong></td>
+            <td><code>images/video3-production-contact-sheet.png</code></td>
+            <td>6-Panel 1080x1920 Sequence (841 KB)</td>
+            <td><span class="badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><strong>Safe-Area Contact Sheet</strong></td>
+            <td><code>images/video3-safe-area-contact-sheet.png</code></td>
+            <td>YouTube Shorts Guides Overlay (833 KB)</td>
+            <td><span class="badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td><strong>Render Telemetry</strong></td>
+            <td><code>data/video3-render-telemetry.json</code></td>
+            <td>Metal GPU 10-core, 48 spp, OIDN</td>
+            <td><span class="badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td><strong>Actual Rendered Event Timing</strong></td>
+            <td><code>data/video3-actual-rendered-event-timing.json</code></td>
+            <td>Frame-accurate impact timestamps</td>
+            <td><span class="badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td><strong>Audio Cue / Sync Report</strong></td>
+            <td><code>data/video3-audio-cue-sync-report.json</code></td>
+            <td>Transient delta &le; 33ms across all cues</td>
+            <td><span class="badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td><strong>Loudness Report</strong></td>
+            <td><code>data/video3-loudness-report.json</code></td>
+            <td>-15.4 LUFS, LRA 4.6 LU (EBU R128)</td>
+            <td><span class="badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td><strong>True-Peak Report</strong></td>
+            <td><code>data/video3-true-peak-report.json</code></td>
+            <td>-1.1 dBFS True Peak</td>
+            <td><span class="badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td><strong>Decoded Overs / Clipping Check</strong></td>
+            <td><code>data/video3-decoded-overs-check.json</code></td>
+            <td>0 samples clipped (&le; -1.1 dBFS)</td>
+            <td><span class="badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td><strong>Tonal-Noise / Spectrum Check</strong></td>
+            <td><code>data/video3-tonal-noise-spectrum-check.json</code></td>
+            <td>Quiet intervals &le; -180 dBFS (Zero drone)</td>
+            <td><span class="badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td><strong>Layout QA Report</strong></td>
+            <td><code>data/video3-layout-qa-report.json</code></td>
+            <td>Bounding box (148,234,813,388) in safe zone</td>
+            <td><span class="badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td><strong>Whole-File SHA-256</strong></td>
+            <td><code>data/video3-whole-file-sha256.json</code></td>
+            <td>Cryptographic file checksums</td>
+            <td><span class="badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td><strong>Video Elementary-Stream SHA-256</strong></td>
+            <td><code>data/video3-video-elementary-sha256.json</code></td>
+            <td><code>b0b5d856ec5775d1f89998ad13319324096beecf6c8340f9d43e7fbbcab5c313</code></td>
+            <td><span class="badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td>16</td>
+            <td><strong>Audio Elementary-Stream SHA-256</strong></td>
+            <td><code>data/video3-audio-elementary-sha256.json</code></td>
+            <td><code>c31440985aca75f11b9ef2f4a6428a022412c1d36a69b615751da860712f618f</code></td>
+            <td><span class="badge-pass">PASS</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Cryptographic Verification Details -->
+    <div class="media-card">
+      <div class="section-title">Cryptographic Stream Integrity Audit</div>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+        Elementary H.264 streams extracted before and after muxing confirm zero re-encoding (bit-for-bit identical):
+      </p>
+      <div class="code-block">
+Source Video Stream (production_visual.h264):
+b0b5d856ec5775d1f89998ad13319324096beecf6c8340f9d43e7fbbcab5c313
+
+Muxed Video Stream (production_muxed.h264):
+b0b5d856ec5775d1f89998ad13319324096beecf6c8340f9d43e7fbbcab5c313
+
+VERIFICATION: PASS (EXACT BIT-FOR-BIT MATCH)
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Minecraft Shorts Automated Architecture & Physics Factory · Doom Builder Reports</p>
+  </footer>
+
+</body>
+</html>

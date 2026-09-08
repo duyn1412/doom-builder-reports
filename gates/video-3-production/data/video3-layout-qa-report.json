@@ -1,0 +1,68 @@
+{
+  "resolution": [
+    1080,
+    1920
+  ],
+  "safe_area": {
+    "top_unsafe_y": [
+      0,
+      220
+    ],
+    "bottom_unsafe_y": [
+      1580,
+      1920
+    ],
+    "right_unsafe_x": [
+      920,
+      1080
+    ],
+    "left_caution_x": [
+      0,
+      60
+    ],
+    "primary_safe_area": {
+      "x": [
+        60,
+        900
+      ],
+      "y": [
+        220,
+        1580
+      ]
+    }
+  },
+  "ui_elements": {
+    "hotbar_6_slot": {
+      "bbox": [
+        148,
+        234,
+        813,
+        388
+      ],
+      "fits_safe_area": true,
+      "right_rail_clearance_px": 267,
+      "bottom_clearance_px": 1192
+    },
+    "physics_traps_label": {
+      "bbox": [
+        280,
+        234,
+        800,
+        280
+      ],
+      "fits_safe_area": true
+    }
+  },
+  "critical_geometry": {
+    "actor_centroid_x_range": [
+      480,
+      620
+    ],
+    "actor_centroid_y_range": [
+      820,
+      1150
+    ],
+    "impact_focal_points_inside_safe_area": true
+  },
+  "verdict": "PASS - 100% of critical UI and actor geometry conforms to Shorts safe-area bounds"
+}

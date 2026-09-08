@@ -1,0 +1,70 @@
+{
+  "verdict": "PASS - Zero continuous tonal drone, zero harmonic hum, clean quiet intervals",
+  "prohibited_frequencies_checked": [
+    320,
+    640,
+    1280
+  ],
+  "quiet_intervals": [
+    {
+      "window": "between_clip1_and_clip2",
+      "range_s": [
+        2.3,
+        2.7
+      ],
+      "rms_dbfs": -180.0,
+      "near_silence_pass": true,
+      "tone_spikes": {
+        "320Hz_db": -180.0,
+        "640Hz_db": -180.0,
+        "1280Hz_db": -180.0
+      },
+      "zero_tone_drone_pass": true
+    },
+    {
+      "window": "between_clip2_and_clip3",
+      "range_s": [
+        5.1,
+        5.6
+      ],
+      "rms_dbfs": -180.0,
+      "near_silence_pass": true,
+      "tone_spikes": {
+        "320Hz_db": -180.0,
+        "640Hz_db": -180.0,
+        "1280Hz_db": -180.0
+      },
+      "zero_tone_drone_pass": true
+    },
+    {
+      "window": "between_clip3_and_clip4",
+      "range_s": [
+        7.8,
+        8.6
+      ],
+      "rms_dbfs": -180.0,
+      "near_silence_pass": true,
+      "tone_spikes": {
+        "320Hz_db": -180.0,
+        "640Hz_db": -180.0,
+        "1280Hz_db": -180.0
+      },
+      "zero_tone_drone_pass": true
+    },
+    {
+      "window": "between_clip4_and_clip5",
+      "range_s": [
+        10.8,
+        11.6
+      ],
+      "rms_dbfs": -180.0,
+      "near_silence_pass": true,
+      "tone_spikes": {
+        "320Hz_db": -180.0,
+        "640Hz_db": -180.0,
+        "1280Hz_db": -180.0
+      },
+      "zero_tone_drone_pass": true
+    }
+  ]
+}

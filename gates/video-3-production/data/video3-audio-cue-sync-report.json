@@ -1,0 +1,155 @@
+{
+  "sync_tolerance_ms": 33.33,
+  "max_allowed_delta_ms": 33.33,
+  "all_cues_pass": true,
+  "cues": [
+    {
+      "id": "ui_click_slot_0",
+      "time_s": 0.01,
+      "category": "UI",
+      "desc": "Subtle UI tick on slot 0 highlight"
+    },
+    {
+      "id": "ui_click_slot_1",
+      "time_s": 2.8,
+      "category": "UI",
+      "desc": "Subtle UI tick on slot 1 highlight"
+    },
+    {
+      "id": "ui_click_slot_2",
+      "time_s": 5.7,
+      "category": "UI",
+      "desc": "Subtle UI tick on slot 2 highlight"
+    },
+    {
+      "id": "ui_click_slot_3",
+      "time_s": 8.7,
+      "category": "UI",
+      "desc": "Subtle UI tick on slot 3 highlight"
+    },
+    {
+      "id": "ui_click_slot_4",
+      "time_s": 11.7,
+      "category": "UI",
+      "desc": "Subtle UI tick on slot 4 highlight"
+    },
+    {
+      "id": "ui_click_slot_5",
+      "time_s": 14.8,
+      "category": "UI",
+      "desc": "Subtle UI tick on slot 5 highlight"
+    },
+    {
+      "id": "ball_wave_first_contact",
+      "visual_target_s": 0.467,
+      "audio_transient_s": 0.467,
+      "delta_ms": 0.0,
+      "clip": "Ball Wave",
+      "desc": "First rubber ball strikes actor lower body"
+    },
+    {
+      "id": "ball_wave_peak_impact",
+      "visual_target_s": 0.6,
+      "audio_transient_s": 0.6,
+      "delta_ms": 0.0,
+      "clip": "Ball Wave",
+      "desc": "Dense wave crest lateral collision; actor pushed +X"
+    },
+    {
+      "id": "jelly_press_first_contact",
+      "visual_target_s": 3.933,
+      "audio_transient_s": 3.933,
+      "delta_ms": 0.0,
+      "clip": "Jelly Press",
+      "desc": "Dual emerald & amethyst jelly blocks touch actor torso"
+    },
+    {
+      "id": "jelly_press_peak_squeeze",
+      "visual_target_s": 4.133,
+      "audio_transient_s": 4.133,
+      "delta_ms": 0.0,
+      "clip": "Jelly Press",
+      "desc": "Maximum torso compression, SQUISHED expression fully visible"
+    },
+    {
+      "id": "jelly_press_release_rebound",
+      "visual_target_s": 4.6,
+      "audio_transient_s": 4.6,
+      "delta_ms": 0.0,
+      "clip": "Jelly Press",
+      "desc": "Blocks release; torso snaps back in elastic wobble"
+    },
+    {
+      "id": "pendulum_exact_contact",
+      "visual_target_s": 6.567,
+      "audio_transient_s": 6.567,
+      "delta_ms": 0.0,
+      "clip": "Pendulum Smash",
+      "desc": "100kg steel hazard impacts actor chest; full body lateral displacement"
+    },
+    {
+      "id": "sweeper_exact_contact",
+      "visual_target_s": 9.567,
+      "audio_transient_s": 9.567,
+      "delta_ms": 0.0,
+      "clip": "Rotating Sweeper",
+      "desc": "Orange hazard paddle strikes actor; rotational kick & stumble"
+    },
+    {
+      "id": "tilting_onset",
+      "visual_target_s": 12.467,
+      "audio_transient_s": 12.467,
+      "delta_ms": 0.0,
+      "clip": "Tilting Platform",
+      "desc": "Platform hydraulics pitch incline deck upward"
+    },
+    {
+      "id": "tilting_actor_slide",
+      "visual_target_s": 13.967,
+      "audio_transient_s": 13.967,
+      "delta_ms": 0.0,
+      "clip": "Tilting Platform",
+      "desc": "Actor footing slips; slides into foreground prop pile"
+    },
+    {
+      "id": "collapse_trigger_click",
+      "visual_target_s": 14.833,
+      "audio_transient_s": 14.833,
+      "delta_ms": 0.0,
+      "clip": "Chain-Reaction Collapse",
+      "desc": "Steel trigger ball rolls down ramp and triggers trip latch"
+    },
+    {
+      "id": "collapse_domino_cascade",
+      "visual_target_s": 15.333,
+      "audio_transient_s": 15.3,
+      "delta_ms": 33.0,
+      "clip": "Chain-Reaction Collapse",
+      "desc": "3 giant stone dominoes topple in cascade"
+    },
+    {
+      "id": "collapse_keystone_eject",
+      "visual_target_s": 16.567,
+      "audio_transient_s": 16.567,
+      "delta_ms": 0.0,
+      "clip": "Chain-Reaction Collapse",
+      "desc": "Trip hammer strikes crimson keystone block; keystone fractures and ejects"
+    },
+    {
+      "id": "collapse_column_snap",
+      "visual_target_s": 17.1,
+      "audio_transient_s": 17.1,
+      "delta_ms": 0.0,
+      "clip": "Chain-Reaction Collapse",
+      "desc": "Main structural pillar buckles under catastrophic load"
+    },
+    {
+      "id": "collapse_floor_plunge_peak",
+      "visual_target_s": 17.933,
+      "audio_transient_s": 17.933,
+      "delta_ms": 0.0,
+      "clip": "Chain-Reaction Collapse",
+      "desc": "Central floor deck drops into abyss; actor plunge & massive debris impact"
+    }
+  ]
+}
