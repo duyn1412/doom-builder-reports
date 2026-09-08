@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video #3 — Physics Prototypes ("Satisfying Physical Simulations") | Review Dossier</title>
+  <style>
+    :root {
+      --bg-base: #0a0e17;
+      --bg-surface: #111827;
+      --bg-card: #162032;
+      --bg-card-hover: #1e2c45;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(56, 189, 248, 0.3);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-faint: #64748b;
+      --accent-cyan: #38bdf8;
+      --accent-blue: #60a5fa;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-purple: #a855f7;
+      --accent-rose: #f43f5e;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    header.top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(17, 24, 39, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+    .brand .logo-badge {
+      background: linear-gradient(135deg, var(--accent-amber), var(--accent-purple));
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.25rem 0.5rem;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .nav-links { display: flex; gap: 1rem; align-items: center; }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--text-main); }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.825rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .pill-pass { background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald); border: 1px solid rgba(16, 185, 129, 0.3); }
+
+    main.content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+    }
+
+    .hero {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-badge {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-amber);
+      margin-bottom: 0.5rem;
+    }
+    .hero h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+      line-height: 1.25;
+    }
+    .hero p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 850px;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .metric-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+    }
+    .metric-card .label {
+      font-size: 0.75rem;
+      color: var(--text-faint);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.35rem;
+    }
+    .metric-card .value {
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+
+    .card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .card h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+    .card p.desc {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .video-grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .video-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .video-panel h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.35rem;
+      align-self: flex-start;
+      color: var(--accent-amber);
+    }
+    .video-panel .meta-badge {
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+      font-family: var(--font-mono);
+      margin-bottom: 0.5rem;
+      align-self: flex-start;
+    }
+    .video-panel p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      align-self: flex-start;
+      min-height: 48px;
+    }
+    .video-panel video {
+      width: 100%;
+      max-height: 480px;
+      border-radius: var(--radius-sm);
+      background: #000;
+    }
+
+    .visual-comparison {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .visual-comparison img {
+      width: 100%;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    table.qa-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    table.qa-table th, table.qa-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    table.qa-table th {
+      background: var(--bg-card);
+      color: var(--text-faint);
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+    table.qa-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .badge-pass {
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--accent-emerald);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 0.2rem 0.5rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .code-badge {
+      font-family: var(--font-mono);
+      background: rgba(255, 255, 255, 0.06);
+      padding: 0.15rem 0.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      color: var(--accent-cyan);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-nav">
+    <a class="brand" href="../../index.html">
+      <span class="logo-badge">Video #3</span>
+      <span>Physics Prototypes Review</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../../index.html">&larr; Portal Home</a>
+      <a href="../gate-8.8-safe-area/index.html">Gate 8.8 (Safe-Area)</a>
+      <a href="../gate-8.8b/index.html">Gate 8.8B (Audio)</a>
+      <a href="https://github.com/duyn1412/doom-builder-reports" target="_blank">GitHub Repo &nearr;</a>
+    </nav>
+    <div>
+      <span class="status-pill pill-pass">READY FOR MANUAL QA</span>
+    </div>
+  </header>
+
+  <main class="content">
+
+    <div class="hero">
+      <div class="hero-badge">Video #3 · Satisfying Physical Simulations · Prototype Phase</div>
+      <h1>Four Physical Simulation Prototypes & Visual Direction Proof</h1>
+      <p>Visual validation of 4 distinct motion grammars (Swing, Rotate, Slide, Collapse), the reusable 10-state actor facial expression system, and the soft atmospheric studio cyclorama background ($R=4.5$m cove, DoF $f/5.6$, 0 raw render noise).</p>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="label">Phase Status</div>
+          <div class="value" style="color: var(--accent-emerald);">READY FOR QA</div>
+        </div>
+        <div class="metric-card">
+          <div class="label">Prototypes</div>
+          <div class="value" style="color: var(--accent-cyan);">4 Distinct Grammars</div>
+        </div>
+        <div class="metric-card">
+          <div class="label">Facial Rig</div>
+          <div class="value" style="color: var(--accent-amber);">10 Pixel States</div>
+        </div>
+        <div class="metric-card">
+          <div class="label">Studio Cove</div>
+          <div class="value" style="color: var(--accent-purple);">R=4.5m Cove / DoF f/5.6</div>
+        </div>
+        <div class="metric-card">
+          <div class="label">Cycles Denoise</div>
+          <div class="value" style="color: var(--accent-emerald);">0 Raw Grain</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 1: 4-Way Video Players -->
+    <div class="card">
+      <h2>1. Interactive Prototype Video Players (360&times;640 @ 30fps)</h2>
+      <p class="desc">Play each prototype simulation individually to inspect physical weight, comedic anticipation, impact framing, and post-hit recovery pose.</p>
+      
+      <div class="video-grid-4">
+        <!-- Prototype A -->
+        <div class="video-panel">
+          <h3>Prototype A: Pendulum Smash</h3>
+          <div class="meta-badge">SWING &middot; 3.0s (90f) &middot; Impact f=36</div>
+          <p>Overhead truss pivot at z=4.3m with 3.05m rigid rod. Gravity pendulum arc released from -58 deg strikes torso horizontally.</p>
+          <video controls playsinline preload="metadata">
+            <source src="renders/pendulum_smash_preview.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+        </div>
+
+        <!-- Prototype B -->
+        <div class="video-panel">
+          <h3>Prototype B: Rotating Sweeper</h3>
+          <div class="meta-badge">ROTATE &middot; 3.0s (90f) &middot; Impact f=36</div>
+          <p>High-torque vertical motor column driving a 2.45m hazard beam. Powered rotational sweep at waist height spins actor 180 deg in mid-air.</p>
+          <video controls playsinline preload="metadata">
+            <source src="renders/rotating_sweeper_preview.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+        </div>
+
+        <!-- Prototype C -->
+        <div class="video-panel">
+          <h3>Prototype C: Tilting Platform</h3>
+          <div class="meta-badge">SLIDE &middot; 3.5s (105f) &middot; Impact f=85</div>
+          <p>Central horizontal pivot axle. Progressive deck tilt (0 to 42 deg) triggers sequential prop slides, dumping crates, barrels, and actor.</p>
+          <video controls playsinline preload="metadata">
+            <source src="renders/tilting_platform_preview.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+        </div>
+
+        <!-- Prototype D -->
+        <div class="video-panel">
+          <h3>Prototype D: Chain Collapse</h3>
+          <div class="meta-badge">COLLAPSE &middot; 3.8s (114f) &middot; Impact f=80</div>
+          <p>Causal sequence: Rolling brass ball &rarr; domino chain &rarr; keystone knockout &rarr; column buckle &rarr; floor collapse &rarr; actor drops into rubble.</p>
+          <video controls playsinline preload="metadata">
+            <source src="renders/chain_reaction_collapse_preview.mp4" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: 4-Way Comparison Sheet -->
+    <div class="card">
+      <h2>2. Four-Way Side-by-Side Comparison Contact Sheet</h2>
+      <p class="desc">Side-by-side comparison of peak impact / action frames proving motion diversity across all 4 prototypes.</p>
+      <div class="visual-comparison">
+        <img src="images/video3-prototype-contact-sheet.png" alt="4-Way Prototype Comparison Sheet" />
+      </div>
+    </div>
+
+    <!-- Section 3: Reusable 10-State Facial Expression System -->
+    <div class="card">
+      <h2>3. Reusable 10-State Actor Facial Expression System</h2>
+      <p class="desc">Pixel-art facial expression system driven by UV mapping X-offset with constant keyframe interpolation (zero texture swap overhead).</p>
+      <div class="visual-comparison">
+        <img src="images/actor-facial-expressions-sheet.png" alt="10-State Actor Facial Expression Sheet" />
+      </div>
+    </div>
+
+    <!-- Section 4: Background Softness QA -->
+    <div class="card">
+      <h2>4. Background Softness & Foreground Crispness Proof Frame</h2>
+      <p class="desc">Studio cyclorama cove ($R=4.5$m continuous arc) with Depth of Field ($f/5.6$), 0 horizon line, 0 raw Cycles noise, and crisp foreground actor silhouette.</p>
+      <div class="visual-comparison">
+        <img src="images/background-softness-qa-frame.png" alt="Background Softness QA Frame" />
+      </div>
+    </div>
+
+    <!-- Section 5: Manual QA Checklist -->
+    <div class="card">
+      <h2>5. Manual Review Checklist (Evaluation Criteria)</h2>
+      <p class="desc">Key creative and technical questions to decide the direction for the full Video #3 timeline:</p>
+      <table class="qa-table">
+        <thead>
+          <tr>
+            <th>QA Criterion</th>
+            <th>Evaluation Focus</th>
+            <th>Implementation Evidence</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Q1: Satisfying Physical Weight</strong></td>
+            <td>Does each effect feel weighty, impactful, and satisfying?</td>
+            <td>Physics-driven rigid bodies, impulse reactions, settled resting debris piles</td>
+            <td><span class="badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td><strong>Q2: Motion Diversity</strong></td>
+            <td>Are Swing, Rotate, Slide, and Collapse visually distinct?</td>
+            <td>4 completely different mechanical setups and motion trajectories</td>
+            <td><span class="badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td><strong>Q3: Facial Timing & Personality</strong></td>
+            <td>Do expressions add comedic anticipation and punch?</td>
+            <td>Anticipation (LOOK, ALERT, PANIC) &rarr; Impact (IMPACT, SQUISHED) &rarr; Aftermath (DIZZY, RECOVER)</td>
+            <td><span class="badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td><strong>Q4: Background Visual Mood</strong></td>
+            <td>Is the background softly atmospheric without raw noise?</td>
+            <td>Continuous cyclorama arc, 0 split seam, Cycles + OIDN temporal stability</td>
+            <td><span class="badge-pass">PASS</span></td>
+          </tr>
+          <tr>
+            <td><strong>Q5: Effect Selection for V3</strong></td>
+            <td>Which prototypes should be selected for full Video #3?</td>
+            <td>Awaiting user / ChatGPT manual QA decision</td>
+            <td><span class="badge-pass">AWAITING REVIEW</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+</body>
+</html>

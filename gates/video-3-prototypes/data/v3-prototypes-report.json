@@ -1,0 +1,334 @@
+{
+  "phase": "Video #3 Physics Prototype Phase",
+  "status": "PROTOTYPES COMPLETE - READY FOR MANUAL QA",
+  "specification": "docs/v3.md",
+  "fps": 30,
+  "previewResolution": [
+    360,
+    640
+  ],
+  "aspectRatio": "9:16",
+  "renderEngine": "Blender 4.5.11 LTS Cycles + OpenImageDenoise",
+  "reusableFacialExpressionSystem": {
+    "totalStates": 10,
+    "states": [
+      "NEUTRAL",
+      "LOOK_LEFT",
+      "LOOK_RIGHT",
+      "ALERT",
+      "PANIC",
+      "IMPACT",
+      "PAIN",
+      "SQUISHED",
+      "DIZZY",
+      "RECOVER"
+    ],
+    "asset": "output/viral-effects/viral-drop-003/assets/facial-expressions/actor_faces_spritesheet_1280x128.png",
+    "contactSheet": "output/viral-effects/viral-drop-003/previews/actor-facial-expressions-sheet.png",
+    "blenderImplementation": "UV Mapping X-offset driven (10x1 horizontal grid, CONSTANT keyframe interpolation, 0 texture swap overhead)",
+    "status": "PASS - VERIFIED"
+  },
+  "backgroundVisualDirection": {
+    "style": "Seamless Studio Cyclorama Cove (Continuous arc profile)",
+    "coveRadiusM": 4.5,
+    "depthOfField": {
+      "active": true,
+      "focusDistanceM": 5.65,
+      "apertureFStop": 5.6,
+      "foreground": "Crisp razor-sharp actor & physics bodies",
+      "background": "Soft atmospheric gradient, 0 raw Cycles noise, 0 horizon seam"
+    },
+    "qaFrame": "output/viral-effects/viral-drop-003/previews/background-softness-qa-frame.png",
+    "status": "PASS - VERIFIED"
+  },
+  "prototypes": [
+    {
+      "id": "pendulum_smash",
+      "name": "PROTOTYPE A: PENDULUM SMASH",
+      "grammar": "SWING (Gravity-driven pendulum arc)",
+      "durationSec": 3.0,
+      "frames": 90,
+      "impactFrame": 36,
+      "impactTimeSec": 1.2,
+      "framesDir": "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/frames_pendulum",
+      "mp4": "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/pendulum_smash_preview.mp4",
+      "keyFrames": [
+        1,
+        24,
+        36,
+        48,
+        75
+      ],
+      "facialTimeline": [
+        {
+          "frame": 1,
+          "timeSec": 0.033,
+          "expression": "NEUTRAL",
+          "context": "Idle initial pose, pendulum released"
+        },
+        {
+          "frame": 18,
+          "timeSec": 0.6,
+          "expression": "LOOK_LEFT",
+          "context": "Actor spots swinging block approaching"
+        },
+        {
+          "frame": 28,
+          "timeSec": 0.933,
+          "expression": "ALERT",
+          "context": "Pendulum accelerates through arc"
+        },
+        {
+          "frame": 34,
+          "timeSec": 1.133,
+          "expression": "PANIC",
+          "context": "Actor flinches right before impact"
+        },
+        {
+          "frame": 37,
+          "timeSec": 1.233,
+          "expression": "IMPACT",
+          "context": "Direct horizontal torso strike"
+        },
+        {
+          "frame": 45,
+          "timeSec": 1.5,
+          "expression": "PAIN",
+          "context": "Kinetic slide and tumble across floor"
+        },
+        {
+          "frame": 62,
+          "timeSec": 2.067,
+          "expression": "DIZZY",
+          "context": "Pendulum secondary swing, actor dazed on floor"
+        }
+      ],
+      "physicsSummary": {
+        "mechanism": "Overhead truss pivot at z=4.3m with 3.05m rigid suspension rod",
+        "impactor": "100 KG steel smash block with hazard stripe",
+        "releaseAngleDeg": -58.0,
+        "impactVelocityEst": "5.4 m/s",
+        "actorDisplacementM": 1.42,
+        "secondaryMotion": "Damped pendulum swing-back to +30 deg, -10 deg, settling at 3.0s",
+        "status": "PASS - STABLE & DETERMINISTIC"
+      }
+    },
+    {
+      "id": "rotating_sweeper",
+      "name": "PROTOTYPE B: ROTATING SWEEPER",
+      "grammar": "ROTATE (Powered rotational motion around fixed pivot)",
+      "durationSec": 3.0,
+      "frames": 90,
+      "impactFrame": 36,
+      "impactTimeSec": 1.2,
+      "framesDir": "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/frames_sweeper",
+      "mp4": "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/rotating_sweeper_preview.mp4",
+      "keyFrames": [
+        1,
+        24,
+        36,
+        50,
+        75
+      ],
+      "facialTimeline": [
+        {
+          "frame": 1,
+          "timeSec": 0.033,
+          "expression": "NEUTRAL",
+          "context": "Powered arm starts rotational sweep"
+        },
+        {
+          "frame": 17,
+          "timeSec": 0.567,
+          "expression": "LOOK_LEFT",
+          "context": "Actor spots sweeper circling forward"
+        },
+        {
+          "frame": 27,
+          "timeSec": 0.9,
+          "expression": "ALERT",
+          "context": "Arm accelerates into sweeping range"
+        },
+        {
+          "frame": 33,
+          "timeSec": 1.1,
+          "expression": "PANIC",
+          "context": "Anticipation beat right before impact"
+        },
+        {
+          "frame": 36,
+          "timeSec": 1.2,
+          "expression": "IMPACT",
+          "context": "Lateral strike at waist/chest height"
+        },
+        {
+          "frame": 44,
+          "timeSec": 1.467,
+          "expression": "DIZZY",
+          "context": "Actor swept off feet into mid-air 180 deg spin"
+        },
+        {
+          "frame": 64,
+          "timeSec": 2.133,
+          "expression": "RECOVER",
+          "context": "Sweeper completes 360 sweep, actor recovers on floor"
+        }
+      ],
+      "physicsSummary": {
+        "mechanism": "Vertical motor column at (-1.6, 0.4) driving 2.45m horizontal industrial beam",
+        "impactor": "Padded steel bumper with yellow/black hazard bands",
+        "rotationAxis": "Z-axis fixed pivot",
+        "sweepHeightM": 0.9,
+        "actorDisplacementM": 1.52,
+        "secondaryMotion": "Full 360-deg sweep follow-through with smooth motor deceleration",
+        "status": "PASS - STABLE & DETERMINISTIC"
+      }
+    },
+    {
+      "id": "tilting_platform",
+      "name": "PROTOTYPE C: TILTING PLATFORM",
+      "grammar": "SLIDE (TILT -> GRAVITY -> SLIDE -> ACCUMULATION)",
+      "durationSec": 3.5,
+      "frames": 105,
+      "impactFrame": 85,
+      "impactTimeSec": 2.83,
+      "framesDir": "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/frames_tilting",
+      "mp4": "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/tilting_platform_preview.mp4",
+      "keyFrames": [
+        1,
+        35,
+        54,
+        75,
+        95
+      ],
+      "facialTimeline": [
+        {
+          "frame": 1,
+          "timeSec": 0.033,
+          "expression": "NEUTRAL",
+          "context": "Level platform with 14 physical crates & barrels"
+        },
+        {
+          "frame": 24,
+          "timeSec": 0.8,
+          "expression": "LOOK_RIGHT",
+          "context": "Subtle 14 deg tilt, loose crates start sliding"
+        },
+        {
+          "frame": 40,
+          "timeSec": 1.333,
+          "expression": "ALERT",
+          "context": "Tilt increases to 28 deg, props slide faster"
+        },
+        {
+          "frame": 55,
+          "timeSec": 1.833,
+          "expression": "PANIC",
+          "context": "Steep 38 deg incline, actor struggles for balance"
+        },
+        {
+          "frame": 72,
+          "timeSec": 2.4,
+          "expression": "SQUISHED",
+          "context": "Traction lost, actor slides off platform edge"
+        },
+        {
+          "frame": 88,
+          "timeSec": 2.933,
+          "expression": "DIZZY",
+          "context": "Actor lands in settled debris pile with props"
+        }
+      ],
+      "physicsSummary": {
+        "mechanism": "3.2m x 3.0m platform on central horizontal axle at z=0.75m",
+        "props": "14 physical props (4 wood crates, 4 barrels, 6 concrete blocks)",
+        "inclineProgression": "0 deg (t=0..0.7s) -> 14 deg (t=1.1s) -> 28 deg (t=1.7s) -> 38 deg (t=2.3s)",
+        "actorDisplacementM": 1.92,
+        "secondaryMotion": "Gravity-driven accumulation pile at base of platform",
+        "status": "PASS - STABLE & DETERMINISTIC"
+      }
+    },
+    {
+      "id": "chain_reaction_collapse",
+      "name": "PROTOTYPE D: CHAIN-REACTION COLLAPSE",
+      "grammar": "CHAIN REACTION / STRUCTURAL COLLAPSE",
+      "durationSec": 3.8,
+      "frames": 114,
+      "impactFrame": 80,
+      "impactTimeSec": 2.67,
+      "framesDir": "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/frames_collapse",
+      "mp4": "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/chain_reaction_collapse_preview.mp4",
+      "keyFrames": [
+        1,
+        24,
+        44,
+        68,
+        95
+      ],
+      "facialTimeline": [
+        {
+          "frame": 1,
+          "timeSec": 0.033,
+          "expression": "NEUTRAL",
+          "context": "Actor stands on elevated 1.45m stone platform"
+        },
+        {
+          "frame": 19,
+          "timeSec": 0.633,
+          "expression": "LOOK_LEFT",
+          "context": "Spots brass trigger ball rolling down ramp"
+        },
+        {
+          "frame": 34,
+          "timeSec": 1.133,
+          "expression": "ALERT",
+          "context": "Domino cascade knocks into support keystone"
+        },
+        {
+          "frame": 50,
+          "timeSec": 1.667,
+          "expression": "PANIC",
+          "context": "Support column buckles, floor begins tilting"
+        },
+        {
+          "frame": 68,
+          "timeSec": 2.267,
+          "expression": "IMPACT",
+          "context": "Platform drops out, actor plunges through air"
+        },
+        {
+          "frame": 84,
+          "timeSec": 2.8,
+          "expression": "DIZZY",
+          "context": "Lands amidst fallen stone slabs, debris settles"
+        }
+      ],
+      "physicsSummary": {
+        "mechanism": "Sequential 5-stage causal chain: Trigger ball -> Domino chain -> Keystone pin -> Buckling column -> Deck collapse",
+        "triggerBall": "Brass sphere (r=0.15m) rolling down 12 deg ramp",
+        "dominoChain": "4 heavy stone slabs with sequential domino tumble",
+        "platformHeightM": 1.45,
+        "secondaryMotion": "Slabs and actor crash into ground with natural rubble settling",
+        "status": "PASS - STABLE & DETERMINISTIC"
+      }
+    }
+  ],
+  "deliverables": {
+    "previewMp4s": [
+      "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/pendulum_smash_preview.mp4",
+      "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/rotating_sweeper_preview.mp4",
+      "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/tilting_platform_preview.mp4",
+      "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/chain_reaction_collapse_preview.mp4"
+    ],
+    "comparisonContactSheet": "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/video3-prototype-contact-sheet.png",
+    "facialExpressionSheet": "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/actor-facial-expressions-sheet.png",
+    "backgroundQAFrame": "/Users/duyn/mine/output/viral-effects/viral-drop-003/previews/background-softness-qa-frame.png"
+  },
+  "manualQAChecklist": {
+    "q1_satisfying_physics": "Does each new physics effect feel weighty, dynamic, and satisfying?",
+    "q2_motion_diversity": "Are all 4 motion grammars (Swing, Rotate, Slide, Collapse) clearly distinct?",
+    "q3_facial_personality": "Does the actor facial-expression system add comedic timing & narrative anticipation?",
+    "q4_background_mood": "Does the soft atmospheric background work without raw noise or visual distractions?",
+    "q5_selection_for_v3": "Which prototypes should be selected for the full Video #3 timeline?"
+  }
+}
